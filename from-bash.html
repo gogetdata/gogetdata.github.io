@@ -1,0 +1,289 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>ggd from-bash &#8212; ggd  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="ggd check-recipe" href="check-recipe.html" />
+    <link rel="prev" title="ggd show-env" href="show-env.html" />
+<link href="https://fonts.googleapis.com/css?family=Lato|Raleway" rel="stylesheet"> 
+<link rel="stylesheet" type="text/css" href="_static/font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="_static/style.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jqc-1.12.3/dt-1.10.12/datatables.min.css"/>
+<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+
+<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/jqc-1.12.3/dt-1.10.12/datatables.min.js"></script>
+
+<script type="text/javascript" class="init">
+$(document).ready(function() {
+    $('#recipestable').DataTable( {
+        "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]]
+    } );
+} );
+</script>
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="ggd-from-bash">
+<span id="id1"></span><h1>ggd from-bash<a class="headerlink" href="#ggd-from-bash" title="Permalink to this headline">¶</a></h1>
+<p>ggd from-bash is used to create a ggd data recipe from a bash script which contains the information on
+extracting and processing the data.</p>
+<ul class="simple">
+<li><strong>recipe</strong>: A data recipe is directory containing a set of files that contain information about the recipe.
+This includes: A meta.yaml file, which is the meta data information for the soon to be ggd data package.
+A post-link script, which contains the information about file and data management. A recipe script, which
+contains the information on how to get the data and how to process it.</li>
+<li><strong>package</strong>: A data package is created from building the ggd data recipe. It is a bgzipped tar file that contains
+the built data recipe, and additional metadata information for conda system handeling.</li>
+</ul>
+<p><code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">from-bash</span></code> take a bash script created by you and turns it into a data recipe. This data recipe will then be
+turned into a data package using <a class="reference internal" href="check-recipe.html#ggd-check-recipe"><span class="std std-ref">ggd check-recipe</span></a>. Finally, the new data package will
+be added to the ggd repo and ggd conda channel through a continious integration system. (for more details see
+the <a class="reference internal" href="contribute.html#make-data-packages"><span class="std std-ref">contribute</span></a> documentation)</p>
+<p>The first step in this process is to create a bash script with instructions on downloading and process data, and
+then using <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">from-bash</span></code> to create a ggd data recipe</p>
+<div class="section" id="using-ggd-from-bash">
+<h2>Using ggd from-bash<a class="headerlink" href="#using-ggd-from-bash" title="Permalink to this headline">¶</a></h2>
+<p>Creating a ggd recipe is easy using the <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">from-bash</span></code> tool.
+Running <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">from-bash</span> <span class="pre">-h</span></code> will give you the following help message:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>positional arguments:
+    name                  name of recipe
+    script                bash script that contains the commands that build the recipe
+
+optional arguments:
+    -h, --help            show this <span class="nb">help</span> message and <span class="nb">exit</span>
+    -c <span class="o">{</span>genomics<span class="o">}</span>, --channel <span class="o">{</span>genomics<span class="o">}</span>
+                    the ggd channel to use. <span class="o">(</span><span class="nv">Default</span> <span class="o">=</span> genomics<span class="o">)</span>
+    -d DEPENDENCY, --dependency DEPENDENCY
+                    any software dependencies <span class="o">(</span>in bioconda, conda-forge<span class="o">)</span> or data-dependency <span class="o">(</span>in ggd<span class="o">)</span>. May be as many <span class="nb">times</span> as needed.
+    -e EXTRA_FILE, --extra-file EXTRA_FILE
+                    any files that the recipe creates that are not a *.gz and *.gz.tbi pair. May be used more than once
+
+required arguments:
+    -s <span class="o">{</span>Canis_familiaris,Homo_sapiens,Drosophila_melanogaster,Mus_musculus<span class="o">}</span>, --species <span class="o">{</span>Canis_familiaris,Homo_sapiens,Drosophila_melanogaster,Mus_musculus<span class="o">}</span>
+                    species recipe is <span class="k">for</span>
+    -g GENOME_BUILD, --genome-build GENOME_BUILD
+                    genome-build the recipe is <span class="k">for</span>
+    --authors AUTHORS     authors of the recipe
+    -gv GGD_VERSION, --ggd_version GGD_VERSION
+                    The version of the ggd package. <span class="o">(</span>First <span class="nb">time</span> <span class="nv">package</span> <span class="o">=</span> <span class="m">1</span>, updated package &gt; <span class="m">1</span><span class="o">)</span>
+    -dv DATA_VERSION, --data_version DATA_VERSION
+                    The version of the data <span class="o">(</span>itself<span class="o">)</span> being downloaded and processed <span class="o">(</span>EX: dbsnp-127<span class="o">)</span>
+    --summary SUMMARY     a comment describing the recipe
+    -k KEYWORD, --keyword KEYWORD
+                    a keyword to associate with the recipe. may be specified more that once.
+</pre></div>
+</div>
+<p>Required Flags:</p>
+<ul class="simple">
+<li>-s: The <code class="code docutils literal notranslate"><span class="pre">-s</span></code> flag is used to declare the species the data recipe is for</li>
+<li>-g: The <code class="code docutils literal notranslate"><span class="pre">-g</span></code> flag is used to declare the genome-build the data recipe is for</li>
+<li>–authors: The <code class="code docutils literal notranslate"><span class="pre">--authors</span></code> flag is used to declare the authors of the recipe</li>
+<li>-gv: The <code class="code docutils literal notranslate"><span class="pre">-gv</span></code> flag is used to declare the ggd recipe version. (1 for first time recipe, and 2+ for updated recipes)</li>
+<li>-dv: The <code class="code docutils literal notranslate"><span class="pre">-dv</span></code> flag is used to declare the version of the data being downloaded and processed. If a version is not
+avaiable for the specific data use something that can identify the data uniquely. (Such as the data when the data was created)</li>
+<li>–summary: The <code class="code docutils literal notranslate"><span class="pre">--summary</span></code> flag is used to provide a brief summary/description about the recipe</li>
+<li>-k: The <code class="code docutils literal notranslate"><span class="pre">-k</span></code> flag is used to declare keywords associated with the data and recipe. If there are multiple keywords, the <cite>-k</cite> flag
+should be used for each keywords. (Example: -k ref -k reference)</li>
+<li><code class="code docutils literal notranslate"><span class="pre">name</span></code> represents the name of the recipe</li>
+<li><code class="code docutils literal notranslate"><span class="pre">script</span></code> represents the bash script containing the information on data extraction and processing</li>
+</ul>
+<p>Optional Flags:</p>
+<ul class="simple">
+<li>-c: The <code class="code docutils literal notranslate"><span class="pre">-c</span></code> flag is used to declare which ggd channel to use. (genomics is the default)</li>
+<li>-d: The <code class="code docutils literal notranslate"><span class="pre">-d</span></code> flag is used to declare software dependencies in conda, bioconda, and conda-forge, and data-dependencies in
+ggd for creating the package. If there are not dependencies this flag is not needed</li>
+<li>-e: The <code class="code docutils literal notranslate"><span class="pre">-e</span></code> flag is used to declare any extra files created during the data processing. An extra file is any file that is
+not a .gz and .gz.tbi pair. If your final processed files are .gz and .gz.tbi pair this flag is not needed.</li>
+</ul>
+</div>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="a-simple-example-of-creating-a-ggd-recipe">
+<h3>1. A simple example of creating a ggd recipe<a class="headerlink" href="#a-simple-example-of-creating-a-ggd-recipe" title="Permalink to this headline">¶</a></h3>
+<p>get_data.sh:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">genome</span><span class="o">=</span>https://raw.githubusercontent.com/gogetdata/ggd-recipes/master/genomes/Homo_sapiens/hg19/hg19.genome
+wget --quiet -O - http://hgdownload.cse.ucsc.edu/goldenpath/hg19/database/gap.txt.gz <span class="se">\</span>
+    <span class="p">|</span> gzip -dc <span class="se">\</span>
+    <span class="p">|</span> awk -v <span class="nv">OFS</span><span class="o">=</span><span class="s2">&quot;\t&quot;</span> <span class="s1">&#39;BEGIN {print &quot;#chrom\tstart\tend\tsize\ttype\tstrand&quot;} {print $2,$3,$4,$7,$8,&quot;+&quot;}&#39;</span> <span class="se">\</span>
+    <span class="p">|</span> gsort /dev/stdin <span class="nv">$genome</span> <span class="se">\</span>
+    <span class="p">|</span> bgzip -c &gt; gaps.bed.gz
+
+tabix gaps.bed.gz
+</pre></div>
+</div>
+<p>ggd from-bash</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ggd from-bash -s Homo_sapiens -g hg19 --author mjc --ggd_version <span class="m">1</span> --data_version <span class="m">27</span>-Apr-2009 --summary <span class="s1">&#39;Assembly gaps from USCS&#39;</span> -k gaps -k region gaps get_data.sh
+</pre></div>
+</div>
+<p>This code will create a new ggd recipe:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Directory Name: <strong>hg19-gaps</strong></li>
+<li>Files: <strong>meta.yaml</strong>, <strong>post-link.sh</strong>, and <strong>recipe.sh</strong></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="a-more-complex-ggd-recipe">
+<h3>2. A more complex ggd recipe<a class="headerlink" href="#a-more-complex-ggd-recipe" title="Permalink to this headline">¶</a></h3>
+<p>get_data.sh</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget --quiet http://evs.gs.washington.edu/evs_bulk_data/ESP6500SI-V2-SSA137.GRCh38-liftover.snps_indels.vcf.tar.gz
+
+<span class="c1"># extract individual chromosome files</span>
+tar -zxf ESP6500SI-V2-SSA137.GRCh38-liftover.snps_indels.vcf.tar.gz
+
+<span class="c1"># combine chromosome files into one</span>
+<span class="o">(</span>grep ^# ESP6500SI-V2-SSA137.GRCh38-liftover.chr1.snps_indels.vcf<span class="p">;</span> cat ESP6500SI-V2-SSA137.GRCh38-liftover.chr*.snps_indels.vcf <span class="p">|</span> grep
+
+<span class="c1"># sort the chromosome data according to the .genome file from github</span>
+gsort temp.vcf https://raw.githubusercontent.com/gogetdata/ggd-recipes/master/genomes/Homo_sapiens/GRCh37/GRCh37.genome <span class="se">\</span>
+    <span class="p">|</span> bgzip -c &gt; ESP6500SI.all.snps_indels.vcf.gz
+
+<span class="c1"># tabix it</span>
+tabix -p vcf ESP6500SI.all.snps_indels.vcf.gz
+
+<span class="c1"># get handle for reference file</span>
+<span class="nv">reference_fasta</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>ggd list-files <span class="s1">&#39;grch37-reference-genome&#39;</span> -s <span class="s1">&#39;Homo_sapiens&#39;</span> -g <span class="s1">&#39;GRCh37&#39;</span> -p <span class="s1">&#39;hs37d5.fa&#39;</span><span class="k">)</span><span class="s2">&quot;</span>
+
+<span class="c1"># get the santizer script</span>
+wget --quiet https://raw.githubusercontent.com/arq5x/gemini/00cd627497bc9ede6851eae2640bdaff9f4edfa3/gemini/annotation_provenance/sanit
+
+<span class="c1"># sanitize</span>
+zless ESP6500SI.all.snps_indels.vcf.gz <span class="p">|</span> python sanitize-esp.py <span class="p">|</span> bgzip -c &gt; temp.gz
+tabix temp.gz
+
+<span class="c1"># decompose with vt</span>
+vt decompose -s temp.gz <span class="p">|</span> vt normalize -r <span class="nv">$reference_fasta</span> - <span class="se">\</span>
+    <span class="p">|</span> perl -pe <span class="s1">&#39;s/\([EA_|T|AA_]\)AC,Number=R,Type=Integer/\1AC,Number=R,Type=String/&#39;</span> <span class="se">\</span>
+    <span class="p">|</span> bgzip -c &gt; ESP6500SI.all.snps_indels.tidy.vcf.gz
+
+tabix ESP6500SI.all.snps_indels.tidy.vcf.gz
+
+<span class="c1"># clean up environment</span>
+rm ESP6500SI-V2-SSA137.GRCh38-liftover.snps_indels.vcf.tar.gz
+rm ESP6500SI-V2-SSA137.GRCh38-liftover.chr*.snps_indels.vcf
+
+rm ESP6500SI.all.snps_indels.vcf.gz.tbi
+rm ESP6500SI.all.snps_indels.vcf.gz
+
+rm temp.gz
+rm temp.gz.tbi
+rm temp.vcf
+
+rm sanitize-esp.py
+</pre></div>
+</div>
+<p>ggd from-bash</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ggd from-bash -s Homo_sapiens -g GRCh37 --author mjc --ggd_version <span class="m">1</span> --data_version ESP6500SI-V2 --summary <span class="s1">&#39;ESP variants (More Info: http://evs.gs.washington.edu/EVS/#tabs-7)&#39;</span> -k ESP esp-variants get_data.sh
+</pre></div>
+</div>
+<p>This code will create a new ggd recipe:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Directory Name: <strong>grch37-esp-variants</strong></li>
+<li>Files: <strong>meta.yaml</strong>, <strong>post-link.sh</strong>, <strong>recipe.sh</strong></li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="index.html">
+    <img class="logo" src="_static/logo/gogetdata_temp.png" alt="Logo"/>
+    
+  </a>
+</p>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="recipes.html">Available packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ggd-search.html">ggd search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">ggd install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uninstall.html">ggd uninstall</a></li>
+<li class="toctree-l1"><a class="reference internal" href="list-file.html">ggd list-files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pkg-info.html">ggd pkg-info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="show-env.html">ggd show-env</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">ggd from-bash</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#using-ggd-from-bash">Using ggd from-bash</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="check-recipe.html">ggd check-recipe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contribute.html">Contribute</a></li>
+</ul>
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, The gogetdata team.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/from-bash.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

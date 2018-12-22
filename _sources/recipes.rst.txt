@@ -1,0 +1,21 @@
+.. _recipes:
+
+Available packages
+==================
+
+.. toctree::
+   :hidden:
+   :maxdepth: 1
+   :glob:
+
+   recipes/*/*/*/*/*/*/*/*
+
+.. raw:: html
+
+    <table id="recipestable" class="display" cellspacing="0" width="100%">
+    <thead>
+        <tr><th>Package</th><th>Version</th><th>License</th><th>Linux</th><th>OSX</th></tr>
+    </thead>
+    <tbody></tbody>
+    <tfoot></tfoot>
+    </table>

@@ -1,0 +1,125 @@
+.. ggd documentation master file, created by
+   sphinx-quickstart on Wed Dec 19 10:28:31 2018.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+.. image:: GoGetData.png
+
+Welcome to the Go Get Data documentation!
+=========================================
+
+**ggd** is a data managment system that provides access to data package containing auto curated genomic data.
+ggd hosts data packages that contain information on how to extract and process scientific data, providinig access
+to a growing number of scientific datasets without the hassel of finding, downloading, and processing them
+yourself. ggd leverages the `conda <http://conda.pydata.org/docs/intro.html>`_ package managment system 
+and the infastructure of `Bioconda <https://bioconda.github.io/index.html>`_ to provide a stable source
+of dataset and annotation repdroducibility. Using the ggd data managment system allows any user to quickly
+access a desired dataset(s), and provides a stable way to cite data acess and use by refering to the ggd 
+data package name and version. 
+
+ggd consist of:
+
+- a `repository of recipes <https://github.com/gogetdata/ggd-recipes>`_ hosted on Github
+- a `comand line interface (cli) <https://github.com/gogetdata/ggd-cli>`_ to communicate with the ggd system
+- a continually growing list of genomic recipes to provide easy and quick access to processed genomic data
+  using the ggd cli tool
+
+
+.. When using ggd please **cite our article** `author list <>`_.
+
+
+Available Data Packages
+-----------------------
+You can see and search for available packages using the :ref:`Avaiable packages <recipes>` page of the 
+ggd documentation
+
+If you have the ggd cli tool installed, you can use :code:`ggd search` to search for available pacakges
+
+.. _using-ggd:
+
+Using GGD
+=========
+
+1. Install conda 
+----------------
+Go Get Data (GGD) requires the conda package managment system be installed on your system. Loading conda from a module 
+is not sufficient. Please install Anaconda or Miniconda onto your system. The best way to
+install it is with the `Miniconda <http://conda.pydata.org/miniconda.html>`_
+package. The Python 3 version is recommended
+
+2. Configure the conda channels
+--------------------------------
+Go Get Data (GGD) data packages are stored in the Anaconda cloud. Additionaly, ggd uses software tools available from 
+other software pacakges in conda. A GGD conda channel, and other required channels, need to be added to your conda
+configurations. You can add as many GGD channels as you would like, as they are available, but only one of the available
+ggd channels is required. As GGD becomes more widely used additional channels will be created to support different areas of 
+research
+
+Available ggd channels:
+
+- ggd-genomics
+
+Run the following commands, adding in additional ggd channels as desired:
+
+.. code-block:: bash 
+
+    conda config --add channels defaults
+    conda config --add channels ggd-genomics
+    conda config --add channels bioconda
+    conda config --add channels conda-forge
+
+3. Install ggd
+--------------
+Go Get Data (GGD) needs to be installed on your system before you can use it. Run the following commands to download the 
+ggd cli:
+
+.. code-block:: bash
+
+    conda install -y --file https://raw.githubusercontent.com/gogetdata/ggd-cli/master/requirements.txt
+    pip install ggd
+
+4. GGD tools
+------------
+The Go Get Data (GGD) command line tool (cli) installed in step 3 has built-in tools for accessing and managing 
+data packages. These tools include:
+
+- :ref:`ggd search <ggd-search>` Search for a ggd data package
+- :ref:`ggd install <ggd-install>` Install a ggd data package
+- :ref:`ggd uninstall <ggd-uninstall>` Uninstall a ggd data package
+- :ref:`ggd list-files <ggd-list-files>` List the files for an installed ggd package
+- :ref:`ggd pkg-info <ggd-pkg-info>` Show a specific ggd package's info
+- :ref:`ggd show-env <ggd-show-env>` Show the ggd specific enviroment variables
+- :ref:`ggd from-bash <ggd-from-bash>` Create a ggd recipe from a bash script
+- :ref:`ggd check-recipe <ggd-check-recipe>` Check/test a ggd recipe
+
+5. Contributing to GGD
+----------------------
+We intend for Go Get Data (GGD) to become a widely used data managment system for genomics and other reserach areas.
+GGD provides support for reproducibility through Conda's naming, version tracking, and dependency handling structure.
+One major function of the ggd cli tools is to provide an easy way to add data pacakges to the data repository. 
+
+We welcome and encourage everyone to contribute to the data repository hosted by ggd.
+
+Instructions on how to create a data pacakge and add it to ggd can be found on the :ref:`Contribute <make-data-packages>` 
+documentation pages
+
+
+Contents: 
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   recipes
+   ggd-search
+   install
+   uninstall
+   list-file
+   pkg-info
+   show-env
+   from-bash
+   check-recipe
+   contribute
+
+
+

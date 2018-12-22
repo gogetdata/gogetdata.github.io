@@ -1,0 +1,191 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Setting up with Github &#8212; ggd  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Contributing a ggd recipe" href="contribute-recipe.html" />
+    <link rel="prev" title="Contribute" href="contribute.html" />
+<link href="https://fonts.googleapis.com/css?family=Lato|Raleway" rel="stylesheet"> 
+<link rel="stylesheet" type="text/css" href="_static/font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="_static/style.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jqc-1.12.3/dt-1.10.12/datatables.min.css"/>
+<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+
+<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/jqc-1.12.3/dt-1.10.12/datatables.min.js"></script>
+
+<script type="text/javascript" class="init">
+$(document).ready(function() {
+    $('#recipestable').DataTable( {
+        "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]]
+    } );
+} );
+</script>
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="setting-up-with-github">
+<span id="setup-github"></span><h1>Setting up with Github<a class="headerlink" href="#setting-up-with-github" title="Permalink to this headline">¶</a></h1>
+<p>A github account is required in order to contribute a data package to ggd. If you do not have a
+github account it is easy to create one. (Note: Your github account does not need to be connected
+to ggd in order to work)</p>
+<ul>
+<li><p class="first">Go to <a class="reference external" href="https://github.com/">github.com</a> and sign up for an account. (Accounts are free)</p>
+</li>
+<li><p class="first">Once you have an account you will need to fork the <a class="reference external" href="https://github.com/gogetdata/ggd-recipes">ggd-recipes</a>
+github repo. This repository is where the ggd data recipes are collected.</p>
+<blockquote>
+<div><ul class="simple">
+<li>In the top right hand corner of the <a class="reference external" href="https://github.com/gogetdata/ggd-recipes">ggd-recipes</a> page you will
+see a button called <strong>fork</strong>. When you have pressed the button it will ask you where to put the fork. Select
+your github account.</li>
+<li><strong>ggd-recipes</strong> will now be a repository attached to your acount. (github.com/&lt;github username&gt;/ggd-recipes)</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">You will then need to clone the forked ggd-recipes repo to the machine that you are working on.</p>
+<blockquote>
+<div><ul>
+<li><p class="first">On you machine navigate to a directory were you want to donwload the forked ggd-recipes repo.</p>
+</li>
+<li><p class="first"><strong>NOTE:</strong> <cite>git</cite> is a required software package. If you do not have it downloaded on your system run:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">anaconda</span> <span class="n">git</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>NOTE:</strong> conda is required as well. If you do not have conda installed on your system see <a class="reference internal" href="index.html#using-ggd"><span class="std std-ref">Using GGD</span></a>
+to install conda and the required software packages on your system. You can then return to this page and continue.</p>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">clone the forked repository to the current location on your machine</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="code docutils literal notranslate"><span class="pre">&lt;USERNAME&gt;</span></code> is your github account username. (This is where the ggd-recipes repo was forked to)</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/&lt;</span><span class="n">USERNAME</span><span class="o">&gt;/</span><span class="n">ggd</span><span class="o">-</span><span class="n">recipes</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Move into the ggd-recipes directory:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">ggd</span><span class="o">-</span><span class="n">recipes</span><span class="o">/</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Add the original ggd-recieps repo as an upstream remote repo to the one just added to your machine. This
+will make it more easy to update your forked repo with the uptream origional one.</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">upstream</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">gogetdata</span><span class="o">/</span><span class="n">ggd</span><span class="o">-</span><span class="n">recipes</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+<p>You have now set up a forked ggd-recipes repository on your machine, which you will use to add data packages to ggd.</p>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="index.html">
+    <img class="logo" src="_static/logo/gogetdata_temp.png" alt="Logo"/>
+    
+  </a>
+</p>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="recipes.html">Available packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ggd-search.html">ggd search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">ggd install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uninstall.html">ggd uninstall</a></li>
+<li class="toctree-l1"><a class="reference internal" href="list-file.html">ggd list-files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pkg-info.html">ggd pkg-info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="show-env.html">ggd show-env</a></li>
+<li class="toctree-l1"><a class="reference internal" href="from-bash.html">ggd from-bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="check-recipe.html">ggd check-recipe</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="contribute.html">Contribute</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Setting up with Github</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contribute-recipe.html">Contributing a ggd recipe</a></li>
+</ul>
+</li>
+</ul>
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, The gogetdata team.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/github-setup.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

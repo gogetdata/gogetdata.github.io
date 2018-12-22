@@ -1,0 +1,240 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>ggd check-recipe &#8212; ggd  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Contribute" href="contribute.html" />
+    <link rel="prev" title="ggd from-bash" href="from-bash.html" />
+<link href="https://fonts.googleapis.com/css?family=Lato|Raleway" rel="stylesheet"> 
+<link rel="stylesheet" type="text/css" href="_static/font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="_static/style.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jqc-1.12.3/dt-1.10.12/datatables.min.css"/>
+<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+
+<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/jqc-1.12.3/dt-1.10.12/datatables.min.js"></script>
+
+<script type="text/javascript" class="init">
+$(document).ready(function() {
+    $('#recipestable').DataTable( {
+        "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]]
+    } );
+} );
+</script>
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="ggd-check-recipe">
+<span id="id1"></span><h1>ggd check-recipe<a class="headerlink" href="#ggd-check-recipe" title="Permalink to this headline">¶</a></h1>
+<p>ggd check-recipe is used to check a ggd recipe built by running <a class="reference internal" href="from-bash.html#ggd-from-bash"><span class="std std-ref">ggd from-bash</span></a>. <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">from-bash</span></code>
+takes a bash script used to download and process data and turns it into a ggd data recipe. <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">check-recipe</span></code> should
+then be called to test that newly built ggd recipe.</p>
+<p><code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">check-recipe</span></code> is a part of the tool set used to create and contribute data packages to the ggd data repository.
+For more information about using the ggd workflow to contribute to ggd see <a class="reference internal" href="contribute.html#make-data-packages"><span class="std std-ref">contribute</span></a>.</p>
+<div class="section" id="using-ggd-check-recipe">
+<h2>Using ggd check-recipe<a class="headerlink" href="#using-ggd-check-recipe" title="Permalink to this headline">¶</a></h2>
+<p>Checking a newly built ggd recipe is easy using the <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">check-recipe</span></code> tool.
+Running <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">check-recipe</span> <span class="pre">-h</span></code> will give you the following help message:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>positional arguments:
+    recipe_path  path to recipe directory <span class="o">(</span>can also be path to the .bz2<span class="o">)</span>
+
+optional arguments:
+    -h, --help   show this <span class="nb">help</span> message and <span class="nb">exit</span>
+</pre></div>
+</div>
+<p>The only required argument is the <code class="code docutils literal notranslate"><span class="pre">recipe_path</span></code>. The recipe_path is the path to the directory for the ggd recipe
+you would like to check. When using <a class="reference internal" href="from-bash.html#ggd-from-bash"><span class="std std-ref">ggd from-bash</span></a> to create a ggd recipe, from-bash will
+create a new directory with three new files. The recipe_path should be the path to the new directroy created
+from using <cite>ggd from-bash</cite>.</p>
+<p>Running <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">check-recipe</span> <span class="pre">&lt;recipe-path&gt;</span></code> will build, install, and check the recipe to ensure the recipe works correctly</p>
+</div>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="an-example-of-creating-a-ggd-recipe-from-ggd-from-bash-and-using-ggd-check-recipe-to-check-the-recipe">
+<h3>1. An example of creating a ggd recipe from <cite>ggd from-bash</cite> and using <cite>ggd check-recipe</cite> to check the recipe<a class="headerlink" href="#an-example-of-creating-a-ggd-recipe-from-ggd-from-bash-and-using-ggd-check-recipe-to-check-the-recipe" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li>get_data.sh (A bash script used to create a recipe with <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">from-bash</span></code>)</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/sh</span>
+<span class="nb">set</span> <span class="o">-</span><span class="n">eo</span> <span class="n">pipefail</span> <span class="o">-</span><span class="n">o</span> <span class="n">nounset</span>
+<span class="n">wget</span> <span class="o">--</span><span class="n">quiet</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">check</span><span class="o">-</span><span class="n">certificate</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">hgdownload</span><span class="o">.</span><span class="n">cse</span><span class="o">.</span><span class="n">ucsc</span><span class="o">.</span><span class="n">edu</span><span class="o">/</span><span class="n">goldenpath</span><span class="o">/</span><span class="n">hg19</span><span class="o">/</span><span class="n">phastCons100way</span><span class="o">/</span><span class="n">hg19</span><span class="o">.</span><span class="mi">100</span><span class="n">way</span><span class="o">.</span><span class="n">phastCons</span><span class="o">.</span><span class="n">bw</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Using <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">from-bash</span></code> to create a ggd recipe</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ggd</span> <span class="n">from</span><span class="o">-</span><span class="n">bash</span> <span class="o">-</span><span class="n">s</span> <span class="n">Homo_sapiens</span> <span class="o">-</span><span class="n">g</span> <span class="n">hg19</span> <span class="o">--</span><span class="n">author</span> <span class="n">mjc</span> <span class="o">--</span><span class="n">ggd_version</span> <span class="mi">1</span> <span class="o">--</span><span class="n">data_version</span> <span class="mi">09</span><span class="o">-</span><span class="n">Feb</span><span class="o">-</span><span class="mi">2014</span> <span class="o">--</span><span class="n">summary</span> <span class="s1">&#39;phastCons scores for MSA of 99 genomes to hg19&#39;</span> <span class="o">-</span><span class="n">e</span> <span class="n">hg19</span><span class="o">.</span><span class="mi">100</span><span class="n">way</span><span class="o">.</span><span class="n">phastCons</span><span class="o">.</span><span class="n">bw</span> <span class="o">-</span><span class="n">k</span> <span class="n">phastCons</span> <span class="o">-</span><span class="n">k</span> <span class="n">conservation</span> <span class="n">get_data</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>A new directory called <strong>hg19-phastcons</strong> is now present in the current working directory</dt>
+<dd><ul class="first last">
+<li>The <strong>hg19-phastcons</strong> directory contains three files: <strong>meta.yaml</strong>, <strong>post-link.sh</strong>, and <strong>recipe.sh</strong></li>
+<li>Lets say the path to <strong>hg19-phastcons</strong> is <cite>/user/home/hg19-phastcons/</cite></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>Using <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">check-recipe</span></code> we will build, install, and test the new <strong>hg19-phastcons</strong> recipe</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ggd check-recipe /user/home/hg19-phastcons/
+
+STDOUT:
+    &gt; No numpy version specified in conda_build_config.yaml.  Falling back to default numpy value of 1.11
+    &gt; WARNING:conda_build.metadata:No numpy version specified in conda_build_config.yaml.  Falling back to default numpy value of 1.11
+    &gt; INFO:conda_build.variants:Adding in variants from internal_defaults
+    &gt; INFO:conda_build.metadata:Attempting to finalize metadata for hg19-phastcons
+    &gt; INFO:conda_build.build:Packaging hg19-phastcons
+    &gt; INFO:conda_build.build:Packaging hg19-phastcons-1-0
+    &gt; No files or script found for output hg19-phastcons
+    &gt; WARNING:conda_build.build:No files or script found for output hg19-phastcons
+    &gt; /TMP/hg19-phastcons-1-0.tar.bz2: C1115 Found invalid license &quot;None&quot; in info/index.json
+    &gt; /TMP/hg19-phastcons-1-0.tar.bz2: C1134 Found pre/post link file &quot;bin/.hg19-phastcons-post-link.sh&quot; in archive
+    &gt; INFO:conda_build.variants:Adding in variants from /TMP/info/recipe/conda_build_config.yaml
+    &gt; Solving environment: done
+    &gt;
+    &gt; ## Package Plan ##
+    &gt;
+    &gt;  environment location: /scratch/ucgd/lustre/work/u1138933/anaconda2
+    &gt;
+    &gt;    added / updated specs:
+    &gt;        - hg19-phastcons
+    &gt;
+    &gt;
+    &gt; The following packages will be downloaded:
+    &gt;
+    &gt; package                    |            build
+    &gt; ---------------------------|-----------------
+    &gt; hg19-phastcons-1           |                0           5 KB  local
+    &gt;
+    &gt; The following NEW packages will be INSTALLED:
+    &gt;
+    &gt;   hg19-phastcons: 1-0 local
+    &gt;
+    &gt;
+    &gt; Downloading and Extracting Packages
+    &gt; hg19-phastcons-1     | 5 KB      | ############################################################################################ | 100%
+    &gt; Preparing transaction: done
+    &gt; Verifying transaction: done
+    &gt; Executing transaction: done
+    &gt; modified files:
+    &gt; :: /&lt;conda root&gt;/share/ggd/Homo_sapiens/hg19/hg19-phastcons/1/hg19.100way.phastCons.bw
+    &gt;
+    &gt;
+    &gt; checking /scratch/ucgd/lustre/work/u1138933/anaconda2/share/ggd/Homo_sapiens/hg19/hg19-phastcons/1/hg19.100way.phastCons.bw
+    &gt;
+    &gt;   ****************************
+    &gt;   * Successful recipe check! *
+    &gt;   ****************************
+    &gt;
+</pre></div>
+</div>
+<ul class="simple">
+<li>If the reciep fails, a message will be dispalyed stating that it failed and potentially why it failed.</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="index.html">
+    <img class="logo" src="_static/logo/gogetdata_temp.png" alt="Logo"/>
+    
+  </a>
+</p>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="recipes.html">Available packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ggd-search.html">ggd search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">ggd install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uninstall.html">ggd uninstall</a></li>
+<li class="toctree-l1"><a class="reference internal" href="list-file.html">ggd list-files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pkg-info.html">ggd pkg-info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="show-env.html">ggd show-env</a></li>
+<li class="toctree-l1"><a class="reference internal" href="from-bash.html">ggd from-bash</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">ggd check-recipe</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#using-ggd-check-recipe">Using ggd check-recipe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contribute.html">Contribute</a></li>
+</ul>
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, The gogetdata team.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/check-recipe.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
