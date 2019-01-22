@@ -89,58 +89,56 @@ Example: <code class="code docutils literal notranslate"><span class="pre">ggd</
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="failed-uninstall-example">
 <h3>1. Failed uninstall example:<a class="headerlink" href="#failed-uninstall-example" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ggd uninstall hg19-ga
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd uninstall hg19-ga
 
-STDOUT:
-    &gt; Checking <span class="k">for</span> instalation of hg19-ga
-    &gt;
-    &gt; hg19-ga is not in the ggd-genomics channel
-    &gt;
-    &gt; Packages installed on your system that are similar include:
-    &gt;        Package         Channel
-    &gt;        -hg19-gaps      ggd-genomics
-    &gt;
-    &gt; If one of these packages is the desired package to uninstall please rerun ggd uninstall with the desired package name and correct ggd channel name
-    &gt;
-    &gt; Note: If the the package is not a part of a ggd channel run <span class="s1">&#39;conda uninstall &lt;pkg&gt;&#39;</span> to uninstall
-    &gt;
-    &gt; GGD channels include: genomics, etc.
+  Checking <span class="k">for</span> instalation of hg19-ga
+
+  hg19-ga is not in the ggd-genomics channel
+
+  Packages installed on your system that are similar include:
+         Package         Channel
+         -hg19-gaps      ggd-genomics
+
+  If one of these packages is the desired package to uninstall please rerun ggd uninstall with the desired package name and correct ggd channel name
+
+  Note: If the the package is not a part of a ggd channel run <span class="s1">&#39;conda uninstall &lt;pkg&gt;&#39;</span> to uninstall
+
+  GGD channels include: genomics, etc.
 </pre></div>
 </div>
 </div>
 <div class="section" id="successful-uninstall-example">
 <h3>2. Successful uninstall example:<a class="headerlink" href="#successful-uninstall-example" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ggd uninstall hg19-gaps
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd uninstall hg19-gaps
 
-STDOUT:
-    &gt; Checking <span class="k">for</span> instalation of hg19-gaps
-    &gt;
-    &gt; hg19-gaps is installed by conda on your system
-    &gt;
-    &gt; Uninstalling hg19-gaps
-    &gt; Solving environment: <span class="k">done</span>
-    &gt;
-    &gt; <span class="c1">## Package Plan ##</span>
-    &gt;
-    &gt; environment location: &lt;conda root&gt;
-    &gt;
-    &gt; removed specs:
-    &gt;   - hg19-gaps
-    &gt;
-    &gt;
-    &gt; The following packages will be REMOVED:
-    &gt;
-    &gt;   hg19-gaps: <span class="m">1</span>-0 ggd-genomics
-    &gt;
-    &gt; Preparing transaction: <span class="k">done</span>
-    &gt; Verifying transaction: <span class="k">done</span>
-    &gt; Executing transaction: <span class="k">done</span>
-    &gt;
-    &gt; Removing hg19-gaps version <span class="m">1</span> file<span class="o">(</span>s<span class="o">)</span> from ggd recipe storage
-    &gt;
-    &gt; Deleteing <span class="m">2</span> items of hg19-gaps version <span class="m">1</span> from your conda root
-    &gt;
-    &gt; DONE
+  Checking <span class="k">for</span> instalation of hg19-gaps
+
+  hg19-gaps is installed by conda on your system
+
+  Uninstalling hg19-gaps
+  Solving environment: <span class="k">done</span>
+
+  <span class="c1">## Package Plan ##</span>
+
+  environment location: &lt;conda root&gt;
+
+  removed specs:
+    - hg19-gaps
+
+
+  The following packages will be REMOVED:
+
+    hg19-gaps: <span class="m">1</span>-0 ggd-genomics
+
+  Preparing transaction: <span class="k">done</span>
+  Verifying transaction: <span class="k">done</span>
+  Executing transaction: <span class="k">done</span>
+
+  Removing hg19-gaps version <span class="m">1</span> file<span class="o">(</span>s<span class="o">)</span> from ggd recipe storage
+
+  Deleteing <span class="m">2</span> items of hg19-gaps version <span class="m">1</span> from your conda root
+
+  DONE
 </pre></div>
 </div>
 </div>
@@ -169,7 +167,6 @@ STDOUT:
 
 
 <h3>Navigation</h3>
-<p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="recipes.html">Available packages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ggd-search.html">ggd search</a></li>

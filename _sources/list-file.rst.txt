@@ -54,11 +54,10 @@ Example
 
 .. code-block:: bash
 
-    ggd list-files grch37-reference-genome
+    $ ggd list-files grch37-reference-genome
 
-    STDOUT:
-        > <conda root>/share/ggd/Homo_sapiens/GRCh37/grch37-reference-genome/1/hs37d5.fa.fai
-        > <conda root>/ share/ggd/Homo_sapiens/GRCh37/grch37-reference-genome/1/hs37d5.fa
+      <conda root>/share/ggd/Homo_sapiens/GRCh37/grch37-reference-genome/1/hs37d5.fa.fai
+      <conda root>/ share/ggd/Homo_sapiens/GRCh37/grch37-reference-genome/1/hs37d5.fa
 
 <conda root> represents the root directory for the local conda repository on your system 
 
@@ -67,16 +66,14 @@ Example
 
 .. code-block:: bash
 
-    ggd list-files grch37-esp-variants -s Homo_sapiens -g GRCh37 -p *.vcf.gz
+    $ ggd list-files grch37-esp-variants -s Homo_sapiens -g GRCh37 -p *.vcf.gz
 
-    STDOUT:
-        > <conda root>/ggd/Homo_sapiens/GRCh37/grch37-esp-variants/1/ESP6500SI.all.snps_indels.tidy.vcf.gz
+     <conda root>/ggd/Homo_sapiens/GRCh37/grch37-esp-variants/1/ESP6500SI.all.snps_indels.tidy.vcf.gz
 
 
-    python -m ggd list-files grch37-esp-variants -s Homo_sapiens -g GRCh37 -p *.vcf.gz.tbi
+    $ ggd list-files grch37-esp-variants -s Homo_sapiens -g GRCh37 -p *.vcf.gz.tbi
 
-    STDOUT:
-        > <conda root>/ucgd/lustre/work/u1138933/anaconda2/share/ggd/Homo_sapiens/GRCh37/grch37-esp-variants/1/ESP6500SI.all.snps_indels.tidy.vcf.gz.tbi
+     <conda root>/ucgd/lustre/work/u1138933/anaconda2/share/ggd/Homo_sapiens/GRCh37/grch37-esp-variants/1/ESP6500SI.all.snps_indels.tidy.vcf.gz.tbi
 
 
 

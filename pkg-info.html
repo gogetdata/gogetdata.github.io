@@ -101,93 +101,89 @@ However, you can use the -av flag to list all the available versions</p>
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="example-listing-pkg-info">
 <h3>1. Example listing pkg info:<a class="headerlink" href="#example-listing-pkg-info" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ggd pkg-info hg19-phastcons
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd pkg-info hg19-phastcons
 
-STDOUT:
-    &gt; GGD-Recipe: hg19-phastcons
-    &gt; GGD-Channel: genomics
-    &gt; Summary: phastCons scores <span class="k">for</span> MSA of <span class="m">99</span> genomes to hg19
-    &gt; Pkg Version: <span class="m">1</span>
-    &gt; Pkg Build: <span class="m">0</span>
-    &gt; Species: Homo_sapiens
-    &gt; Genome Build: hg19
-    &gt; Keywords: <span class="o">[</span><span class="s1">&#39;phastCons&#39;</span>, <span class="s1">&#39;conservation&#39;</span><span class="o">]</span>
-    &gt; Data Version: <span class="m">09</span>-Feb-2014
-    &gt; Build Requirements: <span class="o">[]</span>
-    &gt; Run Requirements: <span class="o">[]</span>
-    &gt; Pkg File Path: &lt;conda root&gt;/share/ggd/Homo_sapiens/hg19/hg19-phastcons/1
-    &gt; Pkg Files: &lt;conda root&gt;/anaconda2/share/ggd/Homo_sapiens/hg19/hg19-phastcons/1/hg19.100way.phastCons.bw
+  GGD-Recipe: hg19-phastcons
+  GGD-Channel: genomics
+  Summary: phastCons scores <span class="k">for</span> MSA of <span class="m">99</span> genomes to hg19
+  Pkg Version: <span class="m">1</span>
+  Pkg Build: <span class="m">0</span>
+  Species: Homo_sapiens
+  Genome Build: hg19
+  Keywords: <span class="o">[</span><span class="s1">&#39;phastCons&#39;</span>, <span class="s1">&#39;conservation&#39;</span><span class="o">]</span>
+  Data Version: <span class="m">09</span>-Feb-2014
+  Build Requirements: <span class="o">[]</span>
+  Run Requirements: <span class="o">[]</span>
+  Pkg File Path: &lt;conda root&gt;/share/ggd/Homo_sapiens/hg19/hg19-phastcons/1
+  Pkg Files: &lt;conda root&gt;/anaconda2/share/ggd/Homo_sapiens/hg19/hg19-phastcons/1/hg19.100way.phastCons.bw
 </pre></div>
 </div>
 </div>
 <div class="section" id="example-listing-pkg-info-and-all-available-versions">
 <h3>2. Example listing pkg info and all available versions:<a class="headerlink" href="#example-listing-pkg-info-and-all-available-versions" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ggd pkg-info hg19-phastcons -av
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd pkg-info hg19-phastcons -av
 
-STDOUT:
-    &gt; GGD-Recipe: hg19-phastcons
-    &gt; GGD-Channel: genomics
-    &gt; Summary: phastCons scores <span class="k">for</span> MSA of <span class="m">99</span> genomes to hg19
-    &gt; Pkg Version: <span class="m">1</span>
-    &gt; Pkg Build: <span class="m">0</span>
-    &gt; Species: Homo_sapiens
-    &gt; Genome Build: hg19
-    &gt; Keywords: <span class="o">[</span><span class="s1">&#39;phastCons&#39;</span>, <span class="s1">&#39;conservation&#39;</span><span class="o">]</span>
-    &gt; Data Version: <span class="m">09</span>-Feb-2014
-    &gt; Build Requirements: <span class="o">[]</span>
-    &gt; Run Requirements: <span class="o">[]</span>
-    &gt; Pkg File Path: &lt;conda root&gt;/share/ggd/Homo_sapiens/hg19/hg19-phastcons/1
-    &gt; Pkg Files: &lt;conda root&gt;/anaconda2/share/ggd/Homo_sapiens/hg19/hg19-phastcons/1/hg19.100way.phastCons.bw
-    &gt;
-    &gt;
-    &gt; Listing all ggd-recipe version <span class="k">for</span> the hg19-phastcons recipe in the ggd-genomics channel
-    &gt;
-    &gt;   Loading channels: ...working... <span class="k">done</span>
-    &gt;   - <span class="c1"># Name                  Version           Build  Channel</span>
-    &gt;   - hg19-phastcons                <span class="m">1</span>               <span class="m">0</span>  ggd-genomics
-    &gt;   - hg19-phastcons                <span class="m">1</span>               <span class="m">1</span>  ggd-genomics
-    &gt;   - hg19-phastcons                <span class="m">1</span>               <span class="m">2</span>  ggd-genomics
-    &gt;   - hg19-phastcons                <span class="m">2</span>               <span class="m">0</span>  ggd-genomics
-    &gt;   - hg19-phastcons                <span class="m">3</span>               <span class="m">0</span>  ggd-genomics
+  GGD-Recipe: hg19-phastcons
+  GGD-Channel: genomics
+  Summary: phastCons scores <span class="k">for</span> MSA of <span class="m">99</span> genomes to hg19
+  Pkg Version: <span class="m">1</span>
+  Pkg Build: <span class="m">0</span>
+  Species: Homo_sapiens
+  Genome Build: hg19
+  Keywords: <span class="o">[</span><span class="s1">&#39;phastCons&#39;</span>, <span class="s1">&#39;conservation&#39;</span><span class="o">]</span>
+  Data Version: <span class="m">09</span>-Feb-2014
+  Build Requirements: <span class="o">[]</span>
+  Run Requirements: <span class="o">[]</span>
+  Pkg File Path: &lt;conda root&gt;/share/ggd/Homo_sapiens/hg19/hg19-phastcons/1
+  Pkg Files: &lt;conda root&gt;/anaconda2/share/ggd/Homo_sapiens/hg19/hg19-phastcons/1/hg19.100way.phastCons.bw
+
+
+  Listing all ggd-recipe version <span class="k">for</span> the hg19-phastcons recipe in the ggd-genomics channel
+
+    Loading channels: ...working... <span class="k">done</span>
+    - <span class="c1"># Name                  Version           Build  Channel</span>
+    - hg19-phastcons                <span class="m">1</span>               <span class="m">0</span>  ggd-genomics
+    - hg19-phastcons                <span class="m">1</span>               <span class="m">1</span>  ggd-genomics
+    - hg19-phastcons                <span class="m">1</span>               <span class="m">2</span>  ggd-genomics
+    - hg19-phastcons                <span class="m">2</span>               <span class="m">0</span>  ggd-genomics
+    - hg19-phastcons                <span class="m">3</span>               <span class="m">0</span>  ggd-genomics
 </pre></div>
 </div>
 </div>
 <div class="section" id="example-listing-pkg-info-and-recipe">
 <h3>3. Example listing pkg info and recipe:<a class="headerlink" href="#example-listing-pkg-info-and-recipe" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ggd pkg-info hg19-repeatmasker -sr
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd pkg-info hg19-repeatmasker -sr
 
-STDOUT:
-    &gt; GGD-Recipe: hg19-repeatmasker
-    &gt; GGD-Channel: genomics
-    &gt; Summary: RepeatMasker track from UCSC
-    &gt; Pkg Version: <span class="m">1</span>
-    &gt; Pkg Build: <span class="m">0</span>
-    &gt; Species: Homo_sapiens
-    &gt; Genome Build: hg19
-    &gt; Keywords: <span class="o">[</span><span class="s1">&#39;rmsk&#39;</span>, <span class="s1">&#39;region&#39;</span><span class="o">]</span>
-    &gt; Data Version: <span class="m">27</span>-Apr-2009
-    &gt; Build Requirements: <span class="o">[</span><span class="s1">&#39;gsort&#39;</span>, <span class="s1">&#39;htslib&#39;</span>, <span class="s1">&#39;zlib&#39;</span><span class="o">]</span>
-    &gt; Run Requirements: <span class="o">[</span><span class="s1">&#39;gsort&#39;</span>, <span class="s1">&#39;htslib&#39;</span>, <span class="s1">&#39;zlib&#39;</span><span class="o">]</span>
-    &gt; Pkg File Path: &lt;conda root&gt;/share/ggd/Homo_sapiens/hg19/hg19-repeatmasker/1
-    &gt; Pkg Files: &lt;conda root&gt;/share/ggd/Homo_sapiens/hg19/hg19-repeatmasker/1/rmsk.bed.gz, /scratch/ucgd/lustre/work/u1138933/anaconda2/share/ggd/Homo_sapiens/hg19/hg19-repeatmasker/1/rmsk.bed.gz.tbi
-    &gt;
-    &gt;
-    &gt; hg19-repeatmasker recipe file:
-    &gt; *****************************************************************************
-    &gt; * <span class="c1">#!/bin/sh</span>
-    &gt; * <span class="nb">set</span> -eo pipefail -o nounset
-    &gt; * <span class="nv">genome</span><span class="o">=</span>https://raw.githubusercontent.com/gogetdata/ggd-recipes/master/genomes/Homo_sapiens/hg19/hg19.genome
-    &gt; * wget --quiet -O - http://hgdownload.cse.ucsc.edu/goldenpath/hg19/database/rmsk.txt.gz <span class="se">\</span>
-    &gt; * <span class="p">|</span> gzip -dc <span class="se">\</span>
-    &gt; * <span class="p">|</span> awk -v <span class="nv">OFS</span><span class="o">=</span><span class="s2">&quot;\t&quot;</span> <span class="s1">&#39;BEGIN {print &quot;#chrom\tstart\tend\tfamily_class_name\tdiv+del+ins\tstrand&quot;} {print $6,$7,$8,$12&quot;_&quot;$13&quot;_&quot;$11,$3+$4+$5,$10}&#39;</span> <span class="se">\</span>
-    &gt; * <span class="p">|</span> gsort /dev/stdin <span class="nv">$genome</span> <span class="se">\</span>
-    &gt; * <span class="p">|</span> bgzip -c &gt; rmsk.bed.gz
-    &gt; *
-    &gt; * tabix rmsk.bed.gz
-    &gt; *
-    &gt; *****************************************************************************
-    &gt; NOTE: The recipe provided above outlines where the data was accessed and how it was processed
-    &gt;
+  GGD-Recipe: hg19-repeatmasker
+  GGD-Channel: genomics
+  Summary: RepeatMasker track from UCSC
+  Pkg Version: <span class="m">1</span>
+  Pkg Build: <span class="m">0</span>
+  Species: Homo_sapiens
+  Genome Build: hg19
+  Keywords: <span class="o">[</span><span class="s1">&#39;rmsk&#39;</span>, <span class="s1">&#39;region&#39;</span><span class="o">]</span>
+  Data Version: <span class="m">27</span>-Apr-2009
+  Build Requirements: <span class="o">[</span><span class="s1">&#39;gsort&#39;</span>, <span class="s1">&#39;htslib&#39;</span>, <span class="s1">&#39;zlib&#39;</span><span class="o">]</span>
+  Run Requirements: <span class="o">[</span><span class="s1">&#39;gsort&#39;</span>, <span class="s1">&#39;htslib&#39;</span>, <span class="s1">&#39;zlib&#39;</span><span class="o">]</span>
+  Pkg File Path: &lt;conda root&gt;/share/ggd/Homo_sapiens/hg19/hg19-repeatmasker/1
+  Pkg Files: &lt;conda root&gt;/share/ggd/Homo_sapiens/hg19/hg19-repeatmasker/1/rmsk.bed.gz, /scratch/ucgd/lustre/work/u1138933/anaconda2/share/ggd/Homo_sapiens/hg19/hg19-repeatmasker/1/rmsk.bed.gz.tbi
+
+
+  hg19-repeatmasker recipe file:
+  *****************************************************************************
+  * <span class="c1">#!/bin/sh</span>
+  * <span class="nb">set</span> -eo pipefail -o nounset
+  * <span class="nv">genome</span><span class="o">=</span>https://raw.githubusercontent.com/gogetdata/ggd-recipes/master/genomes/Homo_sapiens/hg19/hg19.genome
+  * wget --quiet -O - http://hgdownload.cse.ucsc.edu/goldenpath/hg19/database/rmsk.txt.gz <span class="se">\</span>
+  * <span class="p">|</span> gzip -dc <span class="se">\</span>
+  * <span class="p">|</span> awk -v <span class="nv">OFS</span><span class="o">=</span><span class="s2">&quot;\t&quot;</span> <span class="s1">&#39;BEGIN {print &quot;#chrom\tstart\tend\tfamily_class_name\tdiv+del+ins\tstrand&quot;} {print $6,$7,$8,$12&quot;_&quot;$13&quot;_&quot;$11,$3+$4+$5,$10}&#39;</span> <span class="se">\</span>
+  * <span class="p">|</span> gsort /dev/stdin <span class="nv">$genome</span> <span class="se">\</span>
+  * <span class="p">|</span> bgzip -c &gt; rmsk.bed.gz
+  *
+  * tabix rmsk.bed.gz
+  *
+  *****************************************************************************
+  NOTE: The recipe provided above outlines where the data was accessed and how it was processed
 </pre></div>
 </div>
 </div>
@@ -216,7 +212,6 @@ STDOUT:
 
 
 <h3>Navigation</h3>
-<p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="recipes.html">Available packages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ggd-search.html">ggd search</a></li>

@@ -56,73 +56,70 @@ Some examples of using the `ggd search` tool:
 
 .. code-block:: bash 
 
-    ggd search -t reference 
+    $ ggd search -t reference 
 
-    STDOUT:
-        > grch37-reference-genome
-        >   Summary: GRCh37 reference genome from 1000 genomes
-        >   Species: Homo_sapiens
-        >   Genome Build: GRCh37
-        >   Keywords: ref, reference
-        >   Data Version: phase2_reference
+      grch37-reference-genome
+       Summary: GRCh37 reference genome from 1000 genomes
+       Species: Homo_sapiens
+       Genome Build: GRCh37
+       Keywords: ref, reference
+       Data Version: phase2_reference
 
-        >   To install run:
-        >       ggd install grch37-reference-genomet
-        >
-        > grch38-reference-genome
-        .
-        .
-        .
+       To install run:
+           ggd install grch37-reference-genomet
+    
+      grch38-reference-genome
+     .
+     .
+     .
 
 2. Simple Example with two search term:
 +++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: bash 
 
-    ggd search -t repeat masker 
+    $ ggd search -t repeat masker 
 
-    STDOUT:
-        > hg38-repeatmasker
-        >   Summary: RepeatMasker track from UCSC
-        >   Species: Homo_sapiens
-        >   Genome Build: hg38
-        >   Keywords: rmsk, region
-        >   Data Version: 06-Mar-2014
-        >
-        >   To install run:
-        >       ggd install hg38-repeatmasker
-        >
-        >
-        > hg19-repeatmasker
-        >   Summary: RepeatMasker track from UCSC
-        >   Species: Homo_sapiens
-        >   Genome Build: hg19
-        >   Keywords: rmsk, region
-        >   Data Version: 27-Apr-2009
-        >
-        >   To install run:
-        >       ggd install hg19-repeatmasker
-        .
-        .
-        .
+      hg38-repeatmasker
+       Summary: RepeatMasker track from UCSC
+       Species: Homo_sapiens
+       Genome Build: hg38
+       Keywords: rmsk, region
+       Data Version: 06-Mar-2014
+    
+       To install run:
+           ggd install hg38-repeatmasker
+    
+    
+      hg19-repeatmasker
+       Summary: RepeatMasker track from UCSC
+       Species: Homo_sapiens
+       Genome Build: hg19
+       Keywords: rmsk, region
+       Data Version: 27-Apr-2009
+    
+       To install run:
+           ggd install hg19-repeatmasker
+     .
+     .
+     .
 
 3. Example using the -g, -s, and -k flags to filter the results:
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: bash 
 
-    ggd search -t reference genome -g grch37 -s Homo_sapiens -k ref   
+    $ ggd search -t reference genome -g grch37 -s Homo_sapiens -k ref   
 
-    STDOUT:
-        > grch37-reference-genome
-        >   Summary: GRCh37 reference genome from 1000 genomes
-        >   Species: Homo_sapiens
-        >   Genome Build: GRCh37
-        >   Keywords: ref, reference
-        >   Data Version: phase2_reference
+      grch37-reference-genome
+       Summary: GRCh37 reference genome from 1000 genomes
+       Species: Homo_sapiens
+       Genome Build: GRCh37
+       Keywords: ref, reference
+       Data Version: phase2_reference
 
-        >   To install run:
-        >       ggd install grch37-reference-genomet
+       To install run:
+           ggd install grch37-reference-genome
 
 
 

@@ -109,27 +109,24 @@ search space and refine the final file list</p>
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="simple-example-with-only-the-name-field">
 <h3>1. Simple example with only the name field<a class="headerlink" href="#simple-example-with-only-the-name-field" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ggd list-files grch37-reference-genome
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd list-files grch37-reference-genome
 
-STDOUT:
-    &gt; &lt;conda root&gt;/share/ggd/Homo_sapiens/GRCh37/grch37-reference-genome/1/hs37d5.fa.fai
-    &gt; &lt;conda root&gt;/ share/ggd/Homo_sapiens/GRCh37/grch37-reference-genome/1/hs37d5.fa
+  &lt;conda root&gt;/share/ggd/Homo_sapiens/GRCh37/grch37-reference-genome/1/hs37d5.fa.fai
+  &lt;conda root&gt;/ share/ggd/Homo_sapiens/GRCh37/grch37-reference-genome/1/hs37d5.fa
 </pre></div>
 </div>
 <p>&lt;conda root&gt; represents the root directory for the local conda repository on your system</p>
 </div>
 <div class="section" id="example-using-the-s-g-and-p-flags-to-find-the-gz-vcf-files-for-a-given-ggd-data-package">
 <h3>2. Example using the -s, -g, and -p flags to find the gz vcf files for a given ggd data package<a class="headerlink" href="#example-using-the-s-g-and-p-flags-to-find-the-gz-vcf-files-for-a-given-ggd-data-package" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ggd list-files grch37-esp-variants -s Homo_sapiens -g GRCh37 -p *.vcf.gz
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd list-files grch37-esp-variants -s Homo_sapiens -g GRCh37 -p *.vcf.gz
 
-STDOUT:
-    &gt; &lt;conda root&gt;/ggd/Homo_sapiens/GRCh37/grch37-esp-variants/1/ESP6500SI.all.snps_indels.tidy.vcf.gz
+ &lt;conda root&gt;/ggd/Homo_sapiens/GRCh37/grch37-esp-variants/1/ESP6500SI.all.snps_indels.tidy.vcf.gz
 
 
-python -m ggd list-files grch37-esp-variants -s Homo_sapiens -g GRCh37 -p *.vcf.gz.tbi
+$ ggd list-files grch37-esp-variants -s Homo_sapiens -g GRCh37 -p *.vcf.gz.tbi
 
-STDOUT:
-    &gt; &lt;conda root&gt;/ucgd/lustre/work/u1138933/anaconda2/share/ggd/Homo_sapiens/GRCh37/grch37-esp-variants/1/ESP6500SI.all.snps_indels.tidy.vcf.gz.tbi
+ &lt;conda root&gt;/ucgd/lustre/work/u1138933/anaconda2/share/ggd/Homo_sapiens/GRCh37/grch37-esp-variants/1/ESP6500SI.all.snps_indels.tidy.vcf.gz.tbi
 </pre></div>
 </div>
 </div>
@@ -158,7 +155,6 @@ STDOUT:
 
 
 <h3>Navigation</h3>
-<p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="recipes.html">Available packages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ggd-search.html">ggd search</a></li>

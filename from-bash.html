@@ -95,6 +95,9 @@ optional arguments:
                     any software dependencies <span class="o">(</span>in bioconda, conda-forge<span class="o">)</span> or data-dependency <span class="o">(</span>in ggd<span class="o">)</span>. May be as many <span class="nb">times</span> as needed.
     -e EXTRA_FILE, --extra-file EXTRA_FILE
                     any files that the recipe creates that are not a *.gz and *.gz.tbi pair. May be used more than once
+    -p <span class="o">{</span>noarch,none<span class="o">}</span>, --platform <span class="o">{</span>noarch,none<span class="o">}</span>
+                            Whether to use noarch as the platfrom or the system platform. If <span class="nb">set</span> to <span class="s1">&#39;none&#39;</span> the system platform will be
+                            used. <span class="o">(</span><span class="nv">Default</span> <span class="o">=</span> noarch. Noarch means no architecture and is platform agnostic.<span class="o">)</span>
 
 required arguments:
     -s <span class="o">{</span>Canis_familiaris,Homo_sapiens,Drosophila_melanogaster,Mus_musculus<span class="o">}</span>, --species <span class="o">{</span>Canis_familiaris,Homo_sapiens,Drosophila_melanogaster,Mus_musculus<span class="o">}</span>
@@ -132,6 +135,9 @@ should be used for each keywords. (Example: -k ref -k reference)</li>
 ggd for creating the package. If there are not dependencies this flag is not needed</li>
 <li>-e: The <code class="code docutils literal notranslate"><span class="pre">-e</span></code> flag is used to declare any extra files created during the data processing. An extra file is any file that is
 not a .gz and .gz.tbi pair. If your final processed files are .gz and .gz.tbi pair this flag is not needed.</li>
+<li>-p: The <code class="code docutils literal notranslate"><span class="pre">-p</span></code> flag is used to set the noarch platform or not. By default “noarch” is set, which means the package will be
+built and installed with no architecture designation. This means it should be able to build on linux and macOSX. If this is not
+true you will need to set <code class="code docutils literal notranslate"><span class="pre">-p</span></code> to “none”. The system you are using, linux or macOSX will take then take the place of noarch.</li>
 </ul>
 </div>
 <div class="section" id="example">
@@ -150,7 +156,7 @@ tabix gaps.bed.gz
 </pre></div>
 </div>
 <p>ggd from-bash</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ggd from-bash -s Homo_sapiens -g hg19 --author mjc --ggd_version <span class="m">1</span> --data_version <span class="m">27</span>-Apr-2009 --summary <span class="s1">&#39;Assembly gaps from USCS&#39;</span> -k gaps -k region gaps get_data.sh
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd from-bash -s Homo_sapiens -g hg19 --author mjc --ggd_version <span class="m">1</span> --data_version <span class="m">27</span>-Apr-2009 --summary <span class="s1">&#39;Assembly gaps from USCS&#39;</span> -k gaps -k region gaps get_data.sh
 </pre></div>
 </div>
 <p>This code will create a new ggd recipe:</p>
@@ -211,7 +217,7 @@ rm sanitize-esp.py
 </pre></div>
 </div>
 <p>ggd from-bash</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ggd from-bash -s Homo_sapiens -g GRCh37 --author mjc --ggd_version <span class="m">1</span> --data_version ESP6500SI-V2 --summary <span class="s1">&#39;ESP variants (More Info: http://evs.gs.washington.edu/EVS/#tabs-7)&#39;</span> -k ESP esp-variants get_data.sh
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd from-bash -s Homo_sapiens -g GRCh37 --author mjc --ggd_version <span class="m">1</span> --data_version ESP6500SI-V2 --summary <span class="s1">&#39;ESP variants (More Info: http://evs.gs.washington.edu/EVS/#tabs-7)&#39;</span> -k ESP esp-variants get_data.sh
 </pre></div>
 </div>
 <p>This code will create a new ggd recipe:</p>
@@ -247,7 +253,6 @@ rm sanitize-esp.py
 
 
 <h3>Navigation</h3>
-<p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="recipes.html">Available packages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ggd-search.html">ggd search</a></li>

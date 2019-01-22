@@ -26,7 +26,7 @@ to ggd in order to work)
             
         ::
 
-            conda install -c anaconda git
+            $ conda install -c anaconda git
     
     * **NOTE:** conda is required as well. If you do not have conda installed on your system see :ref:`Using GGD <using-ggd>`
       to install conda and the required software packages on your system. You can then return to this page and continue.
@@ -37,20 +37,20 @@ to ggd in order to work)
 
     ::
 
-        git clone https://github.com/<USERNAME>/ggd-recipes.git
+        $ git clone https://github.com/<USERNAME>/ggd-recipes.git
 
 * Move into the ggd-recipes directory:
     
     ::
 
-        cd ggd-recipes/
+        $ cd ggd-recipes/
 
 * Add the original ggd-recieps repo as an upstream remote repo to the one just added to your machine. This
   will make it more easy to update your forked repo with the uptream origional one.
         
     ::
 
-        git remote add upstream https://github.com/gogetdata/ggd-recipes.git
+        $ git remote add upstream https://github.com/gogetdata/ggd-recipes.git
 
 
 You have now set up a forked ggd-recipes repository on your machine, which you will use to add data packages to ggd. 

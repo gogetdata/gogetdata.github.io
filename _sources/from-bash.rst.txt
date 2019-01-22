@@ -42,6 +42,9 @@ Running :code:`ggd from-bash -h` will give you the following help message:
                         any software dependencies (in bioconda, conda-forge) or data-dependency (in ggd). May be as many times as needed.
         -e EXTRA_FILE, --extra-file EXTRA_FILE
                         any files that the recipe creates that are not a *.gz and *.gz.tbi pair. May be used more than once
+        -p {noarch,none}, --platform {noarch,none}
+                                Whether to use noarch as the platfrom or the system platform. If set to 'none' the system platform will be
+                                used. (Default = noarch. Noarch means no architecture and is platform agnostic.)
 
     required arguments:
         -s {Canis_familiaris,Homo_sapiens,Drosophila_melanogaster,Mus_musculus}, --species {Canis_familiaris,Homo_sapiens,Drosophila_melanogaster,Mus_musculus}
@@ -79,6 +82,9 @@ Optional Flags:
   ggd for creating the package. If there are not dependencies this flag is not needed
 * -e: The :code:`-e` flag is used to declare any extra files created during the data processing. An extra file is any file that is 
   not a .gz and .gz.tbi pair. If your final processed files are .gz and .gz.tbi pair this flag is not needed.
+* -p: The :code:`-p` flag is used to set the noarch platform or not. By default "noarch" is set, which means the package will be 
+  built and installed with no architecture designation. This means it should be able to build on linux and macOSX. If this is not
+  true you will need to set :code:`-p` to "none". The system you are using, linux or macOSX will take then take the place of noarch.
 
 
 Example
@@ -104,7 +110,7 @@ ggd from-bash
 
 .. code-block:: bash
 
-    ggd from-bash -s Homo_sapiens -g hg19 --author mjc --ggd_version 1 --data_version 27-Apr-2009 --summary 'Assembly gaps from USCS' -k gaps -k region gaps get_data.sh
+    $ ggd from-bash -s Homo_sapiens -g hg19 --author mjc --ggd_version 1 --data_version 27-Apr-2009 --summary 'Assembly gaps from USCS' -k gaps -k region gaps get_data.sh
 
 This code will create a new ggd recipe:
     
@@ -168,7 +174,7 @@ ggd from-bash
 
 .. code-block:: bash
 
-    ggd from-bash -s Homo_sapiens -g GRCh37 --author mjc --ggd_version 1 --data_version ESP6500SI-V2 --summary 'ESP variants (More Info: http://evs.gs.washington.edu/EVS/#tabs-7)' -k ESP esp-variants get_data.sh
+    $ ggd from-bash -s Homo_sapiens -g GRCh37 --author mjc --ggd_version 1 --data_version ESP6500SI-V2 --summary 'ESP variants (More Info: http://evs.gs.washington.edu/EVS/#tabs-7)' -k ESP esp-variants get_data.sh
 
 This code will create a new ggd recipe:
 

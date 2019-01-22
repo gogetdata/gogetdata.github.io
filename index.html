@@ -78,6 +78,121 @@ data package name and version.</p>
 <li>a continually growing list of genomic recipes to provide easy and quick access to processed genomic data
 using the ggd cli tool</li>
 </ul>
+<div class="section" id="quick-start">
+<h2>Quick Start<a class="headerlink" href="#quick-start" title="Permalink to this headline">¶</a></h2>
+<p>Use <code class="code docutils literal notranslate"><span class="pre">ggd</span></code> to search, find, and install a data package hosted by ggd. The data package will be installed and processed
+on your system, and give you ready-to-use data files. For additional information see <a class="reference internal" href="#using-ggd"><span class="std std-ref">Using GGD</span></a>.</p>
+<img alt="_images/ggd-Figure1.png" src="_images/ggd-Figure1.png" />
+<div class="section" id="example">
+<h3>Example:<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Lets say you you need to align some sequence(s) to the human reference genome for an analysis you are doing.
+You will need download the reference genome from one of the sites that hosts it. You will need make sure it is
+the correct genome build, it is the right reference genome, and download it from the site. You will then need
+to sort and index the reference genome before you can use it. GGD simplifies this process by allowing you to search
+and install avaible processed genomic data packages using the ggd tool.</li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#******************************</span>
+<span class="c1">#1. Search for a reference genome</span>
+<span class="c1">#   (See ggd search)</span>
+<span class="c1">#******************************</span>
+
+$ ggd search reference genome
+
+  grch37-reference-genome
+   Summary: GRCh37 reference genome from <span class="m">1000</span> genomes
+   Species: Homo_sapiens
+   Genome Build: GRCh37
+   Keywords: ref, reference
+   Data Version: phase2_reference
+
+   To install run:
+       ggd install grch37-reference-genome
+
+  grch38-reference-genome
+   Summary: GRCh37 reference genome from UCSC
+   Species: Homo_sapiens
+   Genome Build: GRCh38
+   Keywords: ref, reference
+   Data Version: 15_Jan-2014
+
+   To install run:
+       ggd install grch38-reference-genome
+
+  . . .
+
+<span class="c1">#******************************</span>
+<span class="c1">#2. Install the grch38 reference genome</span>
+<span class="c1">#   (See ggd install)</span>
+<span class="c1">#******************************</span>
+
+$ ggd install grch38-reference-genome
+
+
+  Looking <span class="k">for</span> grch38-reference-genome in the <span class="s1">&#39;ggd-genomics&#39;</span> channel
+
+  grch38-reference-genome exists in ggd-genomics
+
+  grch38-reference-genome is not installed on your system
+
+  grch38-reference-genome has not been installed by conda
+
+  Installing grch38-reference-genome
+  Solving environment:
+
+   <span class="c1">## Package Plan ##</span>
+
+   environment location: &lt;conda root&gt;
+
+     added / updated specs:
+        - grch38-reference-genome
+
+
+  The following packages will be downloaded:
+
+     package                    <span class="p">|</span>            build
+    ---------------------------<span class="p">|</span>-----------------
+     grch38-reference-genome    <span class="p">|</span>                <span class="m">0</span>           <span class="m">6</span> KB  ggd-genomics
+
+  The following NEW packages will be INSTALLED:
+
+     grch38-reference-genome: <span class="m">1</span>-0 ggd-genomics
+
+
+  Downloading and Extracting Packages
+  grch38-reference-genome          <span class="p">|</span> <span class="m">6</span> KB      <span class="p">|</span> <span class="c1">###########################################################################################</span>
+  Preparing transaction: <span class="k">done</span>
+  Verifying transaction: <span class="k">done</span>
+  Executing transaction: <span class="k">done</span>
+
+  DONE
+
+
+<span class="c1">#******************************</span>
+<span class="c1">#3. Identify the data enviroment variable or the file location</span>
+<span class="c1">#   (See ggd show-env or ggd list-files)</span>
+<span class="c1">#******************************</span>
+
+$ ggd show-env
+
+    ***************************
+    Active environment variables:
+    &gt; <span class="nv">$ggd_grch38_reference_genome</span>
+    ***************************
+
+$ ggd list-files grch38-reference-genome
+
+  &lt;conda root&gt;/ share/ggd/Homo_sapiens/GRCh38/grch38-reference-genome/1/grch38.fa
+  &lt;conda root&gt;/share/ggd/Homo_sapiens/GRCh38/grch38-reference-genome/1/grch38.fa.fai
+
+
+<span class="c1">#******************************</span>
+<span class="c1">#4. Use files</span>
+<span class="c1">#******************************</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="section" id="available-data-packages">
 <h2>Available Data Packages<a class="headerlink" href="#available-data-packages" title="Permalink to this headline">¶</a></h2>
 <p>You can see and search for available packages using the <a class="reference internal" href="recipes.html#recipes"><span class="std std-ref">Avaiable packages</span></a> page of the
@@ -106,10 +221,10 @@ research</p>
 <li>ggd-genomics</li>
 </ul>
 <p>Run the following commands, adding in additional ggd channels as desired:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda config --add channels defaults
-conda config --add channels ggd-genomics
-conda config --add channels bioconda
-conda config --add channels conda-forge
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda config --add channels defaults
+$ conda config --add channels ggd-genomics
+$ conda config --add channels bioconda
+$ conda config --add channels conda-forge
 </pre></div>
 </div>
 </div>
@@ -117,8 +232,8 @@ conda config --add channels conda-forge
 <h2>3. Install ggd<a class="headerlink" href="#install-ggd" title="Permalink to this headline">¶</a></h2>
 <p>Go Get Data (GGD) needs to be installed on your system before you can use it. Run the following commands to download the
 ggd cli:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install -y --file https://raw.githubusercontent.com/gogetdata/ggd-cli/master/requirements.txt
-pip install ggd
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda install -y --file https://raw.githubusercontent.com/gogetdata/ggd-cli/master/requirements.txt
+$ pip install ggd
 </pre></div>
 </div>
 </div>
@@ -147,7 +262,6 @@ One major function of the ggd cli tools is to provide an easy way to add data pa
 documentation pages</p>
 <p>Contents:</p>
 <div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="recipes.html">Available packages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ggd-search.html">ggd search</a><ul>
@@ -222,7 +336,6 @@ documentation pages</p>
 
 
 <h3>Navigation</h3>
-<p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="recipes.html">Available packages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ggd-search.html">ggd search</a></li>

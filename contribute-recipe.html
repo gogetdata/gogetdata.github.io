@@ -72,9 +72,9 @@ you add a recipe to it.</p>
 <li>Navigate to the forked ggd-recipes repo on your local machine</li>
 <li>Once in the directory run the following commands:</li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="n">master</span>
-<span class="n">git</span> <span class="n">pull</span> <span class="n">upstream</span> <span class="n">master</span>
-<span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="n">master</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git checkout master
+$ git pull upstream master
+$ git push origin master
 </pre></div>
 </div>
 </div></blockquote>
@@ -160,7 +160,7 @@ tabix gaps.bed.g
 <dd><p class="first">Assuming your bash script created in step 2 is called <em>hg19_data_recipe.sh</em>, run the following command to turn
 it into a ggd recipe:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ggd</span> <span class="n">from</span><span class="o">-</span><span class="n">bash</span> <span class="o">-</span><span class="n">s</span> <span class="n">Homo_sapiens</span> <span class="o">-</span><span class="n">g</span> <span class="n">hg19</span> <span class="o">--</span><span class="n">author</span> <span class="n">mjc</span> <span class="o">--</span><span class="n">ggd_version</span> <span class="mi">1</span> <span class="o">--</span><span class="n">data_version</span> <span class="mi">27</span><span class="o">-</span><span class="n">Apr</span><span class="o">-</span><span class="mi">2009</span> <span class="o">--</span><span class="n">summary</span> <span class="s1">&#39;Assembly gaps from USCS&#39;</span> <span class="o">-</span><span class="n">k</span> <span class="n">gaps</span> <span class="o">-</span><span class="n">k</span> <span class="n">region</span> <span class="n">gaps</span> <span class="n">hg19_data_recipe</span><span class="o">.</span><span class="n">sh</span>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ggd from-bash -s Homo_sapiens -g hg19 --author mjc --ggd_version 1 --data_version 27-Apr-2009 --summary &#39;Assembly gaps from USCS&#39; -k gaps -k region gaps hg19_data_recipe.sh
 </pre></div>
 </div>
 </div></blockquote>
@@ -178,11 +178,11 @@ that the recipe was correctly created and provides the necessary instruction for
 <dl class="docutils">
 <dt>Example:</dt>
 <dd><p class="first">Using the hg19-gaps recipe created in step 3, run the following command</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ggd</span> <span class="n">check</span><span class="o">-</span><span class="n">recipe</span> <span class="n">hg19</span><span class="o">-</span><span class="n">gaps</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ggd check-recipe hg19-gaps
 </pre></div>
 </div>
 <p>or if you are in a different directory on your machine run:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ggd</span> <span class="n">check</span><span class="o">-</span><span class="n">recipe</span> <span class="o">&lt;</span><span class="n">Path_To_hg19</span><span class="o">-</span><span class="n">gaps</span><span class="o">&gt;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ggd check-recipe &lt;Path_To_hg19-gaps&gt;
 </pre></div>
 </div>
 <p class="last">This command will build, install, and check the validity of the new ggd data recipe.
@@ -222,7 +222,7 @@ The recipes file convention is as follows:</p>
 </ul>
 </div></blockquote>
 <p>For the hg19-gaps recipe above you would use the following commands:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mv</span> <span class="n">hg19</span><span class="o">-</span><span class="n">gaps</span> <span class="o">/&lt;</span><span class="n">forked</span> <span class="n">ggd</span><span class="o">-</span><span class="n">recipes</span><span class="o">&gt;/</span><span class="n">recipes</span><span class="o">/</span><span class="n">genomics</span><span class="o">/</span><span class="n">Homo_sapiens</span><span class="o">/</span><span class="n">hg19</span><span class="o">/</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ mv hg19-gaps /&lt;forked ggd-recipes&gt;/recipes/genomics/Homo_sapiens/hg19/
 </pre></div>
 </div>
 <p>Once the recipe is there you will need to add the recipe to your forked ggd-recipe repo.
@@ -283,7 +283,6 @@ able to access it.</p>
 
 
 <h3>Navigation</h3>
-<p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="recipes.html">Available packages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ggd-search.html">ggd search</a></li>

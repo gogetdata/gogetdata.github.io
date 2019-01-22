@@ -38,58 +38,56 @@ Example
 
 .. code-block:: bash
 
-    ggd uninstall hg19-ga
+    $ ggd uninstall hg19-ga
 
-    STDOUT:
-        > Checking for instalation of hg19-ga
-        >
-        > hg19-ga is not in the ggd-genomics channel
-        >
-        > Packages installed on your system that are similar include:
-        >        Package         Channel
-        >        -hg19-gaps      ggd-genomics
-        >
-        > If one of these packages is the desired package to uninstall please rerun ggd uninstall with the desired package name and correct ggd channel name
-        >
-        > Note: If the the package is not a part of a ggd channel run 'conda uninstall <pkg>' to uninstall
-        >
-        > GGD channels include: genomics, etc.
+      Checking for instalation of hg19-ga
+     
+      hg19-ga is not in the ggd-genomics channel
+     
+      Packages installed on your system that are similar include:
+             Package         Channel
+             -hg19-gaps      ggd-genomics
+     
+      If one of these packages is the desired package to uninstall please rerun ggd uninstall with the desired package name and correct ggd channel name
+     
+      Note: If the the package is not a part of a ggd channel run 'conda uninstall <pkg>' to uninstall
+     
+      GGD channels include: genomics, etc.
 
 2. Successful uninstall example:
 ++++++++++++++++++++++++++++++++
 
 .. code-block:: bash
 
-    ggd uninstall hg19-gaps 
+    $ ggd uninstall hg19-gaps 
 
-    STDOUT:
-        > Checking for instalation of hg19-gaps
-        >
-        > hg19-gaps is installed by conda on your system
-        >
-        > Uninstalling hg19-gaps
-        > Solving environment: done
-        >
-        > ## Package Plan ##
-        >
-        > environment location: <conda root>
-        >
-        > removed specs: 
-        >   - hg19-gaps
-        >
-        >
-        > The following packages will be REMOVED:
-        >
-        >   hg19-gaps: 1-0 ggd-genomics
-        >
-        > Preparing transaction: done
-        > Verifying transaction: done
-        > Executing transaction: done
-        >
-        > Removing hg19-gaps version 1 file(s) from ggd recipe storage
-        >
-        > Deleteing 2 items of hg19-gaps version 1 from your conda root
-        >
-        > DONE
+      Checking for instalation of hg19-gaps
+     
+      hg19-gaps is installed by conda on your system
+     
+      Uninstalling hg19-gaps
+      Solving environment: done
+     
+      ## Package Plan ##
+     
+      environment location: <conda root>
+     
+      removed specs: 
+        - hg19-gaps
+     
+     
+      The following packages will be REMOVED:
+     
+        hg19-gaps: 1-0 ggd-genomics
+     
+      Preparing transaction: done
+      Verifying transaction: done
+      Executing transaction: done
+     
+      Removing hg19-gaps version 1 file(s) from ggd recipe storage
+     
+      Deleteing 2 items of hg19-gaps version 1 from your conda root
+     
+      DONE
 
 

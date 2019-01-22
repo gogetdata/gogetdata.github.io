@@ -101,7 +101,7 @@ from using <cite>ggd from-bash</cite>.</p>
 <ul class="simple">
 <li>Using <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">from-bash</span></code> to create a ggd recipe</li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ggd</span> <span class="n">from</span><span class="o">-</span><span class="n">bash</span> <span class="o">-</span><span class="n">s</span> <span class="n">Homo_sapiens</span> <span class="o">-</span><span class="n">g</span> <span class="n">hg19</span> <span class="o">--</span><span class="n">author</span> <span class="n">mjc</span> <span class="o">--</span><span class="n">ggd_version</span> <span class="mi">1</span> <span class="o">--</span><span class="n">data_version</span> <span class="mi">09</span><span class="o">-</span><span class="n">Feb</span><span class="o">-</span><span class="mi">2014</span> <span class="o">--</span><span class="n">summary</span> <span class="s1">&#39;phastCons scores for MSA of 99 genomes to hg19&#39;</span> <span class="o">-</span><span class="n">e</span> <span class="n">hg19</span><span class="o">.</span><span class="mi">100</span><span class="n">way</span><span class="o">.</span><span class="n">phastCons</span><span class="o">.</span><span class="n">bw</span> <span class="o">-</span><span class="n">k</span> <span class="n">phastCons</span> <span class="o">-</span><span class="n">k</span> <span class="n">conservation</span> <span class="n">get_data</span><span class="o">.</span><span class="n">sh</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ggd from-bash -s Homo_sapiens -g hg19 --author mjc --ggd_version 1 --data_version 09-Feb-2014 --summary &#39;phastCons scores for MSA of 99 genomes to hg19&#39; -e hg19.100way.phastCons.bw -k phastCons -k conservation get_data.sh
 </pre></div>
 </div>
 <ul class="simple">
@@ -116,56 +116,54 @@ from using <cite>ggd from-bash</cite>.</p>
 </li>
 <li>Using <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">check-recipe</span></code> we will build, install, and test the new <strong>hg19-phastcons</strong> recipe</li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ggd check-recipe /user/home/hg19-phastcons/
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ggd check-recipe /user/home/hg19-phastcons/
 
-STDOUT:
-    &gt; No numpy version specified in conda_build_config.yaml.  Falling back to default numpy value of 1.11
-    &gt; WARNING:conda_build.metadata:No numpy version specified in conda_build_config.yaml.  Falling back to default numpy value of 1.11
-    &gt; INFO:conda_build.variants:Adding in variants from internal_defaults
-    &gt; INFO:conda_build.metadata:Attempting to finalize metadata for hg19-phastcons
-    &gt; INFO:conda_build.build:Packaging hg19-phastcons
-    &gt; INFO:conda_build.build:Packaging hg19-phastcons-1-0
-    &gt; No files or script found for output hg19-phastcons
-    &gt; WARNING:conda_build.build:No files or script found for output hg19-phastcons
-    &gt; /TMP/hg19-phastcons-1-0.tar.bz2: C1115 Found invalid license &quot;None&quot; in info/index.json
-    &gt; /TMP/hg19-phastcons-1-0.tar.bz2: C1134 Found pre/post link file &quot;bin/.hg19-phastcons-post-link.sh&quot; in archive
-    &gt; INFO:conda_build.variants:Adding in variants from /TMP/info/recipe/conda_build_config.yaml
-    &gt; Solving environment: done
-    &gt;
-    &gt; ## Package Plan ##
-    &gt;
-    &gt;  environment location: /scratch/ucgd/lustre/work/u1138933/anaconda2
-    &gt;
-    &gt;    added / updated specs:
-    &gt;        - hg19-phastcons
-    &gt;
-    &gt;
-    &gt; The following packages will be downloaded:
-    &gt;
-    &gt; package                    |            build
-    &gt; ---------------------------|-----------------
-    &gt; hg19-phastcons-1           |                0           5 KB  local
-    &gt;
-    &gt; The following NEW packages will be INSTALLED:
-    &gt;
-    &gt;   hg19-phastcons: 1-0 local
-    &gt;
-    &gt;
-    &gt; Downloading and Extracting Packages
-    &gt; hg19-phastcons-1     | 5 KB      | ############################################################################################ | 100%
-    &gt; Preparing transaction: done
-    &gt; Verifying transaction: done
-    &gt; Executing transaction: done
-    &gt; modified files:
-    &gt; :: /&lt;conda root&gt;/share/ggd/Homo_sapiens/hg19/hg19-phastcons/1/hg19.100way.phastCons.bw
-    &gt;
-    &gt;
-    &gt; checking /scratch/ucgd/lustre/work/u1138933/anaconda2/share/ggd/Homo_sapiens/hg19/hg19-phastcons/1/hg19.100way.phastCons.bw
-    &gt;
-    &gt;   ****************************
-    &gt;   * Successful recipe check! *
-    &gt;   ****************************
-    &gt;
+  No numpy version specified in conda_build_config.yaml.  Falling back to default numpy value of 1.11
+  WARNING:conda_build.metadata:No numpy version specified in conda_build_config.yaml.  Falling back to default numpy value of 1.11
+  INFO:conda_build.variants:Adding in variants from internal_defaults
+  INFO:conda_build.metadata:Attempting to finalize metadata for hg19-phastcons
+  INFO:conda_build.build:Packaging hg19-phastcons
+  INFO:conda_build.build:Packaging hg19-phastcons-1-0
+  No files or script found for output hg19-phastcons
+  WARNING:conda_build.build:No files or script found for output hg19-phastcons
+  /TMP/hg19-phastcons-1-0.tar.bz2: C1115 Found invalid license &quot;None&quot; in info/index.json
+  /TMP/hg19-phastcons-1-0.tar.bz2: C1134 Found pre/post link file &quot;bin/.hg19-phastcons-post-link.sh&quot; in archive
+  INFO:conda_build.variants:Adding in variants from /TMP/info/recipe/conda_build_config.yaml
+  Solving environment: done
+
+  ## Package Plan ##
+
+   environment location: /scratch/ucgd/lustre/work/u1138933/anaconda2
+
+     added / updated specs:
+         - hg19-phastcons
+
+
+  The following packages will be downloaded:
+
+  package                    |            build
+  ---------------------------|-----------------
+  hg19-phastcons-1           |                0           5 KB  local
+
+  The following NEW packages will be INSTALLED:
+
+    hg19-phastcons: 1-0 local
+
+
+  Downloading and Extracting Packages
+  hg19-phastcons-1     | 5 KB      | ############################################################################################ | 100%
+  Preparing transaction: done
+  Verifying transaction: done
+  Executing transaction: done
+  modified files:
+  :: /&lt;conda root&gt;/share/ggd/Homo_sapiens/hg19/hg19-phastcons/1/hg19.100way.phastCons.bw
+
+
+  checking /scratch/ucgd/lustre/work/u1138933/anaconda2/share/ggd/Homo_sapiens/hg19/hg19-phastcons/1/hg19.100way.phastCons.bw
+
+    ****************************
+    * Successful recipe check! *
+    ****************************
 </pre></div>
 </div>
 <ul class="simple">
@@ -198,7 +196,6 @@ STDOUT:
 
 
 <h3>Navigation</h3>
-<p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="recipes.html">Available packages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ggd-search.html">ggd search</a></li>

@@ -15,9 +15,9 @@ you add a recipe to it.
 
     ::
 
-        git checkout master
-        git pull upstream master
-        git push origin master
+        $ git checkout master
+        $ git pull upstream master
+        $ git push origin master
 
 
 2. Writing a bash script to get data
@@ -82,7 +82,7 @@ Eample:
     
         ::
 
-            ggd from-bash -s Homo_sapiens -g hg19 --author mjc --ggd_version 1 --data_version 27-Apr-2009 --summary 'Assembly gaps from USCS' -k gaps -k region gaps hg19_data_recipe.sh
+            $ ggd from-bash -s Homo_sapiens -g hg19 --author mjc --ggd_version 1 --data_version 27-Apr-2009 --summary 'Assembly gaps from USCS' -k gaps -k region gaps hg19_data_recipe.sh
 
     The :code:`ggd from-bash` tools transforms the bash script you created into a data recipe. Running the above code will create 
     a data recipe called *hg19-gaps*, which will be a directory and will contain three files. For more information on the 
@@ -100,13 +100,13 @@ Example:
 
     ::
 
-        ggd check-recipe hg19-gaps
+        $ ggd check-recipe hg19-gaps
 
     or if you are in a different directory on your machine run:
 
     ::
 
-        ggd check-recipe <Path_To_hg19-gaps>
+        $ ggd check-recipe <Path_To_hg19-gaps>
 
     This command will build, install, and check the validity of the new ggd data recipe. 
     For more information about :code:`ggd check-recipe` see :ref:`check-recipe <ggd-check-recipe>`
@@ -140,7 +140,7 @@ For the hg19-gaps recipe above you would use the following commands:
 
 ::
 
-    mv hg19-gaps /<forked ggd-recipes>/recipes/genomics/Homo_sapiens/hg19/
+    $ mv hg19-gaps /<forked ggd-recipes>/recipes/genomics/Homo_sapiens/hg19/
 
 Once the recipe is there you will need to add the recipe to your forked ggd-recipe repo. 
 Navigate to the forked ggd-recipe directory.

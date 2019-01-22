@@ -17,7 +17,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="ggd install" href="install.html" />
-    <link rel="prev" title="Available packages" href="recipes.html" />
+    <link rel="prev" title="hg38-repeatmasker" href="recipes/hg38-repeatmasker/README.html" />
 <link href="https://fonts.googleapis.com/css?family=Lato|Raleway" rel="stylesheet"> 
 <link rel="stylesheet" type="text/css" href="_static/font-awesome-4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="_static/style.css">
@@ -108,71 +108,68 @@ cutoff is provided, but this flag can be used to provide more strict or more len
 <p>Some examples of using the <cite>ggd search</cite> tool:</p>
 <div class="section" id="simple-example-with-one-search-term">
 <h3>1. Simple Example with one search term:<a class="headerlink" href="#simple-example-with-one-search-term" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ggd search -t reference
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd search -t reference
 
-STDOUT:
-    &gt; grch37-reference-genome
-    &gt;   Summary: GRCh37 reference genome from <span class="m">1000</span> genomes
-    &gt;   Species: Homo_sapiens
-    &gt;   Genome Build: GRCh37
-    &gt;   Keywords: ref, reference
-    &gt;   Data Version: phase2_reference
+  grch37-reference-genome
+   Summary: GRCh37 reference genome from <span class="m">1000</span> genomes
+   Species: Homo_sapiens
+   Genome Build: GRCh37
+   Keywords: ref, reference
+   Data Version: phase2_reference
 
-    &gt;   To install run:
-    &gt;       ggd install grch37-reference-genomet
-    &gt;
-    &gt; grch38-reference-genome
-    .
-    .
-    .
+   To install run:
+       ggd install grch37-reference-genomet
+
+  grch38-reference-genome
+ .
+ .
+ .
 </pre></div>
 </div>
 </div>
 <div class="section" id="simple-example-with-two-search-term">
 <h3>2. Simple Example with two search term:<a class="headerlink" href="#simple-example-with-two-search-term" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ggd search -t repeat masker
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd search -t repeat masker
 
-STDOUT:
-    &gt; hg38-repeatmasker
-    &gt;   Summary: RepeatMasker track from UCSC
-    &gt;   Species: Homo_sapiens
-    &gt;   Genome Build: hg38
-    &gt;   Keywords: rmsk, region
-    &gt;   Data Version: <span class="m">06</span>-Mar-2014
-    &gt;
-    &gt;   To install run:
-    &gt;       ggd install hg38-repeatmasker
-    &gt;
-    &gt;
-    &gt; hg19-repeatmasker
-    &gt;   Summary: RepeatMasker track from UCSC
-    &gt;   Species: Homo_sapiens
-    &gt;   Genome Build: hg19
-    &gt;   Keywords: rmsk, region
-    &gt;   Data Version: <span class="m">27</span>-Apr-2009
-    &gt;
-    &gt;   To install run:
-    &gt;       ggd install hg19-repeatmasker
-    .
-    .
-    .
+  hg38-repeatmasker
+   Summary: RepeatMasker track from UCSC
+   Species: Homo_sapiens
+   Genome Build: hg38
+   Keywords: rmsk, region
+   Data Version: <span class="m">06</span>-Mar-2014
+
+   To install run:
+       ggd install hg38-repeatmasker
+
+
+  hg19-repeatmasker
+   Summary: RepeatMasker track from UCSC
+   Species: Homo_sapiens
+   Genome Build: hg19
+   Keywords: rmsk, region
+   Data Version: <span class="m">27</span>-Apr-2009
+
+   To install run:
+       ggd install hg19-repeatmasker
+ .
+ .
+ .
 </pre></div>
 </div>
 </div>
 <div class="section" id="example-using-the-g-s-and-k-flags-to-filter-the-results">
 <h3>3. Example using the -g, -s, and -k flags to filter the results:<a class="headerlink" href="#example-using-the-g-s-and-k-flags-to-filter-the-results" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ggd search -t reference genome -g grch37 -s Homo_sapiens -k ref
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd search -t reference genome -g grch37 -s Homo_sapiens -k ref
 
-STDOUT:
-    &gt; grch37-reference-genome
-    &gt;   Summary: GRCh37 reference genome from <span class="m">1000</span> genomes
-    &gt;   Species: Homo_sapiens
-    &gt;   Genome Build: GRCh37
-    &gt;   Keywords: ref, reference
-    &gt;   Data Version: phase2_reference
+  grch37-reference-genome
+   Summary: GRCh37 reference genome from <span class="m">1000</span> genomes
+   Species: Homo_sapiens
+   Genome Build: GRCh37
+   Keywords: ref, reference
+   Data Version: phase2_reference
 
-    &gt;   To install run:
-    &gt;       ggd install grch37-reference-genomet
+   To install run:
+       ggd install grch37-reference-genome
 </pre></div>
 </div>
 </div>
@@ -201,7 +198,6 @@ STDOUT:
 
 
 <h3>Navigation</h3>
-<p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="recipes.html">Available packages</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">ggd search</a><ul>
