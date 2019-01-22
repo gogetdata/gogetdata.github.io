@@ -199,7 +199,7 @@ ggd cli:
 .. code-block:: bash
 
     $ conda install -y --file https://raw.githubusercontent.com/gogetdata/ggd-cli/master/requirements.txt
-    $ pip install ggd
+    $ pip install -U git+git://github.com/gogetdata/ggd-cli 
 
 4. GGD tools
 ------------
