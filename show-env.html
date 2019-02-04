@@ -64,29 +64,38 @@ $(document).ready(function() {
   <div class="section" id="ggd-show-env">
 <span id="id1"></span><h1>ggd show-env<a class="headerlink" href="#ggd-show-env" title="Permalink to this headline">¶</a></h1>
 <p>ggd show-env is a tool used to show the ggd associated variables created during package installation
-for the current conda enviroment.
-During installation, ggd will place the processed files in a specific location on your system. To access
-these files ggd creates enviroment variables for a specific conda enviroment. These variables contain the
+for the current conda environment.</p>
+<p>During installation, ggd will place the processed files in a specific location on your system. To access
+these files ggd creates environment variables for a specific conda environment. These variables contain the
 directory path to the processed files. You can use <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">list-files</span></code> to find the file paths for a ggd data
-package, however, these enviroment variables provide quick access to the processed files without having to know
+package, however, these environment variables provide quick access to the processed files without having to know
 the file paths.</p>
 <div class="section" id="using-ggd-show-env">
 <h2>Using ggd show-env<a class="headerlink" href="#using-ggd-show-env" title="Permalink to this headline">¶</a></h2>
 <p>You can use ggd show-env to get a list of ggd data package enviroment variables.
 Running <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">show-env</span> <span class="pre">-h</span></code> will give you the following message:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>usage: ggd show-env <span class="o">[</span>-h<span class="o">]</span> <span class="o">[</span>-p PATTERN<span class="o">]</span>
-
-optional arguments:
-    -h, --help            show this <span class="nb">help</span> message and <span class="nb">exit</span>
-    -p PATTERN, --pattern PATTERN
-                          regular expression pattern to match the name of the variable desired
-</pre></div>
-</div>
-<p>There are no required arguemnts for using <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">show-env</span></code>, however, you can refine the results using
+<p>show-env arguments:</p>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-h</span>, <span class="option">--help</span></kbd></td>
+<td>show this help message and exit</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-p <var>PATTERN</var></span>, <span class="option">--pattern <var>PATTERN</var></span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>(Optional) Regular expression pattern to match the name of the variable desired</td></tr>
+</tbody>
+</table>
+<div class="section" id="additional-argument-explanation">
+<h3>Additional argument explanation:<a class="headerlink" href="#additional-argument-explanation" title="Permalink to this headline">¶</a></h3>
+<p>There are no required arguments for using <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">show-env</span></code>, however, you can refine the results using
 the <code class="code docutils literal notranslate"><span class="pre">-p</span></code> flag.</p>
 </div>
-<div class="section" id="example">
-<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id2">
 <h3>1. Using ggd show-env<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd show-env
@@ -163,7 +172,7 @@ the <code class="code docutils literal notranslate"><span class="pre">-p</span><
 <li class="toctree-l1"><a class="reference internal" href="pkg-info.html">ggd pkg-info</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">ggd show-env</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#using-ggd-show-env">Using ggd show-env</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#example">Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#examples">Examples</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="from-bash.html">ggd from-bash</a></li>

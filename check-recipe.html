@@ -72,50 +72,64 @@ For more information about using the ggd workflow to contribute to ggd see <a cl
 <h2>Using ggd check-recipe<a class="headerlink" href="#using-ggd-check-recipe" title="Permalink to this headline">¶</a></h2>
 <p>Checking a newly built ggd recipe is easy using the <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">check-recipe</span></code> tool.
 Running <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">check-recipe</span> <span class="pre">-h</span></code> will give you the following help message:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>positional arguments:
-    recipe_path  path to recipe directory <span class="o">(</span>can also be path to the .bz2<span class="o">)</span>
-
-optional arguments:
-    -h, --help   show this <span class="nb">help</span> message and <span class="nb">exit</span>
-</pre></div>
-</div>
-<p>The only required argument is the <code class="code docutils literal notranslate"><span class="pre">recipe_path</span></code>. The recipe_path is the path to the directory for the ggd recipe
-you would like to check. When using <a class="reference internal" href="from-bash.html#ggd-from-bash"><span class="std std-ref">ggd from-bash</span></a> to create a ggd recipe, from-bash will
-create a new directory with three new files. The recipe_path should be the path to the new directroy created
+<p>check-recipe arguments:</p>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-h</span>, <span class="option">--help</span></kbd></td>
+<td>show this help message and exit</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">/recipe_path</span></kbd></td>
+<td>(Positional) Path to recipe directory (can also be path to the .bz2)
+(‘/’ indicates a placeholder and is not part of the argument name)</td></tr>
+</tbody>
+</table>
+<div class="section" id="additional-argument-explanation">
+<h3>Additional argument explanation:<a class="headerlink" href="#additional-argument-explanation" title="Permalink to this headline">¶</a></h3>
+<p>The only required argument is the <code class="code docutils literal notranslate"><span class="pre">recipe_path</span></code> and refers to the directory you would like <code class="docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">check-recipe</span></code>
+to check. When using <a class="reference internal" href="from-bash.html#ggd-from-bash"><span class="std std-ref">ggd from-bash</span></a> to create a ggd recipe, from-bash will
+create a new directory with three new files. The recipe_path should be the path to the new directory created
 from using <cite>ggd from-bash</cite>.</p>
-<p>Running <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">check-recipe</span> <span class="pre">&lt;recipe-path&gt;</span></code> will build, install, and check the recipe to ensure the recipe works correctly</p>
+<p>Running <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">check-recipe</span> <span class="pre">&lt;recipe-path&gt;</span></code> will build, install, and check the recipe to ensure the recipe works correctly.</p>
+</div>
 </div>
 <div class="section" id="example">
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="an-example-of-creating-a-ggd-recipe-from-ggd-from-bash-and-using-ggd-check-recipe-to-check-the-recipe">
-<h3>1. An example of creating a ggd recipe from <cite>ggd from-bash</cite> and using <cite>ggd check-recipe</cite> to check the recipe<a class="headerlink" href="#an-example-of-creating-a-ggd-recipe-from-ggd-from-bash-and-using-ggd-check-recipe-to-check-the-recipe" title="Permalink to this headline">¶</a></h3>
+<h3>1. An example of creating a ggd recipe from <code class="docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">from-bash</span></code> and using <code class="docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">check-recipe</span></code> to check the recipe<a class="headerlink" href="#an-example-of-creating-a-ggd-recipe-from-ggd-from-bash-and-using-ggd-check-recipe-to-check-the-recipe" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>get_data.sh (A bash script used to create a recipe with <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">from-bash</span></code>)</li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/sh</span>
 <span class="nb">set</span> <span class="o">-</span><span class="n">eo</span> <span class="n">pipefail</span> <span class="o">-</span><span class="n">o</span> <span class="n">nounset</span>
-<span class="n">wget</span> <span class="o">--</span><span class="n">quiet</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">check</span><span class="o">-</span><span class="n">certificate</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">hgdownload</span><span class="o">.</span><span class="n">cse</span><span class="o">.</span><span class="n">ucsc</span><span class="o">.</span><span class="n">edu</span><span class="o">/</span><span class="n">goldenpath</span><span class="o">/</span><span class="n">hg19</span><span class="o">/</span><span class="n">phastCons100way</span><span class="o">/</span><span class="n">hg19</span><span class="o">.</span><span class="mi">100</span><span class="n">way</span><span class="o">.</span><span class="n">phastCons</span><span class="o">.</span><span class="n">bw</span>
+<span class="n">wget</span> <span class="o">--</span><span class="n">quiet</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">check</span><span class="o">-</span><span class="n">certificate</span> \
+    <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">hgdownload</span><span class="o">.</span><span class="n">cse</span><span class="o">.</span><span class="n">ucsc</span><span class="o">.</span><span class="n">edu</span><span class="o">/</span><span class="n">goldenpath</span><span class="o">/</span><span class="n">hg19</span><span class="o">/</span><span class="n">phastCons100way</span><span class="o">/</span><span class="n">hg19</span><span class="o">.</span><span class="mi">100</span><span class="n">way</span><span class="o">.</span><span class="n">phastCons</span><span class="o">.</span><span class="n">bw</span>
 </pre></div>
 </div>
-<ul class="simple">
-<li>Using <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">from-bash</span></code> to create a ggd recipe</li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ggd from-bash -s Homo_sapiens -g hg19 --author mjc --ggd_version 1 --data_version 09-Feb-2014 --summary &#39;phastCons scores for MSA of 99 genomes to hg19&#39; -e hg19.100way.phastCons.bw -k phastCons -k conservation get_data.sh
+<ul>
+<li><p class="first">Using <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">from-bash</span></code> to create a ggd recipe:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ggd from-bash -s Homo_sapiens -g hg19 \
+    --author mjc --ggd_version 1 \
+    --data_version 09-Feb-2014 \
+    --summary &#39;phastCons scores for MSA of 99 genomes to hg19&#39; \
+    -e hg19.100way.phastCons.bw -k phastCons \
+    -k conservation get_data.sh
 </pre></div>
 </div>
-<ul class="simple">
+</li>
 <li><dl class="first docutils">
 <dt>A new directory called <strong>hg19-phastcons</strong> is now present in the current working directory</dt>
-<dd><ul class="first last">
+<dd><ul class="first last simple">
 <li>The <strong>hg19-phastcons</strong> directory contains three files: <strong>meta.yaml</strong>, <strong>post-link.sh</strong>, and <strong>recipe.sh</strong></li>
-<li>Lets say the path to <strong>hg19-phastcons</strong> is <cite>/user/home/hg19-phastcons/</cite></li>
+<li>Lets say the path to <strong>hg19-phastcons</strong> is <code class="docutils literal notranslate"><span class="pre">/user/home/hg19-phastcons/</span></code></li>
 </ul>
 </dd>
 </dl>
 </li>
-<li>Using <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">check-recipe</span></code> we will build, install, and test the new <strong>hg19-phastcons</strong> recipe</li>
-</ul>
+<li><p class="first">Using <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">check-recipe</span></code> we will build, install, and test the new <strong>hg19-phastcons</strong> recipe:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ggd check-recipe /user/home/hg19-phastcons/
 
   No numpy version specified in conda_build_config.yaml.  Falling back to default numpy value of 1.11
@@ -151,13 +165,12 @@ from using <cite>ggd from-bash</cite>.</p>
 
 
   Downloading and Extracting Packages
-  hg19-phastcons-1     | 5 KB      | ############################################################################################ | 100%
+  hg19-phastcons-1     | 5 KB      | ############################ | 100%
   Preparing transaction: done
   Verifying transaction: done
   Executing transaction: done
   modified files:
   :: /&lt;conda root&gt;/share/ggd/Homo_sapiens/hg19/hg19-phastcons/1/hg19.100way.phastCons.bw
-
 
   checking /scratch/ucgd/lustre/work/u1138933/anaconda2/share/ggd/Homo_sapiens/hg19/hg19-phastcons/1/hg19.100way.phastCons.bw
 
@@ -166,8 +179,9 @@ from using <cite>ggd from-bash</cite>.</p>
     ****************************
 </pre></div>
 </div>
-<ul class="simple">
-<li>If the reciep fails, a message will be dispalyed stating that it failed and potentially why it failed.</li>
+</li>
+<li><p class="first">If the recipe fails, a message will be displayed stating that it failed and (hopefully) why it failed.</p>
+</li>
 </ul>
 </div></blockquote>
 </div>

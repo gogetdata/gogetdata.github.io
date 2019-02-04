@@ -62,28 +62,28 @@ $(document).ready(function() {
             
   <div class="section" id="contributing-a-ggd-recipe">
 <span id="contrib-recipe"></span><h1>Contributing a ggd recipe<a class="headerlink" href="#contributing-a-ggd-recipe" title="Permalink to this headline">¶</a></h1>
-<p>The following setps outline how to create, check, and add a ggd data recipe.</p>
+<p>The following steps outline how to create, check, and add a ggd data recipe.</p>
 <div class="section" id="update-local-forked-repo">
 <h2>1. Update local forked repo<a class="headerlink" href="#update-local-forked-repo" title="Permalink to this headline">¶</a></h2>
 <p>You will need to update the forked ggd-recipes repo on your local machine before
 you add a recipe to it.</p>
-<blockquote>
-<div><ul class="simple">
-<li>Navigate to the forked ggd-recipes repo on your local machine</li>
-<li>Once in the directory run the following commands:</li>
-</ul>
+<ul>
+<li><p class="first">Navigate to the forked ggd-recipes repo on your local machine</p>
+</li>
+<li><p class="first">Once in the directory run the following commands:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git checkout master
 $ git pull upstream master
 $ git push origin master
 </pre></div>
 </div>
-</div></blockquote>
+</li>
+</ul>
 </div>
 <div class="section" id="writing-a-bash-script-to-get-data">
 <h2>2. Writing a bash script to get data<a class="headerlink" href="#writing-a-bash-script-to-get-data" title="Permalink to this headline">¶</a></h2>
 <p>Here you will need create a bash script that extract and process the data you would
 like to add to ggd.</p>
-<p>The follwoing will outline steps used to create the hg19-gaps ggd data recipe</p>
+<p>The following will outline steps used to create the hg19-gaps ggd data recipe:</p>
 <ul>
 <li><dl class="first docutils">
 <dt>First locate the data you would like to extract.</dt>
@@ -96,24 +96,22 @@ like to add to ggd.</p>
 </dd>
 </dl>
 </li>
-<li><p class="first">Next, identify if you need a genome coordinance file. Many of these are hosted on the ggd-recipes repo.
-If the coordinance file is not available you can either add one to the ggd-recipes repo or ask a member of the
+<li><p class="first">Next, identify if you need a genome coordinates file. Many of these are hosted on the ggd-recipes repo.
+If the coordinates file is not available you can either add one to the ggd-recipes repo or ask a member of the
 ggd team to add one.</p>
 </li>
-<li><p class="first">Example: hg19 genome build coordinance file:</p>
-</li>
-</ul>
+<li><p class="first">Example: hg19 genome build coordinates file:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">gogetdata</span><span class="o">/</span><span class="n">ggd</span><span class="o">-</span><span class="n">recipes</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">genomes</span><span class="o">/</span><span class="n">Homo_sapiens</span><span class="o">/</span><span class="n">hg19</span><span class="o">/</span><span class="n">hg19</span><span class="o">.</span><span class="n">genome</span>
 </pre></div>
 </div>
-<ul>
+</li>
 <li><dl class="first docutils">
 <dt>Next, identify what format you want the final files to be in and what processing needs to be done</dt>
 <dd><ul class="first last simple">
 <li><dl class="first docutils">
 <dt>Example:</dt>
 <dd><ol class="first last arabic">
-<li>need to decompress a gziped file</li>
+<li>need to decompress a gzipped file</li>
 <li>need to extract the chrom, start, end, size, type, and strand columns</li>
 <li>needs to sort the resulting extraction</li>
 <li>need to bgzip the new sorted extraction</li>
@@ -130,8 +128,7 @@ ggd team to add one.</p>
 <dt>Next, create bash script that contains the steps in order to extract and process the data file:</dt>
 <dd><ul class="first last">
 <li><p class="first">Example (bash script):</p>
-<blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>genome=https://raw.githubusercontent.com/gogetdata/ggd-recipes/master/genomes/Homo_sapiens/hg19/hg19.genome
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>genome=https://raw.githubusercontent.com/gogetdata/ggd-recipes/master/genomes/Homo_sapiens/hg19/hg19.genome
 wget --quiet -O - http://hgdownload.cse.ucsc.edu/goldenpath/hg19/database/gap.txt.gz \
     | gzip -dc \
     | awk -v OFS=&quot;\t&quot; &#39;BEGIN {print &quot;#chrom\tstart\tend\tsize\ttype\tstrand&quot;} {print $2,$3,$4,$7,$8,&quot;+&quot;}&#39; \
@@ -141,83 +138,80 @@ wget --quiet -O - http://hgdownload.cse.ucsc.edu/goldenpath/hg19/database/gap.tx
 tabix gaps.bed.g
 </pre></div>
 </div>
-</div></blockquote>
 </li>
 </ul>
 </dd>
 </dl>
 </li>
 </ul>
-<p>You should run the script to make sure it works, and that the processed files are what you expect them to be.</p>
+<p>You should run the script to make sure it works and that the processed files are what you expect them to be.</p>
 </div>
 <div class="section" id="create-a-ggd-recipe-using-the-ggd-cli">
 <h2>3. Create a ggd recipe using the ggd cli<a class="headerlink" href="#create-a-ggd-recipe-using-the-ggd-cli" title="Permalink to this headline">¶</a></h2>
-<p>The go get data (ggd) command line interface (cli) contains tools to create and test a data recipe</p>
-<p>If it has not been installed, install the ggd cli following the steps outline in <a class="reference internal" href="index.html#using-ggd"><span class="std std-ref">Using GGD</span></a></p>
-<p>With the ggd cli installed you can now transform your bash script into a ggd recipe</p>
-<dl class="docutils">
-<dt>Eample:</dt>
-<dd><p class="first">Assuming your bash script created in step 2 is called <em>hg19_data_recipe.sh</em>, run the following command to turn
-it into a ggd recipe:</p>
+<p>The ggd command line interface (cli) contains tools to create and test a data recipe.</p>
+<p>If it has not been installed, install the ggd cli following the steps outline in <a class="reference internal" href="index.html#using-ggd"><span class="std std-ref">Using GGD</span></a>.</p>
+<p>With the ggd cli installed you can now transform your bash script into a ggd recipe.</p>
+<div class="section" id="example">
+<h3>Example:<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ggd from-bash -s Homo_sapiens -g hg19 --author mjc --ggd_version 1 --data_version 27-Apr-2009 --summary &#39;Assembly gaps from USCS&#39; -k gaps -k region gaps hg19_data_recipe.sh
+<div><p>Assuming your bash script created in step 2 is called <em>hg19_data_recipe.sh</em>, run the following command to turn
+it into a ggd recipe:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ggd from-bash -s Homo_sapiens -g hg19 --author mjc \
+    --ggd_version 1 --data_version 27-Apr-2009 \
+    --summary &#39;Assembly gaps from USCS&#39; \
+    -k gaps -k region gaps hg19_data_recipe.sh
 </pre></div>
 </div>
-</div></blockquote>
-<p class="last">The <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">from-bash</span></code> tools transforms the bash script you created into a data recipe. Running the above code will create
+<p>The <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">from-bash</span></code> tool transforms the bash script you created into a data recipe. Running the above code will create
 a data recipe called <em>hg19-gaps</em>, which will be a directory and will contain three files. For more information on the
 <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">from-bash</span></code> command see <a class="reference internal" href="from-bash.html#ggd-from-bash"><span class="std std-ref">from-bash</span></a>.</p>
-</dd>
-</dl>
+</div></blockquote>
+</div>
 </div>
 <div class="section" id="build-install-and-check-the-data-recipe">
 <h2>4. Build, install, and check the data recipe<a class="headerlink" href="#build-install-and-check-the-data-recipe" title="Permalink to this headline">¶</a></h2>
-<p>Now that you have create a ggd data recipe you need to test it to make sure it not only extracts and processes the data, but
+<p>Now that you have created a ggd data recipe you need to test it to make sure it not only extracts and processes the data, but
 that the recipe was correctly created and provides the necessary instruction for data package creation.</p>
 <p>To do this use the <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">check-recipe</span></code> command.</p>
-<dl class="docutils">
-<dt>Example:</dt>
-<dd><p class="first">Using the hg19-gaps recipe created in step 3, run the following command</p>
+<div class="section" id="id1">
+<h3>Example:<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>Using the hg19-gaps recipe created in step 3, run the following command:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ggd check-recipe hg19-gaps
 </pre></div>
 </div>
-<p>or if you are in a different directory on your machine run:</p>
+<p>Or if you are in a different directory on your machine run:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ggd check-recipe &lt;Path_To_hg19-gaps&gt;
 </pre></div>
 </div>
-<p class="last">This command will build, install, and check the validity of the new ggd data recipe.
+<p>This command will build, install, and check the validity of the new ggd data recipe.
 For more information about <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">check-recipe</span></code> see <a class="reference internal" href="check-recipe.html#ggd-check-recipe"><span class="std std-ref">check-recipe</span></a></p>
-</dd>
-</dl>
+</div></blockquote>
+</div>
 </div>
 <div class="section" id="submit-the-new-ggd-recipe-to-the-original-ggd-recipes-repo">
 <h2>5. Submit the new ggd recipe to the original ggd-recipes repo<a class="headerlink" href="#submit-the-new-ggd-recipe-to-the-original-ggd-recipes-repo" title="Permalink to this headline">¶</a></h2>
 <p>Once the ggd recipe you created passes step 4 you are ready to add it to the original ggd-recipes repo.</p>
-<p>To do this you will need to create a <strong>pull request</strong></p>
+<p>To do this you will need to create a <strong>pull request</strong>.</p>
 <p>From your local machine, add the new data recipe you created to the forked ggd-recipes repo. You will add it
-to the recipes/ directory. If you do not put it in the right directory it will be rejected.
+to the <code class="docutils literal notranslate"><span class="pre">recipes/</span></code> directory. If you do not put it in the right directory it will be rejected.
 The recipes file convention is as follows:</p>
 <blockquote>
 <div><ul>
 <li><p class="first">All recipes are stored within the <strong>ggd-recipes/recipes</strong> directory</p>
 </li>
 <li><p class="first">The recipes directory has the following format:</p>
-<blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/&lt;</span><span class="n">path</span> <span class="n">to</span> <span class="n">forked</span> <span class="n">ggd</span><span class="o">-</span><span class="n">recipes</span> <span class="n">repo</span><span class="o">&gt;/</span><span class="n">recipes</span><span class="o">/&lt;</span><span class="n">ggd</span> <span class="n">channel</span><span class="o">&gt;/&lt;</span><span class="n">species</span><span class="o">&gt;/&lt;</span><span class="n">genome</span><span class="o">-</span><span class="n">build</span><span class="o">&gt;/</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/&lt;</span><span class="n">path</span> <span class="n">to</span> <span class="n">forked</span> <span class="n">ggd</span><span class="o">-</span><span class="n">recipes</span> <span class="n">repo</span><span class="o">&gt;/</span><span class="n">recipes</span><span class="o">/&lt;</span><span class="n">ggd</span> <span class="n">channel</span><span class="o">&gt;/&lt;</span><span class="n">species</span><span class="o">&gt;/&lt;</span><span class="n">genome</span><span class="o">-</span><span class="n">build</span><span class="o">&gt;/</span>
 </pre></div>
 </div>
 <ul class="simple">
-<li><code class="code docutils literal notranslate"><span class="pre">&lt;path</span> <span class="pre">to</span> <span class="pre">forked</span> <span class="pre">ggd-recipes</span> <span class="pre">repo&gt;</span></code> is the path to the forked ggd-recipes repo on your local machine</li>
-<li><code class="code docutils literal notranslate"><span class="pre">recipes</span></code> is <strong>recipes</strong> directory</li>
-<li><dl class="first docutils">
-<dt><code class="code docutils literal notranslate"><span class="pre">&lt;ggd</span> <span class="pre">channel&gt;</span></code> is the ggd channel that recipe should go in. This depends on the type of data you are adding.</dt>
-<dd>For the hg19-gaps example the channel would be <strong>genomics</strong>.</dd>
-</dl>
-</li>
-<li><code class="code docutils literal notranslate"><span class="pre">&lt;species&gt;</span></code> is the species that data is for. For the hg19-gaps example this would be <strong>Homo_sapiens</strong></li>
-<li><code class="code docutils literal notranslate"><span class="pre">&lt;genome-build&gt;</span></code> is the genome build for the datat. For the hg19-gaps example this would be <strong>hg19</strong></li>
+<li><code class="code docutils literal notranslate"><span class="pre">&lt;path</span> <span class="pre">to</span> <span class="pre">forked</span> <span class="pre">ggd-recipes</span> <span class="pre">repo&gt;</span></code> is the path to the forked ggd-recipes repo on your local machine.</li>
+<li><code class="code docutils literal notranslate"><span class="pre">recipes</span></code> is the <strong>recipes</strong> directory.</li>
+<li><code class="code docutils literal notranslate"><span class="pre">&lt;ggd</span> <span class="pre">channel&gt;</span></code> is the ggd channel that recipe should go in. This depends on the type of data you are adding.
+For the hg19-gaps example the channel would be <strong>genomics</strong>.</li>
+<li><code class="code docutils literal notranslate"><span class="pre">&lt;species&gt;</span></code> is the species corresponding to these data. For the hg19-gaps example this would be <strong>Homo_sapiens</strong>.</li>
+<li><code class="code docutils literal notranslate"><span class="pre">&lt;genome-build&gt;</span></code> is the genome build for the data. For the hg19-gaps example this would be <strong>hg19</strong>.</li>
 </ul>
-</div></blockquote>
 </li>
 </ul>
 </div></blockquote>
@@ -226,34 +220,38 @@ The recipes file convention is as follows:</p>
 </pre></div>
 </div>
 <p>Once the recipe is there you will need to add the recipe to your forked ggd-recipe repo.
-Navigate to the forked ggd-recipe directory.
-Use the following commands:</p>
+Navigate to the forked ggd-recipe directory and use the following commands:</p>
 <blockquote>
-<div><ul class="simple">
-<li><dl class="first docutils">
-<dt>Add the recipe to the git repo:</dt>
-<dd><code class="code docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">/recipes/genomics/Homo_sapiens/hg19/hg19-gaps/</span></code></dd>
-</dl>
+<div><ul>
+<li><p class="first">Add the recipe to the git repo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git add /recipes/genomics/Homo_sapiens/hg19/hg19-gaps/
+</pre></div>
+</div>
 </li>
-<li><dl class="first docutils">
-<dt>Commit the addition to the repo: (A text editor will open up. Add a comment about the new recipe and save it)</dt>
-<dd><code class="code docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code></dd>
-</dl>
+<li><p class="first">Commit the addition to the repo (A text editor will open up. Add a comment about the new recipe and save it):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git commit
+</pre></div>
+</div>
 </li>
-<li><dl class="first docutils">
-<dt>Push the commit to your fork repo on github: (You will be asked to fill out your github credentials)</dt>
-<dd><code class="code docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span></code></dd>
-</dl>
+<li><p class="first">Push the commit to your fork repo on github (You will be asked to fill out your github credentials):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git push origin
+</pre></div>
+</div>
 </li>
-<li>Go to the ggd-recipes github page for your username. (<a class="reference external" href="https://github.com">https://github.com</a>/&lt;USERNAME&gt;/ggd-recipes/)</li>
-<li>Under the green “Clone or download” button click on <strong>Pull request</strong>.</li>
-<li>Where it says <strong>base fork:</strong> make sure it is on <strong>gogetdata/ggd-recipes</strong>. And where it says <strong>base:</strong> make sure it
-is on <strong>master</strong>.</li>
-<li>Click the green <strong>Create pull request</strong> button.</li>
-<li>Add some comments and complete the pull request.</li>
+<li><p class="first">Go to the ggd-recipes github page for your username (<a class="reference external" href="https://github.com">https://github.com</a>/&lt;USERNAME&gt;/ggd-recipes/).</p>
+</li>
+<li><p class="first">Under the green “Clone or download” button click on <strong>Pull request</strong>.</p>
+</li>
+<li><p class="first">Where it says <strong>base fork:</strong> make sure it is on <strong>gogetdata/ggd-recipes</strong>. And where it says <strong>base:</strong> make sure it
+is on <strong>master</strong>.</p>
+</li>
+<li><p class="first">Click the green <strong>Create pull request</strong> button.</p>
+</li>
+<li><p class="first">Add some comments and complete the pull request.</p>
+</li>
 </ul>
 </div></blockquote>
-<p>You have now create a pull request with your new data recipe. The recipe will go through a continous integration
+<p>You have now created a pull request with your new data recipe. The recipe will go through a continuous integration
 step where the recipe will be tested.</p>
 <p>If it passes, the recipe will be added to the gogetdata/ggd-recipes repo and anyone using the ggd tool will be
 able to access it.</p>

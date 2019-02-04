@@ -69,45 +69,82 @@ provided.</p>
 <h2>Using ggd search<a class="headerlink" href="#using-ggd-search" title="Permalink to this headline">¶</a></h2>
 <p>Once ggd is installed on your system you can run <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">search</span></code> to search for available data packages.
 Running <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">search</span> <span class="pre">-h</span></code> will give you the following help message:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>optional arguments:
-    -h, --help            show this <span class="nb">help</span> message and <span class="nb">exit</span>
-    -t TERM <span class="o">[</span>TERM ...<span class="o">]</span>, --term TERM <span class="o">[</span>TERM ...<span class="o">]</span>
-                        **Required** The term<span class="o">(</span>s<span class="o">)</span> to search <span class="k">for</span>. Multiple terms can be used. Example: <span class="s1">&#39;-t reference genome&#39;</span>
-    -g GENOME_BUILD, --genome_build GENOME_BUILD
-                        <span class="o">(</span>Optional<span class="o">)</span> The genome build of the desired recipe
-    -s <span class="o">{</span>Canis_familiaris,Homo_sapiens,Drosophila_melanogaster,Mus_musculus<span class="o">}</span>, --species <span class="o">{</span>Canis_familiaris,Homo_sapiens,Drosophila_melanogaster,Mus_musculus<span class="o">}</span>
-                        <span class="o">(</span>Optional<span class="o">)</span> The species <span class="k">for</span> the desired recipe
-    -k KEYWORD <span class="o">[</span>KEYWORD ...<span class="o">]</span>, --keyword KEYWORD <span class="o">[</span>KEYWORD ...<span class="o">]</span>
-                        <span class="o">(</span>Optional<span class="o">)</span> Keyword<span class="o">(</span>s<span class="o">)</span> the are used to describe the recipe. Multiple keywords can be used. Example: <span class="s1">&#39;-k ref reference genome&#39;</span>
-    -m MATCH_SCORE, --match_score MATCH_SCORE
-                        <span class="o">(</span>Optional<span class="o">)</span> A score between <span class="m">0</span> and <span class="m">100</span> to use percent match between the search term<span class="o">(</span>s<span class="o">)</span> and the ggd-recipes
-    -c <span class="o">{</span>genomics<span class="o">}</span>, --channel <span class="o">{</span>genomics<span class="o">}</span>
-                        <span class="o">(</span>Optional<span class="o">)</span> The ggd channel to search. <span class="o">(</span><span class="nv">Default</span> <span class="o">=</span> genomics<span class="o">)</span>
-</pre></div>
-</div>
-<p>Required Flags:</p>
+<p>Search arguments:</p>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-h</span>, <span class="option">--help</span></kbd></td>
+<td>show this help message and exit</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-t <var>TERM</var></span>, <span class="option">--term <var>TERM</var></span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>(<strong>Required</strong>) term(s) upon which to search. Multiple terms can be
+specified as a space-delimited list, e.g. ‘-t reference genome’.</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-g <var>GENOME_BUILD</var></span>, <span class="option">--genome_build <var>GENOME_BUILD</var></span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>(Optional) The genome build of the desired recipe. This is used
+to filter the search results on a specific “genome build”. This
+flag is not required, however, if provided the resulting search
+will be filtered to only include data packages with this genome
+build.</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-s <var>SPECIES</var></span>, <span class="option">--species <var>SPECIES</var></span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>(Optional) The species for the desired recipe. This is used to
+filter the search results on a specific “species”. Only data
+packages for that specific species will be displayed. Species is
+limited to Drosophila_melanogaster, Homo_sapiens, Canis_familiaris, and
+Mus_musculus.</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-k <var>KEYWORD</var></span>, <span class="option">--keyword <var>KEYWORD</var></span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>(Optional) Filter based on keyword(s) used to describe the recipe.
+Multiple keywords can be used, e.g. ‘-k ref reference genome’.</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-m <var>MATCH_SCORE</var></span>, <span class="option">--match_score <var>MATCH_SCORE</var></span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>(Optional) A score between 0 and 100 to use percent match between
+the search term(s) and the ggd-recipes. This represents the “match”
+score to use for searching. A fuzzy word match is used to identify
+similar packages to the terms that were searched, and the match
+score defines which packages will be displayed based on a cutoff.
+A default match score cutoff is provided, but this flag can be
+used to provide more strict or more lenient search results.</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-c <var>CHANNEL</var></span>, <span class="option">--channel <var>CHANNEL</var></span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>(Optional) The ggd channel to search. (Default = genomics)</td></tr>
+</tbody>
+</table>
+<p>Any combination of search flags can be used to search for a package with the exception of the -t flag, which is required.</p>
+<div class="section" id="additional-argument-explanation">
+<h3>Additional argument explanation:<a class="headerlink" href="#additional-argument-explanation" title="Permalink to this headline">¶</a></h3>
+<p>Required arguments:</p>
 <ul class="simple">
-<li>-t: The <code class="code docutils literal notranslate"><span class="pre">-t</span></code> flag represents the “terms” to search for. At least one search term is required, but multiple can be provided</li>
+<li><em>-t:</em> The <code class="code docutils literal notranslate"><span class="pre">-t</span></code> flag represents the “terms” to search for. At least one search term is required, but multiple can be provided</li>
 </ul>
-<p>Optional Flags:</p>
+<p>Optional arguments:</p>
 <ul class="simple">
-<li>-g: The <code class="code docutils literal notranslate"><span class="pre">-g</span></code> flag is used to filter the search results on a specific “genome build”. This flag is not required, however, if
+<li><em>-g:</em> The <code class="code docutils literal notranslate"><span class="pre">-g</span></code> flag is used to filter the search results on a specific “genome build”. This flag is not required, however, if
 provided the resulting search will be filtered to only include data packages with that genome build.</li>
-<li>-s: The <code class="code docutils literal notranslate"><span class="pre">-s</span></code> flag is used to filter the search results on a specific “species”. Only data packages for that specific species
+<li><em>-s:</em> The <code class="code docutils literal notranslate"><span class="pre">-s</span></code> flag is used to filter the search results on a specific “species”. Only data packages for that specific species
 will be displayed.</li>
-<li>-k: The <code class="code docutils literal notranslate"><span class="pre">-k</span></code> flag is used to filter the search results based on keywords assigned to a pacakge.</li>
-<li>-m: The <code class="code docutils literal notranslate"><span class="pre">-m</span></code> flag represents the “match” score to use for searcing. A fuzzy word match is used to identify similar packages
+<li><em>-k:</em> The <code class="code docutils literal notranslate"><span class="pre">-k</span></code> flag is used to filter the search results based on keywords assigned to a pacakge.</li>
+<li><em>-m:</em> The <code class="code docutils literal notranslate"><span class="pre">-m</span></code> flag represents the “match” score to use for searcing. A fuzzy word match is used to identify similar packages
 to the terms search for, and the match score defines which packages will be displayed based on a cutoff. A default match score
 cutoff is provided, but this flag can be used to provide more strict or more lenient search results.</li>
-<li>-c: The <code class="code docutils literal notranslate"><span class="pre">-c</span></code> flag is used to set the ggd channel to search in. The ggd-genomics channel is set by default.</li>
+<li><em>-c:</em> The <code class="code docutils literal notranslate"><span class="pre">-c</span></code> flag is used to set the ggd channel to search in. The ggd-genomics channel is set by default.</li>
 </ul>
-<p>Any combination of search flags can be used to search for a package with the exception of the -t flag, which is required.</p>
+</div>
 </div>
 <div class="section" id="example">
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
 <p>Some examples of using the <cite>ggd search</cite> tool:</p>
 <div class="section" id="simple-example-with-one-search-term">
-<h3>1. Simple Example with one search term:<a class="headerlink" href="#simple-example-with-one-search-term" title="Permalink to this headline">¶</a></h3>
+<h3>1. Simple example with one search term:<a class="headerlink" href="#simple-example-with-one-search-term" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd search -t reference
 
   grch37-reference-genome
@@ -121,14 +158,11 @@ cutoff is provided, but this flag can be used to provide more strict or more len
        ggd install grch37-reference-genomet
 
   grch38-reference-genome
- .
- .
- .
 </pre></div>
 </div>
 </div>
-<div class="section" id="simple-example-with-two-search-term">
-<h3>2. Simple Example with two search term:<a class="headerlink" href="#simple-example-with-two-search-term" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="simple-example-with-two-search-terms">
+<h3>2. Simple example with two search terms:<a class="headerlink" href="#simple-example-with-two-search-terms" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd search -t repeat masker
 
   hg38-repeatmasker
@@ -151,14 +185,11 @@ cutoff is provided, but this flag can be used to provide more strict or more len
 
    To install run:
        ggd install hg19-repeatmasker
- .
- .
- .
 </pre></div>
 </div>
 </div>
-<div class="section" id="example-using-the-g-s-and-k-flags-to-filter-the-results">
-<h3>3. Example using the -g, -s, and -k flags to filter the results:<a class="headerlink" href="#example-using-the-g-s-and-k-flags-to-filter-the-results" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="example-using-g-s-and-k-flags-to-filter-the-results">
+<h3>3. Example using <code class="docutils literal notranslate"><span class="pre">-g</span></code>, <code class="docutils literal notranslate"><span class="pre">-s</span></code>, and <code class="docutils literal notranslate"><span class="pre">-k</span></code> flags to filter the results:<a class="headerlink" href="#example-using-g-s-and-k-flags-to-filter-the-results" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd search -t reference genome -g grch37 -s Homo_sapiens -k ref
 
   grch37-reference-genome

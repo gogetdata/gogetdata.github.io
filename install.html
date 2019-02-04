@@ -63,36 +63,65 @@ $(document).ready(function() {
             
   <div class="section" id="ggd-install">
 <span id="id1"></span><h1>ggd install<a class="headerlink" href="#ggd-install" title="Permalink to this headline">¶</a></h1>
-<p>ggd install is used to install a ggd pacakge from the Anacond cloud. It process your file system and ensure
-a proper install. If the package fails to install for some reason it will clean up the failed install.
-<strong>NOTE:</strong> running <code class="code docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">&lt;package&gt;</span></code> will work, however, it will only install the package and won’t
-provide file and system managment. Please use <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">install</span> <span class="pre">&lt;package&gt;</span></code> when installing a ggd data package.</p>
+<p>ggd install is used to install a ggd package from the Anaconda cloud. ggd install determines your file system and ensures
+a proper install. If the package fails to install for some reason it will clean up the failed install.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Running <code class="code docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">&lt;package&gt;</span></code> will work, however, it will only install the package and will not
+provide file and system management. <strong>Please use</strong> <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">install</span> <span class="pre">&lt;package&gt;</span></code> <strong>when installing a ggd data package</strong>.</p>
+</div>
+</div></blockquote>
 <div class="section" id="using-ggd-install">
 <h2>Using ggd install<a class="headerlink" href="#using-ggd-install" title="Permalink to this headline">¶</a></h2>
 <p>Use <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">install</span></code> to install a data package hosted by ggd.
 Running <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">install</span> <span class="pre">-h</span></code> will give you the following message:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>positional arguments:
-    name                  the name of the recipe to install
-
-optional arguments:
-    -h, --help            show this <span class="nb">help</span> message and <span class="nb">exit</span>
-    -c <span class="o">{</span>genomics<span class="o">}</span>, --channel <span class="o">{</span>genomics<span class="o">}</span>
-                          The ggd channel the desired recipe is stored in.<span class="o">(</span><span class="nv">Default</span> <span class="o">=</span> genomics<span class="o">)</span>
-    -v VERSION, --version VERSION
-                          A specific ggd package version to install. If the -v
-                          flag is not used the latest version will be installed.
+<p>Install arguments:</p>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-h</span>, <span class="option">--help</span></kbd></td>
+<td>show this help message and exit</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">/name</span></kbd></td>
+<td>(Positional) the name of the recipe to install.
+(‘/’ indicates a placeholder and is not part of the argument name)</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-c</span>, <span class="option">--channel</span></kbd></td>
+<td>(Optional) The ggd channel the desired recipe is stored in.(Default = genomics)</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-v <var>VERSION</var></span>, <span class="option">--version <var>VERSION</var></span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>(Optional) A specific ggd package version to install. If the -v
+flag is not used the latest version will be installed.</td></tr>
+</tbody>
+</table>
+<div class="section" id="additional-argument-explanation">
+<h3>Additional argument explanation:<a class="headerlink" href="#additional-argument-explanation" title="Permalink to this headline">¶</a></h3>
+<p>Required arguments:</p>
+<ul class="simple">
+<li><em>name:</em> The <code class="code docutils literal notranslate"><span class="pre">name</span></code> represents the name of the ggd package to download and is required. If the name
+provided is not in the ggd channel it will not be downloaded, and the user will be informed.</li>
+</ul>
+<p>Optional arguments:</p>
+<ul>
+<li><p class="first"><em>-c:</em> The <code class="code docutils literal notranslate"><span class="pre">-c</span></code> flag represents the ggd channel. The default channel is <em>genomics</em>. If the data package
+you want to install is in a different ggd channel you will need to supply the channel name using this flag.</p>
+<p>For example, if the data was located in the ‘proteomics’ channel, you would use:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ggd</span> <span class="n">install</span> <span class="o">&lt;</span><span class="n">package</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">c</span> <span class="n">proteomics</span>
 </pre></div>
 </div>
-<p>Simply, the <code class="code docutils literal notranslate"><span class="pre">name</span></code> is the field that is required and represents the name of the ggd package to download. If the name
-provided is not in the ggd channel it will not be downloaded, and the user will be informed.</p>
-<p>The <code class="code docutils literal notranslate"><span class="pre">-c</span></code> flag represents the ggd channel. The default channel is <em>genomics</em>. If the data package you want to install
-is in a different ggd channel you will need to supply the channel name using this flag.
-Example: <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">install</span> <span class="pre">&lt;package&gt;</span> <span class="pre">-c</span> <span class="pre">proteomics</span></code></p>
-<p>The <code class="code docutils literal notranslate"><span class="pre">-v</span></code> flag represents a specific ggd-version for a desired package to be installed. If you want version 2 of
-a specific genomic data package you would run <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">install</span> <span class="pre">&lt;package&gt;</span> <span class="pre">-v</span> <span class="pre">2</span></code>. This flag is not required</p>
+</li>
+<li><p class="first"><em>-v:</em> The <code class="code docutils literal notranslate"><span class="pre">-v</span></code> flag represents a specific ggd-version for a desired package to be installed. If you want version 2 of
+a specific genomic data package you would run <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">install</span> <span class="pre">&lt;package&gt;</span> <span class="pre">-v</span> <span class="pre">2</span></code>. This flag is not required.</p>
+</li>
+</ul>
 </div>
-<div class="section" id="example">
-<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="failed-install-example">
 <h3>1. Failed install example:<a class="headerlink" href="#failed-install-example" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ggd install hg19-ga
@@ -130,9 +159,9 @@ a specific genomic data package you would run <code class="code docutils literal
 
   The following packages will be downloaded:
 
-     package                    <span class="p">|</span>            build
-     ---------------------------<span class="p">|</span>-----------------
-     hg19-gaps-1                <span class="p">|</span>                <span class="m">0</span>           <span class="m">6</span> KB  ggd-genomics
+     package                    <span class="p">|</span>     build
+     ---------------------------<span class="p">|</span>----------
+     hg19-gaps-1                <span class="p">|</span>         <span class="m">0</span>      <span class="m">6</span> KB  ggd-genomics
 
   The following NEW packages will be INSTALLED:
 
@@ -140,7 +169,7 @@ a specific genomic data package you would run <code class="code docutils literal
 
 
   Downloading and Extracting Packages
-  hg19-gaps-1          <span class="p">|</span> <span class="m">6</span> KB      <span class="p">|</span> <span class="c1">############################################################################################ | 100%</span>
+  hg19-gaps-1          <span class="p">|</span> <span class="m">6</span> KB      <span class="p">|</span> <span class="c1">####################### | 100%</span>
   Preparing transaction: <span class="k">done</span>
   Verifying transaction: <span class="k">done</span>
   Executing transaction: <span class="k">done</span>
@@ -179,7 +208,7 @@ a specific genomic data package you would run <code class="code docutils literal
 <li class="toctree-l1"><a class="reference internal" href="ggd-search.html">ggd search</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">ggd install</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#using-ggd-install">Using ggd install</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#example">Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#examples">Examples</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="uninstall.html">ggd uninstall</a></li>

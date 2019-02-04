@@ -64,8 +64,11 @@ $(document).ready(function() {
   <div class="section" id="ggd-list-files">
 <span id="id1"></span><h1>ggd list-files<a class="headerlink" href="#ggd-list-files" title="Permalink to this headline">¶</a></h1>
 <p>ggd list-files is used to list the files associated with a ggd data package that has been installed on your system
-using <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">install</span></code></p>
-<p>NOTE: If the data package has not been installed on your system <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">list-files</span></code> will not be able to list the files</p>
+using <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">install</span></code>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If the data package has not been installed on your system <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">list-files</span></code> will not be able to list the files.</p>
+</div>
 <p>This tool is used to find the location of a file(s) downloaded using ggd. For example, if you downloaded the GRCh37
 reference genome using <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">install</span> <span class="pre">grch37-reference-genome</span></code> and you want the fasta file and the tabix file you would
 run <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">list-files</span> <span class="pre">grch37-reference-genome</span></code>. The file locations would then be provided via STDOUT.</p>
@@ -73,52 +76,77 @@ run <code class="code docutils literal notranslate"><span class="pre">ggd</span>
 <h2>Using ggd list-files<a class="headerlink" href="#using-ggd-list-files" title="Permalink to this headline">¶</a></h2>
 <p>Use <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">list-files</span></code> to list the files associated with a previously installed ggd package.
 Running <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">list-files</span> <span class="pre">-h</span></code> will give you the following message:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>positional arguments:
-    name                  pattern to match recipe name<span class="o">(</span>s<span class="o">)</span>. Ex. <span class="sb">`</span>ggd list-files <span class="s2">&quot;hg19-hello*&quot;</span> -s <span class="s2">&quot;Homo_sapiens&quot;</span> -g <span class="s2">&quot;hg19&quot;</span> -p <span class="s2">&quot;out*&quot;</span><span class="sb">`</span>
-
-optional arguments:
-    -h, --help            show this <span class="nb">help</span> message and <span class="nb">exit</span>
-    -c <span class="o">{</span>genomics<span class="o">}</span>, --channel <span class="o">{</span>genomics<span class="o">}</span> The ggd channel of the recipe to find. <span class="o">(</span><span class="nv">Default</span> <span class="o">=</span> genomics<span class="o">)</span>
-    -s <span class="o">{</span>Canis_familiaris,Homo_sapiens,Drosophila_melanogaster,Mus_musculus<span class="o">}</span>, --species <span class="o">{</span>Canis_familiaris,Homo_sapiens,Drosophila_melanogaster,Mus_musculus<span class="o">}</span>
-                        <span class="o">(</span>Optional<span class="o">)</span> species recipe is <span class="k">for</span>. Use <span class="s1">&#39;*&#39;</span> <span class="k">for</span> any species
-    -g GENOME_BUILD, --genome-build GENOME_BUILD <span class="o">(</span>Optional<span class="o">)</span> genome build the recipe is <span class="k">for</span>. Use <span class="s1">&#39;*&#39;</span> <span class="k">for</span> any genome build.
-    -v VERSION, --version VERSION <span class="o">(</span>Optional<span class="o">)</span> pattern to match the version of the file desired. Use <span class="s1">&#39;*&#39;</span> <span class="k">for</span> any version
-    -p PATTERN, --pattern PATTERN <span class="o">(</span>Optional<span class="o">)</span> pattern to match the name of the file desired. To list all files <span class="k">for</span> a ggd package, <span class="k">do</span> not use the -p option
-</pre></div>
-</div>
-<p>Flag Desctions</p>
-<ul>
-<li><p class="first">The :code”<cite>name</cite> field is required and represents the ggd data package name to list files for.</p>
-</li>
-<li><p class="first">Optional flags for filtering</p>
-<blockquote>
-<div><ul class="simple">
-<li>-c: The <code class="code docutils literal notranslate"><span class="pre">-c</span></code> flag is used to set the ggd channel. Default = genomics</li>
-<li>-s: The <code class="code docutils literal notranslate"><span class="pre">-s</span></code> flag represents the species of the ggd data package. (Helps to locate the file faster)</li>
-<li>-g: The <code class="code docutils literal notranslate"><span class="pre">-g</span></code> flag represents the genome-build of the ggd data package. (Helps to reduce the number of packages looked at)</li>
-<li>-v: The <code class="code docutils literal notranslate"><span class="pre">-v</span></code> flag represents the ggd data package version. This flag helps to refine the package to a specific version</li>
-<li>-p: The <code class="code docutils literal notranslate"><span class="pre">-p</span></code> flag is used to list files that have a specific pattern, such as <em>.fai</em> or <em>.bam</em></li>
+<p>list-files arguments:</p>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-h</span>, <span class="option">--help</span></kbd></td>
+<td>show this help message and exit</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">/name</span></kbd></td>
+<td>(Positional) Pattern to match recipe name(s). Ex:
+<cite>ggd list-files “hg19-hello*” -s “Homo_sapiens” -g “hg19” -p “out*”</cite>
+(‘/’ indicates a placeholder and is not part of the argument name)</td></tr>
+</tbody>
+</table>
+<p>-c , –channel                                  (Optional) The ggd channel of the recipe to find. (Default = genomics)</p>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-s</span>, <span class="option">--species</span></kbd></td>
+<td>(Optional) species recipe is for. Use ‘*’ for any species</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-g <var>GENOME_BUILD</var></span>, <span class="option">--genome-build <var>GENOME_BUILD</var></span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>(Optional) genome build the recipe is for. Use ‘*’ for any
+genome build.</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-v <var>VERSION</var></span>, <span class="option">--version <var>VERSION</var></span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>(Optional) pattern to match the version of the file desired.
+Use ‘*’ for any version.</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-p <var>PATTERN</var></span>, <span class="option">--pattern <var>PATTERN</var></span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>(Optional) pattern to match the name of the file desired. To
+list all files for a ggd package, do not use the -p option.</td></tr>
+</tbody>
+</table>
+<div class="section" id="additional-argument-explanation">
+<h3>Additional argument explanation:<a class="headerlink" href="#additional-argument-explanation" title="Permalink to this headline">¶</a></h3>
+<p>Required arguments:</p>
+<ul class="simple">
+<li><em>name:</em> The <code class="code docutils literal notranslate"><span class="pre">name</span></code> field is required and represents the ggd data package name for which to list files.</li>
 </ul>
-</div></blockquote>
-</li>
+<p>Optional arguments for filtering:</p>
+<ul class="simple">
+<li><em>-c:</em> The <code class="code docutils literal notranslate"><span class="pre">-c</span></code> flag is used to set the ggd channel (default: genomics).</li>
+<li><em>-s:</em> The <code class="code docutils literal notranslate"><span class="pre">-s</span></code> flag represents the species of the ggd data package and filters files based on species.</li>
+<li><em>-g:</em> The <code class="code docutils literal notranslate"><span class="pre">-g</span></code> flag represents the genome-build of the ggd data package and filters the list to the specified build.</li>
+<li><em>-v:</em> The <code class="code docutils literal notranslate"><span class="pre">-v</span></code> flag represents the ggd data package version. This flag helps to refine the package to a specific version.</li>
+<li><em>-p:</em> The <code class="code docutils literal notranslate"><span class="pre">-p</span></code> flag is used to list files that have a specific pattern, such as ‘*.fai’ or ‘*.bam’.</li>
 </ul>
 <p>The <strong>name</strong> field is the only required parameter for <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">list-files</span></code>, however, the other flags are provided to help reduce the
-search space and refine the final file list</p>
+search space and refine the final file list.</p>
 </div>
-<div class="section" id="example">
-<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="simple-example-with-only-the-name-field">
 <h3>1. Simple example with only the name field<a class="headerlink" href="#simple-example-with-only-the-name-field" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd list-files grch37-reference-genome
 
   &lt;conda root&gt;/share/ggd/Homo_sapiens/GRCh37/grch37-reference-genome/1/hs37d5.fa.fai
-  &lt;conda root&gt;/ share/ggd/Homo_sapiens/GRCh37/grch37-reference-genome/1/hs37d5.fa
+  &lt;conda root&gt;/share/ggd/Homo_sapiens/GRCh37/grch37-reference-genome/1/hs37d5.fa
 </pre></div>
 </div>
-<p>&lt;conda root&gt; represents the root directory for the local conda repository on your system</p>
 </div>
-<div class="section" id="example-using-the-s-g-and-p-flags-to-find-the-gz-vcf-files-for-a-given-ggd-data-package">
-<h3>2. Example using the -s, -g, and -p flags to find the gz vcf files for a given ggd data package<a class="headerlink" href="#example-using-the-s-g-and-p-flags-to-find-the-gz-vcf-files-for-a-given-ggd-data-package" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="example-using-the-s-g-and-p-flags-to-find-the-gzipped-vcf-files-for-a-given-ggd-data-package">
+<h3>2. Example using the <code class="docutils literal notranslate"><span class="pre">-s</span></code>, <code class="docutils literal notranslate"><span class="pre">-g</span></code>, and <code class="docutils literal notranslate"><span class="pre">-p</span></code> flags to find the gzipped vcf files for a given ggd data package<a class="headerlink" href="#example-using-the-s-g-and-p-flags-to-find-the-gzipped-vcf-files-for-a-given-ggd-data-package" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd list-files grch37-esp-variants -s Homo_sapiens -g GRCh37 -p *.vcf.gz
 
  &lt;conda root&gt;/ggd/Homo_sapiens/GRCh37/grch37-esp-variants/1/ESP6500SI.all.snps_indels.tidy.vcf.gz
@@ -128,6 +156,10 @@ $ ggd list-files grch37-esp-variants -s Homo_sapiens -g GRCh37 -p *.vcf.gz.tbi
 
  &lt;conda root&gt;/ucgd/lustre/work/u1138933/anaconda2/share/ggd/Homo_sapiens/GRCh37/grch37-esp-variants/1/ESP6500SI.all.snps_indels.tidy.vcf.gz.tbi
 </pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">&lt;conda</span> <span class="pre">root&gt;</span></code> represents the root directory for the local conda repository on your system.</p>
 </div>
 </div>
 </div>
@@ -162,7 +194,7 @@ $ ggd list-files grch37-esp-variants -s Homo_sapiens -g GRCh37 -p *.vcf.gz.tbi
 <li class="toctree-l1"><a class="reference internal" href="uninstall.html">ggd uninstall</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">ggd list-files</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#using-ggd-list-files">Using ggd list-files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#example">Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#examples">Examples</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="pkg-info.html">ggd pkg-info</a></li>

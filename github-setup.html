@@ -71,57 +71,51 @@ to ggd in order to work)</p>
 </li>
 <li><p class="first">Once you have an account you will need to fork the <a class="reference external" href="https://github.com/gogetdata/ggd-recipes">ggd-recipes</a>
 github repo. This repository is where the ggd data recipes are collected.</p>
-<blockquote>
-<div><ul class="simple">
-<li>In the top right hand corner of the <a class="reference external" href="https://github.com/gogetdata/ggd-recipes">ggd-recipes</a> page you will
-see a button called <strong>fork</strong>. When you have pressed the button it will ask you where to put the fork. Select
-your github account.</li>
-<li><strong>ggd-recipes</strong> will now be a repository attached to your acount. (github.com/&lt;github username&gt;/ggd-recipes)</li>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>In the top right hand corner of the <a class="reference external" href="https://github.com/gogetdata/ggd-recipes">ggd-recipes</a> page you will</dt>
+<dd>see a button called <strong>fork</strong>. When you have pressed the button it will ask you where to put the fork. Select
+your github account.</dd>
+</dl>
+</li>
+<li><strong>ggd-recipes</strong> will now be a repository attached to your account. (github.com/&lt;github username&gt;/ggd-recipes)</li>
 </ul>
-</div></blockquote>
 </li>
 <li><p class="first">You will then need to clone the forked ggd-recipes repo to the machine that you are working on.</p>
-<blockquote>
-<div><ul>
-<li><p class="first">On you machine navigate to a directory were you want to donwload the forked ggd-recipes repo.</p>
+<ul>
+<li><p class="first">On you machine navigate to a directory were you want to download the forked ggd-recipes repo.</p>
 </li>
 <li><p class="first"><strong>NOTE:</strong> <cite>git</cite> is a required software package. If you do not have it downloaded on your system run:</p>
-<blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ conda install -c anaconda git
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ conda install -c anaconda git
 </pre></div>
 </div>
-</div></blockquote>
 </li>
-<li><p class="first"><strong>NOTE:</strong> conda is required as well. If you do not have conda installed on your system see <a class="reference internal" href="index.html#using-ggd"><span class="std std-ref">Using GGD</span></a>
-to install conda and the required software packages on your system. You can then return to this page and continue.</p>
+<li><dl class="first docutils">
+<dt><strong>NOTE:</strong> conda is required as well. If you do not have conda installed on your system see <a class="reference internal" href="index.html#using-ggd"><span class="std std-ref">Using GGD</span></a></dt>
+<dd><p class="first last">to install conda and the required software packages on your system. You can then return to this page and continue.</p>
+</dd>
+</dl>
 </li>
 </ul>
-</div></blockquote>
 </li>
-<li><p class="first">clone the forked repository to the current location on your machine</p>
-<blockquote>
-<div><ul class="simple">
-<li><code class="code docutils literal notranslate"><span class="pre">&lt;USERNAME&gt;</span></code> is your github account username. (This is where the ggd-recipes repo was forked to)</li>
+<li><p class="first">Clone the forked repository to the current location on your machine.</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">&lt;USERNAME&gt;</span></code> is your github account username. This is where the ggd-recipes repo was forked.</li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git clone https://github.com/&lt;USERNAME&gt;/ggd-recipes.git
 </pre></div>
 </div>
-</div></blockquote>
 </li>
 <li><p class="first">Move into the ggd-recipes directory:</p>
-<blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd ggd-recipes/
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd ggd-recipes/
 </pre></div>
 </div>
-</div></blockquote>
 </li>
-<li><p class="first">Add the original ggd-recieps repo as an upstream remote repo to the one just added to your machine. This
-will make it more easy to update your forked repo with the uptream origional one.</p>
-<blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git remote add upstream https://github.com/gogetdata/ggd-recipes.git
+<li><p class="first">Add the original ggd-recipes repo as an upstream remote repo to the one just added to your machine. This
+will make it easier to update your forked repo with the original, upstream repository.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git remote add upstream https://github.com/gogetdata/ggd-recipes.git
 </pre></div>
 </div>
-</div></blockquote>
 </li>
 </ul>
 <p>You have now set up a forked ggd-recipes repository on your machine, which you will use to add data packages to ggd.</p>
