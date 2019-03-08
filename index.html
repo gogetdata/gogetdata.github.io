@@ -14,9 +14,10 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Available packages" href="recipes.html" />
+    <link rel="next" title="GGD Quick Start" href="quick-start.html" />
 <link href="https://fonts.googleapis.com/css?family=Lato|Raleway" rel="stylesheet"> 
 <link rel="stylesheet" type="text/css" href="_static/font-awesome-4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="_static/style.css">
@@ -60,7 +61,8 @@ $(document).ready(function() {
 
           <div class="body" role="main">
             
-  <img alt="_images/GoGetData.png" src="_images/GoGetData.png" />
+  <img alt="_images/GoGetData.png" id="home-page" src="_images/GoGetData.png" />
+<p><strong>For a quick guide to start using ggd see:</strong> <a class="reference internal" href="quick-start.html#quick-start"><span class="std std-ref">GGD Quick Start</span></a></p>
 <p>Go Get Data (ggd) is a data management system that provides access to data package containing auto curated genomic data.
 ggd hosts data packages that contain information on how to extract and process scientific data, providing access
 to a growing number of scientific datasets without the hassle of finding, downloading, and processing them
@@ -80,8 +82,9 @@ using the ggd cli tool</li>
 </div>
 <div class="section" id="capabilities">
 <h1>Capabilities<a class="headerlink" href="#capabilities" title="Permalink to this headline">¶</a></h1>
+<p>See <a class="reference internal" href="quick-start.html#quick-start"><span class="std std-ref">GGD Quick Start</span></a> to start using ggd with minimal information.</p>
 <p>Use <code class="code docutils literal notranslate"><span class="pre">ggd</span></code> to search, find, and install a data package hosted by ggd. The data package will be installed and processed
-on your system, and give you ready-to-use data files. For additional information see <a class="reference internal" href="#using-ggd"><span class="std std-ref">Using GGD</span></a>.</p>
+on your system, and give you ready-to-use data files. For additional information see <a class="reference internal" href="using-ggd.html#using-ggd"><span class="std std-ref">Using GGD</span></a>.</p>
 <img alt="_images/ggd-Figure1.png" src="_images/ggd-Figure1.png" />
 </div>
 <hr class="docutils" />
@@ -112,11 +115,11 @@ $ ggd search -t reference genome
        ggd install grch37-reference-genome
 
   grch38-reference-genome
-   Summary: GRCh37 reference genome from UCSC
+   Summary: GRCh37 reference genome from Ensembl
    Species: Homo_sapiens
    Genome Build: GRCh38
    Keywords: ref, reference
-   Data Version: 15_Jan-2014
+   Data Version: Release-95
 
    To install run:
        ggd install grch38-reference-genome
@@ -198,165 +201,27 @@ $ ggd list-files grch38-reference-genome
 <p>You can see and search for available packages using the <a class="reference internal" href="recipes.html#recipes"><span class="std std-ref">Available packages</span></a> page of the
 ggd documentation</p>
 <p>If you have the ggd cli tool installed, you can use <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">search</span></code> to search for available packages.</p>
-<div class="section" id="using-ggd">
-<span id="id1"></span><h3>Using GGD<a class="headerlink" href="#using-ggd" title="Permalink to this headline">¶</a></h3>
-</div>
-</div>
-<div class="section" id="install-conda">
-<h2>1. Install conda<a class="headerlink" href="#install-conda" title="Permalink to this headline">¶</a></h2>
-<p>ggd requires the conda package management system be installed on your system. Loading conda from a module
-is not sufficient as data packages are stored in conda root. Please install Anaconda or Miniconda onto your system.
-The best way to install is with the <a class="reference external" href="http://conda.pydata.org/miniconda.html">Miniconda</a>
-package. The Python 3 version is recommended.</p>
-</div>
-<div class="section" id="configure-the-conda-channels">
-<h2>2. Configure the conda channels<a class="headerlink" href="#configure-the-conda-channels" title="Permalink to this headline">¶</a></h2>
-<p>ggd data packages are stored in the Anaconda cloud. Additionally, ggd uses software tools available from
-other software packages in conda. A ggd conda channel, and other required channels, need to be added to your conda
-configurations. You can add as many available ggd channels as you would like, but only one of the available
-ggd channels is required. As ggd becomes more widely used, additional channels will be created to support different areas of
-research.</p>
-<p>Available ggd channels:</p>
-<ul class="simple">
-<li>ggd-genomics</li>
-</ul>
-<p>Run the following commands, adding in additional ggd channels as desired:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda config --add channels defaults
-$ conda config --add channels ggd-genomics
-$ conda config --add channels bioconda
-$ conda config --add channels conda-forge
-</pre></div>
-</div>
-</div>
-<div class="section" id="install-ggd">
-<h2>3. Install ggd<a class="headerlink" href="#install-ggd" title="Permalink to this headline">¶</a></h2>
-<p>ggd needs to be installed on your system before you can use it. Run the following commands to download the
-ggd cli:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda install -y --file https://raw.githubusercontent.com/gogetdata/ggd-cli/master/requirements.txt
-$ pip install -U git+git://github.com/gogetdata/ggd-cli
-</pre></div>
-</div>
-</div>
-<div class="section" id="ggd-tools">
-<h2>4. ggd tools<a class="headerlink" href="#ggd-tools" title="Permalink to this headline">¶</a></h2>
-<p>The ggd command line tool (cli) installed in step 3 has built-in tools for accessing and managing
-data packages. These tools include:</p>
-<ul class="simple">
-<li><a class="reference internal" href="ggd-search.html#ggd-search"><span class="std std-ref">ggd search</span></a> Search for a ggd data package</li>
-<li><a class="reference internal" href="install.html#ggd-install"><span class="std std-ref">ggd install</span></a> Install a ggd data package</li>
-<li><a class="reference internal" href="uninstall.html#ggd-uninstall"><span class="std std-ref">ggd uninstall</span></a> Uninstall a ggd data package</li>
-<li><a class="reference internal" href="list-file.html#ggd-list-files"><span class="std std-ref">ggd list-files</span></a> List the files for an installed ggd package</li>
-<li><a class="reference internal" href="pkg-info.html#ggd-pkg-info"><span class="std std-ref">ggd pkg-info</span></a> Show a specific ggd package’s info</li>
-<li><a class="reference internal" href="show-env.html#ggd-show-env"><span class="std std-ref">ggd show-env</span></a> Show the ggd specific environment variables</li>
-<li><a class="reference internal" href="from-bash.html#ggd-from-bash"><span class="std std-ref">ggd from-bash</span></a> Create a ggd recipe from a bash script</li>
-<li><a class="reference internal" href="check-recipe.html#ggd-check-recipe"><span class="std std-ref">ggd check-recipe</span></a> Check/test a ggd recipe</li>
-</ul>
-</div>
-<div class="section" id="contributing-to-ggd">
-<h2>5. Contributing to ggd<a class="headerlink" href="#contributing-to-ggd" title="Permalink to this headline">¶</a></h2>
-<p>We intend for ggd to become a widely used data management system for genomics and other research areas.
-ggd provides support for reproducibility through conda’s naming, version tracking, and dependency handling structure.
-One major function of the ggd cli tools is to provide an easy way to add data packages to the data repository.</p>
-<p>We welcome and encourage everyone to contribute to the data repository hosted by ggd.</p>
-<p>Instructions on how to create a data package and add it to ggd can be found on the <a class="reference internal" href="contribute.html#make-data-packages"><span class="std std-ref">Contribute</span></a>
-documentation pages.</p>
-<div class="section" id="ggd-use-case">
-<h3>ggd Use Case<a class="headerlink" href="#ggd-use-case" title="Permalink to this headline">¶</a></h3>
-<p>You need to align some sequence(s) to the human reference genome for a given analysis.
-You will need to find and download the correct reference genome from one of the sites that hosts it and make sure it is
-the correct genome build. You will then need to sort and index the reference genome before you can use it.</p>
-<p>ggd simplifies this process by allowing you to search
-and install available processed genomic data packages using the ggd tool.</p>
-<ol class="arabic simple">
-<li>Search for a reference genome</li>
-</ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd search -t reference genome
-
-  grch37-reference-genome
-   Summary: GRCh37 reference genome from <span class="m">1000</span> genomes
-   Species: Homo_sapiens
-   Genome Build: GRCh37
-   Keywords: ref, reference
-   Data Version: phase2_reference
-
-   To install run:
-       ggd install grch37-reference-genome
-
-  grch38-reference-genome
-   Summary: GRCh37 reference genome from UCSC
-   Species: Homo_sapiens
-   Genome Build: GRCh38
-   Keywords: ref, reference
-   Data Version: 15_Jan-2014
-
-   To install run:
-       ggd install grch38-reference-genome
-
-  . . .
-</pre></div>
-</div>
-<ol class="arabic simple" start="2">
-<li>Install the grch38 reference genome</li>
-</ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd install grch38-reference-genome
-
-  -&gt; Looking <span class="k">for</span> grch38-reference-genome in the <span class="s1">&#39;ggd-genomics&#39;</span> channel
-  -&gt; grch38-reference-genome exists in ggd-genomics
-  -&gt; grch38-reference-genome is not installed on your system
-  -&gt; grch38-reference-genome has not been installed by conda
-  -&gt; Installing grch38-reference-genome
-
-  Solving environment:
-
-   <span class="c1">## Package Plan ##</span>
-
-   environment location: &lt;conda root&gt;
-
-     added / updated specs:
-        - grch38-reference-genome
-
-  The following packages will be downloaded:
-
-     package                    <span class="p">|</span>            build
-     ---------------------------<span class="p">|</span>-----------------
-     grch38-reference-genome    <span class="p">|</span>                <span class="m">0</span>           <span class="m">6</span> KB  ggd-genomics
-
-  The following NEW packages will be INSTALLED:
-
-     grch38-reference-genome: <span class="m">1</span>-0 ggd-genomics
-
-
-  Downloading and Extracting Packages
-  grch38-reference-genome          <span class="p">|</span> <span class="m">6</span> KB      <span class="p">|</span> <span class="c1">##############################</span>
-  Preparing transaction: <span class="k">done</span>
-  Verifying transaction: <span class="k">done</span>
-  Executing transaction: <span class="k">done</span>
-
-  DONE
-</pre></div>
-</div>
-<ol class="arabic simple" start="3">
-<li>Identify the data environment variable or the file location</li>
-</ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd show-env
-***************************
-Active environment variables:
-&gt; <span class="nv">$ggd_grch38_reference_genome</span>
-***************************
-
-$ ggd list-files grch38-reference-genome
-
--&gt; &lt;conda root&gt;/share/ggd/Homo_sapiens/GRCh38/grch38-reference-genome/1/grch38.fa
--&gt; &lt;conda root&gt;/share/ggd/Homo_sapiens/GRCh38/grch38-reference-genome/1/grch38.fa.fai
-</pre></div>
-</div>
-<ol class="arabic simple" start="4">
-<li>Use the files</li>
-</ol>
 <p>Contents:</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="recipes.html">Available packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick-start.html">GGD Quick Start</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="quick-start.html#installing-ggd">1) Installing GGD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quick-start.html#searching-for-data-packages">2) Searching for data packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quick-start.html#installing-a-data-pacakge">3) Installing a data pacakge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quick-start.html#using-the-environment-variables">4) Using the environment variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quick-start.html#using-the-data-pacakges">5) Using the data pacakges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quick-start.html#additional-info">6) Additional Info</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="using-ggd.html">Using GGD</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="using-ggd.html#install-conda">1. Install conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using-ggd.html#configure-the-conda-channels">2. Configure the conda channels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using-ggd.html#install-ggd">3. Install ggd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using-ggd.html#ggd-tools">4. ggd tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using-ggd.html#contributing-to-ggd">5. Contributing to ggd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using-ggd.html#ggd-use-case">ggd Use Case</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="ggd-search.html">ggd search</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="ggd-search.html#using-ggd-search">Using ggd search</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ggd-search.html#example">Example</a></li>
@@ -387,9 +252,9 @@ $ ggd list-files grch38-reference-genome
 <li class="toctree-l2"><a class="reference internal" href="show-env.html#examples">Examples</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="from-bash.html">ggd from-bash</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="from-bash.html#using-ggd-from-bash">Using ggd from-bash</a></li>
-<li class="toctree-l2"><a class="reference internal" href="from-bash.html#examples">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="make-recipe.html">ggd make-recipe</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="make-recipe.html#using-ggd-make-recipe">Using ggd make-recipe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="make-recipe.html#examples">Examples</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="check-recipe.html">ggd check-recipe</a><ul>
@@ -402,8 +267,8 @@ $ ggd list-files grch38-reference-genome
 <li class="toctree-l2"><a class="reference internal" href="contribute-recipe.html">Contributing a ggd recipe</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="recipes.html">Available packages</a></li>
 </ul>
-</div>
 </div>
 </div>
 </div>
@@ -431,16 +296,18 @@ $ ggd list-files grch38-reference-genome
 
 <h3>Navigation</h3>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="recipes.html">Available packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick-start.html">GGD Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using-ggd.html">Using GGD</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ggd-search.html">ggd search</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install.html">ggd install</a></li>
 <li class="toctree-l1"><a class="reference internal" href="uninstall.html">ggd uninstall</a></li>
 <li class="toctree-l1"><a class="reference internal" href="list-file.html">ggd list-files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pkg-info.html">ggd pkg-info</a></li>
 <li class="toctree-l1"><a class="reference internal" href="show-env.html">ggd show-env</a></li>
-<li class="toctree-l1"><a class="reference internal" href="from-bash.html">ggd from-bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="make-recipe.html">ggd make-recipe</a></li>
 <li class="toctree-l1"><a class="reference internal" href="check-recipe.html">ggd check-recipe</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contribute.html">Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recipes.html">Available packages</a></li>
 </ul>
 
 
@@ -452,7 +319,7 @@ $ ggd list-files grch38-reference-genome
       &copy;2016, The gogetdata team.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.4</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

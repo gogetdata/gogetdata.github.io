@@ -14,8 +14,10 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Available packages" href="recipes.html" />
     <link rel="prev" title="Setting up with Github" href="github-setup.html" />
 <link href="https://fonts.googleapis.com/css?family=Lato|Raleway" rel="stylesheet"> 
 <link rel="stylesheet" type="text/css" href="_static/font-awesome-4.7.0/css/font-awesome.min.css">
@@ -62,6 +64,7 @@ $(document).ready(function() {
             
   <div class="section" id="contributing-a-ggd-recipe">
 <span id="contrib-recipe"></span><h1>Contributing a ggd recipe<a class="headerlink" href="#contributing-a-ggd-recipe" title="Permalink to this headline">¶</a></h1>
+<p>[<a class="reference internal" href="index.html#home-page"><span class="std std-ref">Click here to return to the home page</span></a>]</p>
 <p>The following steps outline how to create, check, and add a ggd data recipe.</p>
 <div class="section" id="update-local-forked-repo">
 <h2>1. Update local forked repo<a class="headerlink" href="#update-local-forked-repo" title="Permalink to this headline">¶</a></h2>
@@ -149,22 +152,22 @@ tabix gaps.bed.g
 <div class="section" id="create-a-ggd-recipe-using-the-ggd-cli">
 <h2>3. Create a ggd recipe using the ggd cli<a class="headerlink" href="#create-a-ggd-recipe-using-the-ggd-cli" title="Permalink to this headline">¶</a></h2>
 <p>The ggd command line interface (cli) contains tools to create and test a data recipe.</p>
-<p>If it has not been installed, install the ggd cli following the steps outline in <a class="reference internal" href="index.html#using-ggd"><span class="std std-ref">Using GGD</span></a>.</p>
+<p>If it has not been installed, install the ggd cli following the steps outline in <a class="reference internal" href="using-ggd.html#using-ggd"><span class="std std-ref">Using GGD</span></a>.</p>
 <p>With the ggd cli installed you can now transform your bash script into a ggd recipe.</p>
 <div class="section" id="example">
 <h3>Example:<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>Assuming your bash script created in step 2 is called <em>hg19_data_recipe.sh</em>, run the following command to turn
 it into a ggd recipe:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ggd from-bash -s Homo_sapiens -g hg19 --author mjc \
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ggd make-recipe -s Homo_sapiens -g hg19 --author mjc \
     --ggd_version 1 --data_version 27-Apr-2009 \
     --summary &#39;Assembly gaps from USCS&#39; \
     -k gaps -k region gaps hg19_data_recipe.sh
 </pre></div>
 </div>
-<p>The <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">from-bash</span></code> tool transforms the bash script you created into a data recipe. Running the above code will create
+<p>The <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">make-recipe</span></code> tool transforms the bash script you created into a data recipe. Running the above code will create
 a data recipe called <em>hg19-gaps</em>, which will be a directory and will contain three files. For more information on the
-<code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">from-bash</span></code> command see <a class="reference internal" href="from-bash.html#ggd-from-bash"><span class="std std-ref">from-bash</span></a>.</p>
+<code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">make-recipe</span></code> command see <a class="reference internal" href="make-recipe.html#ggd-make-recipe"><span class="std std-ref">make-recipe</span></a>.</p>
 </div></blockquote>
 </div>
 </div>
@@ -282,20 +285,22 @@ able to access it.</p>
 
 <h3>Navigation</h3>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="recipes.html">Available packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick-start.html">GGD Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using-ggd.html">Using GGD</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ggd-search.html">ggd search</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install.html">ggd install</a></li>
 <li class="toctree-l1"><a class="reference internal" href="uninstall.html">ggd uninstall</a></li>
 <li class="toctree-l1"><a class="reference internal" href="list-file.html">ggd list-files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pkg-info.html">ggd pkg-info</a></li>
 <li class="toctree-l1"><a class="reference internal" href="show-env.html">ggd show-env</a></li>
-<li class="toctree-l1"><a class="reference internal" href="from-bash.html">ggd from-bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="make-recipe.html">ggd make-recipe</a></li>
 <li class="toctree-l1"><a class="reference internal" href="check-recipe.html">ggd check-recipe</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="contribute.html">Contribute</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="github-setup.html">Setting up with Github</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Contributing a ggd recipe</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="recipes.html">Available packages</a></li>
 </ul>
 
 
@@ -307,7 +312,7 @@ able to access it.</p>
       &copy;2016, The gogetdata team.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.4</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

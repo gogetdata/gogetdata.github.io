@@ -14,6 +14,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="ggd uninstall" href="uninstall.html" />
@@ -63,6 +64,7 @@ $(document).ready(function() {
             
   <div class="section" id="ggd-install">
 <span id="id1"></span><h1>ggd install<a class="headerlink" href="#ggd-install" title="Permalink to this headline">¶</a></h1>
+<p>[<a class="reference internal" href="index.html#home-page"><span class="std std-ref">Click here to return to the home page</span></a>]</p>
 <p>ggd install is used to install a ggd package from the Anaconda cloud. ggd install determines your file system and ensures
 a proper install. If the package fails to install for some reason it will clean up the failed install.</p>
 <blockquote>
@@ -116,6 +118,15 @@ you want to install is in a different ggd channel you will need to supply the ch
 </li>
 <li><p class="first"><em>-v:</em> The <code class="code docutils literal notranslate"><span class="pre">-v</span></code> flag represents a specific ggd-version for a desired package to be installed. If you want version 2 of
 a specific genomic data package you would run <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">install</span> <span class="pre">&lt;package&gt;</span> <span class="pre">-v</span> <span class="pre">2</span></code>. This flag is not required.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Durring the installation you will see a multiple progress spinners. The time it takes to install the data pacakge
+is dependent on how big the data package is being installed. When you see: <strong>Executing Transaction |-</strong> you are
+in the final stages of installation, however, this stage takes the longest. Please be patient as the package is
+being installed, processed, and curated.</p>
+</div>
+</div></blockquote>
 </li>
 </ul>
 </div>
@@ -204,7 +215,8 @@ a specific genomic data package you would run <code class="code docutils literal
 
 <h3>Navigation</h3>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="recipes.html">Available packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick-start.html">GGD Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using-ggd.html">Using GGD</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ggd-search.html">ggd search</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">ggd install</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#using-ggd-install">Using ggd install</a></li>
@@ -215,9 +227,10 @@ a specific genomic data package you would run <code class="code docutils literal
 <li class="toctree-l1"><a class="reference internal" href="list-file.html">ggd list-files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pkg-info.html">ggd pkg-info</a></li>
 <li class="toctree-l1"><a class="reference internal" href="show-env.html">ggd show-env</a></li>
-<li class="toctree-l1"><a class="reference internal" href="from-bash.html">ggd from-bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="make-recipe.html">ggd make-recipe</a></li>
 <li class="toctree-l1"><a class="reference internal" href="check-recipe.html">ggd check-recipe</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contribute.html">Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recipes.html">Available packages</a></li>
 </ul>
 
 
@@ -229,7 +242,7 @@ a specific genomic data package you would run <code class="code docutils literal
       &copy;2016, The gogetdata team.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.4</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
