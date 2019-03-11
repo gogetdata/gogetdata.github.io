@@ -147,7 +147,7 @@ and install available processed genomic data packages using the ggd tool.</p>
    To install run:
        ggd install grch37-reference-genome
 
-  grch38-reference-genome
+  grch38-reference-genome-ensembl
    Summary: GRCh37 reference genome from Ensembl
    Species: Homo_sapiens
    Genome Build: GRCh38
@@ -155,7 +155,7 @@ and install available processed genomic data packages using the ggd tool.</p>
    Data Version: Release-95
 
    To install run:
-       ggd install grch38-reference-genome
+       ggd install grch38-reference-genome-ensembl
 
   . . .
 </pre></div>
@@ -163,13 +163,13 @@ and install available processed genomic data packages using the ggd tool.</p>
 <ol class="arabic simple" start="2">
 <li>Install the grch38 reference genome</li>
 </ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd install grch38-reference-genome
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd install grch38-reference-genome-ensembl
 
-  -&gt; Looking <span class="k">for</span> grch38-reference-genome in the <span class="s1">&#39;ggd-genomics&#39;</span> channel
-  -&gt; grch38-reference-genome exists in ggd-genomics
-  -&gt; grch38-reference-genome is not installed on your system
-  -&gt; grch38-reference-genome has not been installed by conda
-  -&gt; Installing grch38-reference-genome
+  -&gt; Looking <span class="k">for</span> grch38-reference-genome-ensembl in the <span class="s1">&#39;ggd-genomics&#39;</span> channel
+  -&gt; grch38-reference-genome-ensembl exists in ggd-genomics
+  -&gt; grch38-reference-genome-ensembl is not installed on your system
+  -&gt; grch38-reference-genome-ensembl has not been installed by conda
+  -&gt; Installing grch38-reference-genome-ensembl
 
   Solving environment:
 
@@ -178,21 +178,21 @@ and install available processed genomic data packages using the ggd tool.</p>
    environment location: &lt;conda root&gt;
 
      added / updated specs:
-        - grch38-reference-genome
+        - grch38-reference-genome-ensembl
 
   The following packages will be downloaded:
 
-     package                    <span class="p">|</span>            build
-     ---------------------------<span class="p">|</span>-----------------
-     grch38-reference-genome    <span class="p">|</span>                <span class="m">0</span>           <span class="m">6</span> KB  ggd-genomics
+     package                            <span class="p">|</span>            build
+     -----------------------------------<span class="p">|</span>-----------------
+     grch38-reference-genome-ensembl    <span class="p">|</span>                <span class="m">0</span>           <span class="m">6</span> KB  ggd-genomics
 
   The following NEW packages will be INSTALLED:
 
-     grch38-reference-genome: <span class="m">1</span>-0 ggd-genomics
+     grch38-reference-genome-ensembl: <span class="m">1</span>-0 ggd-genomics
 
 
   Downloading and Extracting Packages
-  grch38-reference-genome          <span class="p">|</span> <span class="m">6</span> KB      <span class="p">|</span> <span class="c1">##############################</span>
+  grch38-reference-genome-ensembl          <span class="p">|</span> <span class="m">6</span> KB      <span class="p">|</span> <span class="c1">##############################</span>
   Preparing transaction: <span class="k">done</span>
   Verifying transaction: <span class="k">done</span>
   Executing transaction: <span class="k">done</span>
@@ -206,13 +206,13 @@ and install available processed genomic data packages using the ggd tool.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd show-env
 ***************************
 Active environment variables:
-&gt; <span class="nv">$ggd_grch38_reference_genome</span>
+&gt; <span class="nv">$ggd_grch38_reference_genome</span>-ensembl
 ***************************
 
-$ ggd list-files grch38-reference-genome
+$ ggd list-files grch38-reference-genome-ensembl
 
--&gt; &lt;conda root&gt;/share/ggd/Homo_sapiens/GRCh38/grch38-reference-genome/1/grch38.fa
--&gt; &lt;conda root&gt;/share/ggd/Homo_sapiens/GRCh38/grch38-reference-genome/1/grch38.fa.fai
+-&gt; &lt;conda root&gt;/share/ggd/Homo_sapiens/GRCh38/grch38-reference-genome-ensembl/1/grch38.fa
+-&gt; &lt;conda root&gt;/share/ggd/Homo_sapiens/GRCh38/grch38-reference-genome-ensembl/1/grch38.fa.fai
 </pre></div>
 </div>
 <ol class="arabic simple" start="4">
