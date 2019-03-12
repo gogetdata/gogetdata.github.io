@@ -9,7 +9,8 @@
     <title>ggd make-recipe &#8212; ggd  documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="_static/font-awesome-4.7.0/css/font-awesome.min.css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
@@ -19,43 +20,99 @@
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="ggd check-recipe" href="check-recipe.html" />
     <link rel="prev" title="ggd show-env" href="show-env.html" />
-<link href="https://fonts.googleapis.com/css?family=Lato|Raleway" rel="stylesheet"> 
-<link rel="stylesheet" type="text/css" href="_static/font-awesome-4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="_static/style.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jqc-1.12.3/dt-1.10.12/datatables.min.css"/>
-<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Raleway" rel="stylesheet"> 
+    <link rel="stylesheet" type="text/css" href="_static/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="_static/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jqc-1.12.3/dt-1.10.12/datatables.min.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
 
-<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/manifest.json">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-<meta name="theme-color" content="#ffffff">
-<script type="text/javascript" src="https://cdn.datatables.net/v/dt/jqc-1.12.3/dt-1.10.12/datatables.min.js"></script>
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 
-<script type="text/javascript" class="init">
-$(document).ready(function() {
-    $('#recipestable').DataTable( {
-        "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]]
+    <script type="text/javascript" class="init">
+    $(document).ready(function() {
+        $('#recipestable').DataTable( {
+            "lengthMenu": [[25, 50, -1], [25, 50, "All"]]
+        } );
     } );
-} );
-</script>
+    </script>
 
   </head><body>
-  
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="index.html">
+    <img class="logo" src="_static/logo/gogetdata_temp.png" alt="Logo"/>
+    
+  </a>
+</p>
 
-    <div class="document">
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quick-start.html">GGD Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using-ggd.html">Using GGD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ggd-search.html">ggd search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">ggd install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uninstall.html">ggd uninstall</a></li>
+<li class="toctree-l1"><a class="reference internal" href="list-file.html">ggd list-files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pkg-info.html">ggd pkg-info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="show-env.html">ggd show-env</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">ggd make-recipe</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#using-ggd-make-recipe">Using ggd make-recipe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="check-recipe.html">ggd check-recipe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contribute.html">Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recipes.html">Available data packages</a></li>
+</ul>
+
+<ul>
+  
+  <li class="toctree-l1"><a href="https://github.com/gogetdata/ggd-recipes">ggd-recipes @ Github</a></li>
+  
+  <li class="toctree-l1"><a href="https://github.com/gogetdata/ggd-cli">ggd-cli @ Github</a></li>
+  
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
       <div class="documentwrapper">
         <div class="bodywrapper">
           
@@ -277,49 +334,10 @@ rm sanitize-esp.py
           
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-<p class="logo">
-  <a href="index.html">
-    <img class="logo" src="_static/logo/gogetdata_temp.png" alt="Logo"/>
-    
-  </a>
-</p>
-
-
-
-
-
-
-
-
-<h3>Navigation</h3>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="quick-start.html">GGD Quick Start</a></li>
-<li class="toctree-l1"><a class="reference internal" href="using-ggd.html">Using GGD</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ggd-search.html">ggd search</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install.html">ggd install</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uninstall.html">ggd uninstall</a></li>
-<li class="toctree-l1"><a class="reference internal" href="list-file.html">ggd list-files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pkg-info.html">ggd pkg-info</a></li>
-<li class="toctree-l1"><a class="reference internal" href="show-env.html">ggd show-env</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">ggd make-recipe</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#using-ggd-make-recipe">Using ggd make-recipe</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#examples">Examples</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="check-recipe.html">ggd check-recipe</a></li>
-<li class="toctree-l1"><a class="reference internal" href="contribute.html">Contribute</a></li>
-<li class="toctree-l1"><a class="reference internal" href="recipes.html">Available packages</a></li>
-</ul>
-
-
-        </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
+    <div class="clearer"></div>
+  </div>
     <div class="footer">
-      &copy;2016, The gogetdata team.
+      &copy;2016-2019, The gogetdata team.
       
       |
       Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.4</a>

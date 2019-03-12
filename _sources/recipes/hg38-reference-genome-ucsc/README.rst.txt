@@ -10,7 +10,7 @@ The hg38 reference genome from UCSC. This version includes the latest patch\, pa
 ================ ===========
 GGD Pacakge      hg38-reference-genome-ucsc 
 GGD Channel      ggd-genomics
-Pkg Version(s)   1
+Pkg Version(s)   1-0, 1-1
 Recipe           https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/hg38/hg38-reference-genome-ucsc
 Species          Homo_sapiens
 Genome Build     hg38
