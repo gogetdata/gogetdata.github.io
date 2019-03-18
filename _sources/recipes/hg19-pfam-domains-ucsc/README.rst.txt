@@ -10,7 +10,7 @@ Pfam domain annotation in bed12 format. \(From UCSC\)
 ================ ===========
 GGD Pacakge      hg19-pfam-domains-ucsc 
 GGD Channel      ggd-genomics
-Pkg Version(s)   1-0, 1-1
+Pkg Version(s)   1-0, 1-1, 1-2, 1-3
 Recipe           https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/hg19/hg19-pfam-domains-ucsc
 Species          Homo_sapiens
 Genome Build     hg19

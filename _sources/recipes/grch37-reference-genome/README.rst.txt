@@ -10,7 +10,7 @@ GRCh37 reference genome from 1000 genomes
 ================ ===========
 GGD Pacakge      grch37-reference-genome 
 GGD Channel      ggd-genomics
-Pkg Version(s)   1-0, 1-1
+Pkg Version(s)   1-0, 1-1, 1-2, 1-3
 Recipe           https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/GRCh37/grch37-reference-genome
 Species          Homo_sapiens
 Genome Build     GRCh37
