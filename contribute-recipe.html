@@ -195,7 +195,7 @@ wget --quiet -O - http://hgdownload.cse.ucsc.edu/goldenpath/hg19/database/gap.tx
     | gsort /dev/stdin $genome \
     | bgzip -c &gt; gaps.bed.gz
 
-tabix gaps.bed.g
+tabix gaps.bed.gz
 </pre></div>
 </div>
 </li>
@@ -203,13 +203,27 @@ tabix gaps.bed.g
 </dd>
 </dl>
 </li>
+<li><p class="first">In this data processing script please change the resulting data file names to be short and include all necessary
+genomic file extentions. (See the NOTE bellow)</p>
+</li>
 </ul>
 <p>You should run the script to make sure it works and that the processed files are what you expect them to be.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The final data file names will be changed to reflect the new ggd recipe name. To keep the data file name as
+short as possible please rename data files to include only a short name and the genomic file extensions. The name
+will be replaced with the ggd recipe name, and the genomic file extention will be kept. For example, in the
+hg19-gaps example above <em>gaps.bed.gz</em> and the tabix companion “gaps.bed.gz.tbi* will be renmaed to <em>hg19-gaps.bed.gz</em>
+and <em>hg19-gaps.bed.gz.tbi</em>. Because of the complexities with genomic file extentions all extentions will be retained
+and only the beginning name before the first . will be replaced with the recipe name.</p>
+</div>
+</div></blockquote>
 </div>
 <div class="section" id="create-a-ggd-recipe-using-the-ggd-cli">
 <h2>3. Create a ggd recipe using the ggd cli<a class="headerlink" href="#create-a-ggd-recipe-using-the-ggd-cli" title="Permalink to this headline">¶</a></h2>
 <p>The ggd command line interface (cli) contains tools to create and test a data recipe.</p>
-<p>If it has not been installed, install the ggd cli following the steps outline in <a class="reference internal" href="using-ggd.html#using-ggd"><span class="std std-ref">Using GGD</span></a>.</p>
+<p>If it has not been installed, install the ggd cli following the steps outlined in <a class="reference internal" href="using-ggd.html#using-ggd"><span class="std std-ref">Using GGD</span></a>.</p>
 <p>With the ggd cli installed you can now transform your bash script into a ggd recipe.</p>
 <div class="section" id="example">
 <h3>Example:<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
