@@ -73,7 +73,7 @@ You should run the script to make sure it works and that the processed files are
        The final data file names will be changed to reflect the new ggd recipe name. To keep the data file name as 
        short as possible please rename data files to include only a short name and the genomic file extensions. The name
        will be replaced with the ggd recipe name, and the genomic file extention will be kept. For example, in the 
-       hg19-gaps example above *gaps.bed.gz* and the tabix companion "gaps.bed.gz.tbi* will be renmaed to *hg19-gaps.bed.gz*
+       hg19-gaps example above *gaps.bed.gz* and the tabix companion *gaps.bed.gz.tbi* will be renmaed to *hg19-gaps.bed.gz*
        and *hg19-gaps.bed.gz.tbi*. Because of the complexities with genomic file extentions all extentions will be retained
        and only the beginning name before the first . will be replaced with the recipe name. 
 
