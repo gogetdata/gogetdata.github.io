@@ -193,9 +193,9 @@ wget --quiet -O - http://hgdownload.cse.ucsc.edu/goldenpath/hg19/database/gap.tx
     | gzip -dc \
     | awk -v OFS=&quot;\t&quot; &#39;BEGIN {print &quot;#chrom\tstart\tend\tsize\ttype\tstrand&quot;} {print $2,$3,$4,$7,$8,&quot;+&quot;}&#39; \
     | gsort /dev/stdin $genome \
-    | bgzip -c &gt; gaps.bed.gz
+    | bgzip -c &gt; hg19-gaps-ucsc-v1.bed.gz
 
-tabix gaps.bed.gz
+tabix hg19-gaps-ucsc-v1.bed.gz
 </pre></div>
 </div>
 </li>
@@ -233,11 +233,11 @@ it into a ggd recipe:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ggd make-recipe -s Homo_sapiens -g hg19 --author mjc \
     --ggd_version 1 --data_version 27-Apr-2009 \
     --summary &#39;Assembly gaps from USCS&#39; \
-    -k gaps -k region gaps hg19_data_recipe.sh
+    -k gaps -k region gaps-ucsc hg19_data_recipe.sh
 </pre></div>
 </div>
 <p>The <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">make-recipe</span></code> tool transforms the bash script you created into a data recipe. Running the above code will create
-a data recipe called <em>hg19-gaps</em>, which will be a directory and will contain three files. For more information on the
+a data recipe called <em>hg19-gaps-ucsc-v1</em>, which will be a directory and will contain three files. For more information on the
 <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">make-recipe</span></code> command see <a class="reference internal" href="make-recipe.html#ggd-make-recipe"><span class="std std-ref">make-recipe</span></a>.</p>
 </div></blockquote>
 </div>
@@ -251,11 +251,11 @@ that the recipe was correctly created and provides the necessary instruction for
 <h3>Example:<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>Using the hg19-gaps recipe created in step 3, run the following command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ggd check-recipe hg19-gaps
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ggd check-recipe hg19-gaps-ucsc-v1
 </pre></div>
 </div>
 <p>Or if you are in a different directory on your machine run:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ggd check-recipe &lt;Path_To_hg19-gaps&gt;
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ggd check-recipe &lt;Path_To_hg19-gaps-ucsc-v1&gt;
 </pre></div>
 </div>
 <p>This command will build, install, and check the validity of the new ggd data recipe.
@@ -290,7 +290,7 @@ For the hg19-gaps example the channel would be <strong>genomics</strong>.</li>
 </ul>
 </div></blockquote>
 <p>For the hg19-gaps recipe above you would use the following commands:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ mv hg19-gaps /&lt;forked ggd-recipes&gt;/recipes/genomics/Homo_sapiens/hg19/
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ mv hg19-gaps-ucsc-v1 /&lt;forked ggd-recipes&gt;/recipes/genomics/Homo_sapiens/hg19/
 </pre></div>
 </div>
 <p>Once the recipe is there you will need to add the recipe to your forked ggd-recipe repo.
@@ -298,7 +298,7 @@ Navigate to the forked ggd-recipe directory and use the following commands:</p>
 <blockquote>
 <div><ul>
 <li><p class="first">Add the recipe to the git repo:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git add /recipes/genomics/Homo_sapiens/hg19/hg19-gaps/
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git add /recipes/genomics/Homo_sapiens/hg19/hg19-gaps-ucsc-v1/
 </pre></div>
 </div>
 </li>

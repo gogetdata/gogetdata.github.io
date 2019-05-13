@@ -173,7 +173,7 @@ a desired package, you can use the install command to install the data package.<
 </div>
 <p>For example, if you needed to install the GRCh38 reference genome from Ensembl, you have identify the data package using
 the ggd search tool, you can use the following command to install the package.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd install grch38-reference-genome
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd install grch38-reference-genome-ensembl-v1
 </pre></div>
 </div>
 <p>If you look at the output from running <cite>ggd install</cite> you will see the system directory path to where the installed data packages
@@ -188,10 +188,18 @@ use the following command:</p>
 </div>
 <p>If the environment variables are inactive, the output will tell you how to activate them. Once active, the environment variable
 can be used to access the data packages install by ggd.</p>
-<p>For example, if you installed the GRCh38 reference genome from Ensembl, you would get an environmnet variable like:
-<code class="code docutils literal notranslate"><span class="pre">ggd_grch38_reference_genome</span></code>. You can use this environment variable to acces your data.</p>
+<p>For most data packages two environment variables will be created.
+* An environment variable that points to the directory path where the installed data is stored
+* An environment variable that poinst to the main installed file to use.</p>
+<p>For example, if you installed the GRCh38 reference genome from Ensembl, you would get two environmnet variable like:
+<code class="code docutils literal notranslate"><span class="pre">ggd_grch38_reference_genome_ensembl_v1_dir</span></code> and <code class="code docutils literal notranslate"><span class="pre">ggd_grch38_reference_genome_ensembl_v1_file</span></code>.
+You can use these environment variable to acces your data.</p>
 <p>To see the files for this ggd installed package you can use the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ls <span class="nv">$ggd_grch38_reference_genome</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ls <span class="nv">$ggd_grch38_reference_genome_ensemble_v1_dir</span>
+</pre></div>
+</div>
+<p>To use the main file env var (Example showed is using an installed ref fasta to align reads):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bwa mem <span class="nv">$ggd_grch38_reference_genome_ensemble_v1_file</span> reads.fq &gt; aln.sam
 </pre></div>
 </div>
 <p>To move to the directory where the files are stored you can use the following command:</p>
@@ -200,7 +208,7 @@ can be used to access the data packages install by ggd.</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">If you remove the files from this directory ggd will no longer be able to provide file handeling, version tracking, and
+<p class="last">If you remove the files from this directory ggd will no longer be able to provide file and dependency handeling, version tracking, and
 other functions. If you need to move these files please make a copy and move the copy.</p>
 </div>
 </div>
@@ -209,6 +217,7 @@ other functions. If you need to move these files please make a copy and move the
 <p>Now that you have downloaded the desired data packages you can use them for all of your experiements and analyses. ggd offers mutliple
 functions in order to locate the data files installed by ggd, get the data package information, etc. For more information see
 <a class="reference internal" href="using-ggd.html#using-ggd"><span class="std std-ref">Using GGD</span></a>.</p>
+<p>For additional information and examples on using installed data packages see <span class="xref std std-ref">Using installed data</span>.</p>
 </div>
 <div class="section" id="additional-info">
 <h2>6) Additional Info<a class="headerlink" href="#additional-info" title="Permalink to this headline">¶</a></h2>

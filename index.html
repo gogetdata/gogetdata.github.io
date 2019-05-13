@@ -158,25 +158,37 @@ and install avaible processed genomic data packages using the ggd tool.</li>
 
 $ ggd search -t reference genome
 
-  grch37-reference-genome
-   Summary: GRCh37 reference genome from <span class="m">1000</span> genomes
-   Species: Homo_sapiens
-   Genome Build: GRCh37
-   Keywords: ref, reference
-   Data Version: phase2_reference
+ grch37-reference-genome-1000g-v1
+    Summary: GRCh37 reference genome from <span class="m">1000</span> genomes
+    Species: Homo_sapiens
+    Genome Build: GRCh37
+    Keywords: ref, reference, fasta-file
+    Data Version: phase2_reference
 
-   To install run:
-       ggd install grch37-reference-genome
+    To install run:
+        ggd install grch37-reference-genome-1000g-v1
 
-  grch38-reference-genome-ensembl
-   Summary: GRCh37 reference genome from Ensembl
-   Species: Homo_sapiens
-   Genome Build: GRCh38
-   Keywords: ref, reference
-   Data Version: Release-95
 
-   To install run:
-       ggd install grch38-reference-genome-ensembl
+ grch37-reference-genome-ensembl-v1
+    Summary: The GRCh37 reference genome from Ensembl. Release <span class="m">75</span>. Primary Assembly file
+    Species: Homo_sapiens
+    Genome Build: GRCh37
+    Keywords: ref, reference, Ensembl, Release75
+    Data Version: Release-75
+
+    To install run:
+        ggd install grch37-reference-genome-ensembl-v1
+
+
+ grch38-reference-genome-ensembl-v1
+    Summary: The GRCh38 reference genome from Ensembl. Release <span class="m">95</span>. Primary Assembly file
+    Species: Homo_sapiens
+    Genome Build: GRCh38
+    Keywords: ref, reference, genome, Ensembl
+    Data Version: Release-95
+
+    To install run:
+        ggd install grch38-reference-genome-ensembl-v1
 
   . . .
 
@@ -185,18 +197,18 @@ $ ggd search -t reference genome
 <span class="c1">#   (See ggd install)</span>
 <span class="c1">#******************************</span>
 
-$ ggd install grch38-reference-genome-ensembl
+$ ggd install grch38-reference-genome-ensembl-v1
 
 
-  Looking <span class="k">for</span> grch38-reference-genome-ensembl in the <span class="s1">&#39;ggd-genomics&#39;</span> channel
+  Looking <span class="k">for</span> grch38-reference-genome-ensembl-v1 in the <span class="s1">&#39;ggd-genomics&#39;</span> channel
 
-  grch38-reference-genome-ensembl exists in ggd-genomics
+  grch38-reference-genome-ensembl-v1 exists in ggd-genomics
 
-  grch38-reference-genome-ensembl is not installed on your system
+  grch38-reference-genome-ensembl-v1 is not installed on your system
 
-  grch38-reference-genome-ensembl has not been installed by conda
+  grch38-reference-genome-ensembl-v1 has not been installed by conda
 
-  Installing grch38-reference-genome-ensembl
+  Installing grch38-reference-genome-ensembl-v1
   Solving environment:
 
    <span class="c1">## Package Plan ##</span>
@@ -204,14 +216,14 @@ $ ggd install grch38-reference-genome-ensembl
    environment location: &lt;conda root&gt;
 
      added / updated specs:
-        - grch38-reference-genome-ensembl
+        - grch38-reference-genome-ensembl-v1
 
 
   The following packages will be downloaded:
 
      package                            <span class="p">|</span>            build
     ------------------------------------<span class="p">|</span>-----------------
-     grch38-reference-genome-ensembl    <span class="p">|</span>                <span class="m">0</span>           <span class="m">6</span> KB  ggd-genomics
+     grch38-reference-genome-ensembl-v1 <span class="p">|</span>                <span class="m">0</span>           <span class="m">6</span> KB  ggd-genomics
 
   The following NEW packages will be INSTALLED:
 
@@ -219,7 +231,7 @@ $ ggd install grch38-reference-genome-ensembl
 
 
   Downloading and Extracting Packages
-  grch38-reference-genome-ensembl          <span class="p">|</span> <span class="m">6</span> KB      <span class="p">|</span> <span class="c1">###########################################################################################</span>
+  grch38-reference-genome-ensembl-v1       <span class="p">|</span> <span class="m">6</span> KB      <span class="p">|</span> <span class="c1">###########################################################################################</span>
   Preparing transaction: <span class="k">done</span>
   Verifying transaction: <span class="k">done</span>
   Executing transaction: <span class="k">done</span>
@@ -236,17 +248,21 @@ $ ggd show-env
 
     ***************************
     Active environment variables:
-    &gt; <span class="nv">$ggd_grch38_reference_genome</span>-ensembl
+    &gt; <span class="nv">$ggd_grch38_reference_genome</span>-ensembl_v1_dir
+    &gt; <span class="nv">$ggd_grch38_reference_genome</span>-ensembl_v1_file
     ***************************
 
-$ ggd list-files grch38-reference-genome-ensembl
+$ ggd list-files grch38-reference-genome-ensembl-v1
 
-  &lt;conda root&gt;/ share/ggd/Homo_sapiens/GRCh38/grch38-reference-genome-ensembl/1/grch38.fa
-  &lt;conda root&gt;/share/ggd/Homo_sapiens/GRCh38/grch38-reference-genome-ensembl/1/grch38.fa.fai
+  &lt;conda root&gt;/ share/ggd/Homo_sapiens/GRCh38/grch38-reference-genome-ensembl-ensembl-v1/1/grch38.fa
+  &lt;conda root&gt;/share/ggd/Homo_sapiens/GRCh38/grch38-reference-genome-ensembl-ensembl-v1/1/grch38.fa.fai
 
 
 <span class="c1">#******************************</span>
 <span class="c1">#4. Use files</span>
+<span class="c1">#    To use the downloaded data packages you can use the full file path from running `ggd list-files`</span>
+<span class="c1">#    or the environment variables created during installation</span>
+<span class="c1">#   For more info see the `Using installed data` tab.</span>
 <span class="c1">#******************************</span>
 </pre></div>
 </div>
@@ -308,6 +324,7 @@ ggd documentation</p>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="make-recipe.html">ggd make-recipe</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="make-recipe.html#using-ggd-make-recipe">Using ggd make-recipe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="make-recipe.html#data-recipe-standards">Data recipe standards</a></li>
 <li class="toctree-l2"><a class="reference internal" href="make-recipe.html#examples">Examples</a></li>
 </ul>
 </li>

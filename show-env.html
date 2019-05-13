@@ -125,10 +125,12 @@
 <p>ggd show-env is a tool used to show the ggd associated variables created during package installation
 for the current conda environment.</p>
 <p>During installation, ggd will place the processed files in a specific location on your system. To access
-these files ggd creates environment variables for a specific conda environment. These variables contain the
-directory path to the processed files. You can use <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">list-files</span></code> to find the file paths for a ggd data
+these files ggd creates upt to two environment variables for each data package within a specific conda environment.
+These variables contain the either the directory path to the processed files or the file path to the main data file.
+You can use <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">list-files</span></code> or <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">pkg-info</span></code> to find additional file paths for a ggd data
 package, however, these environment variables provide quick access to the processed files without having to know
 the file paths.</p>
+<p>For details on using these environment variables in your analysis scripts see: <span class="xref std std-ref">Using installed data</span>.</p>
 <div class="section" id="using-ggd-show-env">
 <h2>Using ggd show-env<a class="headerlink" href="#using-ggd-show-env" title="Permalink to this headline">¶</a></h2>
 <p>You can use ggd show-env to get a list of ggd data package enviroment variables.
@@ -151,6 +153,11 @@ Running <code class="code docutils literal notranslate"><span class="pre">ggd</s
 <h3>Additional argument explanation:<a class="headerlink" href="#additional-argument-explanation" title="Permalink to this headline">¶</a></h3>
 <p>There are no required arguments for using <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">show-env</span></code>, however, you can refine the results using
 the <code class="code docutils literal notranslate"><span class="pre">-p</span></code> flag.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Environemnt variables ending with <cite>_dir</cite> point to the directory path of the installed data package.</p>
+<p class="last">Environment variables ending with <cite>_file</cite> point to the main file from the installed data package.</p>
+</div>
 </div>
 </div>
 <div class="section" id="examples">
@@ -162,14 +169,22 @@ the <code class="code docutils literal notranslate"><span class="pre">-p</span><
   *****************************
 
   Active environment variables:
-  &gt; <span class="nv">$ggd_hg19_repeatmasker</span>
-  &gt; <span class="nv">$ggd_grch37_esp_variants</span>
-  &gt; <span class="nv">$ggd_hg38_repeatmasker</span>
-  &gt; <span class="nv">$ggd_grch37_reference_genome</span>
-  &gt; <span class="nv">$ggd_hg19_phastcons</span>
-  &gt; <span class="nv">$ggd_hg19_gaps</span>
-  &gt; <span class="nv">$ggd_hg38_simplerepeats</span>
-  &gt; <span class="nv">$ggd_hg19_simplerepeats</span>
+  &gt; <span class="nv">$ggd_hg19_repeatmasker_ucsc_v1_dir</span>
+  &gt; <span class="nv">$ggd_hg19_repeatmasker_ucsc_v1_file</span>
+  &gt; <span class="nv">$ggd_grch37_esp_variants_ensembl_v1_dir</span>
+  &gt; <span class="nv">$ggd_grch37_esp_variants_ensembl_v1_file</span>
+  &gt; <span class="nv">$ggd_hg38_repeatmasker_ucsc_v1_dir</span>
+  &gt; <span class="nv">$ggd_hg38_repeatmasker_ucsc_v1_file</span>
+  &gt; <span class="nv">$ggd_grch37_reference_genome_ensembl_v1_dir</span>
+  &gt; <span class="nv">$ggd_grch37_reference_genome_ensembl_v1_file</span>
+  &gt; <span class="nv">$ggd_hg19_phastcons_ucsc_v1_dir</span>
+  &gt; <span class="nv">$ggd_hg19_phastcons_ucsc_v1_file</span>
+  &gt; <span class="nv">$ggd_hg19_gaps_ucsc_v1_dir</span>
+  &gt; <span class="nv">$ggd_hg19_gaps_ucsc_v1_file</span>
+  &gt; <span class="nv">$ggd_hg38_simplerepeats_ucsc_v1_dir</span>
+  &gt; <span class="nv">$ggd_hg38_simplerepeats_ucsc_v1_file</span>
+  &gt; <span class="nv">$ggd_hg19_simplerepeats_ucsc_v1_dir</span>
+  &gt; <span class="nv">$ggd_hg19_simplerepeats_ucsc_v1_file</span>
   .
   .
   .
@@ -185,10 +200,14 @@ the <code class="code docutils literal notranslate"><span class="pre">-p</span><
   *****************************
 
   Active environment variables:
-  &gt; <span class="nv">$ggd_hg19_phastcons</span>
-  &gt; <span class="nv">$ggd_hg19_gaps</span>
-  &gt; <span class="nv">$ggd_hg19_repeatmasker</span>
-  &gt; <span class="nv">$ggd_hg19_simplerepeats</span>
+  &gt; <span class="nv">$ggd_hg19_phastcons_ucsc_v1_dir</span>
+  &gt; <span class="nv">$ggd_hg19_phastcons_ucsc_v1_file</span>
+  &gt; <span class="nv">$ggd_hg19_gaps_ucsc_v1_dir</span>
+  &gt; <span class="nv">$ggd_hg19_gaps_ucsc_v1_file</span>
+  &gt; <span class="nv">$ggd_hg19_repeatmasker_ucsc_v1_dir</span>
+  &gt; <span class="nv">$ggd_hg19_repeatmasker_ucsc_v1_file</span>
+  &gt; <span class="nv">$ggd_hg19_simplerepeats_ucsc_v1_dir</span>
+  &gt; <span class="nv">$ggd_hg19_simplerepeats_ucsc_v1_file</span>
   .
   .
   .
