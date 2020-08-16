@@ -1,57 +1,39 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>ggd make-recipe &#8212; ggd  documentation</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ggd make-recipe &#8212; GGD  documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/style.css" />
     <link rel="stylesheet" type="text/css" href="_static/font-awesome-4.7.0/css/font-awesome.min.css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="ggd check-recipe" href="check-recipe.html" />
     <link rel="prev" title="ggd show-env" href="show-env.html" />
-    <link href="https://fonts.googleapis.com/css?family=Lato|Raleway" rel="stylesheet"> 
-    <link rel="stylesheet" type="text/css" href="_static/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="_static/style.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jqc-1.12.3/dt-1.10.12/datatables.min.css"/>
+    
+    <link href="https://fonts.googleapis.com/css?family=Lato|Raleway" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
 
-    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-    <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <meta name="msapplication-TileImage" content="_static/ms-icon-144x144.png">
 
-    <script type="text/javascript" class="init">
-    $(document).ready(function() {
-        $('#recipestable').DataTable( {
-            "lengthMenu": [[25, 50, -1], [25, 50, "All"]]
-        } );
-    } );
-    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+
+
+
 
   </head><body>
   <div class="document">
@@ -60,7 +42,7 @@
         <div class="sphinxsidebarwrapper">
 <p class="logo">
   <a href="index.html">
-    <img class="logo" src="_static/logo/gogetdata_temp.png" alt="Logo"/>
+    <img class="logo" src="_static/logo/GoGetData_name_logo.png" alt="Logo"/>
     
   </a>
 </p>
@@ -76,19 +58,19 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="quick-start.html">GGD Quick Start</a></li>
 <li class="toctree-l1"><a class="reference internal" href="using-ggd.html">Using GGD</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ggd-search.html">ggd search</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install.html">ggd install</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uninstall.html">ggd uninstall</a></li>
-<li class="toctree-l1"><a class="reference internal" href="list-file.html">ggd list-files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pkg-info.html">ggd pkg-info</a></li>
-<li class="toctree-l1"><a class="reference internal" href="show-env.html">ggd show-env</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">ggd make-recipe</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#using-ggd-make-recipe">Using ggd make-recipe</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#data-recipe-standards">Data recipe standards</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#examples">Examples</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="GGD-CLI.html">GGD Commands</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ggd-search.html">ggd search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html">ggd install</a></li>
+<li class="toctree-l2"><a class="reference internal" href="predict-path.html">ggd predict-path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="uninstall.html">ggd uninstall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="list.html">ggd list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="list-file.html">ggd get-files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pkg-info.html">ggd pkg-info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="show-env.html">ggd show-env</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ggd make-recipe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="check-recipe.html">ggd check-recipe</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="check-recipe.html">ggd check-recipe</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contribute.html">Contribute</a></li>
 <li class="toctree-l1"><a class="reference internal" href="recipes.html">Available data packages</a></li>
 </ul>
@@ -101,17 +83,15 @@
   
 </ul>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="documentwrapper">
@@ -125,135 +105,159 @@
 <p>[<a class="reference internal" href="index.html#home-page"><span class="std std-ref">Click here to return to the home page</span></a>]</p>
 <p>ggd make-recipe is used to create a ggd data recipe from a bash script which contains the information on
 extracting and processing the data.</p>
+<p>This provides a simple resource to create a recipe where the users need only create the base script and
+ggd will generate the remainder of the pieces required for a ggd data recipe.</p>
 <ul class="simple">
-<li><strong>recipe</strong>: A data recipe is directory containing a set of files that contain information about the recipe.
+<li><p><strong>recipe</strong>: A data recipe is a directory containing a set of files that comprise information about the recipe.
 This includes: A meta.yaml file, which is the meta data information for the soon to be ggd data package;
-a post-link script, which contains the information about file and data management; and a recipe script, which
-contains the information on how to get the data and how to process it.</li>
-<li><strong>package</strong>: A data package is created from building the ggd data recipe. It is a bgzipped tar file that contains
-the built data recipe and additional metadata information for conda system handling.</li>
+a post-link script, which contains the information about file and data management; a recipe script, which
+contains the information on how to get the data and how to process it; and a checksum file, which is used
+to ensure that the contents of the data files installed from ggd have not changed.</p></li>
+<li><p><strong>package</strong>: A data package is created from building/packaging the ggd data recipe. It is a bgzipped tar
+file that contains the built data recipe and additional metadata information for conda system handling.</p></li>
 </ul>
 <p><code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">make-recipe</span></code> takes a bash script created by you and turns it into a data recipe. This data recipe will then be
 turned into a data package using <a class="reference internal" href="check-recipe.html#ggd-check-recipe"><span class="std std-ref">ggd check-recipe</span></a>. Finally, the new data package will
-be added to the ggd repo and ggd conda channel through a continuous integration system. For more details see
+be added to the ggd repo and ggd conda channel through an automatic continuous integration system. For more details see
 the <a class="reference internal" href="contribute.html#make-data-packages"><span class="std std-ref">contribute</span></a> documentation.</p>
-<p>The first step in this process is to create a bash script with instructions on downloading and data processing,
-then using <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">make-recipe</span></code> to create a ggd data recipe.</p>
+<p>The first step in this process is to create a bash script with instructions on downloading and processing the data,
+then using <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">make-recipe</span></code> to create a ggd data recipe</p>
 <div class="section" id="using-ggd-make-recipe">
 <h2>Using ggd make-recipe<a class="headerlink" href="#using-ggd-make-recipe" title="Permalink to this headline">¶</a></h2>
 <p>Creating a ggd recipe is easy using the <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">make-recipe</span></code> tool.
 Running <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">make-recipe</span> <span class="pre">-h</span></code> will give you the following help message:</p>
 <p>make-recipe arguments:</p>
-<table class="docutils option-list" frame="void" rules="none">
-<col class="option" />
-<col class="description" />
-<tbody valign="top">
-<tr><td class="option-group">
-<kbd><span class="option">-h</span>, <span class="option">--help</span></kbd></td>
-<td>show this help message and exit</td></tr>
-<tr><td class="option-group">
-<kbd><span class="option">/name</span></kbd></td>
-<td>(Positional) Name of recipe
-(‘/’ indicates a placeholder and is not part of the argument name)</td></tr>
-<tr><td class="option-group">
-<kbd><span class="option">/script</span></kbd></td>
-<td>(Positional) Bash script that contains the commands that build the recipe
-(‘/’ indicates a placeholder and is not part of the argument name)</td></tr>
-<tr><td class="option-group">
-<kbd><span class="option">-c</span>, <span class="option">--channel</span></kbd></td>
-<td>(Optional) The ggd channel to use. (Default = genomics)</td></tr>
-<tr><td class="option-group" colspan="2">
-<kbd><span class="option">-d <var>DEPENDENCY</var></span>, <span class="option">--dependency <var>DEPENDENCY</var></span></kbd></td>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 38%" />
+<col style="width: 63%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>ggd make-recipe</p></th>
+<th class="head"><p>Make a ggd data recipe from a bash script</p></th>
 </tr>
-<tr><td>&#160;</td><td>any software dependencies (in bioconda, conda-forge) or
-data-dependency (in ggd). May be as many times as needed.</td></tr>
-<tr><td class="option-group" colspan="2">
-<kbd><span class="option">-e <var>EXTRA_FILE</var></span>, <span class="option">--extra-file <var>EXTRA_FILE</var></span></kbd></td>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>-h, –help</p></td>
+<td><p>show this help message and exit</p></td>
 </tr>
-<tr><td>&#160;</td><td>any files that the recipe creates that are not a *.gz
-and *.gz.tbi pair. May be used more than once.</td></tr>
-<tr><td class="option-group">
-<kbd><span class="option">-p</span>, <span class="option">--platform</span></kbd></td>
-<td>(Optional) Whether to use noarch as the platfrom or the system
+<tr class="row-odd"><td><p>-c, –channel</p></td>
+<td><p>(Optional) The ggd channel to use. (Default = genomics)</p></td>
+</tr>
+<tr class="row-even"><td><p>-d, –dependency</p></td>
+<td><p>any software dependencies (in bioconda, conda-forge) or
+data-dependency (in ggd). May be used as many times as needed.</p></td>
+</tr>
+<tr class="row-odd"><td><p>-p, –platform</p></td>
+<td><p>(Optional) Whether to use noarch as the platform or the system
 platform. If set to ‘none’ the system platform will be
 used. (Default = noarch. Noarch means no architecture
-and is platform agnostic.)</td></tr>
-<tr><td class="option-group">
-<kbd><span class="option">-s</span>, <span class="option">--species</span></kbd></td>
-<td>(Required) Species recipe is for</td></tr>
-<tr><td class="option-group" colspan="2">
-<kbd><span class="option">-g <var>GENOME_BUILD</var></span>, <span class="option">--genome-build <var>GENOME_BUILD</var></span></kbd></td>
+and is platform agnostic.)</p></td>
 </tr>
-<tr><td>&#160;</td><td>(Required) Genome-build the recipe is for</td></tr>
-<tr><td class="option-group" colspan="2">
-<kbd><span class="option">--authors <var>AUTHORS</var></span></kbd></td>
+<tr class="row-even"><td><p>-s, –species</p></td>
+<td><p><strong>Required</strong> Species recipe is for</p></td>
 </tr>
-<tr><td>&#160;</td><td>(Required) Authors of the recipe</td></tr>
-<tr><td class="option-group" colspan="2">
-<kbd><span class="option">-g<var>v</var></span>, <span class="option">--ggd_version</span></kbd></td>
+<tr class="row-odd"><td><p>-g, –genome-build</p></td>
+<td><p><strong>Required</strong> Genome-build the recipe is for</p></td>
 </tr>
-<tr><td>&#160;</td><td>(Required) The version of the ggd package. (First time package = 1,
-updated package &gt; 1)</td></tr>
-<tr><td class="option-group" colspan="2">
-<kbd><span class="option">-d<var>v</var></span>, <span class="option">--data_version</span></kbd></td>
+<tr class="row-even"><td><p>–author</p></td>
+<td><p><strong>Required</strong> The author(s) of the data recipe being created, (This recipe)</p></td>
 </tr>
-<tr><td>&#160;</td><td>(Required) The version of the data (itself) being downloaded and
-processed (EX: dbsnp-127)</td></tr>
-<tr><td class="option-group" colspan="2">
-<kbd><span class="option">--summary <var>SUMMARY</var></span></kbd></td>
+<tr class="row-odd"><td><p>-pv, –package-version</p></td>
+<td><p><strong>Required</strong> The version of the ggd package. (First time package = 1,
+updated package &gt; 1)</p></td>
 </tr>
-<tr><td>&#160;</td><td>(Required) A comment describing the recipe</td></tr>
-<tr><td class="option-group" colspan="2">
-<kbd><span class="option">-k <var>KEYWORD</var></span>, <span class="option">--keyword <var>KEYWORD</var></span></kbd></td>
+<tr class="row-even"><td><p>-dv, –data-version</p></td>
+<td><p><strong>Required</strong> The version of the data (itself) being downloaded and
+processed (EX: dbsnp-127) If there is no data version
+apparent we recommend you use the date associated with
+the files or something else that can uniquely identify
+the ‘version’ of the data</p></td>
 </tr>
-<tr><td>&#160;</td><td>(Required) A keyword to associate with the recipe. may be specified
-more that once.</td></tr>
+<tr class="row-odd"><td><p>-dp, –data-provider</p></td>
+<td><p><strong>Required</strong> The data provider where the data was accessed.
+(Example: UCSC, Ensembl, gnomAD, etc.)</p></td>
+</tr>
+<tr class="row-even"><td><p>–summary</p></td>
+<td><p><strong>Required</strong> A detailed comment describing the recipe</p></td>
+</tr>
+<tr class="row-odd"><td><p>-k, –keyword</p></td>
+<td><p><strong>Required</strong> A keyword to associate with the recipe. May be
+specified more that once. Please add enough keywords
+to better describe and distinguish the recipe</p></td>
+</tr>
+<tr class="row-even"><td><p>-cb, –coordinate-base</p></td>
+<td><p><strong>Required</strong> The genomic coordinate basing for the file(s) in the
+recipe. That is, the coordinates exclusive start at genomic
+coordinate 0 or 1, and the end coordinate is either
+inclusive (everything up to and including the end
+coordinate) or exclusive (everything up to but not
+including the end coordinate) Files that do not have
+coordinate basing, like fasta files, specify NA for
+not applicable.</p></td>
+</tr>
+<tr class="row-odd"><td><p>-n, –name</p></td>
+<td><p><strong>Required</strong> The sub-name of the recipe being created. (e.g. cpg-
+islands, pfam-domains, gaps, etc.) This will not be
+the final name of the recipe, but will specific to the data gathered
+and processed by the recipe</p></td>
+</tr>
+<tr class="row-even"><td><p>script</p></td>
+<td><p><strong>Required</strong> bash script that contains the commands to obtain and
+process the data</p></td>
+</tr>
 </tbody>
 </table>
 <div class="section" id="additional-argument-explanation">
 <h3>Additional argument explanation:<a class="headerlink" href="#additional-argument-explanation" title="Permalink to this headline">¶</a></h3>
 <p>Required arguments:</p>
 <ul class="simple">
-<li><em>-s:</em> The <code class="code docutils literal notranslate"><span class="pre">-s</span></code> flag is used to declare the species of the data recipe.</li>
-<li><em>-g:</em> The <code class="code docutils literal notranslate"><span class="pre">-g</span></code> flag is used to declare the genome-build of the data recipe.</li>
-<li><em>–authors:</em> The <code class="code docutils literal notranslate"><span class="pre">--authors</span></code> flag is used to declare the authors of the recipe.</li>
-<li><em>-gv:</em> The <code class="code docutils literal notranslate"><span class="pre">-gv</span></code> flag is used to declare the ggd recipe version. (1 for first time recipe, and 2+ for updated recipes)</li>
-<li><em>-dv:</em> The <code class="code docutils literal notranslate"><span class="pre">-dv</span></code> flag is used to declare the version of the data being downloaded and processed. If a version is not
-available for the specific data, use something that can identify the data uniquely such as when the data was created.</li>
-<li><em>–summary:</em> The <code class="code docutils literal notranslate"><span class="pre">--summary</span></code> flag is used to provide a brief summary/description of the recipe.</li>
-<li><em>-k:</em> The <code class="code docutils literal notranslate"><span class="pre">-k</span></code> flag is used to declare keywords associated with the data and recipe. If there are multiple keywords, the <cite>-k</cite> flag
-should be used for each keywords. (Example: -k ref -k reference)</li>
-<li><em>name:</em> <code class="code docutils literal notranslate"><span class="pre">name</span></code> represents the name of the recipe. (Please provide a identifiable name with the data provider. Exaple: gaps-ucsc)</li>
-<li><em>script:</em> <code class="code docutils literal notranslate"><span class="pre">script</span></code> represents the bash script containing the information on data extraction and processing.</li>
+<li><p><em>-s:</em> The <code class="code docutils literal notranslate"><span class="pre">-s</span></code> flag is used to declare the species of the data recipe.</p></li>
+<li><p><em>-g:</em> The <code class="code docutils literal notranslate"><span class="pre">-g</span></code> flag is used to declare the genome-build of the data recipe.</p></li>
+<li><p><em>–authors:</em> The <code class="code docutils literal notranslate"><span class="pre">--authors</span></code> flag is used to declare the authors of the ggd data recipe.</p></li>
+<li><p><em>-pv:</em> The <code class="code docutils literal notranslate"><span class="pre">-pv</span></code> flag is used to declare the version of the ggd recipe being created. (1 for first time recipe, and 2+ for updated recipes)</p></li>
+<li><p><em>-dv:</em> The <code class="code docutils literal notranslate"><span class="pre">-dv</span></code> flag is used to declare the version of the data being downloaded and processed. If a version is not
+available for the specific data, use something that can identify the data uniquely such as when the date the data
+was created.</p></li>
+<li><p><em>-dp:</em> The <code class="code docutils literal notranslate"><span class="pre">-dp</span></code> flag is used to designate where the original data is coming from. Please make sure to indicate the data provider correctly to
+both give credit to the data create/provider as well as to help uniquely identify the data origin.</p></li>
+<li><p><em>–summary:</em> The <code class="code docutils literal notranslate"><span class="pre">--summary</span></code> flag is used to provide a summary/description of the recipe. Provide enough information to explain what the data is and
+where it is coming from.</p></li>
+<li><p><em>-k:</em> The <code class="code docutils literal notranslate"><span class="pre">-k</span></code> flag is used to declare keywords associated with the data and recipe. If there are multiple keywords, the <cite>-k</cite> flag
+should be used for each keywords. (Example: -k ref -k reference)</p></li>
+<li><p><em>-cb:</em> The <code class="code docutils literal notranslate"><span class="pre">-cb</span></code> flag designates the coordinate base of the data files created from this recipe. Please follow general genomic file
+coordinate standards based on the file format you are creating. Please indicate the coordinate basing of the file created here using this
+flag.</p></li>
+<li><p><em>-n:</em> <code class="code docutils literal notranslate"><span class="pre">-n</span></code> represents the sub-name of the recipe. Sub-name refers to a portion of the name that will help to uniquely identify the
+recipe from all other recipes based on the data the recipe creates. The full name will include the genome build the data provider and the
+ggd recipe version. <strong>DO NOT</strong> include the genome build, data provider, or ggd recipe version here. Those will be designated with other flags.
+The name should be specific to the data being processed or currated by the recipe. (Please provide an identifiable name. Example: cpg-islands)</p></li>
+<li><p><em>script:</em> <code class="code docutils literal notranslate"><span class="pre">script</span></code> represents the bash script containing the information on data extraction and processing.</p></li>
 </ul>
 <p>Optional arguments:</p>
 <ul class="simple">
-<li><em>-c:</em> The <code class="code docutils literal notranslate"><span class="pre">-c</span></code> flag is used to declare which ggd channel to use. (genomics is the default)</li>
-<li><em>-d:</em> The <code class="code docutils literal notranslate"><span class="pre">-d</span></code> flag is used to declare software dependencies in conda, bioconda, and conda-forge, and data-dependencies in
-ggd for creating the package. If there are not dependencies this flag is not needed.</li>
-<li><em>-e:</em> The <code class="code docutils literal notranslate"><span class="pre">-e</span></code> flag is used to declare any extra files created during the data processing. An extra file is any file that is
-not a .gz and .gz.tbi pair. If your final processed files are .gz and .gz.tbi pair this flag is not needed.</li>
-<li><em>-p:</em> The <code class="code docutils literal notranslate"><span class="pre">-p</span></code> flag is used to set the noarch platform or not. By default “noarch” is set, which means the package will be
+<li><p><em>-c:</em> The <code class="code docutils literal notranslate"><span class="pre">-c</span></code> flag is used to declare which ggd channel to use. (genomics is the default)</p></li>
+<li><p><em>-d:</em> The <code class="code docutils literal notranslate"><span class="pre">-d</span></code> flag is used to declare software dependencies in conda, bioconda, and conda-forge, and data-dependencies in
+ggd for creating the package. If there are no dependencies this flag is not needed.</p></li>
+<li><p><em>-p:</em> The <code class="code docutils literal notranslate"><span class="pre">-p</span></code> flag is used to set the noarch platform or not. By default “noarch” is set, which means the package will be
 built and installed with no architecture designation. This means it should be able to build on linux and macOS. If this is not
-true you will need to set <code class="code docutils literal notranslate"><span class="pre">-p</span></code> to “none”. The system you are using, linux or macOS will take then take the place of noarch.</li>
+true you will need to set <code class="code docutils literal notranslate"><span class="pre">-p</span></code> to “none”. The system you are using, linux or macOS will take then take the place of noarch.</p></li>
 </ul>
 </div>
 </div>
 <div class="section" id="data-recipe-standards">
 <h2>Data recipe standards<a class="headerlink" href="#data-recipe-standards" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>The name of the data recipe should be short, simple, but identifiable and unique. It should also include the data provide for where the data is coming from.
-For example, if you are creating a recipe that access the gaps track from UCSC you would provide the name <cite>gaps-ucsc</cite> for the name parameter when running
-<cite>ggd make-recipes</cite>. The final recipe name will contain the genome build, the user given name, and the version. (<cite>hg19-gaps-ucsc-v1</cite>)</li>
-<li>The data should be named after the recipe name. Please make sure all data that is produced by the recipe prior to the file extensions is named after the recipe name.</li>
-<li>ggd will provide some QC for vcf, bed, bam, gtf, gff, and fa files. (These files will need to have an associated index with them) If the data recipe created does not
-contain one of these file formats you will need to add the file name to the meta data using the <cite>-e</cite> flag when running <cite>ggd make-recipe</cite>.</li>
-<li>Data files should be labeld and sorted consistenly accross different genome builds. The data sorting standard for ggd data recipes is regulated by a tool called <cite>gsort</cite>.
-Please us <cite>gsort</cite> whenever you need to sort genomic data files. (<cite>gsort</cite> can be installed with conda.) The associated genome files used with gsort can be found at
-<a class="reference external" href="https://github.com/gogetdata/ggd-recipes/tree/master/genomes">ggd-recipes/genomes</a>. If the desired genome file for a specific genome build is not avaiable raise an
-issue on at <a class="reference external" href="https://github.com/gogetdata/ggd-recipes/issues">ggd-recipes::issues</a> and someone from the ggd team will help.
-ggd also uses <cite>check-sort-order</cite> for additional QC of the data. If you are unsure about the sort order of your data please
-test it with <cite>check-sort-order</cite></li>
+<li><p>The name of the data recipe should be short, simple, but identifiable and unique. For example, if you are creating a recipe that access
+the cpg-islands track from UCSC you would provide the name <cite>cpg-islands</cite> for the name parameter when running <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">make-recipes</span></code>.
+The final recipe name will contain the genome build, the name provider using <code class="code docutils literal notranslate"><span class="pre">-n</span></code>, the data provider, and the version. (<cite>hg19-cpg-islands-ucsc-v1</cite>)</p></li>
+<li><p>The data should be named after the recipe name. Please make sure all data that is produced by the recipe prior to the file extensions is named after the recipe name.</p></li>
+<li><p>Please add many keywords. Keywords help to distinguish and describe the data files. Please add as many keywords that can help to distinguish and describe the data</p></li>
+<li><p>Data files should be labeled and sorted consistently across different genome builds. The data sorting standard for ggd data recipes is regulated by a tool called <cite>gsort</cite>.
+Please us <cite>gsort</cite> whenever you need to sort genomic data files. (<cite>gsort</cite> can be installed with conda if it is not on your system now.) The associated genome files used
+with gsort can be found at <a class="reference external" href="https://github.com/gogetdata/ggd-recipes/tree/master/genomes">ggd-recipes/genomes</a>. If the desired genome file for a specific genome build
+is not available raise an issue on <a class="reference external" href="https://github.com/gogetdata/ggd-recipes/issues">ggd-recipes::issues</a> and someone from the ggd team will help.
+ggd also uses <cite>check-sort-order</cite> for additional QC of the data. If you are unsure about the sort order of your data please test it with <cite>check-sort-order</cite></p></li>
 </ol>
 </div>
 <div class="section" id="examples">
@@ -272,16 +276,27 @@ tabix hg19-gaps-ucsc-v1.bed.gz
 </pre></div>
 </div>
 <p>ggd make-recipe</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd make-recipe -s Homo_sapiens -g hg19 --author mjc --ggd_version <span class="m">1</span> --data_version <span class="m">27</span>-Apr-2009 --summary <span class="s1">&#39;Assembly gaps from USCS&#39;</span> -k gaps -k region gaps-ucsc get_data.sh
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd make-recipe -s Homo_sapiens -g hg19 --author mjc -pv <span class="m">1</span> -dv <span class="m">27</span>-Apr-2009 -dp UCSC --summary <span class="s1">&#39;Assembly gaps from USCS&#39;</span> -k gaps -k region -cb <span class="m">0</span>-based-inclusive -n gaps data_script.sh
+
+  :ggd:make-recipe: checking hg19
+
+  :ggd:make-recipe: Wrote output to hg19-gaps-ucsc-v1/
+
+  :ggd:make-recipe: To <span class="nb">test</span> that the recipe is working, and before pushing the new recipe to gogetdata/ggd-recipes, please run:
+      $ ggd check-recipe hg19-gaps-ucsc-v1/
 </pre></div>
 </div>
 <p>This code will create a new ggd recipe:</p>
 <blockquote>
 <div><ul class="simple">
-<li>Directory Name: <strong>hg19-gaps-ucsc-v1</strong></li>
-<li>Files: <strong>meta.yaml</strong>, <strong>post-link.sh</strong>, and <strong>recipe.sh</strong></li>
+<li><p>Directory Name: <strong>hg19-gaps-ucsc-v1</strong></p></li>
+<li><p>Files: <strong>meta.yaml</strong>, <strong>post-link.sh</strong>, <strong>recipe.sh</strong>, and <strong>checksums_file.txt</strong></p></li>
 </ul>
 </div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The directory name <strong>hg19-gaps-ucsc-v1</strong> is the ggd recipe</p>
+</div>
 </div>
 <div class="section" id="a-more-complex-ggd-recipe">
 <h3>2. A more complex ggd recipe<a class="headerlink" href="#a-more-complex-ggd-recipe" title="Permalink to this headline">¶</a></h3>
@@ -304,7 +319,7 @@ tabix -p vcf ESP6500SI.all.snps_indels.vcf.gz
 <span class="c1"># get handle for reference file</span>
 <span class="nv">reference_fasta</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>ggd list-files <span class="s1">&#39;grch37-reference-genome-1000g-v1&#39;</span> -s <span class="s1">&#39;Homo_sapiens&#39;</span> -g <span class="s1">&#39;GRCh37&#39;</span> -p <span class="s1">&#39;grch37-reference-genomie-1000g-v1.fa&#39;</span><span class="k">)</span><span class="s2">&quot;</span>
 
-<span class="c1"># get the santizer script</span>
+<span class="c1"># get the sanitizer script</span>
 wget --quiet https://raw.githubusercontent.com/arq5x/gemini/00cd627497bc9ede6851eae2640bdaff9f4edfa3/gemini/annotation_provenance/sanit
 
 <span class="c1"># sanitize</span>
@@ -333,16 +348,42 @@ rm sanitize-esp.py
 </pre></div>
 </div>
 <p>ggd make-recipe</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd make-recipe -s Homo_sapiens -g GRCh37 --author mjc --ggd_version <span class="m">1</span> --data_version ESP6500SI-V2 --summary <span class="s1">&#39;ESP variants (More Info: http://evs.gs.washington.edu/EVS/#tabs-7)&#39;</span> -k ESP esp-variants-uw get_data.sh
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd make-recipe <span class="se">\</span>
+      -s Homo_sapiens <span class="se">\</span>
+      -g GRCh37 <span class="se">\</span>
+      --author mjc <span class="se">\</span>
+      -pv <span class="m">1</span> <span class="se">\</span>
+      -dv ESP6500SI-V2 <span class="se">\</span>
+      -dp UW <span class="se">\</span>
+      --summary <span class="s1">&#39;ESP variants (More Info: http://evs.gs.washington.edu/EVS/#tabs-7)&#39;</span> <span class="se">\</span>
+      -k ESP <span class="se">\</span>
+      -k vcf-file <span class="se">\</span>
+      -cb <span class="m">1</span>-based-exclusive <span class="se">\</span>
+      -d grch37-reference-genome-1000g-v1 <span class="se">\</span>
+      -d gsort <span class="se">\</span>
+      -d vt <span class="se">\</span>
+      -n esp-variants <span class="se">\</span>
+      data_script.sh
+
+  :ggd:make-recipe: checking GRCh37
+
+  :ggd:make-recipe: Wrote output to grch37-esp-variants-uw-v1/
+
+  :ggd:make-recipe: To <span class="nb">test</span> that the recipe is working, and before pushing the new recipe to gogetdata/ggd-recipes, please run:
+    $ ggd check-recipe grch37-esp-variants-uw-v1/
 </pre></div>
 </div>
 <p>This code will create a new ggd recipe:</p>
 <blockquote>
 <div><ul class="simple">
-<li>Directory Name: <strong>grch37-esp-variants-uw-v1</strong></li>
-<li>Files: <strong>meta.yaml</strong>, <strong>post-link.sh</strong>, <strong>recipe.sh</strong></li>
+<li><p>Directory Name: <strong>grch37-esp-variants-uw-v1</strong></p></li>
+<li><p>Files: <strong>meta.yaml</strong>, <strong>post-link.sh</strong>, <strong>recipe.sh</strong>, and <strong>checksums_file.txt</strong></p></li>
 </ul>
 </div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The directory name <strong>grch37-esp-variants-uw-v1</strong> is the ggd recipe</p>
+</div>
 </div>
 </div>
 </div>
@@ -355,10 +396,10 @@ rm sanitize-esp.py
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2016-2019, The gogetdata team.
+      &copy;2016-2020, The GoGetData team.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.4</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.2.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

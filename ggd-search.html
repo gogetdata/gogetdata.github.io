@@ -1,57 +1,39 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>ggd search &#8212; ggd  documentation</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ggd search &#8212; GGD  documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/style.css" />
     <link rel="stylesheet" type="text/css" href="_static/font-awesome-4.7.0/css/font-awesome.min.css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="ggd install" href="install.html" />
-    <link rel="prev" title="Using GGD" href="using-ggd.html" />
-    <link href="https://fonts.googleapis.com/css?family=Lato|Raleway" rel="stylesheet"> 
-    <link rel="stylesheet" type="text/css" href="_static/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="_static/style.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jqc-1.12.3/dt-1.10.12/datatables.min.css"/>
+    <link rel="prev" title="GGD Commands" href="GGD-CLI.html" />
+    
+    <link href="https://fonts.googleapis.com/css?family=Lato|Raleway" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
 
-    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-    <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <meta name="msapplication-TileImage" content="_static/ms-icon-144x144.png">
 
-    <script type="text/javascript" class="init">
-    $(document).ready(function() {
-        $('#recipestable').DataTable( {
-            "lengthMenu": [[25, 50, -1], [25, 50, "All"]]
-        } );
-    } );
-    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+
+
+
 
   </head><body>
   <div class="document">
@@ -60,7 +42,7 @@
         <div class="sphinxsidebarwrapper">
 <p class="logo">
   <a href="index.html">
-    <img class="logo" src="_static/logo/gogetdata_temp.png" alt="Logo"/>
+    <img class="logo" src="_static/logo/GoGetData_name_logo.png" alt="Logo"/>
     
   </a>
 </p>
@@ -76,18 +58,19 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="quick-start.html">GGD Quick Start</a></li>
 <li class="toctree-l1"><a class="reference internal" href="using-ggd.html">Using GGD</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">ggd search</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#using-ggd-search">Using ggd search</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#example">Example</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="GGD-CLI.html">GGD Commands</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ggd search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html">ggd install</a></li>
+<li class="toctree-l2"><a class="reference internal" href="predict-path.html">ggd predict-path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="uninstall.html">ggd uninstall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="list.html">ggd list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="list-file.html">ggd get-files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pkg-info.html">ggd pkg-info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="show-env.html">ggd show-env</a></li>
+<li class="toctree-l2"><a class="reference internal" href="make-recipe.html">ggd make-recipe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="check-recipe.html">ggd check-recipe</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="install.html">ggd install</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uninstall.html">ggd uninstall</a></li>
-<li class="toctree-l1"><a class="reference internal" href="list-file.html">ggd list-files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pkg-info.html">ggd pkg-info</a></li>
-<li class="toctree-l1"><a class="reference internal" href="show-env.html">ggd show-env</a></li>
-<li class="toctree-l1"><a class="reference internal" href="make-recipe.html">ggd make-recipe</a></li>
-<li class="toctree-l1"><a class="reference internal" href="check-recipe.html">ggd check-recipe</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contribute.html">Contribute</a></li>
 <li class="toctree-l1"><a class="reference internal" href="recipes.html">Available data packages</a></li>
 </ul>
@@ -100,17 +83,15 @@
   
 </ul>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="documentwrapper">
@@ -122,80 +103,85 @@
   <div class="section" id="ggd-search">
 <span id="id1"></span><h1>ggd search<a class="headerlink" href="#ggd-search" title="Permalink to this headline">¶</a></h1>
 <p>[<a class="reference internal" href="index.html#home-page"><span class="std std-ref">Click here to return to the home page</span></a>]</p>
-<p>ggd search is used to search for a data package stored within the ggd system. It is dependent on the ggd channel
+<p>ggd search is used to search for a data package stored within the ggd ecosystem. It is dependent on the ggd channel
 provided.</p>
 <div class="section" id="using-ggd-search">
 <h2>Using ggd search<a class="headerlink" href="#using-ggd-search" title="Permalink to this headline">¶</a></h2>
 <p>Once ggd is installed on your system you can run <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">search</span></code> to search for available data packages.
-Running <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">search</span> <span class="pre">-h</span></code> will give you the following help message:</p>
+Running <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">search</span> <span class="pre">-h</span></code> will give you the a similar help message as below:</p>
 <p>Search arguments:</p>
-<table class="docutils option-list" frame="void" rules="none">
-<col class="option" />
-<col class="description" />
-<tbody valign="top">
-<tr><td class="option-group">
-<kbd><span class="option">-h</span>, <span class="option">--help</span></kbd></td>
-<td>show this help message and exit</td></tr>
-<tr><td class="option-group" colspan="2">
-<kbd><span class="option">-t <var>TERM</var></span>, <span class="option">--term <var>TERM</var></span></kbd></td>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>ggd search</p></th>
+<th class="head"><p>Search for available ggd data packages. Results are filtered by match score from high to low.
+(Only 5 results will be reported unless the -dn flag is changed)</p></th>
 </tr>
-<tr><td>&#160;</td><td>(<strong>Required</strong>) term(s) upon which to search. Multiple terms can be
-specified as a space-delimited list, e.g. ‘-t reference genome’.</td></tr>
-<tr><td class="option-group" colspan="2">
-<kbd><span class="option">-g <var>GENOME_BUILD</var></span>, <span class="option">--genome_build <var>GENOME_BUILD</var></span></kbd></td>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>-h, –help</p></td>
+<td><p>show this help message and exit</p></td>
 </tr>
-<tr><td>&#160;</td><td>(Optional) The genome build of the desired recipe. This is used
-to filter the search results on a specific “genome build”. This
-flag is not required, however, if provided the resulting search
-will be filtered to only include data packages with this genome
-build.</td></tr>
-<tr><td class="option-group" colspan="2">
-<kbd><span class="option">-s <var>SPECIES</var></span>, <span class="option">--species <var>SPECIES</var></span></kbd></td>
+<tr class="row-odd"><td><p>search_term
+(Positional Argument)</p></td>
+<td><p><strong>Required</strong> The term(s) to search for. Multiple terms can be used. Example:
+‘ggd search reference genome’, where “reference” and “genome” are the search terms</p></td>
 </tr>
-<tr><td>&#160;</td><td>(Optional) The species for the desired recipe. This is used to
-filter the search results on a specific “species”. Only data
-packages for that specific species will be displayed. Species is
-limited to Drosophila_melanogaster, Homo_sapiens, Canis_familiaris, and
-Mus_musculus.</td></tr>
-<tr><td class="option-group" colspan="2">
-<kbd><span class="option">-k <var>KEYWORD</var></span>, <span class="option">--keyword <var>KEYWORD</var></span></kbd></td>
+<tr class="row-even"><td><p>-g, –genome_build</p></td>
+<td><p>(Optional) Filter results by the genome build of the desired recipe</p></td>
 </tr>
-<tr><td>&#160;</td><td>(Optional) Filter based on keyword(s) used to describe the recipe.
-Multiple keywords can be used, e.g. ‘-k ref reference genome’.</td></tr>
-<tr><td class="option-group" colspan="2">
-<kbd><span class="option">-m <var>MATCH_SCORE</var></span>, <span class="option">--match_score <var>MATCH_SCORE</var></span></kbd></td>
+<tr class="row-odd"><td><p>-s, –species</p></td>
+<td><p>(Optional) Filter results by the species for the desired recipe</p></td>
 </tr>
-<tr><td>&#160;</td><td>(Optional) A score between 0 and 100 to use percent match between
-the search term(s) and the ggd-recipes. This represents the “match”
-score to use for searching. A fuzzy word match is used to identify
-similar packages to the terms that were searched, and the match
-score defines which packages will be displayed based on a cutoff.
-A default match score cutoff is provided, but this flag can be
-used to provide more strict or more lenient search results.</td></tr>
-<tr><td class="option-group" colspan="2">
-<kbd><span class="option">-c <var>CHANNEL</var></span>, <span class="option">--channel <var>CHANNEL</var></span></kbd></td>
+<tr class="row-even"><td><p>-dn, –display-number</p></td>
+<td><p>(Optional) The number of search results to display. (Default = 5)</p></td>
 </tr>
-<tr><td>&#160;</td><td>(Optional) The ggd channel to search. (Default = genomics)</td></tr>
+<tr class="row-odd"><td><p>-m, –match_score</p></td>
+<td><p>(Optional) A score between 0 and 100 to use to filter the results by. (Default = 75).
+The lower the number the more results will be output”</p></td>
+</tr>
+<tr class="row-even"><td><p>-c, –channel</p></td>
+<td><p>(Optional) The ggd channel to search. (Default = genomics)</p></td>
+</tr>
 </tbody>
 </table>
-<p>Any combination of search flags can be used to search for a package with the exception of the -t flag, which is required.</p>
+<p>Any combination of search terms can be used to search for a package.</p>
 <div class="section" id="additional-argument-explanation">
 <h3>Additional argument explanation:<a class="headerlink" href="#additional-argument-explanation" title="Permalink to this headline">¶</a></h3>
 <p>Required arguments:</p>
 <ul class="simple">
-<li><em>-t:</em> The <code class="code docutils literal notranslate"><span class="pre">-t</span></code> flag represents the “terms” to search for. At least one search term is required, but multiple can be provided</li>
+<li><p><em>search_term:</em> The <code class="code docutils literal notranslate"><span class="pre">search_term</span></code> is a positional argument that represents the “terms” to search for. At least one search term is required, but multiple can be provided
+<strong>NOTE: You do not need to add the keyword</strong> <code class="code docutils literal notranslate"><span class="pre">search_term</span></code>.</p></li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the genome build or the species is added to the search terms the results will be filtered based on the species and/or genome build provided. (The genome build and/or species
+need to be spelled the same as the choices for the <code class="code docutils literal notranslate"><span class="pre">-g</span></code> or <code class="code docutils literal notranslate"><span class="pre">-s</span></code> flags</p>
+</div>
 <p>Optional arguments:</p>
-<ul class="simple">
-<li><em>-g:</em> The <code class="code docutils literal notranslate"><span class="pre">-g</span></code> flag is used to filter the search results on a specific “genome build”. This flag is not required, however, if
-provided the resulting search will be filtered to only include data packages with that genome build.</li>
-<li><em>-s:</em> The <code class="code docutils literal notranslate"><span class="pre">-s</span></code> flag is used to filter the search results on a specific “species”. Only data packages for that specific species
-will be displayed.</li>
-<li><em>-k:</em> The <code class="code docutils literal notranslate"><span class="pre">-k</span></code> flag is used to filter the search results based on keywords assigned to a pacakge.</li>
-<li><em>-m:</em> The <code class="code docutils literal notranslate"><span class="pre">-m</span></code> flag represents the “match” score to use for searcing. A fuzzy word match is used to identify similar packages
+<ul>
+<li><p><em>-g:</em> The <code class="code docutils literal notranslate"><span class="pre">-g</span></code> flag is used to filter the search results on a specific “genome build”. This flag is not required, however, if
+provided the resulting search will be filtered to only include data packages with that genome build.</p></li>
+<li><p><em>-s:</em> The <code class="code docutils literal notranslate"><span class="pre">-s</span></code> flag is used to filter the search results on a specific “species”. Only data packages for that specific species
+will be displayed.</p></li>
+<li><p><em>-dn:</em> The <code class="code docutils literal notranslate"><span class="pre">-dn</span></code> flag is used to filter the search results based on the number of results to display. Default = 5. If more than
+5 results are available and you don’t see the desired package in the results list, add the <code class="code docutils literal notranslate"><span class="pre">-dn</span> <span class="pre">{N}</span></code> flag where <em>N</em> is the number
+of results to show.</p></li>
+<li><p><em>-m:</em> The <code class="code docutils literal notranslate"><span class="pre">-m</span></code> flag represents the “match” score to use for searching. A fuzzy word match is used to identify similar packages
 to the terms search for, and the match score defines which packages will be displayed based on a cutoff. A default match score
-cutoff is provided, but this flag can be used to provide more strict or more lenient search results.</li>
-<li><em>-c:</em> The <code class="code docutils literal notranslate"><span class="pre">-c</span></code> flag is used to set the ggd channel to search in. The ggd-genomics channel is set by default.</li>
+cutoff is provided, but this flag can be used to provide more strict or more lenient search results. (Default = 75)</p></li>
+<li><p><em>-c:</em> The <code class="code docutils literal notranslate"><span class="pre">-c</span></code> flag is used to set the ggd channel to search in. The <em>genomics</em> channel is set by default.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There is no limit to the number of search terms you can use. However, the more search terms used will result in an increase in the number of results returned.</p>
+<p>Additionally, the genome build or species can be used as a search term. If they are spelled correctly, regardless of case, the results will be filtered by that genome
+build and/or species. If a genome build or species is added as a search term and is not spelled correctly the results will NOT be filtered by the intended genome build
+and/or species.</p>
+</div>
+</li>
 </ul>
 </div>
 </div>
@@ -204,62 +190,559 @@ cutoff is provided, but this flag can be used to provide more strict or more len
 <p>Some examples of using the <cite>ggd search</cite> tool:</p>
 <div class="section" id="simple-example-with-one-search-term">
 <h3>1. Simple example with one search term:<a class="headerlink" href="#simple-example-with-one-search-term" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd search -t reference
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd search reference
 
-  grch37-reference-genome-1000g-v1
-   Summary: GRCh37 reference genome from <span class="m">1000</span> genomes
-   Species: Homo_sapiens
-   Genome Build: GRCh37
-   Keywords: ref, reference
-   Data Version: phase2_reference
 
-   To install run:
-       ggd install grch37-reference-genome-1000g-v1
+  ----------------------------------------------------------------------------------------------------
 
-  grch38-reference-genome-ensembl-v1
+    mm10-reference-ucsc-v1
+    <span class="o">======================</span>
+
+    Summary: Reference genome <span class="k">for</span> mouse from UCSC
+
+    Species: Mus_musculus
+
+    Genome Build: mm10
+
+    Keywords: reference, ucsc, mouse, mm10, reference-genome, fasta-file
+
+    Data Version: <span class="m">07</span>-Feb-2012
+
+
+    To install run:
+        ggd install mm10-reference-ucsc-v1
+
+  ----------------------------------------------------------------------------------------------------
+
+    hg19-reference-genome-ucsc-v1
+    <span class="o">=============================</span>
+
+    Summary: The hg19 soft masked genomic DNA seqeunce reference genome from UCSC <span class="o">(</span>patch <span class="m">13</span><span class="o">)</span>. Repeats found by <span class="s1">&#39;RepeatMasker&#39;</span> and <span class="s1">&#39;Tandem Repeat Finder&#39;</span> are shown as lower <span class="k">case</span>. Non repeating seqeunce are shown as upper <span class="k">case</span>.
+
+    Species: Homo_sapiens
+
+    Genome Build: hg19
+
+    Keywords: ref, reference-genome, fasta-file, soft-masked
+
+    Data Provider: UCSC
+
+    Data Version: <span class="m">17</span>-Jan-2020
+
+    File type<span class="o">(</span>s<span class="o">)</span>: fa
+
+    Data file coordinate base: NA
+
+    Included Data Files:
+        hg19-reference-genome-ucsc-v1.fa.gz
+        hg19-reference-genome-ucsc-v1.fa.gz.fai
+        hg19-reference-genome-ucsc-v1.fa.gz.gzi
+
+    Approximate Data File Sizes:
+        hg19-reference-genome-ucsc-v1.fa.gz: <span class="m">997</span>.23M
+        hg19-reference-genome-ucsc-v1.fa.gz.fai: <span class="m">12</span>.23K
+        hg19-reference-genome-ucsc-v1.fa.gz.gzi: <span class="m">808</span>.71K
+
+
+    To install run:
+        ggd install hg19-reference-genome-ucsc-v1
+
+  ----------------------------------------------------------------------------------------------------
+
+    hg38-reference-genome-ucsc-v1
+    <span class="o">=============================</span>
+
+    Summary: The hg38 soft masked genomic DNA seqeunce reference genome from UCSC <span class="o">(</span>patch <span class="m">12</span><span class="o">)</span>. Repeats found by <span class="s1">&#39;RepeatMasker&#39;</span> and <span class="s1">&#39;Tandem Repeat Finder&#39;</span> are shown as lower <span class="k">case</span>. Non repeating seqeunce are shown as upper <span class="k">case</span>.
+
+    Species: Homo_sapiens
+
+    Genome Build: hg38
+
+    Keywords: ref, reference-genome, fasta-file, soft-masked
+
+    Data Provider: UCSC
+
+    Data Version: <span class="m">10</span>-Aug-2018
+
+    File type<span class="o">(</span>s<span class="o">)</span>: fa
+
+    Data file coordinate base: NA
+
+    Included Data Files:
+        hg38-reference-genome-ucsc-v1.fa.gz
+        hg38-reference-genome-ucsc-v1.fa.gz.fai
+        hg38-reference-genome-ucsc-v1.fa.gz.gzi
+
+    Approximate Data File Sizes:
+        hg38-reference-genome-ucsc-v1.fa.gz: <span class="m">1</span>.02G
+        hg38-reference-genome-ucsc-v1.fa.gz.fai: <span class="m">25</span>.61K
+        hg38-reference-genome-ucsc-v1.fa.gz.gzi: <span class="m">814</span>.34K
+
+
+    To install run:
+        ggd install hg38-reference-genome-ucsc-v1
+
+  ----------------------------------------------------------------------------------------------------
+
+    grch37-reference-genome-1000g-v1
+    <span class="o">================================</span>
+
+    Summary: GRCh37 reference genome from <span class="m">1000</span> genomes
+
+    Species: Homo_sapiens
+
+    Genome Build: GRCh37
+
+    Keywords: ref, reference, fasta-file
+
+    Data Version: phase2_reference
+
+
+    To install run:
+        ggd install grch37-reference-genome-1000g-v1
+
+  ----------------------------------------------------------------------------------------------------
+
+    hg19-reference-genome-gencode-v1
+    <span class="o">================================</span>
+
+    Summary: The GRCh37 DNA nucleotide sequence primary assembly. Sequence regions include reference chromsomes and scaffoldings. Mapped to hg19
+
+    Species: Homo_sapiens
+
+    Genome Build: hg19
+
+    Keywords: Reference-Genome, Fasta, DNA-Sequence, GENCODE-34, Fasta-sequence, primary-assemlby
+
+    Data Provider: GENCODE
+
+    Data Version: release-34
+
+    File type<span class="o">(</span>s<span class="o">)</span>: fa
+
+    Data file coordinate base: NA
+
+    Included Data Files:
+        hg19-reference-genome-gencode-v1.fa.gz
+        hg19-reference-genome-gencode-v1.fa.gz.fai
+        hg19-reference-genome-gencode-v1.fa.gz.gzi
+
+    Approximate Data File Sizes:
+        hg19-reference-genome-gencode-v1.fa.gz: <span class="m">881</span>.99M
+        hg19-reference-genome-gencode-v1.fa.gz.fai: <span class="m">2</span>.82K
+        hg19-reference-genome-gencode-v1.fa.gz.gzi: <span class="m">772</span>.92K
+
+
+    To install run:
+        ggd install hg19-reference-genome-gencode-v1
+
+  ----------------------------------------------------------------------------------------------------
+
+
+  :ggd:search: NOTE  Only showing results <span class="k">for</span> top <span class="m">5</span> of <span class="m">30</span> matches.
+  :ggd:search: To display all matches append your search <span class="nb">command</span> with <span class="s1">&#39;-dn 30&#39;</span>
+
+       ggd search reference -dn <span class="m">30</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="simple-example-with-two-search-terms">
 <h3>2. Simple example with two search terms:<a class="headerlink" href="#simple-example-with-two-search-terms" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd search -t repeat masker
-
-  hg38-repeatmasker-ucsc-v1
-   Summary: RepeatMasker track from UCSC
-   Species: Homo_sapiens
-   Genome Build: hg38
-   Keywords: rmsk, region
-   Data Version: <span class="m">06</span>-Mar-2014
-
-   To install run:
-       ggd install hg38-repeatmasker-ucsc-v1
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd search chrom sizes
 
 
-  hg19-repeatmasker-ucsc-v1
-   Summary: RepeatMasker track from UCSC
-   Species: Homo_sapiens
-   Genome Build: hg19
-   Keywords: rmsk, region
-   Data Version: <span class="m">27</span>-Apr-2009
+  ----------------------------------------------------------------------------------------------------
 
-   To install run:
-       ggd install hg19-repeatmasker-ucsc-v1
+    hg19-chromsizes-ggd-v1
+    <span class="o">======================</span>
+
+    Summary: Chromosome lengths <span class="k">for</span> hg19
+
+    Species: Homo_sapiens
+
+    Genome Build: hg19
+
+    Keywords: genome, chromosome, lengths, sizes
+
+    Data Provider: GGD
+
+    Data Version: <span class="m">16</span>-Apirl-2020
+
+    File type<span class="o">(</span>s<span class="o">)</span>: txt
+
+    Data file coordinate base: NA
+
+    Included Data Files:
+        hg19-chromsizes-ggd-v1.txt
+
+    Approximate Data File Sizes:
+        hg19-chromsizes-ggd-v1.txt: <span class="m">1</span>.99K
+
+
+    To install run:
+        ggd install hg19-chromsizes-ggd-v1
+
+  ----------------------------------------------------------------------------------------------------
+
+    hg38-chromsizes-ggd-v1
+    <span class="o">======================</span>
+
+    Summary: Chromosome lengths <span class="k">for</span> hg38
+
+    Species: Homo_sapiens
+
+    Genome Build: hg38
+
+    Keywords: genome, chromosome, lengths, sizes
+
+    Data Provider: GGD
+
+    Data Version: <span class="m">16</span>-Apirl-2020
+
+    File type<span class="o">(</span>s<span class="o">)</span>: txt
+
+    Data file coordinate base: NA
+
+    Included Data Files:
+        hg38-chromsizes-ggd-v1.txt
+
+    Approximate Data File Sizes:
+        hg38-chromsizes-ggd-v1.txt: <span class="m">15</span>.53K
+
+
+    To install run:
+        ggd install hg38-chromsizes-ggd-v1
+
+  ----------------------------------------------------------------------------------------------------
+
+    grch37-chromsizes-ggd-v1
+    <span class="o">========================</span>
+
+    Summary: Chromosome lengths <span class="k">for</span> GRCh37
+
+    Species: Homo_sapiens
+
+    Genome Build: GRCh37
+
+    Keywords: genome, chromosome, lengths, sizes
+
+    Data Provider: GGD
+
+    Data Version: <span class="m">16</span>-Apirl-2020
+
+    File type<span class="o">(</span>s<span class="o">)</span>: txt
+
+    Data file coordinate base: NA
+
+    Included Data Files:
+        grch37-chromsizes-ggd-v1.txt
+
+    Approximate Data File Sizes:
+        grch37-chromsizes-ggd-v1.txt: <span class="m">5</span>.17K
+
+
+    To install run:
+        ggd install grch37-chromsizes-ggd-v1
+
+  ----------------------------------------------------------------------------------------------------
+
+    grch38-chromsizes-ggd-v1
+    <span class="o">========================</span>
+
+    Summary: Chromosome lengths <span class="k">for</span> GRCh38
+
+    Species: Homo_sapiens
+
+    Genome Build: GRCh38
+
+    Keywords: genome, chromosome, lengths, sizes
+
+    Data Provider: GGD
+
+    Data Version: <span class="m">16</span>-April-2020
+
+    File type<span class="o">(</span>s<span class="o">)</span>: txt
+
+    Data file coordinate base: NA
+
+    Included Data Files:
+        grch38-chromsizes-ggd-v1.txt
+
+    Approximate Data File Sizes:
+        grch38-chromsizes-ggd-v1.txt: <span class="m">11</span>.14K
+
+
+    To install run:
+        ggd install grch38-chromsizes-ggd-v1
+
+  ----------------------------------------------------------------------------------------------------
 </pre></div>
 </div>
 </div>
-<div class="section" id="example-using-g-s-and-k-flags-to-filter-the-results">
-<h3>3. Example using <code class="docutils literal notranslate"><span class="pre">-g</span></code>, <code class="docutils literal notranslate"><span class="pre">-s</span></code>, and <code class="docutils literal notranslate"><span class="pre">-k</span></code> flags to filter the results:<a class="headerlink" href="#example-using-g-s-and-k-flags-to-filter-the-results" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd search -t reference genome -g grch37 -s Homo_sapiens -k ref
+<div class="section" id="simple-example-with-the-genome-build-as-a-search-term">
+<h3>3. Simple example with the genome build as a search term:<a class="headerlink" href="#simple-example-with-the-genome-build-as-a-search-term" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd search repeat masker hg19
 
-  grch37-reference-genome-1000g-v1
-   Summary: GRCh37 reference genome from <span class="m">1000</span> genomes
-   Species: Homo_sapiens
-   Genome Build: GRCh37
-   Keywords: ref, reference
-   Data Version: phase2_reference
+  ----------------------------------------------------------------------------------------------------
 
-   To install run:
-       ggd install grch37-reference-genome-1000g-v1
+    hg19-repeatmasker-ucsc-v1
+    <span class="o">=========================</span>
+
+    Summary: RepeatMasker track from UCSC in bed format. Interspersed repeats and low complexity sequences identified using the RepeatMasker program. Scaffoldings missing from the GGD hg19.genome file are removed.
+
+    Species: Homo_sapiens
+
+    Genome Build: hg19
+
+    Keywords: rmsk, region, low-complexity-repeats, SINE, ALUs, LINE, LTR, DNA-repeat-elements, simple-repeats, RNA-repeats
+
+    Data Provider: UCSC
+
+    Data Version: <span class="m">22</span>-Mar-2020
+
+    File type<span class="o">(</span>s<span class="o">)</span>: bed
+
+    Data file coordinate base: <span class="m">0</span>-based-inclusive
+
+    Included Data Files:
+        hg19-repeatmasker-ucsc-v1.bed.gz
+        hg19-repeatmasker-ucsc-v1.bed.gz.tbi
+
+    Approximate Data File Sizes:
+        hg19-repeatmasker-ucsc-v1.bed.gz: <span class="m">114</span>.62M
+        hg19-repeatmasker-ucsc-v1.bed.gz.tbi: <span class="m">526</span>.98K
+
+
+    To install run:
+        ggd install hg19-repeatmasker-ucsc-v1
+
+  ----------------------------------------------------------------------------------------------------
+
+    hg19-simple-repeats-ucsc-v1
+    <span class="o">===========================</span>
+
+    Summary: Simple repeats track from UCSC. Simple tandem repeats and imperfect repeats identified by the Tandem Repeats Finder <span class="o">(</span>TRF<span class="o">)</span> algorithm. Any scaffoldings not in the hg19.genome file are removed from the final file
+
+    Species: Homo_sapiens
+
+    Genome Build: hg19
+
+    Keywords: simrep, simple-repeats, repeats, tandem-repeats, simple-tandem-repeats
+
+    Data Provider: UCSC
+
+    Data Version: <span class="m">22</span>-Mar-2020
+
+    File type<span class="o">(</span>s<span class="o">)</span>: bed
+
+    Data file coordinate base: <span class="m">0</span>-based-inclusive
+
+    Included Data Files:
+        hg19-simple-repeats-ucsc-v1.bed.gz
+        hg19-simple-repeats-ucsc-v1.bed.gz.tbi
+
+    Approximate Data File Sizes:
+        hg19-simple-repeats-ucsc-v1.bed.gz: <span class="m">25</span>.58M
+        hg19-simple-repeats-ucsc-v1.bed.gz.tbi: <span class="m">1</span>.35M
+
+
+    To install run:
+        ggd install hg19-simple-repeats-ucsc-v1
+
+  ----------------------------------------------------------------------------------------------------
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-using-g-and-s-flags-to-filter-the-results">
+<h3>4. Example using <code class="docutils literal notranslate"><span class="pre">-g</span></code> and <code class="docutils literal notranslate"><span class="pre">-s</span></code> flags to filter the results:<a class="headerlink" href="#example-using-g-and-s-flags-to-filter-the-results" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd search autosomal-dominant  -g GRCh37 -s Homo_sapiens
+
+  ----------------------------------------------------------------------------------------------------
+
+    grch37-autosomal-dominant-genes-berg-v1
+    =======================================
+
+    Summary: CDS region genomic coordinates, along with the compliment coordinates, for OMIM disease genes (as of June 2011) deemed to follow autosomal dominant inheritance. (Assembled by Macarthur Lab). Berg et al, 2013:  (https://www.ncbi.nlm.nih.gov/pubmed/22995991).
+
+    Species: Homo_sapiens
+
+    Genome Build: GRCh37
+
+    Keywords: genes, autosomal-dominant, disease, Berg_et_al, AD, OMIM, gene_coordinates, CDS-regions
+
+    Data Provider: berg
+
+    Data Version: 1-15-2013
+
+    File type(s): bed
+
+    Data file coordinate base: 0-based-inclusive
+
+    Included Data Files:
+        grch37-autosomal-dominant-genes-berg-v1.bed.gz
+        grch37-autosomal-dominant-genes-berg-v1.bed.gz.tbi
+        grch37-autosomal-dominant-genes-berg-v1.compliment.bed.gz
+        grch37-autosomal-dominant-genes-berg-v1.compliment.bed.gz.tbi
+
+    Approximate Data File Sizes:
+        grch37-autosomal-dominant-genes-berg-v1.bed.gz: 119.97K
+        grch37-autosomal-dominant-genes-berg-v1.bed.gz.tbi: 27.12K
+        grch37-autosomal-dominant-genes-berg-v1.compliment.bed.gz: 73.13K
+        grch37-autosomal-dominant-genes-berg-v1.compliment.bed.gz.tbi: 20.39K
+
+
+    To install run:
+        ggd install grch37-autosomal-dominant-genes-berg-v1
+
+  ----------------------------------------------------------------------------------------------------
+
+    grch37-autosomal-dominant-genes-blekhman-v1
+    ===========================================
+
+    Summary: CDS region genomic coordinates, along with the compliment coordinates, for OMIM disease genes deemed  to follow autosomal dominant inheritance according to extensive manual curation by Molly Przeworski&#39;s group.(https://www.ncbi.nlm.nih.gov/pubmed/18571414).
+
+    Species: Homo_sapiens
+
+    Genome Build: GRCh37
+
+    Keywords: genes, autosomal-dominant, disease, Blekhman_et_al, AD, OMIM, gene_coordinates, CDS-regions
+
+    Data Provider: blekhman
+
+    Data Version: 6-24-2008
+
+    File type(s): bed
+
+    Data file coordinate base: 0-based-inclusive
+
+    Included Data Files:
+        grch37-autosomal-dominant-genes-blekhman-v1.bed.gz
+        grch37-autosomal-dominant-genes-blekhman-v1.bed.gz.tbi
+        grch37-autosomal-dominant-genes-blekhman-v1.compliment.bed.gz
+        grch37-autosomal-dominant-genes-blekhman-v1.compliment.bed.gz.tbi
+
+    Approximate Data File Sizes:
+        grch37-autosomal-dominant-genes-blekhman-v1.bed.gz: 59.94K
+        grch37-autosomal-dominant-genes-blekhman-v1.bed.gz.tbi: 15.15K
+        grch37-autosomal-dominant-genes-blekhman-v1.compliment.bed.gz: 38.45K
+        grch37-autosomal-dominant-genes-blekhman-v1.compliment.bed.gz.tbi: 15.37K
+
+
+    To install run:
+        ggd install grch37-autosomal-dominant-genes-blekhman-v1
+
+  ----------------------------------------------------------------------------------------------------
+
+    grch37-autosomal-dominant-genes-berg-blekhman-v1
+    ================================================
+
+    Summary: CDS region genomic coordinates, along with the compliment coordinates, for combined set of OMIM disease genes deemed to follow autosomal dominant inheritance. (Assembled by Macarthur Lab). Gene sets from:  Berg et al, 2013:  (https://www.ncbi.nlm.nih.gov/pubmed/22995991). Blekham et al, 2008: (https://www.ncbi.nlm.nih.gov/pubmed/18571414)
+
+    Species: Homo_sapiens
+
+    Genome Build: GRCh37
+
+    Keywords: genes, autosomal-dominant, disease, Berg_et_al, Blekhman_et_al, AD, OMIM, gene_coordinates, CDS-regions
+
+    Data Provider: berg-blekhman
+
+    Data Version: 1-15-2013_6-24-2008
+
+    File type(s): bed
+
+    Data file coordinate base: 0-based-inclusive
+
+    Included Data Files:
+        grch37-autosomal-dominant-genes-berg-blekhman-v1.bed.gz
+        grch37-autosomal-dominant-genes-berg-blekhman-v1.bed.gz.tbi
+        grch37-autosomal-dominant-genes-berg-blekhman-v1.compliment.bed.gz
+        grch37-autosomal-dominant-genes-berg-blekhman-v1.compliment.bed.gz.tbi
+
+    Approximate Data File Sizes:
+        grch37-autosomal-dominant-genes-berg-blekhman-v1.bed.gz: 135.22K
+        grch37-autosomal-dominant-genes-berg-blekhman-v1.bed.gz.tbi: 29.55K
+        grch37-autosomal-dominant-genes-berg-blekhman-v1.compliment.bed.gz: 83.03K
+        grch37-autosomal-dominant-genes-berg-blekhman-v1.compliment.bed.gz.tbi: 21.44K
+
+
+    To install run:
+        ggd install grch37-autosomal-dominant-genes-berg-blekhman-v1
+
+  ----------------------------------------------------------------------------------------------------
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-of-searching-for-two-different-data-packages-at-the-same-time-for-a-specific-genome-build">
+<h3>5. Example of searching for two different data packages at the same time for a specific genome build<a class="headerlink" href="#example-of-searching-for-two-different-data-packages-at-the-same-time-for-a-specific-genome-build" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd search pfam cpg hg19
+
+  ----------------------------------------------------------------------------------------------------
+
+    hg19-pfam-domains-ucsc-v1
+    <span class="o">=========================</span>
+
+    Summary: High quality, manually curated Pfam domain annotation in bed12 format from UCSC
+
+    Species: Homo_sapiens
+
+    Genome Build: hg19
+
+    Keywords: pfam, domains, protein, protein-domains, UCSC
+
+    Data Provider: UCSC
+
+    Data Version: <span class="m">16</span>-Apr-2017
+
+    File type<span class="o">(</span>s<span class="o">)</span>: bed
+
+    Data file coordinate base: <span class="m">0</span>-based-inclusive
+
+    Included Data Files:
+        hg19-pfam-domains-ucsc-v1.bed12.bed.gz
+        hg19-pfam-domains-ucsc-v1.bed12.bed.gz.tbi
+
+    Approximate Data File Sizes:
+        hg19-pfam-domains-ucsc-v1.bed12.bed.gz: <span class="m">1</span>.41M
+        hg19-pfam-domains-ucsc-v1.bed12.bed.gz.tbi: <span class="m">143</span>.50K
+
+
+    To install run:
+        ggd install hg19-pfam-domains-ucsc-v1
+
+  ----------------------------------------------------------------------------------------------------
+
+    hg19-cpg-islands-ucsc-v1
+    <span class="o">========================</span>
+
+    Summary: cpg islands from UCSC in bed format. Scaffoldings that are not contained in the hg19.genome file are removed
+
+    Species: Homo_sapiens
+
+    Genome Build: hg19
+
+    Keywords: CpG, region, bed-file, cpg-islands, islands
+
+    Data Provider: UCSC
+
+    Data Version: <span class="m">22</span>-Mar-2020
+
+    File type<span class="o">(</span>s<span class="o">)</span>: bed
+
+    Data file coordinate base: <span class="m">0</span>-based-inclusive
+
+    Included Data Files:
+        hg19-cpg-islands-ucsc-v1.bed.gz
+        hg19-cpg-islands-ucsc-v1.bed.gz.tbi
+
+    Approximate Data File Sizes:
+        hg19-cpg-islands-ucsc-v1.bed.gz: <span class="m">621</span>.35K
+        hg19-cpg-islands-ucsc-v1.bed.gz.tbi: <span class="m">186</span>.06K
+
+
+    To install run:
+        ggd install hg19-cpg-islands-ucsc-v1
+
+  ----------------------------------------------------------------------------------------------------
 </pre></div>
 </div>
 </div>
@@ -274,10 +757,10 @@ cutoff is provided, but this flag can be used to provide more strict or more len
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2016-2019, The gogetdata team.
+      &copy;2016-2020, The GoGetData team.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.4</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.2.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

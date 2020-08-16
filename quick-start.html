@@ -1,57 +1,39 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>GGD Quick Start &#8212; ggd  documentation</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GGD Quick Start &#8212; GGD  documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/style.css" />
     <link rel="stylesheet" type="text/css" href="_static/font-awesome-4.7.0/css/font-awesome.min.css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Using GGD" href="using-ggd.html" />
     <link rel="prev" title="ggd consists of:" href="index.html" />
-    <link href="https://fonts.googleapis.com/css?family=Lato|Raleway" rel="stylesheet"> 
-    <link rel="stylesheet" type="text/css" href="_static/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="_static/style.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jqc-1.12.3/dt-1.10.12/datatables.min.css"/>
+    
+    <link href="https://fonts.googleapis.com/css?family=Lato|Raleway" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
 
-    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-    <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <meta name="msapplication-TileImage" content="_static/ms-icon-144x144.png">
 
-    <script type="text/javascript" class="init">
-    $(document).ready(function() {
-        $('#recipestable').DataTable( {
-            "lengthMenu": [[25, 50, -1], [25, 50, "All"]]
-        } );
-    } );
-    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+
+
+
 
   </head><body>
   <div class="document">
@@ -60,7 +42,7 @@
         <div class="sphinxsidebarwrapper">
 <p class="logo">
   <a href="index.html">
-    <img class="logo" src="_static/logo/gogetdata_temp.png" alt="Logo"/>
+    <img class="logo" src="_static/logo/GoGetData_name_logo.png" alt="Logo"/>
     
   </a>
 </p>
@@ -77,21 +59,16 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">GGD Quick Start</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#installing-ggd">1) Installing GGD</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#searching-for-data-packages">2) Searching for data packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#installing-a-data-pacakge">3) Installing a data pacakge</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#using-the-environment-variables">4) Using the environment variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#using-the-data-pacakges">5) Using the data pacakges</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#additional-info">6) Additional Info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installing-a-data-package">3) Installing a data package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#listing-installed-packages">4) Listing installed packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-the-environment-variables">5) Using the environment variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fetching-the-data-files-with-get-files">6) Fetching the data files with “get-files”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-the-data-packages">7) Using the data packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#additional-info">8) Additional Info</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="using-ggd.html">Using GGD</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ggd-search.html">ggd search</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install.html">ggd install</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uninstall.html">ggd uninstall</a></li>
-<li class="toctree-l1"><a class="reference internal" href="list-file.html">ggd list-files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pkg-info.html">ggd pkg-info</a></li>
-<li class="toctree-l1"><a class="reference internal" href="show-env.html">ggd show-env</a></li>
-<li class="toctree-l1"><a class="reference internal" href="make-recipe.html">ggd make-recipe</a></li>
-<li class="toctree-l1"><a class="reference internal" href="check-recipe.html">ggd check-recipe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GGD-CLI.html">GGD Commands</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contribute.html">Contribute</a></li>
 <li class="toctree-l1"><a class="reference internal" href="recipes.html">Available data packages</a></li>
 </ul>
@@ -104,17 +81,15 @@
   
 </ul>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="documentwrapper">
@@ -126,74 +101,138 @@
   <div class="section" id="ggd-quick-start">
 <span id="quick-start"></span><h1>GGD Quick Start<a class="headerlink" href="#ggd-quick-start" title="Permalink to this headline">¶</a></h1>
 <p>[<a class="reference internal" href="index.html#home-page"><span class="std std-ref">Click here to return to the home page</span></a>]</p>
-<p>Go Get Data (ggd) is a omics data managments system that provides access to processed and curated omic data files.
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>After December 31, 2020 GGD will no longer maintain python 2 compatibility. Python 2 may still work, but maintenance will
+be focused on python 3. This decision is based on the End-Of-Life of python 2 starting on January 1, 2020. GGD will maintain
+python 2 compatibility for 1 year from the End-Of-Life of python 2.</p>
+</div>
+<p>Go Get Data (ggd) is a genomics data management system that provides access to processed and curated genomic data files.
 ggd alleviates the difficulties and complexities of finding, obtaining, and processing the data sets and annotations
-germane to your expriements and analyses.</p>
-<p>ggd provides a commmand line tool to search, install, uninstall, and other functions to work with omic data files.</p>
-<p>To get more information about ggd and how to use it see <a class="reference internal" href="using-ggd.html#using-ggd"><span class="std std-ref">Using GGD</span></a>.</p>
+germane to your experiments and analyses.</p>
+<p>ggd provides a command line tool to search, install, and uninstall genomic data files and provides additional functions to work with the files installed onto your system.</p>
+<p>Below is a brief overview of some of the functionalities of ggd for a quick start guide to using the tool. To get more information about ggd and how to use it see <a class="reference internal" href="using-ggd.html#using-ggd"><span class="std std-ref">Using GGD</span></a>.</p>
+<p>To request a new data recipe please fill out the <a class="reference external" href="https://forms.gle/3WEWgGGeh7ohAjcJA">GGD Recipe Request</a> Form.</p>
 <p>To use ggd you will need to install it.</p>
 <div class="section" id="installing-ggd">
 <h2>1) Installing GGD<a class="headerlink" href="#installing-ggd" title="Permalink to this headline">¶</a></h2>
-<p>This assumes you have installed and have access to the conda package managment system. If you have not, see <a class="reference internal" href="using-ggd.html#using-ggd"><span class="std std-ref">Using GGD</span></a>.</p>
-<p>Add the ggd-genomics channel to your systems conda configurations</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda config --add channels ggd-genomics
+<p>This assumes you have installed and have access to the conda package management system. If you have not, see <a class="reference internal" href="using-ggd.html#using-ggd"><span class="std std-ref">Using GGD</span></a>.</p>
+<p>Add the required conda channels, including the ggd-genomics channel, to your systems conda configurations. (See commands below)</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda config --add channels defaults
+$ conda config --add channels ggd-genomics
+$ conda config --add channels bioconda
+$ conda config --add channels conda-forge
 </pre></div>
 </div>
-<p>Install ggd with the following commands:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda install -y --file https://raw.githubusercontent.com/gogetdata/ggd-cli/master/requirements.txt
-$ pip install -U git+git://github.com/gogetdata/ggd-cli
+<p>Install ggd with the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda install -c bioconda ggd
 </pre></div>
 </div>
 </div>
 <div class="section" id="searching-for-data-packages">
 <h2>2) Searching for data packages<a class="headerlink" href="#searching-for-data-packages" title="Permalink to this headline">¶</a></h2>
 <p>ggd provides an easy to use search tool to search and find the desired data packages.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd search -t &lt;data-package&gt;
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd search &lt;<span class="m">1</span> or more search terms&gt;
 </pre></div>
 </div>
-<p>For example, if you need to install the GRCh38 reference genome from Ensembl you can use ggd to search and install the package</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd search -t reference
-</pre></div>
-</div>
-<p>or</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd search -t genome
+<p>For example, if you need to install the human reference genome for genome build GRCh38 from Ensembl you can use ggd to search and install the package:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd search reference
 </pre></div>
 </div>
 <p>or</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd search -t reference genome
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd search genome
 </pre></div>
 </div>
+<p>or</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd search reference genome
+</pre></div>
 </div>
-<div class="section" id="installing-a-data-pacakge">
-<h2>3) Installing a data pacakge<a class="headerlink" href="#installing-a-data-pacakge" title="Permalink to this headline">¶</a></h2>
+<p>or</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd search grch38 reference genome
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd search reference genome -s Homo_sapiens
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd search reference genome -g GRCh38
+</pre></div>
+</div>
+<p>etc.</p>
+</div>
+<div class="section" id="installing-a-data-package">
+<h2>3) Installing a data package<a class="headerlink" href="#installing-a-data-package" title="Permalink to this headline">¶</a></h2>
 <p>ggd also provides an easy way to install data packages hosted in the ggd repo. Once you used the search function and found
-a desired package, you can use the install command to install the data package.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd install &lt;data package&gt;
+the desired package(s), you can use the install command to install the data package(s).</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd install &lt;<span class="m">1</span> or more data packages&gt;
 </pre></div>
 </div>
-<p>For example, if you needed to install the GRCh38 reference genome from Ensembl, you have identify the data package using
-the ggd search tool, you can use the following command to install the package.</p>
+<p>For example, if you needed to install the GRCh38 reference genome from Ensembl, which data package you had identified using
+the ggd search tool, you can use the following command to install the package:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd install grch38-reference-genome-ensembl-v1
 </pre></div>
 </div>
-<p>If you look at the output from running <cite>ggd install</cite> you will see the system directory path to where the installed data packages
-are stored, as well as an environmnet variable that can be used to access the data files.</p>
+<p>If you look at the output from running <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">install</span></code> you will see the system directory path to where the installed data packages
+are stored, as well as an environment variable that can be used to access the data files.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can install mutliple data packages with a single install command, or you can break the installation up into multiple commands.
+For example, if you wanted to install pfam domains and cpg islands annotation file for the human genome build hg19 you could use the
+following commands:</p>
+<p><code class="code docutils literal notranslate"><span class="pre">$</span> <span class="pre">ggd</span> <span class="pre">install</span> <span class="pre">hg19-pfam-domains-ucsc-v1</span> <span class="pre">hg19-cpg-islands-ucsc-v1</span></code></p>
+<p>or</p>
+<p><code class="code docutils literal notranslate"><span class="pre">$</span> <span class="pre">ggd</span> <span class="pre">install</span> <span class="pre">hg19-pfam-domains-ucsc-v1</span></code></p>
+<p><code class="code docutils literal notranslate"><span class="pre">$</span> <span class="pre">ggd</span> <span class="pre">install</span> <span class="pre">hg19-cpg-islands-ucsc-v1</span></code></p>
+</div>
+</div>
+<div class="section" id="listing-installed-packages">
+<h2>4) Listing installed packages<a class="headerlink" href="#listing-installed-packages" title="Permalink to this headline">¶</a></h2>
+<p>You can get a list of every install data package installed using ggd for a specific conda environment using the <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">list</span></code> command.</p>
+<p>This command will provide information on which data packages are installed and the environment variables associated with those packages.</p>
+<p>For example, you could list all installed data files using the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd list
+</pre></div>
+</div>
+<p>You could list all installed data packages installed in a different conda environment then the one you are currently in with the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd list --prefix &lt;conda-environment-name&gt;
+
+
+Example <span class="o">(</span>list all data packages in the <span class="s2">&quot;my_data_environment&quot;</span> conda environment<span class="o">)</span>:
+
+    $ ggd list --prefix my_data_environmnet
+</pre></div>
+</div>
+<p>You can also list a subset of packages or even a specific package based on a pattern using the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd list -p &lt;pattern to match&gt;
+
+Example <span class="o">(</span>list all data packages that have the pattern <span class="s2">&quot;hg19&quot;</span><span class="o">)</span>:
+
+    $ ggd list -p hg19
+</pre></div>
+</div>
 </div>
 <div class="section" id="using-the-environment-variables">
-<h2>4) Using the environment variables<a class="headerlink" href="#using-the-environment-variables" title="Permalink to this headline">¶</a></h2>
-<p>ggd will create an environment variable for each ggd data package that is intalled. To see all available environment variables
+<h2>5) Using the environment variables<a class="headerlink" href="#using-the-environment-variables" title="Permalink to this headline">¶</a></h2>
+<p>ggd will create an environment variable for each ggd data package that is installed. To see all available environment variables
 use the following command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd show-env
 </pre></div>
 </div>
+<p>These are the same environment variables that are seen when running <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">list</span></code>, however, this command is specific to information
+on avaiable environment variables that can be used for each data packages that has been installed on your system.</p>
 <p>If the environment variables are inactive, the output will tell you how to activate them. Once active, the environment variable
 can be used to access the data packages install by ggd.</p>
-<p>For most data packages two environment variables will be created.
-* An environment variable that points to the directory path where the installed data is stored
-* An environment variable that poinst to the main installed file to use.</p>
-<p>For example, if you installed the GRCh38 reference genome from Ensembl, you would get two environmnet variable like:
+<dl class="simple">
+<dt>For most data packages two environment variables will be created.</dt><dd><ul class="simple">
+<li><p>An environment variable that points to the directory path where the installed data is stored</p></li>
+<li><p>An environment variable that points to the main installed file to use.</p></li>
+</ul>
+</dd>
+</dl>
+<p>For example, if you installed the GRCh38 reference genome from Ensembl, you would get two environment variable like:
 <code class="code docutils literal notranslate"><span class="pre">ggd_grch38_reference_genome_ensembl_v1_dir</span></code> and <code class="code docutils literal notranslate"><span class="pre">ggd_grch38_reference_genome_ensembl_v1_file</span></code>.
-You can use these environment variable to acces your data.</p>
+You can use these environment variable to access your data.</p>
 <p>To see the files for this ggd installed package you can use the following command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ls <span class="nv">$ggd_grch38_reference_genome_ensemble_v1_dir</span>
 </pre></div>
@@ -203,28 +242,51 @@ You can use these environment variable to acces your data.</p>
 </pre></div>
 </div>
 <p>To move to the directory where the files are stored you can use the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> <span class="nv">$ggd_grch38_reference_genome</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> <span class="nv">$ggd_grch38_reference_genome_ensemble_v1_dir</span>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">If you remove the files from this directory ggd will no longer be able to provide file and dependency handeling, version tracking, and
+<p class="admonition-title">Note</p>
+<p>If you remove or change the files from this directory ggd will no longer be able to provide file and dependency handling, version tracking, and
 other functions. If you need to move these files please make a copy and move the copy.</p>
 </div>
 </div>
-<div class="section" id="using-the-data-pacakges">
-<h2>5) Using the data pacakges<a class="headerlink" href="#using-the-data-pacakges" title="Permalink to this headline">¶</a></h2>
-<p>Now that you have downloaded the desired data packages you can use them for all of your experiements and analyses. ggd offers mutliple
+<div class="section" id="fetching-the-data-files-with-get-files">
+<h2>6) Fetching the data files with “get-files”<a class="headerlink" href="#fetching-the-data-files-with-get-files" title="Permalink to this headline">¶</a></h2>
+<p>GGD also provides a tool to fetch installed data files if you don’t want to use or don’t have access to the environment variables. (You will only have access to the
+environment variables if your are in the conda environment where the files were installed)</p>
+<p>If you are not in the conda environment where the data packages was installed, if you perfer not using the environment variables created for you, or if the environment variables available
+don’t point to the file you would like to access, you can use <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">get-files</span></code> to fetch the desired files.</p>
+<p>For example, if you wanted to get the GRCh38 reference genome fasta file you installed in step 3, you could use the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd get-files grch38-reference-genome-ensembl-v1 -p <span class="s2">&quot;*.fa&quot;</span>
+
+<span class="o">(</span>Where -p is either the whole name of the data file you are interested in or a pattern to match the data file you are interseted in<span class="o">)</span>
+</pre></div>
+</div>
+<p>or if you wanted both the fasta file and the fasta indexed file you could run the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd get-files grch38-reference-genome-ensembl-v1
+</pre></div>
+</div>
+<p>If your data package is stored in the <code class="code docutils literal notranslate"><span class="pre">my_data_environment</span></code> conda environment and you are in a different conda environment, you could access the data using this command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd get-files grch38-reference-genome-ensembl-v1 -p <span class="s2">&quot;*.fa&quot;</span> --prefix my_data_environment
+</pre></div>
+</div>
+</div>
+<div class="section" id="using-the-data-packages">
+<h2>7) Using the data packages<a class="headerlink" href="#using-the-data-packages" title="Permalink to this headline">¶</a></h2>
+<p>Now that you have downloaded the desired data packages you can use them for all of your experiments and analyses. ggd offers multiple
 functions in order to locate the data files installed by ggd, get the data package information, etc. For more information see
 <a class="reference internal" href="using-ggd.html#using-ggd"><span class="std std-ref">Using GGD</span></a>.</p>
 <p>For additional information and examples on using installed data packages see <span class="xref std std-ref">Using installed data</span>.</p>
 </div>
 <div class="section" id="additional-info">
-<h2>6) Additional Info<a class="headerlink" href="#additional-info" title="Permalink to this headline">¶</a></h2>
-<p>ggd is a powerful and easy to use tool to access and manage omic data. It helpes to overcome the difficulties with and time used
+<h2>8) Additional Info<a class="headerlink" href="#additional-info" title="Permalink to this headline">¶</a></h2>
+<p>ggd is a powerful and easy to use tool to access and manage genomic data. It helps to overcome the difficulties with and time used
 to find, obtain, and process the needed data for an experiments and/or analyses. ggd provides a stable source of versioning and
-reproducability. We intend ggd to become and commonly used data managment tool for researchers and scientists.</p>
+reproducibility. We intend ggd to become and commonly used data management tool for researchers and scientists.</p>
 <p>To learn more about GGD see the <a class="reference internal" href="index.html#home-page"><span class="std std-ref">Home page</span></a>, <a class="reference internal" href="using-ggd.html#using-ggd"><span class="std std-ref">Using GGD</span></a>, or any other tab.</p>
+<p>GGD was developed as an open source community contribution driven project. While the GGD team continues to maintain the tool and add new data packages, we encourage anyone that would like to contribute to the
+project to do so. For more information on how to contribute see <a class="reference internal" href="contribute.html#make-data-packages"><span class="std std-ref">Contributing a data package to GGD</span></a>.</p>
 </div>
 </div>
 
@@ -236,10 +298,10 @@ reproducability. We intend ggd to become and commonly used data managment tool f
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2016-2019, The gogetdata team.
+      &copy;2016-2020, The GoGetData team.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.4</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.2.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

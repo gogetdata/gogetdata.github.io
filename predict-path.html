@@ -1,0 +1,216 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ggd predict-path &#8212; GGD  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="_static/font-awesome-4.7.0/css/font-awesome.min.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="ggd uninstall" href="uninstall.html" />
+    <link rel="prev" title="ggd install" href="install.html" />
+    
+    <link href="https://fonts.googleapis.com/css?family=Lato|Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="_static/ms-icon-144x144.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="index.html">
+    <img class="logo" src="_static/logo/GoGetData_name_logo.png" alt="Logo"/>
+    
+  </a>
+</p>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quick-start.html">GGD Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using-ggd.html">Using GGD</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="GGD-CLI.html">GGD Commands</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ggd-search.html">ggd search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html">ggd install</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ggd predict-path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="uninstall.html">ggd uninstall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="list.html">ggd list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="list-file.html">ggd get-files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pkg-info.html">ggd pkg-info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="show-env.html">ggd show-env</a></li>
+<li class="toctree-l2"><a class="reference internal" href="make-recipe.html">ggd make-recipe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="check-recipe.html">ggd check-recipe</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contribute.html">Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recipes.html">Available data packages</a></li>
+</ul>
+
+<ul>
+  
+  <li class="toctree-l1"><a href="https://github.com/gogetdata/ggd-recipes">ggd-recipes @ Github</a></li>
+  
+  <li class="toctree-l1"><a href="https://github.com/gogetdata/ggd-cli">ggd-cli @ Github</a></li>
+  
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="ggd-predict-path">
+<span id="id1"></span><h1>ggd predict-path<a class="headerlink" href="#ggd-predict-path" title="Permalink to this headline">¶</a></h1>
+<p>[<a class="reference internal" href="index.html#home-page"><span class="std std-ref">Click here to return to the home page</span></a>]</p>
+<p><code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">predict-path</span></code> is used to predict that path of a data file from a ggd data package that has not been installed yet. Workflows, such as Snakemake,
+require knowledge of the file path prior to running the workflow. Using the <cite>predict-path</cite> tool would allow someone using Snakemake to provide the predict file
+paths of the data files they would like to use without having to pre-install the data packages.The installation of the data packages could take place later in the
+workflow process.</p>
+<div class="section" id="using-ggd-predict-path">
+<h2>Using ggd predict-path<a class="headerlink" href="#using-ggd-predict-path" title="Permalink to this headline">¶</a></h2>
+<p>Use <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">predict-path</span></code> to predict the path of a data file prior to installing the ggd data package.
+Running <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">predict-path</span> <span class="pre">-h</span></code> will give you the following message:</p>
+<p>predict-path arguments:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 75%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>ggd predict-path</p></th>
+<th class="head"><p>Get a predicted install file path for a data package before it is installed.
+(Use for workflows, such as Snakemake)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>-h, –help</p></td>
+<td><p>show this help message and exit</p></td>
+</tr>
+<tr class="row-odd"><td><p>-c, –channel</p></td>
+<td><p>The ggd channel of the recipe to fine. (Deafult = genomics)</p></td>
+</tr>
+<tr class="row-even"><td><p>–prefix</p></td>
+<td><p>(Optional) The name or the full directory path to an
+conda environment. The predicted path will be based on
+this conda environment. When installing, the data
+package should also be installed in this environment.
+(Only needed if not predicting for a path in the
+current conda environment)</p></td>
+</tr>
+<tr class="row-odd"><td><p>-pn, –package-name</p></td>
+<td><p><strong>Required</strong> The name of the data package to predict a
+file path for</p></td>
+</tr>
+<tr class="row-even"><td><p>-fn, –file-name</p></td>
+<td><p><strong>Required</strong> The name of the file to predict that path
+for. It is best if you give the full and correct name
+of the file to predict the path for. If not, ggd will
+try to identify the right file, but won’t guarantee
+that it is the right file</p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="additional-argument-explanation">
+<h3>Additional argument explanation:<a class="headerlink" href="#additional-argument-explanation" title="Permalink to this headline">¶</a></h3>
+<p>Required arguments:</p>
+<ul class="simple">
+<li><p><em>-pn:</em> The <code class="code docutils literal notranslate"><span class="pre">-pn</span></code> flag represents the data package name for which to predict a file path for. (NOTE: the file
+path is for a data file from this data package and not the data package itself)</p></li>
+<li><p><em>-fn:</em> The <code class="code docutils literal notranslate"><span class="pre">-fn</span></code> flag represents the name of the data file for which to predict the file path for. (NOTE: this is
+the actual file from the data package to predict the path for) You can use <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">search</span></code> or check the
+<a class="reference internal" href="recipes.html#recipes"><span class="std std-ref">Available packages</span></a> page to get the name of the files provided by the package</p></li>
+</ul>
+<p>Optional arguments:</p>
+<ul class="simple">
+<li><p><em>-c:</em> The <code class="code docutils literal notranslate"><span class="pre">-c</span></code> flag represents the ggd channel. The default channel is <em>genomics</em>.</p></li>
+<li><p><em>–prefix:</em> The <code class="code docutils literal notranslate"><span class="pre">--prefix</span></code> flag is used to get to the install path for a data file in a specific conda  environment/prefix
+that is different then the current environment.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="predict-the-path-of-the-chromsize-file">
+<h3>1. Predict the path of the chromsize file:<a class="headerlink" href="#predict-the-path-of-the-chromsize-file" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd predict-path -pn hg19-chromsizes-ggd-v1 -fn hg19-chromsizes-ggd-v1.txt
+
+  &lt;conda root&gt;/share/ggd/Homo_sapiens/hg19/hg19-chromsizes-ggd-v1/1/hg19-chromsizes-ggd-v1.txt
+</pre></div>
+</div>
+</div>
+<div class="section" id="predict-the-path-of-the-chromsize-file-in-the-data-environment">
+<h3>1. Predict the path of the chromsize file in the “data” environment:<a class="headerlink" href="#predict-the-path-of-the-chromsize-file-in-the-data-environment" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd predict-path -pn hg19-chromsizes-ggd-v1 -fn hg19-chromsizes-ggd-v1.txt --prefix data
+
+  &lt;data environment&gt;/share/ggd/Homo_sapiens/hg19/hg19-chromsizes-ggd-v1/1/hg19-chromsizes-ggd-v1.txt
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2016-2020, The GoGetData team.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.2.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/predict-path.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

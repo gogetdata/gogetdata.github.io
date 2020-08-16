@@ -1,0 +1,261 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GGD Commands &#8212; GGD  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="_static/font-awesome-4.7.0/css/font-awesome.min.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="ggd search" href="ggd-search.html" />
+    <link rel="prev" title="Using GGD" href="using-ggd.html" />
+    
+    <link href="https://fonts.googleapis.com/css?family=Lato|Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="_static/ms-icon-144x144.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="index.html">
+    <img class="logo" src="_static/logo/GoGetData_name_logo.png" alt="Logo"/>
+    
+  </a>
+</p>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quick-start.html">GGD Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using-ggd.html">Using GGD</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">GGD Commands</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ggd-search.html">ggd search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html">ggd install</a></li>
+<li class="toctree-l2"><a class="reference internal" href="predict-path.html">ggd predict-path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="uninstall.html">ggd uninstall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="list.html">ggd list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="list-file.html">ggd get-files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pkg-info.html">ggd pkg-info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="show-env.html">ggd show-env</a></li>
+<li class="toctree-l2"><a class="reference internal" href="make-recipe.html">ggd make-recipe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="check-recipe.html">ggd check-recipe</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contribute.html">Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recipes.html">Available data packages</a></li>
+</ul>
+
+<ul>
+  
+  <li class="toctree-l1"><a href="https://github.com/gogetdata/ggd-recipes">ggd-recipes @ Github</a></li>
+  
+  <li class="toctree-l1"><a href="https://github.com/gogetdata/ggd-cli">ggd-cli @ Github</a></li>
+  
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="ggd-commands">
+<span id="ggd-cli-page"></span><h1>GGD Commands<a class="headerlink" href="#ggd-commands" title="Permalink to this headline">¶</a></h1>
+<p>[<a class="reference internal" href="index.html#home-page"><span class="std std-ref">Click here to return to the home page</span></a>]</p>
+<p>The ggd command line interface (cli) has multiple tools for data access and local management. Below you can find a short
+description of each tool, as well as links to specific pages about each.</p>
+<p>Tabs for each tool are also available on the left tab bar.</p>
+<ol class="arabic">
+<li><p><a class="reference internal" href="ggd-search.html#ggd-search"><span class="std std-ref">ggd search</span></a></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Search for a ggd data package</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><a class="reference internal" href="predict-path.html#ggd-predict-path"><span class="std std-ref">ggd predict-path</span></a></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Predict the file path of a data package that has not been installed yet (Good for workflows like Snakemake)</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><a class="reference internal" href="install.html#ggd-install"><span class="std std-ref">ggd install</span></a></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Install ggd data package(s)</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><a class="reference internal" href="uninstall.html#ggd-uninstall"><span class="std std-ref">ggd uninstall</span></a></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Uninstall a ggd data package(s)</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><a class="reference internal" href="list.html#ggd-list"><span class="std std-ref">ggd list</span></a></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>List the installed data packages (in a specific environment)</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><a class="reference internal" href="list-file.html#ggd-get-files"><span class="std std-ref">ggd get-files</span></a></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>get the files for an installed ggd package</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><a class="reference internal" href="pkg-info.html#ggd-pkg-info"><span class="std std-ref">ggd pkg-info</span></a></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Show a specific ggd package’s info</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><a class="reference internal" href="show-env.html#ggd-show-env"><span class="std std-ref">ggd show-env</span></a></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Show the ggd specific environment variables</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><a class="reference internal" href="make-recipe.html#ggd-make-recipe"><span class="std std-ref">ggd make-recipe</span></a></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Create a ggd recipe from a bash script</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><a class="reference internal" href="check-recipe.html#ggd-check-recipe"><span class="std std-ref">ggd check-recipe</span></a></p>
+<ul class="simple">
+<li><p>Check/test a ggd recipe</p></li>
+</ul>
+</li>
+</ol>
+<p>Command links:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ggd-search.html">ggd search</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ggd-search.html#using-ggd-search">Using ggd search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ggd-search.html#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">ggd install</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="install.html#using-ggd-install">Using ggd install</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="predict-path.html">ggd predict-path</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="predict-path.html#using-ggd-predict-path">Using ggd predict-path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="predict-path.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="uninstall.html">ggd uninstall</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="uninstall.html#using-ggd-uninstall">Using ggd uninstall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="uninstall.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="list.html">ggd list</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="list.html#using-ggd-list">Using ggd list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="list.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="list-file.html">ggd get-files</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="list-file.html#using-ggd-list-files">Using ggd list-files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="list-file.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pkg-info.html">ggd pkg-info</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pkg-info.html#using-ggd-pkg-info">Using ggd pkg-info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pkg-info.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="show-env.html">ggd show-env</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="show-env.html#using-ggd-show-env">Using ggd show-env</a></li>
+<li class="toctree-l2"><a class="reference internal" href="show-env.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="make-recipe.html">ggd make-recipe</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="make-recipe.html#using-ggd-make-recipe">Using ggd make-recipe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="make-recipe.html#data-recipe-standards">Data recipe standards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="make-recipe.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="check-recipe.html">ggd check-recipe</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="check-recipe.html#check-recipe-is-used-to-validate-a-recipe-created-from-running-ggd-make-recipe"><cite>check-recipe</cite> is used to validate a recipe created from running <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">make-recipe</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="check-recipe.html#using-ggd-check-recipe">Using ggd check-recipe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="check-recipe.html#example">Example</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2016-2020, The GoGetData team.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.2.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/GGD-CLI.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

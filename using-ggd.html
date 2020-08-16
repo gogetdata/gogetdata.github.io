@@ -1,57 +1,39 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Using GGD &#8212; ggd  documentation</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Using GGD &#8212; GGD  documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/style.css" />
     <link rel="stylesheet" type="text/css" href="_static/font-awesome-4.7.0/css/font-awesome.min.css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="ggd search" href="ggd-search.html" />
+    <link rel="next" title="GGD Commands" href="GGD-CLI.html" />
     <link rel="prev" title="GGD Quick Start" href="quick-start.html" />
-    <link href="https://fonts.googleapis.com/css?family=Lato|Raleway" rel="stylesheet"> 
-    <link rel="stylesheet" type="text/css" href="_static/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="_static/style.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jqc-1.12.3/dt-1.10.12/datatables.min.css"/>
+    
+    <link href="https://fonts.googleapis.com/css?family=Lato|Raleway" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
 
-    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-    <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <meta name="msapplication-TileImage" content="_static/ms-icon-144x144.png">
 
-    <script type="text/javascript" class="init">
-    $(document).ready(function() {
-        $('#recipestable').DataTable( {
-            "lengthMenu": [[25, 50, -1], [25, 50, "All"]]
-        } );
-    } );
-    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+
+
+
 
   </head><body>
   <div class="document">
@@ -60,7 +42,7 @@
         <div class="sphinxsidebarwrapper">
 <p class="logo">
   <a href="index.html">
-    <img class="logo" src="_static/logo/gogetdata_temp.png" alt="Logo"/>
+    <img class="logo" src="_static/logo/GoGetData_name_logo.png" alt="Logo"/>
     
   </a>
 </p>
@@ -84,14 +66,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#ggd-use-case">ggd Use Case</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="ggd-search.html">ggd search</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install.html">ggd install</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uninstall.html">ggd uninstall</a></li>
-<li class="toctree-l1"><a class="reference internal" href="list-file.html">ggd list-files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pkg-info.html">ggd pkg-info</a></li>
-<li class="toctree-l1"><a class="reference internal" href="show-env.html">ggd show-env</a></li>
-<li class="toctree-l1"><a class="reference internal" href="make-recipe.html">ggd make-recipe</a></li>
-<li class="toctree-l1"><a class="reference internal" href="check-recipe.html">ggd check-recipe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GGD-CLI.html">GGD Commands</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contribute.html">Contribute</a></li>
 <li class="toctree-l1"><a class="reference internal" href="recipes.html">Available data packages</a></li>
 </ul>
@@ -104,17 +79,15 @@
   
 </ul>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="documentwrapper">
@@ -127,12 +100,19 @@
 <span id="id1"></span><h1>Using GGD<a class="headerlink" href="#using-ggd" title="Permalink to this headline">¶</a></h1>
 <p>[<a class="reference internal" href="index.html#home-page"><span class="std std-ref">Click here to return to the home page</span></a>]</p>
 <p><strong>For a brief introduction to how ggd works and to start using ggd see:</strong> <a class="reference internal" href="quick-start.html#quick-start"><span class="std std-ref">GGD Quick Start</span></a></p>
+<p><strong>To request a new data recipe please fill out the</strong> <a class="reference external" href="https://forms.gle/3WEWgGGeh7ohAjcJA">GGD Recipe Request</a> <strong>Form.</strong></p>
 <div class="section" id="install-conda">
 <h2>1. Install conda<a class="headerlink" href="#install-conda" title="Permalink to this headline">¶</a></h2>
 <p>ggd requires the conda package management system be installed on your system. Loading conda from a module
 is not sufficient as data packages are stored in conda root. Please install Anaconda or Miniconda onto your system.
 The best way to install is with the <a class="reference external" href="http://conda.pydata.org/miniconda.html">Miniconda</a>
-package. The Python 3 version is recommended.</p>
+package. We specifically recommend using the Python 3 version.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>After December 31, 2020 GGD will no longer maintain python 2 compatibility. Python 2 may still work, but maintenance will
+be focused on python 3. This decision is based on the End-Of-Life of python 2 starting on January 1, 2020. GGD will maintain
+python 2 compatibility for 1 year from the End-Of-Life of python 2.</p>
+</div>
 </div>
 <div class="section" id="configure-the-conda-channels">
 <h2>2. Configure the conda channels<a class="headerlink" href="#configure-the-conda-channels" title="Permalink to this headline">¶</a></h2>
@@ -143,7 +123,7 @@ ggd channels is required. As ggd becomes more widely used, additional channels w
 research.</p>
 <p>Available ggd channels:</p>
 <ul class="simple">
-<li>ggd-genomics</li>
+<li><p>ggd-genomics</p></li>
 </ul>
 <p>Run the following commands, adding in additional ggd channels as desired:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda config --add channels defaults
@@ -155,10 +135,13 @@ $ conda config --add channels conda-forge
 </div>
 <div class="section" id="install-ggd">
 <h2>3. Install ggd<a class="headerlink" href="#install-ggd" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Step 2 above is required prior to installing ggd. If Step 2 has not been completed ggd installation will fail</p>
+</div>
 <p>ggd needs to be installed on your system before you can use it. Run the following commands to download the
 ggd cli:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda install -y --file https://raw.githubusercontent.com/gogetdata/ggd-cli/master/requirements.txt
-$ pip install -U git+git://github.com/gogetdata/ggd-cli
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda install -c bioconda ggd
 </pre></div>
 </div>
 </div>
@@ -167,15 +150,18 @@ $ pip install -U git+git://github.com/gogetdata/ggd-cli
 <p>The ggd command line tool (cli) installed in step 3 has built-in tools for accessing and managing
 data packages. These tools include:</p>
 <ul class="simple">
-<li><a class="reference internal" href="ggd-search.html#ggd-search"><span class="std std-ref">ggd search</span></a> Search for a ggd data package</li>
-<li><a class="reference internal" href="install.html#ggd-install"><span class="std std-ref">ggd install</span></a> Install a ggd data package</li>
-<li><a class="reference internal" href="uninstall.html#ggd-uninstall"><span class="std std-ref">ggd uninstall</span></a> Uninstall a ggd data package</li>
-<li><a class="reference internal" href="list-file.html#ggd-list-files"><span class="std std-ref">ggd list-files</span></a> List the files for an installed ggd package</li>
-<li><a class="reference internal" href="pkg-info.html#ggd-pkg-info"><span class="std std-ref">ggd pkg-info</span></a> Show a specific ggd package’s info</li>
-<li><a class="reference internal" href="show-env.html#ggd-show-env"><span class="std std-ref">ggd show-env</span></a> Show the ggd specific environment variables</li>
-<li><a class="reference internal" href="make-recipe.html#ggd-make-recipe"><span class="std std-ref">ggd make-recipe</span></a> Create a ggd recipe from a bash script</li>
-<li><a class="reference internal" href="check-recipe.html#ggd-check-recipe"><span class="std std-ref">ggd check-recipe</span></a> Check/test a ggd recipe</li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">$</span> <span class="pre">ggd</span> <span class="pre">search</span></code>: Search for a ggd data package</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">$</span> <span class="pre">ggd</span> <span class="pre">predict-path</span></code>: Predict the file path of a data package that has not been installed yet (Good for workflows like Snakemake)</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">$</span> <span class="pre">ggd</span> <span class="pre">install</span></code>: Install ggd data package(s)</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">$</span> <span class="pre">ggd</span> <span class="pre">uninstall</span></code>: Uninstall a ggd data package(s)</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">$</span> <span class="pre">ggd</span> <span class="pre">list</span></code>: List the installed data packages</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">$</span> <span class="pre">ggd</span> <span class="pre">get-files</span></code>: get the files for an installed ggd package</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">$</span> <span class="pre">ggd</span> <span class="pre">pkg-info</span></code>: Show a specific ggd package’s info</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">$</span> <span class="pre">ggd</span> <span class="pre">show-env</span></code>: Show the ggd specific environment variables</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">$</span> <span class="pre">ggd</span> <span class="pre">make-recipe</span></code>: Create a ggd recipe from a bash script</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">$</span> <span class="pre">ggd</span> <span class="pre">check-recipe</span></code>: Check/test a ggd recipe</p></li>
 </ul>
+<p>For information about specifc tools see: <a class="reference internal" href="GGD-CLI.html#ggd-cli-page"><span class="std std-ref">GGD-CLI</span></a></p>
 </div>
 <div class="section" id="contributing-to-ggd">
 <h2>5. Contributing to ggd<a class="headerlink" href="#contributing-to-ggd" title="Permalink to this headline">¶</a></h2>
@@ -194,75 +180,187 @@ the correct genome build. You will then need to sort and index the reference gen
 <p>ggd simplifies this process by allowing you to search
 and install available processed genomic data packages using the ggd tool.</p>
 <ol class="arabic simple">
-<li>Search for a reference genome</li>
+<li><p>Search for a reference genome</p></li>
 </ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd search -t reference genome
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd search reference genome
 
-  grch37-reference-genome-1000g-v1
-   Summary: GRCh37 reference genome from <span class="m">1000</span> genomes
-   Species: Homo_sapiens
-   Genome Build: GRCh37
-   Keywords: ref, reference
-   Data Version: phase2_reference
+----------------------------------------------------------------------------------------------------
 
-   To install run:
-       ggd install grch37-reference-genome-1000g-v1
+  grch37-reference-genome-ensembl-v1
+  <span class="o">==================================</span>
 
-  grch38-reference-genome-ensembl-v1
-   Summary: GRCh37 reference genome from Ensembl
-   Species: Homo_sapiens
-   Genome Build: GRCh38
-   Keywords: ref, reference
-   Data Version: Release-95
+      Summary: The GRCh37 unmasked genomic DNA seqeunce reference genome from Ensembl-Release <span class="m">75</span>. Includes all sequence regions EXCLUDING haplotypes and patches. <span class="s1">&#39;Primary Assembly file&#39;</span>
 
-   To install run:
-       ggd install grch38-reference-genome-ensembl-v1
+  Species: Homo_sapiens
+
+  Genome Build: GRCh37
+
+  Keywords: Primary-Assembly, Release-75, ref, reference, Ensembl-ref, DNA-Seqeunce, Fasta-Seqeunce, fasta-file
+
+  Data Provider: Ensembl
+
+  Data Version: release-75_2-3-14
+
+  File type<span class="o">(</span>s<span class="o">)</span>: fa
+
+  Data file coordinate base: NA
+
+  Included Data Files:
+      grch37-reference-genome-ensembl-v1.fa
+      grch37-reference-genome-ensembl-v1.fa.fai
+
+  Approximate Data File Sizes:
+      grch37-reference-genome-ensembl-v1.fa: <span class="m">3</span>.15G
+      grch37-reference-genome-ensembl-v1.fa.fai: <span class="m">2</span>.74K
+
+
+  To install run:
+      ggd install grch37-reference-genome-ensembl-v1
+
+----------------------------------------------------------------------------------------------------
+
+    grch38-reference-genome-ensembl-v1
+    <span class="o">==================================</span>
+
+    Summary: The GRCh38 unmasked genomic DNA seqeunce reference genome from Ensembl-Release <span class="m">99</span>. Includes all sequence regions EXCLUDING haplotypes and patches. <span class="s1">&#39;Primary Assembly file&#39;</span>
+
+    Species: Homo_sapiens
+
+    Genome Build: GRCh38
+
+    Keywords: Primary-Assembly, Release-99, ref, reference, Ensembl-ref, DNA-Seqeunce, Fasta-Seqeunce, fasta-file
+
+    Data Provider: Ensembl
+
+    Data Version: release-99_11-18-19
+
+    File type<span class="o">(</span>s<span class="o">)</span>: fa
+
+    Data file coordinate base: NA
+
+    Included Data Files:
+        grch38-reference-genome-ensembl-v1.fa
+        grch38-reference-genome-ensembl-v1.fa.fai
+
+    Approximate Data File Sizes:
+        grch38-reference-genome-ensembl-v1.fa: <span class="m">3</span>.15G
+        grch38-reference-genome-ensembl-v1.fa.fai: <span class="m">6</span>.41K
+
+
+  To install run:
+      ggd install grch38-reference-genome-ensembl-v1
+
+----------------------------------------------------------------------------------------------------
 
   . . .
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">
-<li>Install the grch38 reference genome</li>
+<li><p>Install the grch38 reference genome</p></li>
 </ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd install grch38-reference-genome-ensembl-v1
 
-  -&gt; Looking <span class="k">for</span> grch38-reference-genome-ensembl-v1 in the <span class="s1">&#39;ggd-genomics&#39;</span> channel
-  -&gt; grch38-reference-genome-ensembl-v1 exists in ggd-genomics
-  -&gt; grch38-reference-genome-ensembl-v1 is not installed on your system
-  -&gt; grch38-reference-genome-ensembl-v1 has not been installed by conda
-  -&gt; Installing grch38-reference-genome-ensembl-v1
+    :ggd:install: Looking <span class="k">for</span> grch38-reference-genome-ensembl-v1 in the <span class="s1">&#39;ggd-genomics&#39;</span> channel
 
-  Solving environment:
+    :ggd:install: grch38-reference-genome-ensembl-v1 exists in the ggd-genomics channel
 
-   <span class="c1">## Package Plan ##</span>
+    :ggd:install: grch38-reference-genome-ensembl-v1 version <span class="m">1</span> is not installed on your system
 
-   environment location: &lt;conda root&gt;
+    :ggd:install: grch38-reference-genome-ensembl-v1 has not been installed by conda
 
-     added / updated specs:
+    :ggd:install: The grch38-reference-genome-ensembl-v1 package is uploaded to an aws S3 bucket. To reduce processing <span class="nb">time</span> the package will be downloaded from an aws S3 bucket
+
+
+    :ggd:install:   Attempting to install the following cached package<span class="o">(</span>s<span class="o">)</span>:
+        grch38-reference-genome-ensembl-v1
+
+
+    :ggd:utils:bypass: Installing grch38-reference-genome-ensembl-v1 from the ggd-genomics conda channel
+
+    Collecting package metadata: <span class="k">done</span>
+    Processing data: <span class="k">done</span>
+
+    <span class="c1">## Package Plan ##</span>
+
+      environment location: &lt;conda-root&gt;
+
+      added / updated specs:
         - grch38-reference-genome-ensembl-v1
 
-  The following packages will be downloaded:
 
-     package                            <span class="p">|</span>            build
-     -----------------------------------<span class="p">|</span>-----------------
-     grch38-reference-genome-ensembl-v1 <span class="p">|</span>                <span class="m">0</span>           <span class="m">6</span> KB  ggd-genomics
+    The following packages will be downloaded:
 
-  The following NEW packages will be INSTALLED:
+        package                    <span class="p">|</span>            build
+        ---------------------------<span class="p">|</span>-----------------
+        grch38-reference-genome-ensembl-v1-1<span class="p">|</span>                <span class="m">3</span>           <span class="m">7</span> KB  ggd-genomics
+        ------------------------------------------------------------
+                                               Total:           <span class="m">7</span> KB
 
-     grch38-reference-genome-ensembl-v1: <span class="m">1</span>-0 ggd-genomics
+    The following NEW packages will be INSTALLED:
+
+      grch38-reference-~ ggd-genomics/noarch::grch38-reference-genome-ensembl-v1-1-0
 
 
-  Downloading and Extracting Packages
-  grch38-reference-genome-ensembl-v1          <span class="p">|</span> <span class="m">6</span> KB      <span class="p">|</span> <span class="c1">##############################</span>
-  Preparing transaction: <span class="k">done</span>
-  Verifying transaction: <span class="k">done</span>
-  Executing transaction: <span class="k">done</span>
 
-  DONE
+    Downloading and Extracting Packages
+    grch38-reference-gen <span class="p">|</span> <span class="m">7</span> KB      <span class="p">|</span> <span class="c1">############################################################################################################################################## | 100%</span>
+    Preparing transaction: <span class="k">done</span>
+    Verifying transaction: <span class="k">done</span>
+    Executing transaction: <span class="k">done</span>
+
+    :ggd:install: Updating installed package list
+
+    :ggd:install: Initiating data file content validation using checksum
+
+    :ggd:install: Checksum <span class="k">for</span> grch38-reference-genome-ensembl-v1
+    :ggd:checksum: installed  file checksum: grch38-reference-genome-ensembl-v1.fa.fai checksum: d527f3eb6b664020cf4d882b5820056f
+    :ggd:checksum: metadata checksum record: grch38-reference-genome-ensembl-v1.fa.fai checksum: d527f3eb6b664020cf4d882b5820056f
+
+    :ggd:checksum: installed  file checksum: grch38-reference-genome-ensembl-v1.fa checksum: 9e6b9465dc708d92bf6d67e9c9fa9389
+    :ggd:checksum: metadata checksum record: grch38-reference-genome-ensembl-v1.fa checksum: 9e6b9465dc708d92bf6d67e9c9fa9389
+
+    :ggd:install: ** Successful Checksum **
+
+    :ggd:install: Install Complete
+
+
+    :ggd:install: Installed file <span class="nv">locations</span>
+    <span class="o">======================================================================================================================</span>
+
+             GGD Package                                     Environment Variable<span class="o">(</span>s<span class="o">)</span>
+         ----------------------------------------------------------------------------------------------------
+        -&gt; grch38-reference-genome-ensembl-v1                      <span class="nv">$ggd_grch38_reference_genome_ensembl_v1_dir</span>
+                                                                  <span class="nv">$ggd_grch38_reference_genome_ensembl_v1_file</span>
+
+
+        Install Path: &lt;conda-root&gt;/share/ggd/Homo_sapiens/GRCh38/grch38-reference-genome-ensembl-v1/1
+
+
+         ----------------------------------------------------------------------------------------------------
+
+    :ggd:install: To activate environment variables run <span class="sb">`</span><span class="nb">source</span> activate base<span class="sb">`</span> in the environmnet the packages were installed in
+
+    :ggd:install: NOTE: These environment variables are specific to the &lt;conda-root&gt; conda environment and can only be accessed from within that <span class="nv">environmnet</span>
+    <span class="o">======================================================================================================================</span>
+
+
+
+
+    :ggd:install: Environment Variables
+    *****************************
+
+    Inactive or out-of-date environment variables:
+    &gt; <span class="nv">$ggd_grch38_reference_genome_ensembl_v1_dir</span>
+    &gt; <span class="nv">$ggd_grch38_reference_genome_ensembl_v1_file</span>
+
+    To activate inactive or out-of-date vars, run:
+    <span class="nb">source</span> activate base
+
+    *****************************
 </pre></div>
 </div>
 <ol class="arabic simple" start="3">
-<li>Identify the data environment variable or the file location</li>
+<li><p>Identify the data environment variable or the file location</p></li>
 </ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd show-env
 ***************************
@@ -271,14 +369,13 @@ Active environment variables:
 &gt; <span class="nv">$ggd_grch38_reference_genome_ensembl_v1_file</span>
 ***************************
 
-$ ggd list-files grch38-reference-genome-ensembl-v1
-
--&gt; &lt;conda root&gt;/share/ggd/Homo_sapiens/GRCh38/grch38-reference-genome-ensembl-v1/1/grch38.fa
--&gt; &lt;conda root&gt;/share/ggd/Homo_sapiens/GRCh38/grch38-reference-genome-ensembl-v1/1/grch38.fa.fai
+$ ggd get-files grch38-reference-genome-ensembl-v1
+&lt;conda root&gt;/share/ggd/Homo_sapiens/GRCh38/grch38-reference-genome-ensembl-v1/1/grch38.fa
+&lt;conda root&gt;/share/ggd/Homo_sapiens/GRCh38/grch38-reference-genome-ensembl-v1/1/grch38.fa.fai
 </pre></div>
 </div>
 <ol class="arabic simple" start="4">
-<li>Use the files</li>
+<li><p>Use the files</p></li>
 </ol>
 <p>For additional information and examples on how to use the installed data files see: <span class="xref std std-ref">Using installed data</span>.</p>
 </div>
@@ -292,10 +389,10 @@ $ ggd list-files grch38-reference-genome-ensembl-v1
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2016-2019, The gogetdata team.
+      &copy;2016-2020, The GoGetData team.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.4</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.2.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

@@ -1,57 +1,39 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>ggd uninstall &#8212; ggd  documentation</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ggd uninstall &#8212; GGD  documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/style.css" />
     <link rel="stylesheet" type="text/css" href="_static/font-awesome-4.7.0/css/font-awesome.min.css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="ggd list-files" href="list-file.html" />
-    <link rel="prev" title="ggd install" href="install.html" />
-    <link href="https://fonts.googleapis.com/css?family=Lato|Raleway" rel="stylesheet"> 
-    <link rel="stylesheet" type="text/css" href="_static/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="_static/style.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jqc-1.12.3/dt-1.10.12/datatables.min.css"/>
+    <link rel="next" title="ggd list" href="list.html" />
+    <link rel="prev" title="ggd predict-path" href="predict-path.html" />
+    
+    <link href="https://fonts.googleapis.com/css?family=Lato|Raleway" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
 
-    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-    <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <meta name="msapplication-TileImage" content="_static/ms-icon-144x144.png">
 
-    <script type="text/javascript" class="init">
-    $(document).ready(function() {
-        $('#recipestable').DataTable( {
-            "lengthMenu": [[25, 50, -1], [25, 50, "All"]]
-        } );
-    } );
-    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+
+
+
 
   </head><body>
   <div class="document">
@@ -60,7 +42,7 @@
         <div class="sphinxsidebarwrapper">
 <p class="logo">
   <a href="index.html">
-    <img class="logo" src="_static/logo/gogetdata_temp.png" alt="Logo"/>
+    <img class="logo" src="_static/logo/GoGetData_name_logo.png" alt="Logo"/>
     
   </a>
 </p>
@@ -76,18 +58,19 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="quick-start.html">GGD Quick Start</a></li>
 <li class="toctree-l1"><a class="reference internal" href="using-ggd.html">Using GGD</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ggd-search.html">ggd search</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install.html">ggd install</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">ggd uninstall</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#using-ggd-uninstall">Using ggd uninstall</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#examples">Examples</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="GGD-CLI.html">GGD Commands</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ggd-search.html">ggd search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html">ggd install</a></li>
+<li class="toctree-l2"><a class="reference internal" href="predict-path.html">ggd predict-path</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ggd uninstall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="list.html">ggd list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="list-file.html">ggd get-files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pkg-info.html">ggd pkg-info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="show-env.html">ggd show-env</a></li>
+<li class="toctree-l2"><a class="reference internal" href="make-recipe.html">ggd make-recipe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="check-recipe.html">ggd check-recipe</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="list-file.html">ggd list-files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pkg-info.html">ggd pkg-info</a></li>
-<li class="toctree-l1"><a class="reference internal" href="show-env.html">ggd show-env</a></li>
-<li class="toctree-l1"><a class="reference internal" href="make-recipe.html">ggd make-recipe</a></li>
-<li class="toctree-l1"><a class="reference internal" href="check-recipe.html">ggd check-recipe</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contribute.html">Contribute</a></li>
 <li class="toctree-l1"><a class="reference internal" href="recipes.html">Available data packages</a></li>
 </ul>
@@ -100,17 +83,15 @@
   
 </ul>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="documentwrapper">
@@ -122,12 +103,12 @@
   <div class="section" id="ggd-uninstall">
 <span id="id1"></span><h1>ggd uninstall<a class="headerlink" href="#ggd-uninstall" title="Permalink to this headline">¶</a></h1>
 <p>[<a class="reference internal" href="index.html#home-page"><span class="std std-ref">Click here to return to the home page</span></a>]</p>
-<p>ggd uninstall is used to uninstall a ggd package from your local machine. It ensures a correct uninstall of the
-data package along with removal of additional files created during installation.</p>
+<p><code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">uninstall</span></code> is used to uninstall ggd package(s) from your local conda environment that has been installed by
+ggd. It ensures a correct uninstall of the data package along with removal of additional files created during installation.</p>
 <blockquote>
 <div><div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Running <code class="code docutils literal notranslate"><span class="pre">conda</span> <span class="pre">uninstall</span> <span class="pre">&lt;package&gt;</span></code> will work, however, it will only uninstall the package and will not
+<p class="admonition-title">Note</p>
+<p>Running <code class="code docutils literal notranslate"><span class="pre">conda</span> <span class="pre">uninstall</span> <span class="pre">&lt;package&gt;</span></code> will work, however, it will only uninstall the package and will not
 provide file and system management. <strong>Please use</strong> <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">uninstall</span> <span class="pre">&lt;package&gt;</span></code> <strong>when uninstalling a ggd data package</strong>.</p>
 </div>
 </div></blockquote>
@@ -136,36 +117,47 @@ provide file and system management. <strong>Please use</strong> <code class="cod
 <p>Use <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">uninstall</span></code> to uninstall a ggd data package previously installed using  <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">install</span></code>.
 Running <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">uninstall</span> <span class="pre">-h</span></code> will give you the following message:</p>
 <p>Uninstall arguments:</p>
-<table class="docutils option-list" frame="void" rules="none">
-<col class="option" />
-<col class="description" />
-<tbody valign="top">
-<tr><td class="option-group">
-<kbd><span class="option">-h</span>, <span class="option">--help</span></kbd></td>
-<td>show this help message and exit</td></tr>
-<tr><td class="option-group">
-<kbd><span class="option">/name</span></kbd></td>
-<td>(Positional) The name of the recipe to uninstall.
-(‘/’ indicates a placeholder and is not part of the argument name)</td></tr>
-<tr><td class="option-group">
-<kbd><span class="option">-c</span>, <span class="option">--channel</span></kbd></td>
-<td>(Optional) The ggd channel the desired recipe is stored in.(Default = genomics)</td></tr>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 84%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>ggd uninstall</p></th>
+<th class="head"><p>Use ggd to uninstall a ggd data package installed in the current conda
+environment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>-h, –help</p></td>
+<td><p>show this help message and exit</p></td>
+</tr>
+<tr class="row-odd"><td><p>names</p></td>
+<td><p>the name(s) of the ggd package(s) to uninstall</p></td>
+</tr>
+<tr class="row-even"><td><p>-c, –channel</p></td>
+<td><p>(Optional) The ggd channel the desired recipe is stored in.(Default = genomics)</p></td>
+</tr>
 </tbody>
 </table>
 <div class="section" id="additional-argument-explanation">
 <h3>Additional argument explanation:<a class="headerlink" href="#additional-argument-explanation" title="Permalink to this headline">¶</a></h3>
-<p>Required argumnets:</p>
+<p>Required arguments:</p>
 <ul class="simple">
-<li><em>name:</em> The <code class="code docutils literal notranslate"><span class="pre">name</span></code> is the name of the ggd data package to uninstall.</li>
+<li><p><em>names:</em> The <code class="code docutils literal notranslate"><span class="pre">names</span></code> is the name or names of the ggd data package(s) to uninstall.</p></li>
 </ul>
 <p>Optional arguments:</p>
 <ul>
-<li><p class="first"><em>-c:</em> The <code class="code docutils literal notranslate"><span class="pre">-c</span></code> flag represents the ggd channel. The default channel is <em>genomics</em>. If the data package you want to uninstall
-is in a different ggd channel you will need to supply the channel name using this flag. For example, if your data package was
-in the ‘proteomics’ channel, you would use:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ggd</span> <span class="n">uninstall</span> <span class="o">&lt;</span><span class="n">package</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">c</span> <span class="n">proteomics</span>
-</pre></div>
+<li><p><em>-c:</em> The <code class="code docutils literal notranslate"><span class="pre">-c</span></code> flag represents the ggd channel. The default channel is <em>genomics</em>. If the data package you want to uninstall
+is in a different ggd channel you will need to supply the channel name using this flag.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You need to be in the conda environment/prefix in which the data has been installed in order to uninstall it.
+If the data packages you are trying to uninstall is not in the current/active conda environment it will not be
+uninstalled, or it will uninstall the package that is in that environment which would not be the intent.</p>
 </div>
+</div></blockquote>
 </li>
 </ul>
 </div>
@@ -176,19 +168,13 @@ in the ‘proteomics’ channel, you would use:</p>
 <h3>1. Failed uninstall example:<a class="headerlink" href="#failed-uninstall-example" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd uninstall hg19-ga
 
-  Checking <span class="k">for</span> installation of hg19-ga
+  :ggd:uninstall: Checking <span class="k">for</span> installation of hg19-ga
 
-  hg19-ga is not in the ggd-genomics channel
+  :ggd:uninstall: hg19-ga is not in the ggd-genomics channel
 
-  Packages installed on your system that are similar include:
-         Package         Channel
-         -hg19-gaps      ggd-genomics
+  :ggd:uninstall: Unable to find any package similar to the package entered. Use <span class="s1">&#39;ggd search&#39;</span> or <span class="s1">&#39;conda find&#39;</span> to identify the right package
 
-  If one of these packages is the desired package to uninstall please rerun ggd uninstall with the desired package name and correct ggd channel name
-
-  Note: If the the package is not a part of a ggd channel run <span class="s1">&#39;conda uninstall &lt;pkg&gt;&#39;</span> to uninstall
-
-  GGD channels include: genomics, etc.
+  :ggd:uninstall: This package may not be installed on your system
 </pre></div>
 </div>
 </div>
@@ -196,34 +182,42 @@ in the ‘proteomics’ channel, you would use:</p>
 <h3>2. Successful uninstall example:<a class="headerlink" href="#successful-uninstall-example" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd uninstall hg19-gaps-ucsc-v1
 
-  Checking <span class="k">for</span> installation of hg19-gaps-ucsc-v1
+  :ggd:uninstall: Checking <span class="k">for</span> installation of hg19-gaps-ucsc-v1
 
-  hg19-gaps-ucsc-v1 is installed by conda on your system
+  :ggd:uninstall: hg19-gaps-ucsc-v1 is installed by conda on your system
 
-  Uninstalling hg19-gaps-ucsc-v1
+  :ggd:uninstall: Uninstalling hg19-gaps-ucsc-v1
+  Collecting package metadata <span class="o">(</span>repodata.json<span class="o">)</span>: <span class="k">done</span>
   Solving environment: <span class="k">done</span>
 
   <span class="c1">## Package Plan ##</span>
 
-  environment location: &lt;conda root&gt;
+    environment location: &lt;env&gt;
 
-  removed specs:
-    - hg19-gaps-ucsc-v1
+    removed specs:
+      - hg19-gaps-ucsc-v1
 
 
   The following packages will be REMOVED:
 
-    hg19-gaps-ucsc-v1: <span class="m">1</span>-0 ggd-genomics
+    hg19-gaps-ucsc-v1-1-1
+
 
   Preparing transaction: <span class="k">done</span>
   Verifying transaction: <span class="k">done</span>
   Executing transaction: <span class="k">done</span>
 
-  Removing hg19-gaps-ucsc-v1 version <span class="m">1</span> file<span class="o">(</span>s<span class="o">)</span> from ggd recipe storage
+  :ggd:uninstall: Removing hg19-gaps-ucsc-v1 version <span class="m">1</span> file<span class="o">(</span>s<span class="o">)</span> from ggd recipe storage
 
-  Deleting <span class="m">2</span> items of hg19-gaps-ucsc-v1 version <span class="m">1</span> from your conda root
+  :ggd:uninstall: Deleting <span class="m">9</span> items of hg19-gaps-ucsc-v1 version <span class="m">1</span> from your conda root
 
-  DONE
+  :ggd:env: Removing the ggd_hg19_gaps_ucsc_v1_dir environment variable
+
+  :ggd:env: Removing the ggd_hg19_gaps_ucsc_v1_file environment variable
+
+  :ggd:uninstall: Updating installed package list
+
+  :ggd:uninstall: DONE
 </pre></div>
 </div>
 </div>
@@ -238,10 +232,10 @@ in the ‘proteomics’ channel, you would use:</p>
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2016-2019, The gogetdata team.
+      &copy;2016-2020, The GoGetData team.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.4</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.2.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
