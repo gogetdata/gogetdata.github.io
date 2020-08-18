@@ -7,25 +7,23 @@ hg19-structural-variants-database-genomic-variants-ucsc-v1
 
 Database of Genomic Variants incorporating dbVar, July 2013 and later
 
-=========================== ====================================
-GGD Pacakge                 hg19-structural-variants-database-genomic-variants-ucsc-v1 
-Species                     Homo_sapiens
-Genome Build                hg19
-GGD Channel                 ggd-genomics
-Package Version             1
-Recipe Author               jrb 
-Data Provider               UCSC
-Data Version                2020-01-13
-Genomic File Type           bed
-Data file coordinate basing 0-based-inclusive
-Package's Data Files        hg19-structural-variants-database-genomic-variants-ucsc-v1.bed.gz, hg19-structural-variants-database-genomic-variants-ucsc-v1.bed.gz.tbi
-Size of Each Data File      hg19-structural-variants-database-genomic-variants-ucsc-v1.bed.gz: 74.51M, hg19-structural-variants-database-genomic-variants-ucsc-v1.bed.gz.tbi: 216.71K
-Package Keywords            structural-variants, structural-variant, SVs, SV, dbVar, dbvar
-Package Dependencies:       gsort, htslib, zlib
-Recipe                      https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/hg19/hg19-structural-variants-database-genomic-variants-ucsc-v1
-=========================== ====================================
-
-
+================================== ====================================
+GGD Pacakge                        hg19-structural-variants-database-genomic-variants-ucsc-v1 
+Species                            Homo_sapiens
+Genome Build                       hg19
+GGD Channel                        ggd-genomics
+Package Version                    1
+Recipe Author                      jrb 
+Data Provider                      UCSC
+Data Version                       2020-01-13
+Genomic File Type                  bed
+Data file coordinate basing        0-based-inclusive
+Package's Data Files               hg19-structural-variants-database-genomic-variants-ucsc-v1.bed.gz, hg19-structural-variants-database-genomic-variants-ucsc-v1.bed.gz.tbi
+Approximate Size of Each Data File hg19-structural-variants-database-genomic-variants-ucsc-v1.bed.gz: **74.51M**, hg19-structural-variants-database-genomic-variants-ucsc-v1.bed.gz.tbi: **216.71K**
+Package Keywords                   structural-variants, structural-variant, SVs, SV, dbVar, dbvar
+Package Dependencies:              gsort, htslib, zlib
+Recipe                             https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/hg19/hg19-structural-variants-database-genomic-variants-ucsc-v1
+================================== ====================================
 
 
 

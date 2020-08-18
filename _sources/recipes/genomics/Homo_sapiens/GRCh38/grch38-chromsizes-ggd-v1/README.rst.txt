@@ -7,25 +7,23 @@ grch38-chromsizes-ggd-v1
 
 Chromosome lengths for GRCh38
 
-=========================== ====================================
-GGD Pacakge                 grch38-chromsizes-ggd-v1 
-Species                     Homo_sapiens
-Genome Build                GRCh38
-GGD Channel                 ggd-genomics
-Package Version             1
-Recipe Author               arq5x 
-Data Provider               GGD
-Data Version                16-April-2020
-Genomic File Type           txt
-Data file coordinate basing NA
-Package's Data Files        grch38-chromsizes-ggd-v1.txt
-Size of Each Data File      grch38-chromsizes-ggd-v1.txt: 11.14K
-Package Keywords            genome, chromosome, lengths, sizes
-Package Dependencies:       
-Recipe                      https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/GRCh38/grch38-chromsizes-ggd-v1
-=========================== ====================================
-
-
+================================== ====================================
+GGD Pacakge                        grch38-chromsizes-ggd-v1 
+Species                            Homo_sapiens
+Genome Build                       GRCh38
+GGD Channel                        ggd-genomics
+Package Version                    1
+Recipe Author                      arq5x 
+Data Provider                      GGD
+Data Version                       16-April-2020
+Genomic File Type                  txt
+Data file coordinate basing        NA
+Package's Data Files               grch38-chromsizes-ggd-v1.txt
+Approximate Size of Each Data File grch38-chromsizes-ggd-v1.txt: **11.14K**
+Package Keywords                   genome, chromosome, lengths, sizes
+Package Dependencies:              
+Recipe                             https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/GRCh38/grch38-chromsizes-ggd-v1
+================================== ====================================
 
 
 

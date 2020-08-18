@@ -7,25 +7,23 @@ grch37-sequence-1000g-v1
 
 The fasta sequence from 1000g
 
-=========================== ====================================
-GGD Pacakge                 grch37-sequence-1000g-v1 
-Species                     Homo_sapiens
-Genome Build                GRCh37
-GGD Channel                 ggd-genomics
-Package Version             1
-Recipe Author               mjc 
-Data Provider               NA
-Data Version                37 - 7/11/11
-Genomic File Type           NA
-Data file coordinate basing NA
-Package's Data Files        NA
-Size of Each Data File      NA
-Package Keywords            sequence, 1000g, fasta-file
-Package Dependencies:       htslib, samtools, zlib
-Recipe                      https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/GRCh37/grch37-sequence-1000g-v1
-=========================== ====================================
-
-
+================================== ====================================
+GGD Pacakge                        grch37-sequence-1000g-v1 
+Species                            Homo_sapiens
+Genome Build                       GRCh37
+GGD Channel                        ggd-genomics
+Package Version                    1
+Recipe Author                      mjc 
+Data Provider                      NA
+Data Version                       37 - 7/11/11
+Genomic File Type                  NA
+Data file coordinate basing        NA
+Package's Data Files               NA
+Approximate Size of Each Data File NA
+Package Keywords                   sequence, 1000g, fasta-file
+Package Dependencies:              htslib, samtools, zlib
+Recipe                             https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/GRCh37/grch37-sequence-1000g-v1
+================================== ====================================
 
 
 

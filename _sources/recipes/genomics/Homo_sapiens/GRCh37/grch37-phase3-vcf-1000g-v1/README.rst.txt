@@ -7,25 +7,23 @@ grch37-phase3-vcf-1000g-v1
 
 The phase3 1000g vcf file distrubted on 05/02/2013 in vcf format (decomposed and normalized)
 
-=========================== ====================================
-GGD Pacakge                 grch37-phase3-vcf-1000g-v1 
-Species                     Homo_sapiens
-Genome Build                GRCh37
-GGD Channel                 ggd-genomics
-Package Version             1
-Recipe Author               mjc 
-Data Provider               NA
-Data Version                phase3 - 20130502 - 8/17/15
-Genomic File Type           NA
-Data file coordinate basing NA
-Package's Data Files        NA
-Size of Each Data File      NA
-Package Keywords            1000g-variants, 1000g, wgs, sites, vcf-file
-Package Dependencies:       grch37-sequence-1000g-v1, gsort, htslib, vt, zlib
-Recipe                      https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/GRCh37/grch37-phase3-vcf-1000g-v1
-=========================== ====================================
-
-
+================================== ====================================
+GGD Pacakge                        grch37-phase3-vcf-1000g-v1 
+Species                            Homo_sapiens
+Genome Build                       GRCh37
+GGD Channel                        ggd-genomics
+Package Version                    1
+Recipe Author                      mjc 
+Data Provider                      NA
+Data Version                       phase3 - 20130502 - 8/17/15
+Genomic File Type                  NA
+Data file coordinate basing        NA
+Package's Data Files               NA
+Approximate Size of Each Data File NA
+Package Keywords                   1000g-variants, 1000g, wgs, sites, vcf-file
+Package Dependencies:              grch37-sequence-1000g-v1, gsort, htslib, vt, zlib
+Recipe                             https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/GRCh37/grch37-phase3-vcf-1000g-v1
+================================== ====================================
 
 
 

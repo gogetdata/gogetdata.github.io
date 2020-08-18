@@ -59,7 +59,7 @@
 <li class="toctree-l1"><a class="reference internal" href="using-ggd.html">Using GGD</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GGD-CLI.html">GGD Commands</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contribute.html">Contribute</a></li>
-<li class="toctree-l1"><a class="reference internal" href="recipes.html">Available data packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recipes.html">Available Data Packages</a></li>
 </ul>
 
 <ul>
@@ -88,6 +88,7 @@
           <div class="body" role="main">
             
   <img alt="_images/GoGetData_name_logo.png" id="home-page" src="_images/GoGetData_name_logo.png" />
+<p><strong>To see and/or search for data packages available through GGD, see:</strong> <a class="reference internal" href="recipes.html#recipes"><span class="std std-ref">Available data packages</span></a></p>
 <p><strong>For a quick-start guide to using ggd see:</strong> <a class="reference internal" href="quick-start.html#quick-start"><span class="std std-ref">GGD Quick Start</span></a></p>
 <p><strong>To request a new data recipe please fill out the</strong> <a class="reference external" href="https://forms.gle/3WEWgGGeh7ohAjcJA">GGD Recipe Request</a> <strong>Form.</strong></p>
 <p><strong>For details on creating and adding recipes to ggd see the</strong> <a class="reference internal" href="contribute.html#make-data-packages"><span class="std std-ref">Contribute</span></a> <strong>page.</strong></p>
@@ -108,7 +109,7 @@ and provides a platform upon which to cite data access and use by way of the ggd
 <img alt="_images/Figure_1.png" src="_images/Figure_1.png" />
 <p>Go Get Data acts as a multi use tool for genomic data access and management. It provide a system for simple data access all the way to a
 complete data management including version tracking, dependency handling, data format standards, and more. Whether using ggd for data
-access in genomic workflows, for an analysis, or for any other reason, ggd has bee developed to work in many situations.</p>
+access in genomic workflows, for an analysis, or for any other reason, ggd has been developed to work in many situations.</p>
 <p>We want to briefly highlight ggd’s ability to work with multiple conda environments at the same time. Multiple tools in ggd use a
 <code class="code docutils literal notranslate"><span class="pre">--prefix</span></code> flag. This prefix flag allows a user to install, manage, and access data in a specific conda environment. Therefore,
 a scientist could install ggd data packages into a conda environment set apart for data storage, as well as access and use that data, all
@@ -150,10 +151,10 @@ recipes and contributing them to ggd. One simply needs to combine the different 
 desired data set into a bash script. Once the bash script has been created they can run <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">make-recipe</span></code> to create
 a ggd data recipe.</p>
 <p>A data recipe consists of a meta data file, a data curation script, a local file and environment handling script, and
-a checksum file. Together, these file represent the necessary instructions ggd will use to install and manage a data
+a checksum file. Together, these files represent the necessary instructions ggd will use to install and manage a data
 recipe on your local system.</p>
-<p>Validation of the new recipe is a required part of the contribution process. ggd provides an additional tool for recipe
-validation. After creating a recipe, simply run <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">check-recipe</span></code> to validate the recipe is working correctly.</p>
+<p>Validation of the new recipe is a required part of the contribution process. After creating a recipe, simply run
+<code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">check-recipe</span></code> to validate the recipe is working correctly.</p>
 <p>For further details about contributing data recipes to ggd see <a class="reference internal" href="contribute.html#make-data-packages"><span class="std std-ref">Contribute</span></a>.</p>
 <img alt="_images/Make_GGD_Recipe.png" src="_images/Make_GGD_Recipe.png" />
 </div>
@@ -161,7 +162,7 @@ validation. After creating a recipe, simply run <code class="code docutils liter
 <h2>Data package infrastructure<a class="headerlink" href="#data-package-infrastructure" title="Permalink to this headline">¶</a></h2>
 <p>Another vital part of ggd is the infrastructure used to provide access to available data recipes. ggd has integrated multiple
 ecosystems together in order to control such access.</p>
-<p>First, recipes are complied together as “cookbooks” on github. This github repo acts as the first stage of recipe access.</p>
+<p>First, recipes are compiled together as “cookbooks” on github. This github repo acts as the first stage of recipe access.</p>
 <p>Second, a continuous integration (CI) system provides automatic data recipe validation. This CI system acts as a the second stage
 to ensure that each data recipe works correctly.</p>
 <p>Third, the CI system packages the recipe into a data packages. These data packages contain the same information as the recipe, but
@@ -519,7 +520,7 @@ ggd documentation</p>
 <li class="toctree-l2"><a class="reference internal" href="contribute-recipe.html">Contributing a ggd recipe</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="recipes.html">Available data packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recipes.html">Available Data Packages</a></li>
 </ul>
 </div>
 </div>

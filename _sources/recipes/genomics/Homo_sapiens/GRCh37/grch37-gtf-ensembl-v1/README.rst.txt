@@ -7,25 +7,23 @@ grch37-gtf-ensembl-v1
 
 The GRCh37 gtf file from ensembl
 
-=========================== ====================================
-GGD Pacakge                 grch37-gtf-ensembl-v1 
-Species                     Homo_sapiens
-Genome Build                GRCh37
-GGD Channel                 ggd-genomics
-Package Version             1
-Recipe Author               mjc 
-Data Provider               NA
-Data Version                release-75
-Genomic File Type           NA
-Data file coordinate basing NA
-Package's Data Files        NA
-Size of Each Data File      NA
-Package Keywords            gtf, gtf-file, ensembl
-Package Dependencies:       gsort, htslib, zlib
-Recipe                      https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/GRCh37/grch37-gtf-ensembl-v1
-=========================== ====================================
-
-
+================================== ====================================
+GGD Pacakge                        grch37-gtf-ensembl-v1 
+Species                            Homo_sapiens
+Genome Build                       GRCh37
+GGD Channel                        ggd-genomics
+Package Version                    1
+Recipe Author                      mjc 
+Data Provider                      NA
+Data Version                       release-75
+Genomic File Type                  NA
+Data file coordinate basing        NA
+Package's Data Files               NA
+Approximate Size of Each Data File NA
+Package Keywords                   gtf, gtf-file, ensembl
+Package Dependencies:              gsort, htslib, zlib
+Recipe                             https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/GRCh37/grch37-gtf-ensembl-v1
+================================== ====================================
 
 
 

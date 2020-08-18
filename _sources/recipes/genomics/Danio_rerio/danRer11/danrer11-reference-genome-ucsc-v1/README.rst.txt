@@ -7,25 +7,23 @@ danrer11-reference-genome-ucsc-v1
 
 The danRer11 reference genome from UCSC
 
-=========================== ====================================
-GGD Pacakge                 danrer11-reference-genome-ucsc-v1 
-Species                     Danio_rerio
-Genome Build                danRer11
-GGD Channel                 ggd-genomics
-Package Version             1
-Recipe Author               mjc 
-Data Provider               NA
-Data Version                6/6/17
-Genomic File Type           NA
-Data file coordinate basing NA
-Package's Data Files        NA
-Size of Each Data File      NA
-Package Keywords            ref, reference, zebrafish, genome, UCSC, fasta-file
-Package Dependencies:       samtools
-Recipe                      https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Danio_rerio/danRer11/danrer11-reference-genome-ucsc-v1
-=========================== ====================================
-
-
+================================== ====================================
+GGD Pacakge                        danrer11-reference-genome-ucsc-v1 
+Species                            Danio_rerio
+Genome Build                       danRer11
+GGD Channel                        ggd-genomics
+Package Version                    1
+Recipe Author                      mjc 
+Data Provider                      NA
+Data Version                       6/6/17
+Genomic File Type                  NA
+Data file coordinate basing        NA
+Package's Data Files               NA
+Approximate Size of Each Data File NA
+Package Keywords                   ref, reference, zebrafish, genome, UCSC, fasta-file
+Package Dependencies:              samtools
+Recipe                             https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Danio_rerio/danRer11/danrer11-reference-genome-ucsc-v1
+================================== ====================================
 
 
 

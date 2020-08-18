@@ -7,25 +7,23 @@ grcz11-reference-genome-ensembl-v1
 
 The GRCz11 release 96 reference genome from Ensembl
 
-=========================== ====================================
-GGD Pacakge                 grcz11-reference-genome-ensembl-v1 
-Species                     Danio_rerio
-Genome Build                GRCz11
-GGD Channel                 ggd-genomics
-Package Version             1
-Recipe Author               mjc 
-Data Provider               NA
-Data Version                Release-96
-Genomic File Type           NA
-Data file coordinate basing NA
-Package's Data Files        NA
-Size of Each Data File      NA
-Package Keywords            ref, reference, zebrafish, genome, Ensembl, fasta-file
-Package Dependencies:       samtools, zlib
-Recipe                      https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Danio_rerio/GRCz11/grcz11-reference-genome-ensembl-v1
-=========================== ====================================
-
-
+================================== ====================================
+GGD Pacakge                        grcz11-reference-genome-ensembl-v1 
+Species                            Danio_rerio
+Genome Build                       GRCz11
+GGD Channel                        ggd-genomics
+Package Version                    1
+Recipe Author                      mjc 
+Data Provider                      NA
+Data Version                       Release-96
+Genomic File Type                  NA
+Data file coordinate basing        NA
+Package's Data Files               NA
+Approximate Size of Each Data File NA
+Package Keywords                   ref, reference, zebrafish, genome, Ensembl, fasta-file
+Package Dependencies:              samtools, zlib
+Recipe                             https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Danio_rerio/GRCz11/grcz11-reference-genome-ensembl-v1
+================================== ====================================
 
 
 

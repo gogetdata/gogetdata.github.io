@@ -7,25 +7,23 @@ grch38-lncrna-sequences-chr-regions-gencode-v1
 
 Long non-coding RNA transcript sequences for CHR regions. Nucleotide sequences of long non-coding RNA transcripts on the reference chromosomes
 
-=========================== ====================================
-GGD Pacakge                 grch38-lncrna-sequences-chr-regions-gencode-v1 
-Species                     Homo_sapiens
-Genome Build                GRCh38
-GGD Channel                 ggd-genomics
-Package Version             1
-Recipe Author               jrb 
-Data Provider               GENCODE
-Data Version                release-34,patch13
-Genomic File Type           fa
-Data file coordinate basing NA
-Package's Data Files        grch38-lncrna-sequences-chr-regions-gencode-v1.fa.gz, grch38-lncrna-sequences-chr-regions-gencode-v1.fa.gz.fai, grch38-lncrna-sequences-chr-regions-gencode-v1.fa.gz.gzi
-Size of Each Data File      grch38-lncrna-sequences-chr-regions-gencode-v1.fa.gz: 16.00M, grch38-lncrna-sequences-chr-regions-gencode-v1.fa.gz.fai: 6.18M, grch38-lncrna-sequences-chr-regions-gencode-v1.fa.gz.gzi: 17.34K
-Package Keywords            reference, gencode, fasta, non-coding, noncoding, long-noncoding, lncrna, transcript
-Package Dependencies:       htslib, samtools, samtools>=1.10, zlib
-Recipe                      https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/GRCh38/grch38-lncrna-sequences-chr-regions-gencode-v1
-=========================== ====================================
-
-
+================================== ====================================
+GGD Pacakge                        grch38-lncrna-sequences-chr-regions-gencode-v1 
+Species                            Homo_sapiens
+Genome Build                       GRCh38
+GGD Channel                        ggd-genomics
+Package Version                    1
+Recipe Author                      jrb 
+Data Provider                      GENCODE
+Data Version                       release-34,patch13
+Genomic File Type                  fa
+Data file coordinate basing        NA
+Package's Data Files               grch38-lncrna-sequences-chr-regions-gencode-v1.fa.gz, grch38-lncrna-sequences-chr-regions-gencode-v1.fa.gz.fai, grch38-lncrna-sequences-chr-regions-gencode-v1.fa.gz.gzi
+Approximate Size of Each Data File grch38-lncrna-sequences-chr-regions-gencode-v1.fa.gz: **16.00M**, grch38-lncrna-sequences-chr-regions-gencode-v1.fa.gz.fai: **6.18M**, grch38-lncrna-sequences-chr-regions-gencode-v1.fa.gz.gzi: **17.34K**
+Package Keywords                   reference, gencode, fasta, non-coding, noncoding, long-noncoding, lncrna, transcript
+Package Dependencies:              htslib, samtools, samtools>=1.10, zlib
+Recipe                             https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/GRCh38/grch38-lncrna-sequences-chr-regions-gencode-v1
+================================== ====================================
 
 
 

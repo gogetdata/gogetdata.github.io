@@ -7,25 +7,23 @@ grch38-chrom-mapping-ucsc2ensembl-ncbi-v1
 
 A tab delimited file containing scaffolding ids that map hg38 UCSC scaffoldings to GRCh38 Ensembl(GenBank) scaffoldings. This is specific to patch 13 of the GRCh38 Human genome build. (1st column = UCSC ids, 2nd column = Ensembl ids)
 
-=========================== ====================================
-GGD Pacakge                 grch38-chrom-mapping-ucsc2ensembl-ncbi-v1 
-Species                     Homo_sapiens
-Genome Build                GRCh38
-GGD Channel                 ggd-genomics
-Package Version             1
-Recipe Author               mjc 
-Data Provider               NCBI
-Data Version                14-April-2020-(patch13)
-Genomic File Type           txt
-Data file coordinate basing NA
-Package's Data Files        grch38-chrom-mapping-ucsc2ensembl-ncbi-v1.txt
-Size of Each Data File      grch38-chrom-mapping-ucsc2ensembl-ncbi-v1.txt: 17.88K
-Package Keywords            Chromosome-mapping, mapping, chrommapping, UCSC2Ensembl, scaffolding-ids, txt, patch-13, hg38-to-GRCh38
-Package Dependencies:       bioawk
-Recipe                      https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/GRCh38/grch38-chrom-mapping-ucsc2ensembl-ncbi-v1
-=========================== ====================================
-
-
+================================== ====================================
+GGD Pacakge                        grch38-chrom-mapping-ucsc2ensembl-ncbi-v1 
+Species                            Homo_sapiens
+Genome Build                       GRCh38
+GGD Channel                        ggd-genomics
+Package Version                    1
+Recipe Author                      mjc 
+Data Provider                      NCBI
+Data Version                       14-April-2020-(patch13)
+Genomic File Type                  txt
+Data file coordinate basing        NA
+Package's Data Files               grch38-chrom-mapping-ucsc2ensembl-ncbi-v1.txt
+Approximate Size of Each Data File grch38-chrom-mapping-ucsc2ensembl-ncbi-v1.txt: **17.88K**
+Package Keywords                   Chromosome-mapping, mapping, chrommapping, UCSC2Ensembl, scaffolding-ids, txt, patch-13, hg38-to-GRCh38
+Package Dependencies:              bioawk
+Recipe                             https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/GRCh38/grch38-chrom-mapping-ucsc2ensembl-ncbi-v1
+================================== ====================================
 
 
 

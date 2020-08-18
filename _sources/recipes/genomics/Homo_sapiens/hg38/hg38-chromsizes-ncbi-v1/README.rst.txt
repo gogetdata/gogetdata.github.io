@@ -7,25 +7,23 @@ hg38-chromsizes-ncbi-v1
 
 Chromosome lengths for the hg38 genome build from NCBI. (Used to create the Go Get Data (GGD) hg38.genome file)
 
-=========================== ====================================
-GGD Pacakge                 hg38-chromsizes-ncbi-v1 
-Species                     Homo_sapiens
-Genome Build                hg38
-GGD Channel                 ggd-genomics
-Package Version             1
-Recipe Author               mjc 
-Data Provider               NCBI
-Data Version                14-April-2020-(patch13)
-Genomic File Type           genome
-Data file coordinate basing NA
-Package's Data Files        hg38-chromsizes-ncbi-v1.genome
-Size of Each Data File      hg38-chromsizes-ncbi-v1.genome: 15.53K
-Package Keywords            genome, chromosome, lengths, sizes, chrom-lengths
-Package Dependencies:       
-Recipe                      https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/hg38/hg38-chromsizes-ncbi-v1
-=========================== ====================================
-
-
+================================== ====================================
+GGD Pacakge                        hg38-chromsizes-ncbi-v1 
+Species                            Homo_sapiens
+Genome Build                       hg38
+GGD Channel                        ggd-genomics
+Package Version                    1
+Recipe Author                      mjc 
+Data Provider                      NCBI
+Data Version                       14-April-2020-(patch13)
+Genomic File Type                  genome
+Data file coordinate basing        NA
+Package's Data Files               hg38-chromsizes-ncbi-v1.genome
+Approximate Size of Each Data File hg38-chromsizes-ncbi-v1.genome: **15.53K**
+Package Keywords                   genome, chromosome, lengths, sizes, chrom-lengths
+Package Dependencies:              
+Recipe                             https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/hg38/hg38-chromsizes-ncbi-v1
+================================== ====================================
 
 
 

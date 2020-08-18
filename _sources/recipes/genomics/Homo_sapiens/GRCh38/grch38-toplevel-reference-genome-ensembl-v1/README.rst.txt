@@ -7,25 +7,23 @@ grch38-toplevel-reference-genome-ensembl-v1
 
 The GRCh38 unmasked genomic DNA seqeunce reference genome from Ensembl-Release 99. Includes all sequence regions flagged as toplevel by Ensembl including chromosomes, regions not assembled into chromosomes, and N padded haplotype/patch regions. &#39;Top Level file&#39;
 
-=========================== ====================================
-GGD Pacakge                 grch38-toplevel-reference-genome-ensembl-v1 
-Species                     Homo_sapiens
-Genome Build                GRCh38
-GGD Channel                 ggd-genomics
-Package Version             1
-Recipe Author               mjc 
-Data Provider               Ensembl
-Data Version                release-99_11-18-19
-Genomic File Type           fa
-Data file coordinate basing NA
-Package's Data Files        grch38-toplevel-reference-genome-ensembl-v1.fa.gz, grch38-toplevel-reference-genome-ensembl-v1.fa.gz.fai, grch38-toplevel-reference-genome-ensembl-v1.fa.gz.gzi
-Size of Each Data File      grch38-toplevel-reference-genome-ensembl-v1.fa.gz: 1.29G, grch38-toplevel-reference-genome-ensembl-v1.fa.gz.fai: 27.85K, grch38-toplevel-reference-genome-ensembl-v1.fa.gz.gzi: 15.74M
-Package Keywords            Top-Level, Release-99, ref, reference, Ensembl-ref, DNA-Seqeunce, Fasta-Seqeunce, fasta-file
-Package Dependencies:       samtools, zlib
-Recipe                      https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/GRCh38/grch38-toplevel-reference-genome-ensembl-v1
-=========================== ====================================
-
-
+================================== ====================================
+GGD Pacakge                        grch38-toplevel-reference-genome-ensembl-v1 
+Species                            Homo_sapiens
+Genome Build                       GRCh38
+GGD Channel                        ggd-genomics
+Package Version                    1
+Recipe Author                      mjc 
+Data Provider                      Ensembl
+Data Version                       release-99_11-18-19
+Genomic File Type                  fa
+Data file coordinate basing        NA
+Package's Data Files               grch38-toplevel-reference-genome-ensembl-v1.fa.gz, grch38-toplevel-reference-genome-ensembl-v1.fa.gz.fai, grch38-toplevel-reference-genome-ensembl-v1.fa.gz.gzi
+Approximate Size of Each Data File grch38-toplevel-reference-genome-ensembl-v1.fa.gz: **1.29G**, grch38-toplevel-reference-genome-ensembl-v1.fa.gz.fai: **27.85K**, grch38-toplevel-reference-genome-ensembl-v1.fa.gz.gzi: **15.74M**
+Package Keywords                   Top-Level, Release-99, ref, reference, Ensembl-ref, DNA-Seqeunce, Fasta-Seqeunce, fasta-file
+Package Dependencies:              samtools, zlib
+Recipe                             https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/GRCh38/grch38-toplevel-reference-genome-ensembl-v1
+================================== ====================================
 
 
 

@@ -7,25 +7,23 @@ hg19-gaps-ucsc-v1
 
 Assembly gaps from UCSC in bed fromat. Scaffoldings that are not contained in the hg19.genome file are removed
 
-=========================== ====================================
-GGD Pacakge                 hg19-gaps-ucsc-v1 
-Species                     Homo_sapiens
-Genome Build                hg19
-GGD Channel                 ggd-genomics
-Package Version             1
-Recipe Author               mjc 
-Data Provider               UCSC
-Data Version                22-Mar-2020
-Genomic File Type           bed
-Data file coordinate basing 0-based-inclusive
-Package's Data Files        hg19-gaps-ucsc-v1.bed.gz, hg19-gaps-ucsc-v1.bed.gz.tbi
-Size of Each Data File      hg19-gaps-ucsc-v1.bed.gz: 5.16K, hg19-gaps-ucsc-v1.bed.gz.tbi: 8.22K
-Package Keywords            gaps, regions, gap-locations, Assembly-Gaps, clone-gaps, contig-gaps, centromere-gaps, telomere-gaps, heterochromatin-gaps, short-arm-gaps
-Package Dependencies:       gsort, htslib, zlib
-Recipe                      https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/hg19/hg19-gaps-ucsc-v1
-=========================== ====================================
-
-
+================================== ====================================
+GGD Pacakge                        hg19-gaps-ucsc-v1 
+Species                            Homo_sapiens
+Genome Build                       hg19
+GGD Channel                        ggd-genomics
+Package Version                    1
+Recipe Author                      mjc 
+Data Provider                      UCSC
+Data Version                       22-Mar-2020
+Genomic File Type                  bed
+Data file coordinate basing        0-based-inclusive
+Package's Data Files               hg19-gaps-ucsc-v1.bed.gz, hg19-gaps-ucsc-v1.bed.gz.tbi
+Approximate Size of Each Data File hg19-gaps-ucsc-v1.bed.gz: **5.16K**, hg19-gaps-ucsc-v1.bed.gz.tbi: **8.22K**
+Package Keywords                   gaps, regions, gap-locations, Assembly-Gaps, clone-gaps, contig-gaps, centromere-gaps, telomere-gaps, heterochromatin-gaps, short-arm-gaps
+Package Dependencies:              gsort, htslib, zlib
+Recipe                             https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/hg19/hg19-gaps-ucsc-v1
+================================== ====================================
 
 
 

@@ -7,25 +7,23 @@ grch37-chromsizes-ggd-v1
 
 Chromosome lengths for GRCh37
 
-=========================== ====================================
-GGD Pacakge                 grch37-chromsizes-ggd-v1 
-Species                     Homo_sapiens
-Genome Build                GRCh37
-GGD Channel                 ggd-genomics
-Package Version             1
-Recipe Author               arq5x 
-Data Provider               GGD
-Data Version                16-Apirl-2020
-Genomic File Type           txt
-Data file coordinate basing NA
-Package's Data Files        grch37-chromsizes-ggd-v1.txt
-Size of Each Data File      grch37-chromsizes-ggd-v1.txt: 5.17K
-Package Keywords            genome, chromosome, lengths, sizes
-Package Dependencies:       
-Recipe                      https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/GRCh37/grch37-chromsizes-ggd-v1
-=========================== ====================================
-
-
+================================== ====================================
+GGD Pacakge                        grch37-chromsizes-ggd-v1 
+Species                            Homo_sapiens
+Genome Build                       GRCh37
+GGD Channel                        ggd-genomics
+Package Version                    1
+Recipe Author                      arq5x 
+Data Provider                      GGD
+Data Version                       16-Apirl-2020
+Genomic File Type                  txt
+Data file coordinate basing        NA
+Package's Data Files               grch37-chromsizes-ggd-v1.txt
+Approximate Size of Each Data File grch37-chromsizes-ggd-v1.txt: **5.17K**
+Package Keywords                   genome, chromosome, lengths, sizes
+Package Dependencies:              
+Recipe                             https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/GRCh37/grch37-chromsizes-ggd-v1
+================================== ====================================
 
 
 

@@ -7,25 +7,23 @@ grch38-liftover-chain-37-to-38-ensembl-v1
 
 Liftover chain file from ensembl
 
-=========================== ====================================
-GGD Pacakge                 grch38-liftover-chain-37-to-38-ensembl-v1 
-Species                     Homo_sapiens
-Genome Build                GRCh38
-GGD Channel                 ggd-genomics
-Package Version             1
-Recipe Author               jrb 
-Data Provider               ensembl
-Data Version                1
-Genomic File Type           chain.gz
-Data file coordinate basing NA
-Package's Data Files        grch38-liftover-chain-37-to-38-ensembl-v1.chain.gz
-Size of Each Data File      grch38-liftover-chain-37-to-38-ensembl-v1.chain.gz: 285.25K
-Package Keywords            chain, liftover, grch38, grch37, ensembl
-Package Dependencies:       
-Recipe                      https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/GRCh38/grch38-liftover-chain-37-to-38-ensembl-v1
-=========================== ====================================
-
-
+================================== ====================================
+GGD Pacakge                        grch38-liftover-chain-37-to-38-ensembl-v1 
+Species                            Homo_sapiens
+Genome Build                       GRCh38
+GGD Channel                        ggd-genomics
+Package Version                    1
+Recipe Author                      jrb 
+Data Provider                      ensembl
+Data Version                       1
+Genomic File Type                  chain.gz
+Data file coordinate basing        NA
+Package's Data Files               grch38-liftover-chain-37-to-38-ensembl-v1.chain.gz
+Approximate Size of Each Data File grch38-liftover-chain-37-to-38-ensembl-v1.chain.gz: **285.25K**
+Package Keywords                   chain, liftover, grch38, grch37, ensembl
+Package Dependencies:              
+Recipe                             https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/GRCh38/grch38-liftover-chain-37-to-38-ensembl-v1
+================================== ====================================
 
 
 

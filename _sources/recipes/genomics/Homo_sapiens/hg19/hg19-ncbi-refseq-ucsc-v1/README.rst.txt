@@ -7,25 +7,23 @@ hg19-ncbi-refseq-ucsc-v1
 
 The composite NCBI RefSeq gene track from UCSC converted to bed format. (Human protein-coding and non-protein-coding genes from NCBI RefSeq)
 
-=========================== ====================================
-GGD Pacakge                 hg19-ncbi-refseq-ucsc-v1 
-Species                     Homo_sapiens
-Genome Build                hg19
-GGD Channel                 ggd-genomics
-Package Version             1
-Recipe Author               mjc 
-Data Provider               NA
-Data Version                08-Apr-2018
-Genomic File Type           NA
-Data file coordinate basing NA
-Package's Data Files        NA
-Size of Each Data File      NA
-Package Keywords            ncbi, refseq, UCSC, NCBI-RNA-reference-seqeunce-collection, bed-file
-Package Dependencies:       gsort, htslib, zlib
-Recipe                      https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/hg19/hg19-ncbi-refseq-ucsc-v1
-=========================== ====================================
-
-
+================================== ====================================
+GGD Pacakge                        hg19-ncbi-refseq-ucsc-v1 
+Species                            Homo_sapiens
+Genome Build                       hg19
+GGD Channel                        ggd-genomics
+Package Version                    1
+Recipe Author                      mjc 
+Data Provider                      NA
+Data Version                       08-Apr-2018
+Genomic File Type                  NA
+Data file coordinate basing        NA
+Package's Data Files               NA
+Approximate Size of Each Data File NA
+Package Keywords                   ncbi, refseq, UCSC, NCBI-RNA-reference-seqeunce-collection, bed-file
+Package Dependencies:              gsort, htslib, zlib
+Recipe                             https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/hg19/hg19-ncbi-refseq-ucsc-v1
+================================== ====================================
 
 
 

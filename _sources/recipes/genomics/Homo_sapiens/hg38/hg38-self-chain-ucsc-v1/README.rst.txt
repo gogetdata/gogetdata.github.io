@@ -7,25 +7,23 @@ hg38-self-chain-ucsc-v1
 
 Self chain alignemnts of the human genome with an improved gap scoring system. Alignemtns point out areas of duplication wihtin the human genome, with the exception of the pseudoautosomal regions on X and Y. From the Human Chained Self Alignemnts track on UCSC.
 
-=========================== ====================================
-GGD Pacakge                 hg38-self-chain-ucsc-v1 
-Species                     Homo_sapiens
-Genome Build                hg38
-GGD Channel                 ggd-genomics
-Package Version             1
-Recipe Author               mjc 
-Data Provider               UCSC
-Data Version                21-Jun-2020
-Genomic File Type           bed
-Data file coordinate basing 0-based-inclusive
-Package's Data Files        hg38-self-chain-ucsc-v1.bed.gz, hg38-self-chain-ucsc-v1.bed.gz.tbi
-Size of Each Data File      hg38-self-chain-ucsc-v1.bed.gz: 800.36M, hg38-self-chain-ucsc-v1.bed.gz.tbi: 716.61K
-Package Keywords            Self-Chain, Self-Alignment, Repeats, low-copy-repeats
-Package Dependencies:       gsort, htslib, zlib
-Recipe                      https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/hg38/hg38-self-chain-ucsc-v1
-=========================== ====================================
-
-
+================================== ====================================
+GGD Pacakge                        hg38-self-chain-ucsc-v1 
+Species                            Homo_sapiens
+Genome Build                       hg38
+GGD Channel                        ggd-genomics
+Package Version                    1
+Recipe Author                      mjc 
+Data Provider                      UCSC
+Data Version                       21-Jun-2020
+Genomic File Type                  bed
+Data file coordinate basing        0-based-inclusive
+Package's Data Files               hg38-self-chain-ucsc-v1.bed.gz, hg38-self-chain-ucsc-v1.bed.gz.tbi
+Approximate Size of Each Data File hg38-self-chain-ucsc-v1.bed.gz: **800.36M**, hg38-self-chain-ucsc-v1.bed.gz.tbi: **716.61K**
+Package Keywords                   Self-Chain, Self-Alignment, Repeats, low-copy-repeats
+Package Dependencies:              gsort, htslib, zlib
+Recipe                             https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/hg38/hg38-self-chain-ucsc-v1
+================================== ====================================
 
 
 

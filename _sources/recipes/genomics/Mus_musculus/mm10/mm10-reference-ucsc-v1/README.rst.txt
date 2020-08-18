@@ -7,25 +7,23 @@ mm10-reference-ucsc-v1
 
 Reference genome for mouse from UCSC
 
-=========================== ====================================
-GGD Pacakge                 mm10-reference-ucsc-v1 
-Species                     Mus_musculus
-Genome Build                mm10
-GGD Channel                 ggd-genomics
-Package Version             1
-Recipe Author               jrb 
-Data Provider               NA
-Data Version                07-Feb-2012
-Genomic File Type           NA
-Data file coordinate basing NA
-Package's Data Files        NA
-Size of Each Data File      NA
-Package Keywords            reference, ucsc, mouse, mm10, reference-genome, fasta-file
-Package Dependencies:       samtools
-Recipe                      https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Mus_musculus/mm10/mm10-reference-ucsc-v1
-=========================== ====================================
-
-
+================================== ====================================
+GGD Pacakge                        mm10-reference-ucsc-v1 
+Species                            Mus_musculus
+Genome Build                       mm10
+GGD Channel                        ggd-genomics
+Package Version                    1
+Recipe Author                      jrb 
+Data Provider                      NA
+Data Version                       07-Feb-2012
+Genomic File Type                  NA
+Data file coordinate basing        NA
+Package's Data Files               NA
+Approximate Size of Each Data File NA
+Package Keywords                   reference, ucsc, mouse, mm10, reference-genome, fasta-file
+Package Dependencies:              samtools
+Recipe                             https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Mus_musculus/mm10/mm10-reference-ucsc-v1
+================================== ====================================
 
 
 

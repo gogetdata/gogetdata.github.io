@@ -7,25 +7,23 @@ grch38-trna-genes-ucsc-v1
 
 tRNA gene predictions from tRNAscan-SE v1.23 hosted on UCSC. Remapped from UCSC hg38 to Ensembl GRCh38
 
-=========================== ====================================
-GGD Pacakge                 grch38-trna-genes-ucsc-v1 
-Species                     Homo_sapiens
-Genome Build                GRCh38
-GGD Channel                 ggd-genomics
-Package Version             1
-Recipe Author               mjc 
-Data Provider               UCSC
-Data Version                01-Oct-2017
-Genomic File Type           bed
-Data file coordinate basing 0-based-inclusive
-Package's Data Files        grch38-trna-genes-ucsc-v1.bed.gz, grch38-trna-genes-ucsc-v1.bed.gz.tbi
-Size of Each Data File      grch38-trna-genes-ucsc-v1.bed.gz: 15.46K, grch38-trna-genes-ucsc-v1.bed.gz.tbi: 8.64K
-Package Keywords            tRNA, tRNA-predictions, tRNA-Gene-Predictions, tRNA-Genes, tRNAscan-SE, GtRNAdb
-Package Dependencies:       grch38-chrom-mapping-ucsc2ensembl-ncbi-v1, gsort, htslib, zlib
-Recipe                      https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/GRCh38/grch38-trna-genes-ucsc-v1
-=========================== ====================================
-
-
+================================== ====================================
+GGD Pacakge                        grch38-trna-genes-ucsc-v1 
+Species                            Homo_sapiens
+Genome Build                       GRCh38
+GGD Channel                        ggd-genomics
+Package Version                    1
+Recipe Author                      mjc 
+Data Provider                      UCSC
+Data Version                       01-Oct-2017
+Genomic File Type                  bed
+Data file coordinate basing        0-based-inclusive
+Package's Data Files               grch38-trna-genes-ucsc-v1.bed.gz, grch38-trna-genes-ucsc-v1.bed.gz.tbi
+Approximate Size of Each Data File grch38-trna-genes-ucsc-v1.bed.gz: **15.46K**, grch38-trna-genes-ucsc-v1.bed.gz.tbi: **8.64K**
+Package Keywords                   tRNA, tRNA-predictions, tRNA-Gene-Predictions, tRNA-Genes, tRNAscan-SE, GtRNAdb
+Package Dependencies:              grch38-chrom-mapping-ucsc2ensembl-ncbi-v1, gsort, htslib, zlib
+Recipe                             https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/GRCh38/grch38-trna-genes-ucsc-v1
+================================== ====================================
 
 
 

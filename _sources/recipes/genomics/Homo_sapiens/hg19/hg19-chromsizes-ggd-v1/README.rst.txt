@@ -7,25 +7,23 @@ hg19-chromsizes-ggd-v1
 
 Chromosome lengths for hg19
 
-=========================== ====================================
-GGD Pacakge                 hg19-chromsizes-ggd-v1 
-Species                     Homo_sapiens
-Genome Build                hg19
-GGD Channel                 ggd-genomics
-Package Version             1
-Recipe Author               arq5x 
-Data Provider               GGD
-Data Version                16-Apirl-2020
-Genomic File Type           txt
-Data file coordinate basing NA
-Package's Data Files        hg19-chromsizes-ggd-v1.txt
-Size of Each Data File      hg19-chromsizes-ggd-v1.txt: 1.99K
-Package Keywords            genome, chromosome, lengths, sizes
-Package Dependencies:       
-Recipe                      https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/hg19/hg19-chromsizes-ggd-v1
-=========================== ====================================
-
-
+================================== ====================================
+GGD Pacakge                        hg19-chromsizes-ggd-v1 
+Species                            Homo_sapiens
+Genome Build                       hg19
+GGD Channel                        ggd-genomics
+Package Version                    1
+Recipe Author                      arq5x 
+Data Provider                      GGD
+Data Version                       16-Apirl-2020
+Genomic File Type                  txt
+Data file coordinate basing        NA
+Package's Data Files               hg19-chromsizes-ggd-v1.txt
+Approximate Size of Each Data File hg19-chromsizes-ggd-v1.txt: **1.99K**
+Package Keywords                   genome, chromosome, lengths, sizes
+Package Dependencies:              
+Recipe                             https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/hg19/hg19-chromsizes-ggd-v1
+================================== ====================================
 
 
 

@@ -7,25 +7,23 @@ hg19-hapmap-broad-v1
 
 The hapmap vcf versoin 3.3 (hosted on the  broad&#39;s ftp site)
 
-=========================== ====================================
-GGD Pacakge                 hg19-hapmap-broad-v1 
-Species                     Homo_sapiens
-Genome Build                hg19
-GGD Channel                 ggd-genomics
-Package Version             1
-Recipe Author               mjc 
-Data Provider               NA
-Data Version                3.3 - 12/7/13
-Genomic File Type           NA
-Data file coordinate basing NA
-Package's Data Files        NA
-Size of Each Data File      NA
-Package Keywords            hapmap, broad-institute, vcf-file
-Package Dependencies:       gsort, htslib, zlib
-Recipe                      https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/hg19/hg19-hapmap-broad-v1
-=========================== ====================================
-
-
+================================== ====================================
+GGD Pacakge                        hg19-hapmap-broad-v1 
+Species                            Homo_sapiens
+Genome Build                       hg19
+GGD Channel                        ggd-genomics
+Package Version                    1
+Recipe Author                      mjc 
+Data Provider                      NA
+Data Version                       3.3 - 12/7/13
+Genomic File Type                  NA
+Data file coordinate basing        NA
+Package's Data Files               NA
+Approximate Size of Each Data File NA
+Package Keywords                   hapmap, broad-institute, vcf-file
+Package Dependencies:              gsort, htslib, zlib
+Recipe                             https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/hg19/hg19-hapmap-broad-v1
+================================== ====================================
 
 
 
