@@ -255,8 +255,8 @@ other functions. If you need to move these files please make a copy and move the
 <div class="section" id="fetching-the-data-files-with-get-files">
 <h2>6) Fetching the data files with “get-files”<a class="headerlink" href="#fetching-the-data-files-with-get-files" title="Permalink to this headline">¶</a></h2>
 <p>GGD also provides a tool to fetch installed data files if you don’t want to use or don’t have access to the environment variables. (You will only have access to the
-environment variables if your are in the conda environment where the files were installed)</p>
-<p>If you are not in the conda environment where the data packages was installed, if you perfer not using the environment variables created for you, or if the environment variables available
+environment variables if you are in the conda environment where the files were installed)</p>
+<p>If you are not in the conda environment where the data packages were installed, if you perfer not using the environment variables created for you, or if the environment variables available
 don’t point to the file you would like to access, you can use <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">get-files</span></code> to fetch the desired files.</p>
 <p>For example, if you wanted to get the GRCh38 reference genome fasta file you installed in step 3, you could use the following command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd get-files grch38-reference-genome-ensembl-v1 -p <span class="s2">&quot;*.fa&quot;</span>
