@@ -8,7 +8,7 @@ grch38-clinically-associated-variants-ensembl-v1
 All known clinically associated variants at the time of Ensembl release 99. Any variant in ClinVar classified as probably/likely-pathogenic, pathogenic, drug-response, or histocompatibility are included. Decomposed and Normalized. Ensembl variant info page can be found at: https://uswest.ensembl.org/info/genome/variation/index.html
 
 ================================== ====================================
-GGD Pacakge                        grch38-clinically-associated-variants-ensembl-v1 
+GGD Package                        grch38-clinically-associated-variants-ensembl-v1 
 Species                            Homo_sapiens
 Genome Build                       GRCh38
 GGD Channel                        ggd-genomics
@@ -25,14 +25,16 @@ Package Dependencies:              bcftools, grch38-reference-genome-ensembl-v1,
 Recipe                             https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/GRCh38/grch38-clinically-associated-variants-ensembl-v1
 ================================== ====================================
 
-
+Install with ``--prefix``
+-------------------------
+**Prefix install enabled:** *True*
 
 Installation
 ------------
 
 .. highlight: bash
 
-With ggd insatlled and an activated ggd channel (see :ref:`using-ggd`), install with::
+With ggd installed and an activated ggd channel (see :ref:`using-ggd`), install with::
 
    ggd install -c ggd-genomics grch38-clinically-associated-variants-ensembl-v1
 

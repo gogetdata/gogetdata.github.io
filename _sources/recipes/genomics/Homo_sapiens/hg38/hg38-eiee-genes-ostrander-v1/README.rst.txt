@@ -8,7 +8,7 @@ hg38-eiee-genes-ostrander-v1
 CDS region genomic coordinates, along with complement coordinates, for a set of eiee genes. The eiee gene set comes from a paper on EIEE (Early Infantile Epileptic Encephalopathy) a severe, fatal epileptic syndrome that occurs within the first few months of life. The gene set is a compilation of gene sets from a few different companies, gene panels, as well as one from the U of Chicago. Paper at: https://www.nature.com/articles/s41525-018-0061-8
 
 ================================== ====================================
-GGD Pacakge                        hg38-eiee-genes-ostrander-v1 
+GGD Package                        hg38-eiee-genes-ostrander-v1 
 Species                            Homo_sapiens
 Genome Build                       hg38
 GGD Channel                        ggd-genomics
@@ -25,14 +25,16 @@ Package Dependencies:              bedtools, grch38-gene-features-ensembl-v1, gs
 Recipe                             https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/hg38/hg38-eiee-genes-ostrander-v1
 ================================== ====================================
 
-
+Install with ``--prefix``
+-------------------------
+**Prefix install enabled:** *True*
 
 Installation
 ------------
 
 .. highlight: bash
 
-With ggd insatlled and an activated ggd channel (see :ref:`using-ggd`), install with::
+With ggd installed and an activated ggd channel (see :ref:`using-ggd`), install with::
 
    ggd install -c ggd-genomics hg38-eiee-genes-ostrander-v1
 

@@ -138,55 +138,55 @@ Running <code class="code docutils literal notranslate"><span class="pre">ggd</s
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>-h, –help</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">-h</span></code>, <code class="docutils literal notranslate"><span class="pre">--help</span></code></p></td>
 <td><p>show this help message and exit</p></td>
 </tr>
-<tr class="row-odd"><td><p>-c, –channel</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-c</span></code>, <code class="docutils literal notranslate"><span class="pre">--channel</span></code></p></td>
 <td><p>(Optional) The ggd channel to use. (Default = genomics)</p></td>
 </tr>
-<tr class="row-even"><td><p>-d, –dependency</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">-d</span></code>, <code class="docutils literal notranslate"><span class="pre">--dependency</span></code></p></td>
 <td><p>any software dependencies (in bioconda, conda-forge) or
 data-dependency (in ggd). May be used as many times as needed.</p></td>
 </tr>
-<tr class="row-odd"><td><p>-p, –platform</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-p</span></code>, <code class="docutils literal notranslate"><span class="pre">--platform</span></code></p></td>
 <td><p>(Optional) Whether to use noarch as the platform or the system
 platform. If set to ‘none’ the system platform will be
 used. (Default = noarch. Noarch means no architecture
 and is platform agnostic.)</p></td>
 </tr>
-<tr class="row-even"><td><p>-s, –species</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">-s</span></code>, <code class="docutils literal notranslate"><span class="pre">--species</span></code></p></td>
 <td><p><strong>Required</strong> Species recipe is for</p></td>
 </tr>
-<tr class="row-odd"><td><p>-g, –genome-build</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-g</span></code>, <code class="docutils literal notranslate"><span class="pre">--genome-build</span></code></p></td>
 <td><p><strong>Required</strong> Genome-build the recipe is for</p></td>
 </tr>
-<tr class="row-even"><td><p>–author</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--author</span></code></p></td>
 <td><p><strong>Required</strong> The author(s) of the data recipe being created, (This recipe)</p></td>
 </tr>
-<tr class="row-odd"><td><p>-pv, –package-version</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-pv</span></code>, <code class="docutils literal notranslate"><span class="pre">--package-version</span></code></p></td>
 <td><p><strong>Required</strong> The version of the ggd package. (First time package = 1,
 updated package &gt; 1)</p></td>
 </tr>
-<tr class="row-even"><td><p>-dv, –data-version</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">-dv</span></code>, <code class="docutils literal notranslate"><span class="pre">--data-version</span></code></p></td>
 <td><p><strong>Required</strong> The version of the data (itself) being downloaded and
 processed (EX: dbsnp-127) If there is no data version
 apparent we recommend you use the date associated with
 the files or something else that can uniquely identify
 the ‘version’ of the data</p></td>
 </tr>
-<tr class="row-odd"><td><p>-dp, –data-provider</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-dp</span></code>, <code class="docutils literal notranslate"><span class="pre">--data-provider</span></code></p></td>
 <td><p><strong>Required</strong> The data provider where the data was accessed.
 (Example: UCSC, Ensembl, gnomAD, etc.)</p></td>
 </tr>
-<tr class="row-even"><td><p>–summary</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--summary</span></code></p></td>
 <td><p><strong>Required</strong> A detailed comment describing the recipe</p></td>
 </tr>
-<tr class="row-odd"><td><p>-k, –keyword</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-k</span></code>, <code class="docutils literal notranslate"><span class="pre">--keyword</span></code></p></td>
 <td><p><strong>Required</strong> A keyword to associate with the recipe. May be
 specified more that once. Please add enough keywords
 to better describe and distinguish the recipe</p></td>
 </tr>
-<tr class="row-even"><td><p>-cb, –coordinate-base</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">-cb</span></code>, <code class="docutils literal notranslate"><span class="pre">--coordinate-base</span></code></p></td>
 <td><p><strong>Required</strong> The genomic coordinate basing for the file(s) in the
 recipe. That is, the coordinates exclusive start at genomic
 coordinate 0 or 1, and the end coordinate is either
@@ -196,13 +196,13 @@ including the end coordinate) Files that do not have
 coordinate basing, like fasta files, specify NA for
 not applicable.</p></td>
 </tr>
-<tr class="row-odd"><td><p>-n, –name</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-n</span></code>, <code class="docutils literal notranslate"><span class="pre">--name</span></code></p></td>
 <td><p><strong>Required</strong> The sub-name of the recipe being created. (e.g. cpg-
 islands, pfam-domains, gaps, etc.) This will not be
 the final name of the recipe, but will specific to the data gathered
 and processed by the recipe</p></td>
 </tr>
-<tr class="row-even"><td><p>script</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">script</span></code></p></td>
 <td><p><strong>Required</strong> bash script that contains the commands to obtain and
 process the data</p></td>
 </tr>
@@ -231,7 +231,7 @@ flag.</p></li>
 <li><p><em>-n:</em> <code class="code docutils literal notranslate"><span class="pre">-n</span></code> represents the sub-name of the recipe. Sub-name refers to a portion of the name that will help to uniquely identify the
 recipe from all other recipes based on the data the recipe creates. The full name will include the genome build the data provider and the
 ggd recipe version. <strong>DO NOT</strong> include the genome build, data provider, or ggd recipe version here. Those will be designated with other flags.
-The name should be specific to the data being processed or currated by the recipe. (Please provide an identifiable name. Example: cpg-islands)</p></li>
+The name should be specific to the data being processed or curated by the recipe. (Please provide an identifiable name. Example: cpg-islands)</p></li>
 <li><p><em>script:</em> <code class="code docutils literal notranslate"><span class="pre">script</span></code> represents the bash script containing the information on data extraction and processing.</p></li>
 </ul>
 <p>Optional arguments:</p>
@@ -317,7 +317,7 @@ gsort temp.vcf https://raw.githubusercontent.com/gogetdata/ggd-recipes/master/ge
 tabix -p vcf ESP6500SI.all.snps_indels.vcf.gz
 
 <span class="c1"># get handle for reference file</span>
-<span class="nv">reference_fasta</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>ggd list-files <span class="s1">&#39;grch37-reference-genome-1000g-v1&#39;</span> -s <span class="s1">&#39;Homo_sapiens&#39;</span> -g <span class="s1">&#39;GRCh37&#39;</span> -p <span class="s1">&#39;grch37-reference-genomie-1000g-v1.fa&#39;</span><span class="k">)</span><span class="s2">&quot;</span>
+<span class="nv">reference_fasta</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>ggd get-files <span class="s1">&#39;grch37-reference-genome-1000g-v1&#39;</span> -s <span class="s1">&#39;Homo_sapiens&#39;</span> -g <span class="s1">&#39;GRCh37&#39;</span> -p <span class="s1">&#39;grch37-reference-genomie-1000g-v1.fa&#39;</span><span class="k">)</span><span class="s2">&quot;</span>
 
 <span class="c1"># get the sanitizer script</span>
 wget --quiet https://raw.githubusercontent.com/arq5x/gemini/00cd627497bc9ede6851eae2640bdaff9f4edfa3/gemini/annotation_provenance/sanit

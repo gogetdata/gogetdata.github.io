@@ -8,7 +8,7 @@ hg38-reference-genome-all-gencode-v1
 Genome sequence. Nucleotide sequence of the hg38.p13 genome assembly version on all regions, including reference chromosomes, scaffolds, assembly patches and haplotypes
 
 ================================== ====================================
-GGD Pacakge                        hg38-reference-genome-all-gencode-v1 
+GGD Package                        hg38-reference-genome-all-gencode-v1 
 Species                            Homo_sapiens
 Genome Build                       hg38
 GGD Channel                        ggd-genomics
@@ -25,14 +25,16 @@ Package Dependencies:              htslib, samtools, samtools>=1.10, zlib
 Recipe                             https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/hg38/hg38-reference-genome-all-gencode-v1
 ================================== ====================================
 
-
+Install with ``--prefix``
+-------------------------
+**Prefix install enabled:** *True*
 
 Installation
 ------------
 
 .. highlight: bash
 
-With ggd insatlled and an activated ggd channel (see :ref:`using-ggd`), install with::
+With ggd installed and an activated ggd channel (see :ref:`using-ggd`), install with::
 
    ggd install -c ggd-genomics hg38-reference-genome-all-gencode-v1
 

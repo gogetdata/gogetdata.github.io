@@ -8,7 +8,7 @@ hg19-gene-features-ensembl-v1
 Gene features, including all annotated transcripts, that make up the Ensembl gene sets. (Alignment based annotation using proteins, cDNA, RNA-seq, etc.). Features are in GTF format. Remapped from Ensembl GRCh37 to UCSC hg19
 
 ================================== ====================================
-GGD Pacakge                        hg19-gene-features-ensembl-v1 
+GGD Package                        hg19-gene-features-ensembl-v1 
 Species                            Homo_sapiens
 Genome Build                       hg19
 GGD Channel                        ggd-genomics
@@ -25,14 +25,16 @@ Package Dependencies:              gsort, hg19-chrom-mapping-ensembl2ucsc-ncbi-v
 Recipe                             https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/hg19/hg19-gene-features-ensembl-v1
 ================================== ====================================
 
-
+Install with ``--prefix``
+-------------------------
+**Prefix install enabled:** *True*
 
 Installation
 ------------
 
 .. highlight: bash
 
-With ggd insatlled and an activated ggd channel (see :ref:`using-ggd`), install with::
+With ggd installed and an activated ggd channel (see :ref:`using-ggd`), install with::
 
    ggd install -c ggd-genomics hg19-gene-features-ensembl-v1
 

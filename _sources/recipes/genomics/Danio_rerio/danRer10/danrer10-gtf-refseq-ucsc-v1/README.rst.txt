@@ -8,7 +8,7 @@ danrer10-gtf-refseq-ucsc-v1
 The UCSC RefSeq gene track converted into GTF format containing known zebrafish protein-coding and non-protein-coding genes from RefSeq. (RefSeq: NCBI RNA reference sequence collection) (UCSC GTF format info: https://genome.ucsc.edu/FAQ/FAQformat.html#format3)
 
 ================================== ====================================
-GGD Pacakge                        danrer10-gtf-refseq-ucsc-v1 
+GGD Package                        danrer10-gtf-refseq-ucsc-v1 
 Species                            Danio_rerio
 Genome Build                       danRer10
 GGD Channel                        ggd-genomics
@@ -25,14 +25,16 @@ Package Dependencies:              gsort, htslib, zlib
 Recipe                             https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Danio_rerio/danRer10/danrer10-gtf-refseq-ucsc-v1
 ================================== ====================================
 
-
+Install with ``--prefix``
+-------------------------
+**Prefix install enabled:** *False*. This package has not been set up to use the ``--prefix`` flag when running ggd install. Once installed, this package will work with other ggd tools that use ``--prefix`` flag.
 
 Installation
 ------------
 
 .. highlight: bash
 
-With ggd insatlled and an activated ggd channel (see :ref:`using-ggd`), install with::
+With ggd installed and an activated ggd channel (see :ref:`using-ggd`), install with::
 
    ggd install -c ggd-genomics danrer10-gtf-refseq-ucsc-v1
 

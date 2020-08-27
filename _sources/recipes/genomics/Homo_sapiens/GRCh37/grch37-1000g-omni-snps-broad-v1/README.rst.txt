@@ -8,7 +8,7 @@ grch37-1000g-omni-snps-broad-v1
 The 1000G omni snps vcf file
 
 ================================== ====================================
-GGD Pacakge                        grch37-1000g-omni-snps-broad-v1 
+GGD Package                        grch37-1000g-omni-snps-broad-v1 
 Species                            Homo_sapiens
 Genome Build                       GRCh37
 GGD Channel                        ggd-genomics
@@ -25,14 +25,16 @@ Package Dependencies:              gsort, htslib, zlib
 Recipe                             https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/GRCh37/grch37-1000g-omni-snps-broad-v1
 ================================== ====================================
 
-
+Install with ``--prefix``
+-------------------------
+**Prefix install enabled:** *False*. This package has not been set up to use the ``--prefix`` flag when running ggd install. Once installed, this package will work with other ggd tools that use ``--prefix`` flag.
 
 Installation
 ------------
 
 .. highlight: bash
 
-With ggd insatlled and an activated ggd channel (see :ref:`using-ggd`), install with::
+With ggd installed and an activated ggd channel (see :ref:`using-ggd`), install with::
 
    ggd install -c ggd-genomics grch37-1000g-omni-snps-broad-v1
 

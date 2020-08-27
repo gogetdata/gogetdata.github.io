@@ -8,7 +8,7 @@ hg38-somatic-variants-ensembl-v1
 All known somatic mutations at the time of Ensembl release 99. Conseqeunces for each variant are included in the annotation. Decomposed and Normalized. Remapped from Ensembl GRCh38 to UCSC hg38. Ensembl variant info page can be found at: https://uswest.ensembl.org/info/genome/variation/index.html
 
 ================================== ====================================
-GGD Pacakge                        hg38-somatic-variants-ensembl-v1 
+GGD Package                        hg38-somatic-variants-ensembl-v1 
 Species                            Homo_sapiens
 Genome Build                       hg38
 GGD Channel                        ggd-genomics
@@ -25,14 +25,16 @@ Package Dependencies:              bcftools, grch38-reference-genome-ensembl-v1,
 Recipe                             https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/hg38/hg38-somatic-variants-ensembl-v1
 ================================== ====================================
 
-
+Install with ``--prefix``
+-------------------------
+**Prefix install enabled:** *True*
 
 Installation
 ------------
 
 .. highlight: bash
 
-With ggd insatlled and an activated ggd channel (see :ref:`using-ggd`), install with::
+With ggd installed and an activated ggd channel (see :ref:`using-ggd`), install with::
 
    ggd install -c ggd-genomics hg38-somatic-variants-ensembl-v1
 

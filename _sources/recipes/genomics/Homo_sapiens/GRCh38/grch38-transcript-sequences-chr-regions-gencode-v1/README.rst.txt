@@ -8,7 +8,7 @@ grch38-transcript-sequences-chr-regions-gencode-v1
 Transcript sequences. Nucleotide sequences of all transcripts on the reference chromosomes
 
 ================================== ====================================
-GGD Pacakge                        grch38-transcript-sequences-chr-regions-gencode-v1 
+GGD Package                        grch38-transcript-sequences-chr-regions-gencode-v1 
 Species                            Homo_sapiens
 Genome Build                       GRCh38
 GGD Channel                        ggd-genomics
@@ -25,14 +25,16 @@ Package Dependencies:              htslib, samtools, samtools>=1.10, zlib
 Recipe                             https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/GRCh38/grch38-transcript-sequences-chr-regions-gencode-v1
 ================================== ====================================
 
-
+Install with ``--prefix``
+-------------------------
+**Prefix install enabled:** *True*
 
 Installation
 ------------
 
 .. highlight: bash
 
-With ggd insatlled and an activated ggd channel (see :ref:`using-ggd`), install with::
+With ggd installed and an activated ggd channel (see :ref:`using-ggd`), install with::
 
    ggd install -c ggd-genomics grch38-transcript-sequences-chr-regions-gencode-v1
 

@@ -8,7 +8,7 @@ danrer10-reference-genome-ucsc-v1
 The danRer10 reference genome from UCSC
 
 ================================== ====================================
-GGD Pacakge                        danrer10-reference-genome-ucsc-v1 
+GGD Package                        danrer10-reference-genome-ucsc-v1 
 Species                            Danio_rerio
 Genome Build                       danRer10
 GGD Channel                        ggd-genomics
@@ -25,14 +25,16 @@ Package Dependencies:              samtools, zlib
 Recipe                             https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Danio_rerio/danRer10/danrer10-reference-genome-ucsc-v1
 ================================== ====================================
 
-
+Install with ``--prefix``
+-------------------------
+**Prefix install enabled:** *False*. This package has not been set up to use the ``--prefix`` flag when running ggd install. Once installed, this package will work with other ggd tools that use ``--prefix`` flag.
 
 Installation
 ------------
 
 .. highlight: bash
 
-With ggd insatlled and an activated ggd channel (see :ref:`using-ggd`), install with::
+With ggd installed and an activated ggd channel (see :ref:`using-ggd`), install with::
 
    ggd install -c ggd-genomics danrer10-reference-genome-ucsc-v1
 

@@ -8,7 +8,7 @@ hg19-haploinsufficient-genes-clingen-v1
 CDS region genomic coordinates, along with complement coordinates, for a set of haploinsufficient genes from ClinGen&#39;s Dosage Sensitivity Map curated by Daniel MacArthur&#39;&#39;s lab. The genes used are those that are haplosensitive and not triplosensitive, and are level 3 (the maximum level) dosage sensitive. Original work on this is part of the Cytogenomic Arrays Consortium. Paper at: &#39;https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5008023/&#39;. Any genes in patch regions or non-reference scaffoldings are not included.
 
 ================================== ====================================
-GGD Pacakge                        hg19-haploinsufficient-genes-clingen-v1 
+GGD Package                        hg19-haploinsufficient-genes-clingen-v1 
 Species                            Homo_sapiens
 Genome Build                       hg19
 GGD Channel                        ggd-genomics
@@ -25,14 +25,16 @@ Package Dependencies:              bedtools, grch37-gene-features-ensembl-v1, gs
 Recipe                             https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/hg19/hg19-haploinsufficient-genes-clingen-v1
 ================================== ====================================
 
-
+Install with ``--prefix``
+-------------------------
+**Prefix install enabled:** *True*
 
 Installation
 ------------
 
 .. highlight: bash
 
-With ggd insatlled and an activated ggd channel (see :ref:`using-ggd`), install with::
+With ggd installed and an activated ggd channel (see :ref:`using-ggd`), install with::
 
    ggd install -c ggd-genomics hg19-haploinsufficient-genes-clingen-v1
 

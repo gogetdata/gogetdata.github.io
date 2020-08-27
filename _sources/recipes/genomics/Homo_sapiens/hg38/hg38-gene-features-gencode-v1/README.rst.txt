@@ -8,7 +8,7 @@ hg38-gene-features-gencode-v1
 Comprehensive set of gene anntotations including reference chromosomes, scaffoldings, assebly patches, and alternative loci. Data is specific to GENCODE Release 34 (Ensembl 100). Features include: gene, transcript, exon, CDS, UTR, start_codon, stop_codon, and Selenocysteine. Remapped from Ensembl GRCh38 to UCSC hg38. (Scaffoldings wihtout UCSC matches are kept with Ensebml ids)
 
 ================================== ====================================
-GGD Pacakge                        hg38-gene-features-gencode-v1 
+GGD Package                        hg38-gene-features-gencode-v1 
 Species                            Homo_sapiens
 Genome Build                       hg38
 GGD Channel                        ggd-genomics
@@ -25,14 +25,16 @@ Package Dependencies:              gsort, hg38-chrom-mapping-ensembl2ucsc-ncbi-v
 Recipe                             https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/hg38/hg38-gene-features-gencode-v1
 ================================== ====================================
 
-
+Install with ``--prefix``
+-------------------------
+**Prefix install enabled:** *True*
 
 Installation
 ------------
 
 .. highlight: bash
 
-With ggd insatlled and an activated ggd channel (see :ref:`using-ggd`), install with::
+With ggd installed and an activated ggd channel (see :ref:`using-ggd`), install with::
 
    ggd install -c ggd-genomics hg38-gene-features-gencode-v1
 

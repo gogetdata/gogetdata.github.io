@@ -8,7 +8,7 @@ hg38-pli-scores-exac-v1
 The probability of being loss-of-function intolerant (pLI) by gene scores from ExAC. See paper at: https://www.nature.com/articles/nature19057. Pseudo-liftover: Updated coordinates based on transcript ids that map between GRCh37 and GRCh38. If unable to map transcript id, the gene symbol is mapped between GRCh37 and GRCh38. If neither the transcript id or gene symbol map between the two builds the record is removed. Remapped from Ensembl GRCh38 to UCSC hg38
 
 ================================== ====================================
-GGD Pacakge                        hg38-pli-scores-exac-v1 
+GGD Package                        hg38-pli-scores-exac-v1 
 Species                            Homo_sapiens
 Genome Build                       hg38
 GGD Channel                        ggd-genomics
@@ -25,14 +25,16 @@ Package Dependencies:              grch38-gene-features-ensembl-v1, gsort, hg38-
 Recipe                             https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/hg38/hg38-pli-scores-exac-v1
 ================================== ====================================
 
-
+Install with ``--prefix``
+-------------------------
+**Prefix install enabled:** *True*
 
 Installation
 ------------
 
 .. highlight: bash
 
-With ggd insatlled and an activated ggd channel (see :ref:`using-ggd`), install with::
+With ggd installed and an activated ggd channel (see :ref:`using-ggd`), install with::
 
    ggd install -c ggd-genomics hg38-pli-scores-exac-v1
 

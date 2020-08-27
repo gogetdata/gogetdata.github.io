@@ -8,7 +8,7 @@ hg19-chrom-mapping-ensembl2ucsc-ncbi-v1
 A tab delimited file containing scaffolding ids that maps GRCh37 Ensembl(GenBank) scaffoldings to hg19 UCSC scaffoldings. This is specific to patch 13 of the GRCh37 Human genome build. (1st column = Ensembl ids, 2nd column = UCSC ids)
 
 ================================== ====================================
-GGD Pacakge                        hg19-chrom-mapping-ensembl2ucsc-ncbi-v1 
+GGD Package                        hg19-chrom-mapping-ensembl2ucsc-ncbi-v1 
 Species                            Homo_sapiens
 Genome Build                       hg19
 GGD Channel                        ggd-genomics
@@ -25,14 +25,16 @@ Package Dependencies:              bioawk
 Recipe                             https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/hg19/hg19-chrom-mapping-ensembl2ucsc-ncbi-v1
 ================================== ====================================
 
-
+Install with ``--prefix``
+-------------------------
+**Prefix install enabled:** *True*
 
 Installation
 ------------
 
 .. highlight: bash
 
-With ggd insatlled and an activated ggd channel (see :ref:`using-ggd`), install with::
+With ggd installed and an activated ggd channel (see :ref:`using-ggd`), install with::
 
    ggd install -c ggd-genomics hg19-chrom-mapping-ensembl2ucsc-ncbi-v1
 

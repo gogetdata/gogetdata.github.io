@@ -8,7 +8,7 @@ grch37-somatic-variants-ensembl-v1
 All known somatic mutations at the time of Ensembl release 75. Conseqeunces for each variant are included in the annotation. Decomposed and Normalized. Ensembl variant info page can be found at: https://uswest.ensembl.org/info/genome/variation/index.html
 
 ================================== ====================================
-GGD Pacakge                        grch37-somatic-variants-ensembl-v1 
+GGD Package                        grch37-somatic-variants-ensembl-v1 
 Species                            Homo_sapiens
 Genome Build                       GRCh37
 GGD Channel                        ggd-genomics
@@ -25,14 +25,16 @@ Package Dependencies:              bcftools, grch37-reference-genome-ensembl-v1,
 Recipe                             https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/GRCh37/grch37-somatic-variants-ensembl-v1
 ================================== ====================================
 
-
+Install with ``--prefix``
+-------------------------
+**Prefix install enabled:** *True*
 
 Installation
 ------------
 
 .. highlight: bash
 
-With ggd insatlled and an activated ggd channel (see :ref:`using-ggd`), install with::
+With ggd installed and an activated ggd channel (see :ref:`using-ggd`), install with::
 
    ggd install -c ggd-genomics grch37-somatic-variants-ensembl-v1
 

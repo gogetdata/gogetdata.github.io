@@ -8,7 +8,7 @@ grch38-cytobands-ucsc-v1
 Approximate locations of Chromosome Bands (cytoBands) located with Giemsa-stained chromosomes from UCSC. Remapped from UCSC hg38 to Ensembl GRCh38.
 
 ================================== ====================================
-GGD Pacakge                        grch38-cytobands-ucsc-v1 
+GGD Package                        grch38-cytobands-ucsc-v1 
 Species                            Homo_sapiens
 Genome Build                       GRCh38
 GGD Channel                        ggd-genomics
@@ -25,14 +25,16 @@ Package Dependencies:              grch38-chrom-mapping-ucsc2ensembl-ncbi-v1, gs
 Recipe                             https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/GRCh38/grch38-cytobands-ucsc-v1
 ================================== ====================================
 
-
+Install with ``--prefix``
+-------------------------
+**Prefix install enabled:** *True*
 
 Installation
 ------------
 
 .. highlight: bash
 
-With ggd insatlled and an activated ggd channel (see :ref:`using-ggd`), install with::
+With ggd installed and an activated ggd channel (see :ref:`using-ggd`), install with::
 
    ggd install -c ggd-genomics grch38-cytobands-ucsc-v1
 

@@ -8,7 +8,7 @@ grch37-cancer-genes-futreal-v1
 CDS region genomic coordinates, along with complement coordinates, for a manually curated set of cancer genes from Futreal et al. https://www.nature.com/articles/nrc1299. Gene symbols manually extracted from the supplemental PDF table here: https://media.nature.com/original/nature-assets/nrc/journal/v4/n3/extref/nrc1299-S1.pdf. Gene symbols manually translated to HGNC nomeclature.
 
 ================================== ====================================
-GGD Pacakge                        grch37-cancer-genes-futreal-v1 
+GGD Package                        grch37-cancer-genes-futreal-v1 
 Species                            Homo_sapiens
 Genome Build                       GRCh37
 GGD Channel                        ggd-genomics
@@ -25,14 +25,16 @@ Package Dependencies:              bedtools, grch37-gene-features-ensembl-v1, gs
 Recipe                             https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/GRCh37/grch37-cancer-genes-futreal-v1
 ================================== ====================================
 
-
+Install with ``--prefix``
+-------------------------
+**Prefix install enabled:** *True*
 
 Installation
 ------------
 
 .. highlight: bash
 
-With ggd insatlled and an activated ggd channel (see :ref:`using-ggd`), install with::
+With ggd installed and an activated ggd channel (see :ref:`using-ggd`), install with::
 
    ggd install -c ggd-genomics grch37-cancer-genes-futreal-v1
 

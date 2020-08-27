@@ -8,7 +8,7 @@ hg38-ccdg-sv-vcf-ccdg-v1
 SV callset 2 from ccdg in hg38
 
 ================================== ====================================
-GGD Pacakge                        hg38-ccdg-sv-vcf-ccdg-v1 
+GGD Package                        hg38-ccdg-sv-vcf-ccdg-v1 
 Species                            Homo_sapiens
 Genome Build                       hg38
 GGD Channel                        ggd-genomics
@@ -25,14 +25,16 @@ Package Dependencies:              gsort, htslib, zlib
 Recipe                             https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/hg38/hg38-ccdg-sv-vcf-ccdg-v1
 ================================== ====================================
 
-
+Install with ``--prefix``
+-------------------------
+**Prefix install enabled:** *True*
 
 Installation
 ------------
 
 .. highlight: bash
 
-With ggd insatlled and an activated ggd channel (see :ref:`using-ggd`), install with::
+With ggd installed and an activated ggd channel (see :ref:`using-ggd`), install with::
 
    ggd install -c ggd-genomics hg38-ccdg-sv-vcf-ccdg-v1
 

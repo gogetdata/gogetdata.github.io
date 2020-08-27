@@ -8,7 +8,7 @@ grch37-radar-li-lab-stanford-v1
 Rigorously Annotated Database of A-to-I RNA Editing (RADAR). A comprehensive collection of Adenosine (A) to Inosine (I) editing sites in human transcripts, otherwise known as RNA editing sites. Paper: http://nar.oxfordjournals.org/content/42/D1/D109. Remapped from UCSC hg19 to Ensembl GRCh37
 
 ================================== ====================================
-GGD Pacakge                        grch37-radar-li-lab-stanford-v1 
+GGD Package                        grch37-radar-li-lab-stanford-v1 
 Species                            Homo_sapiens
 Genome Build                       GRCh37
 GGD Channel                        ggd-genomics
@@ -25,14 +25,16 @@ Package Dependencies:              grch37-chrom-mapping-ucsc2ensembl-ncbi-v1, gs
 Recipe                             https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/GRCh37/grch37-radar-li-lab-stanford-v1
 ================================== ====================================
 
-
+Install with ``--prefix``
+-------------------------
+**Prefix install enabled:** *True*
 
 Installation
 ------------
 
 .. highlight: bash
 
-With ggd insatlled and an activated ggd channel (see :ref:`using-ggd`), install with::
+With ggd installed and an activated ggd channel (see :ref:`using-ggd`), install with::
 
    ggd install -c ggd-genomics grch37-radar-li-lab-stanford-v1
 

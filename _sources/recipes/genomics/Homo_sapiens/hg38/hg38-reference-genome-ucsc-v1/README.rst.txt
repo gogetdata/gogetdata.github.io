@@ -8,7 +8,7 @@ hg38-reference-genome-ucsc-v1
 The hg38 soft masked genomic DNA seqeunce reference genome from UCSC (patch 12). Repeats found by &#39;RepeatMasker&#39; and &#39;Tandem Repeat Finder&#39; are shown as lower case. Non repeating seqeunce are shown as upper case.
 
 ================================== ====================================
-GGD Pacakge                        hg38-reference-genome-ucsc-v1 
+GGD Package                        hg38-reference-genome-ucsc-v1 
 Species                            Homo_sapiens
 Genome Build                       hg38
 GGD Channel                        ggd-genomics
@@ -25,14 +25,16 @@ Package Dependencies:              htslib, samtools, zlib
 Recipe                             https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/hg38/hg38-reference-genome-ucsc-v1
 ================================== ====================================
 
-
+Install with ``--prefix``
+-------------------------
+**Prefix install enabled:** *True*
 
 Installation
 ------------
 
 .. highlight: bash
 
-With ggd insatlled and an activated ggd channel (see :ref:`using-ggd`), install with::
+With ggd installed and an activated ggd channel (see :ref:`using-ggd`), install with::
 
    ggd install -c ggd-genomics hg38-reference-genome-ucsc-v1
 

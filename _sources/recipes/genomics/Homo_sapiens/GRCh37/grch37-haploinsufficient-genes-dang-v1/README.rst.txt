@@ -8,7 +8,7 @@ grch37-haploinsufficient-genes-dang-v1
 CDS region genomic coordinates, along with complement coordinates, for a set of haploinsufficient genes from Dang et al. (2008): https://www.nature.com/articles/ejhg2008111. They used text-searching and database-mining on Pubmed and OMIM to extract an annotated list of human haploinsufficient genes, their associated diseases, and functions. Any genes in patch regions or non-reference scaffoldings are not included.
 
 ================================== ====================================
-GGD Pacakge                        grch37-haploinsufficient-genes-dang-v1 
+GGD Package                        grch37-haploinsufficient-genes-dang-v1 
 Species                            Homo_sapiens
 Genome Build                       GRCh37
 GGD Channel                        ggd-genomics
@@ -25,14 +25,16 @@ Package Dependencies:              bedtools, grch37-gene-features-ensembl-v1, gs
 Recipe                             https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/GRCh37/grch37-haploinsufficient-genes-dang-v1
 ================================== ====================================
 
-
+Install with ``--prefix``
+-------------------------
+**Prefix install enabled:** *True*
 
 Installation
 ------------
 
 .. highlight: bash
 
-With ggd insatlled and an activated ggd channel (see :ref:`using-ggd`), install with::
+With ggd installed and an activated ggd channel (see :ref:`using-ggd`), install with::
 
    ggd install -c ggd-genomics grch37-haploinsufficient-genes-dang-v1
 

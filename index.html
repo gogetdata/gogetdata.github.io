@@ -179,7 +179,7 @@ maintenance provides a stable and structured way to ensure metadata is maintaine
 <h2>Data access and management<a class="headerlink" href="#data-access-and-management" title="Permalink to this headline">¶</a></h2>
 <p>Finally, and most importantly, is the ability to access and manage the data on your local system. This is the main purpose of the command line interface (CLI)
 for ggd. Simply, ggd CLI provides tools for installing data packages on your local system, but more importantly, tools for access and use on your system. For
-more information about the CLI tools see <span class="xref std std-ref">GGD CLI</span>.</p>
+more information about the CLI tools see <a class="reference internal" href="GGD-CLI.html#ggd-cli-page"><span class="std std-ref">GGD CLI</span></a>.</p>
 <img alt="_images/Data_managment.png" src="_images/Data_managment.png" />
 </div>
 </div>
@@ -196,7 +196,7 @@ and install available processed genomic data packages using the ggd tool.</p></l
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The example below is not necessarily the
-correct data packge for your needs, but rather is an example of using ggd</p>
+correct data package for your needs, but rather is an example of using ggd</p>
 </div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#******************************</span>
 <span class="c1">#1. Search for a reference genome</span>
@@ -210,13 +210,13 @@ $ ggd search grch37 reference-genome
   grch37-reference-genome-ensembl-v1
   <span class="o">==================================</span>
 
-      Summary: The GRCh37 unmasked genomic DNA seqeunce reference genome from Ensembl-Release <span class="m">75</span>. Includes all sequence regions EXCLUDING haplotypes and patches. <span class="s1">&#39;Primary Assembly file&#39;</span>
+      Summary: The GRCh37 unmasked genomic DNA sequence reference genome from Ensembl-Release <span class="m">75</span>. Includes all sequence regions EXCLUDING haplotypes and patches. <span class="s1">&#39;Primary Assembly file&#39;</span>
 
   Species: Homo_sapiens
 
   Genome Build: GRCh37
 
-  Keywords: Primary-Assembly, Release-75, ref, reference, Ensembl-ref, DNA-Seqeunce, Fasta-Seqeunce, fasta-file
+  Keywords: Primary-Assembly, Release-75, ref, reference, Ensembl-ref, DNA-Sequence, Fasta-Sequence, fasta-file
 
   Data Provider: Ensembl
 
@@ -243,13 +243,13 @@ $ ggd search grch37 reference-genome
   grch37-reference-genome-gencode-v1
   <span class="o">==================================</span>
 
-  Summary: The GRCh37 DNA nucleotide sequence primary assembly. Sequence regions include reference chromsomes and scaffoldings.
+  Summary: The GRCh37 DNA nucleotide sequence primary assembly. Sequence regions include reference chromosomes and scaffoldings.
 
   Species: Homo_sapiens
 
   Genome Build: GRCh37
 
-  Keywords: Reference-Genome, Fasta, DNA-Sequence, GENCODE-34, Fasta-sequence, primary-assemlby
+  Keywords: Reference-Genome, Fasta, DNA-Sequence, GENCODE-34, Fasta-sequence, primary-assembly
 
   Data Provider: GENCODE
 
@@ -278,13 +278,13 @@ $ ggd search grch37 reference-genome
   grch37-toplevel-reference-genome-ensembl-v1
   <span class="o">===========================================</span>
 
-  Summary: The GRCh37 unmasked genomic DNA seqeunce reference genome from Ensembl-Release <span class="m">75</span>. Includes all sequence regions flagged as toplevel by Ensembl including chromosomes, regions not assembled into chromosomes, and N padded haplotype/patch regions. <span class="s1">&#39;Top Level file&#39;</span>
+  Summary: The GRCh37 unmasked genomic DNA sequence reference genome from Ensembl-Release <span class="m">75</span>. Includes all sequence regions flagged as toplevel by Ensembl including chromosomes, regions not assembled into chromosomes, and N padded haplotype/patch regions. <span class="s1">&#39;Top Level file&#39;</span>
 
   Species: Homo_sapiens
 
   Genome Build: GRCh37
 
-  Keywords: Top-Level, Release-75, ref, reference, Ensembl-ref, DNA-Seqeunce, Fasta-Seqeunce, fasta-file
+  Keywords: Top-Level, Release-75, ref, reference, Ensembl-ref, DNA-Sequence, Fasta-Sequence, fasta-file
 
   Data Provider: Ensembl
 
@@ -323,7 +323,7 @@ $ ggd search grch37 reference-genome
 
 
 <span class="c1">#******************************</span>
-<span class="c1">#2. Install the grch37 reference genome from Ensebml</span>
+<span class="c1">#2. Install the grch37 reference genome from Ensembl</span>
 <span class="c1">#   (See ggd install)</span>
 <span class="c1">#******************************</span>
 
@@ -401,7 +401,7 @@ $ ggd install grch37-reference-genome-ensembl-v1
   Install Path: &lt;conda root&gt;/share/ggd/Homo_sapiens/GRCh37/grch37-reference-genome-ensembl-v1/1
 
 
-  :ggd:install: To activate environment variables run <span class="sb">`</span><span class="nb">source</span> activate base<span class="sb">`</span> in the environmnet the packages were installed in
+  :ggd:install: To activate environment variables run <span class="sb">`</span><span class="nb">source</span> activate base<span class="sb">`</span> in the environment the packages were installed in
 
   :ggd:install: NOTE: These environment variables are specific to the &lt;env&gt; conda environment and can only be accessed from within that <span class="nv">environment</span>
   <span class="o">======================================================================================================================</span>

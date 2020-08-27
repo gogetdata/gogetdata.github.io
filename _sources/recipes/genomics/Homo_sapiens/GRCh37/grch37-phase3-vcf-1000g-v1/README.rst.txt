@@ -8,7 +8,7 @@ grch37-phase3-vcf-1000g-v1
 The phase3 1000g vcf file distrubted on 05/02/2013 in vcf format (decomposed and normalized)
 
 ================================== ====================================
-GGD Pacakge                        grch37-phase3-vcf-1000g-v1 
+GGD Package                        grch37-phase3-vcf-1000g-v1 
 Species                            Homo_sapiens
 Genome Build                       GRCh37
 GGD Channel                        ggd-genomics
@@ -25,14 +25,16 @@ Package Dependencies:              grch37-sequence-1000g-v1, gsort, htslib, vt, 
 Recipe                             https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/GRCh37/grch37-phase3-vcf-1000g-v1
 ================================== ====================================
 
-
+Install with ``--prefix``
+-------------------------
+**Prefix install enabled:** *False*. This package has not been set up to use the ``--prefix`` flag when running ggd install. Once installed, this package will work with other ggd tools that use ``--prefix`` flag.
 
 Installation
 ------------
 
 .. highlight: bash
 
-With ggd insatlled and an activated ggd channel (see :ref:`using-ggd`), install with::
+With ggd installed and an activated ggd channel (see :ref:`using-ggd`), install with::
 
    ggd install -c ggd-genomics grch37-phase3-vcf-1000g-v1
 

@@ -8,7 +8,7 @@ hg19-cytobands-ucsc-v1
 Approximate locations of Chromosome Bands (cytoBands) located with Giemsa-stained chromosomes from UCSC
 
 ================================== ====================================
-GGD Pacakge                        hg19-cytobands-ucsc-v1 
+GGD Package                        hg19-cytobands-ucsc-v1 
 Species                            Homo_sapiens
 Genome Build                       hg19
 GGD Channel                        ggd-genomics
@@ -25,14 +25,16 @@ Package Dependencies:              gsort, htslib, zlib
 Recipe                             https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/hg19/hg19-cytobands-ucsc-v1
 ================================== ====================================
 
-
+Install with ``--prefix``
+-------------------------
+**Prefix install enabled:** *True*
 
 Installation
 ------------
 
 .. highlight: bash
 
-With ggd insatlled and an activated ggd channel (see :ref:`using-ggd`), install with::
+With ggd installed and an activated ggd channel (see :ref:`using-ggd`), install with::
 
    ggd install -c ggd-genomics hg19-cytobands-ucsc-v1
 

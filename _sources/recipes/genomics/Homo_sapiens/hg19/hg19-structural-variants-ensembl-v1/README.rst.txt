@@ -8,7 +8,7 @@ hg19-structural-variants-ensembl-v1
 All known structural mutations at the time of Ensembl release 75. Remapped from Ensembl GRCh37 to UCSC hg19. Ensembl variant info page can be found at: https://uswest.ensembl.org/info/genome/variation/index.html
 
 ================================== ====================================
-GGD Pacakge                        hg19-structural-variants-ensembl-v1 
+GGD Package                        hg19-structural-variants-ensembl-v1 
 Species                            Homo_sapiens
 Genome Build                       hg19
 GGD Channel                        ggd-genomics
@@ -25,14 +25,16 @@ Package Dependencies:              bcftools, gsort, hg19-chrom-mapping-ensembl2u
 Recipe                             https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/hg19/hg19-structural-variants-ensembl-v1
 ================================== ====================================
 
-
+Install with ``--prefix``
+-------------------------
+**Prefix install enabled:** *True*
 
 Installation
 ------------
 
 .. highlight: bash
 
-With ggd insatlled and an activated ggd channel (see :ref:`using-ggd`), install with::
+With ggd installed and an activated ggd channel (see :ref:`using-ggd`), install with::
 
    ggd install -c ggd-genomics hg19-structural-variants-ensembl-v1
 

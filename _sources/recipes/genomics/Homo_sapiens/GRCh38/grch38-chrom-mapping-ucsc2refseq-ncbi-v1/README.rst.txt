@@ -8,7 +8,7 @@ grch38-chrom-mapping-ucsc2refseq-ncbi-v1
 A tab delimited file containing scaffolding ids that map hg38 UCSC to GRCh38 RefSeq scaffoldings. This is specific to patch 13 of the GRCh38 Human genome build. (1st column = UCSC ids, 2nd Column = RefSeq ids)
 
 ================================== ====================================
-GGD Pacakge                        grch38-chrom-mapping-ucsc2refseq-ncbi-v1 
+GGD Package                        grch38-chrom-mapping-ucsc2refseq-ncbi-v1 
 Species                            Homo_sapiens
 Genome Build                       GRCh38
 GGD Channel                        ggd-genomics
@@ -25,14 +25,16 @@ Package Dependencies:              bioawk
 Recipe                             https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/GRCh38/grch38-chrom-mapping-ucsc2refseq-ncbi-v1
 ================================== ====================================
 
-
+Install with ``--prefix``
+-------------------------
+**Prefix install enabled:** *True*
 
 Installation
 ------------
 
 .. highlight: bash
 
-With ggd insatlled and an activated ggd channel (see :ref:`using-ggd`), install with::
+With ggd installed and an activated ggd channel (see :ref:`using-ggd`), install with::
 
    ggd install -c ggd-genomics grch38-chrom-mapping-ucsc2refseq-ncbi-v1
 

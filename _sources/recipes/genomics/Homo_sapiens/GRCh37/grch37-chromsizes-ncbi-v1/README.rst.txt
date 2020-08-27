@@ -8,7 +8,7 @@ grch37-chromsizes-ncbi-v1
 Chromosome lengths for the GRCh37 genome build from NCBI. (Used to create the Go Get Data (GGD) GRCh37.genome file)
 
 ================================== ====================================
-GGD Pacakge                        grch37-chromsizes-ncbi-v1 
+GGD Package                        grch37-chromsizes-ncbi-v1 
 Species                            Homo_sapiens
 Genome Build                       GRCh37
 GGD Channel                        ggd-genomics
@@ -25,14 +25,16 @@ Package Dependencies:
 Recipe                             https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/GRCh37/grch37-chromsizes-ncbi-v1
 ================================== ====================================
 
-
+Install with ``--prefix``
+-------------------------
+**Prefix install enabled:** *True*
 
 Installation
 ------------
 
 .. highlight: bash
 
-With ggd insatlled and an activated ggd channel (see :ref:`using-ggd`), install with::
+With ggd installed and an activated ggd channel (see :ref:`using-ggd`), install with::
 
    ggd install -c ggd-genomics grch37-chromsizes-ncbi-v1
 

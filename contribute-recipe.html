@@ -178,7 +178,7 @@ tabix hg19-gaps-ucsc-v1.bed.gz
 </dl>
 </li>
 <li><p>In this data processing script please change the resulting data file names to be short and include all necessary
-genomic file extentions. (See the NOTE bellow)</p></li>
+genomic file extensions. (See the NOTE bellow)</p></li>
 </ul>
 <p>You should run the script to make sure it works and that the processed files are what you expect them to be.</p>
 <blockquote>
@@ -186,16 +186,16 @@ genomic file extentions. (See the NOTE bellow)</p></li>
 <p class="admonition-title">Note</p>
 <p>The final data file names will be changed to reflect the new ggd recipe name. To keep the data file name as
 short as possible please rename data files to include only a short name and the genomic file extensions. The name
-will be replaced with the ggd recipe name, and the genomic file extention will be kept. For example, in the
-hg19-gaps example above <em>gaps.bed.gz</em> and the tabix companion <em>gaps.bed.gz.tbi</em> will be renmaed to <em>hg19-gaps.bed.gz</em>
-and <em>hg19-gaps.bed.gz.tbi</em>. Because of the complexities with genomic file extentions all extentions will be retained
+will be replaced with the ggd recipe name, and the genomic file extension will be kept. For example, in the
+hg19-gaps example above <em>gaps.bed.gz</em> and the tabix companion <em>gaps.bed.gz.tbi</em> will be renamed to <em>hg19-gaps.bed.gz</em>
+and <em>hg19-gaps.bed.gz.tbi</em>. Because of the complexities with genomic file extensions all extensions will be retained
 and only the beginning name before the first ‘.’ will be replaced with the recipe name.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Make sure that any intermediate files or other files used for data processing are removed after processing. Only the
 final processed data files should remain once the script has finished. If extra files are not removed they will be
-added as members of the data recipe, which is most likley un-wanted and un-needed.</p>
+added as members of the data recipe, which is most likely un-wanted and un-needed.</p>
 </div>
 </div></blockquote>
 </div>

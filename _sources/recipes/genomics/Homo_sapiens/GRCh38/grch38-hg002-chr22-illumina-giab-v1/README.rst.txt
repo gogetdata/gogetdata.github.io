@@ -8,7 +8,7 @@ grch38-hg002-chr22-illumina-giab-v1
 Illumina paired-end sequencing alignments from HG002, downloaded from GIAB, and subset to 30X for chr22. Usable as an example dataset
 
 ================================== ====================================
-GGD Pacakge                        grch38-hg002-chr22-illumina-giab-v1 
+GGD Package                        grch38-hg002-chr22-illumina-giab-v1 
 Species                            Homo_sapiens
 Genome Build                       GRCh38
 GGD Channel                        ggd-genomics
@@ -25,14 +25,16 @@ Package Dependencies:              samtools
 Recipe                             https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/GRCh38/grch38-hg002-chr22-illumina-giab-v1
 ================================== ====================================
 
-
+Install with ``--prefix``
+-------------------------
+**Prefix install enabled:** *True*
 
 Installation
 ------------
 
 .. highlight: bash
 
-With ggd insatlled and an activated ggd channel (see :ref:`using-ggd`), install with::
+With ggd installed and an activated ggd channel (see :ref:`using-ggd`), install with::
 
    ggd install -c ggd-genomics grch38-hg002-chr22-illumina-giab-v1
 

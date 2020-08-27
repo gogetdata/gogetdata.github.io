@@ -8,7 +8,7 @@ hg19-known-genes-ucsc-v1
 The &#39;KnownGene&#39; track from UCSC. Comprsied of gene predictions based on data from Refseq, GenBank, CCDS, RFam, and tRNA genes tracks. Includes protein-coding genes and non-coding RNA genes. Gene symbols and gene descriptions have been added to the dataset.
 
 ================================== ====================================
-GGD Pacakge                        hg19-known-genes-ucsc-v1 
+GGD Package                        hg19-known-genes-ucsc-v1 
 Species                            Homo_sapiens
 Genome Build                       hg19
 GGD Channel                        ggd-genomics
@@ -25,14 +25,16 @@ Package Dependencies:              gsort, htslib, zlib
 Recipe                             https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/hg19/hg19-known-genes-ucsc-v1
 ================================== ====================================
 
-
+Install with ``--prefix``
+-------------------------
+**Prefix install enabled:** *True*
 
 Installation
 ------------
 
 .. highlight: bash
 
-With ggd insatlled and an activated ggd channel (see :ref:`using-ggd`), install with::
+With ggd installed and an activated ggd channel (see :ref:`using-ggd`), install with::
 
    ggd install -c ggd-genomics hg19-known-genes-ucsc-v1
 

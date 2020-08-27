@@ -8,7 +8,7 @@ grch37-microsatellites-ucsc-v1
 Microsatellites from UCSC. Region which tend to be highly polymorphic and with at least 15 di- or tri-nucletodie repeats. Remapped from UCSC hg19 to Ensembl GRCh37
 
 ================================== ====================================
-GGD Pacakge                        grch37-microsatellites-ucsc-v1 
+GGD Package                        grch37-microsatellites-ucsc-v1 
 Species                            Homo_sapiens
 Genome Build                       GRCh37
 GGD Channel                        ggd-genomics
@@ -25,14 +25,16 @@ Package Dependencies:              grch37-chrom-mapping-ucsc2ensembl-ncbi-v1, gs
 Recipe                             https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/GRCh37/grch37-microsatellites-ucsc-v1
 ================================== ====================================
 
-
+Install with ``--prefix``
+-------------------------
+**Prefix install enabled:** *True*
 
 Installation
 ------------
 
 .. highlight: bash
 
-With ggd insatlled and an activated ggd channel (see :ref:`using-ggd`), install with::
+With ggd installed and an activated ggd channel (see :ref:`using-ggd`), install with::
 
    ggd install -c ggd-genomics grch37-microsatellites-ucsc-v1
 

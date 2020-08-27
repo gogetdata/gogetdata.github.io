@@ -8,7 +8,7 @@ hg19-constrained-coding-regions-quinlan-lab-v1
 Constrained Coding Regions (CCRs): https://www.nature.com/articles/s41588-018-0294-6. Regions of human specific coding constraint presumably under strong purifying selection. Constraint is based on the lack of variation within the gnomAD dataset calibrated by the size and CpG content of the region. Regional Constraint is broken up into Autosomes and the X-Chromosome. Chromosomes have been remapped from Ensembl GRCh37 to UCSC hg19.
 
 ================================== ====================================
-GGD Pacakge                        hg19-constrained-coding-regions-quinlan-lab-v1 
+GGD Package                        hg19-constrained-coding-regions-quinlan-lab-v1 
 Species                            Homo_sapiens
 Genome Build                       hg19
 GGD Channel                        ggd-genomics
@@ -25,14 +25,16 @@ Package Dependencies:              gsort, hg19-chrom-mapping-ensembl2ucsc-ncbi-v
 Recipe                             https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/hg19/hg19-constrained-coding-regions-quinlan-lab-v1
 ================================== ====================================
 
-
+Install with ``--prefix``
+-------------------------
+**Prefix install enabled:** *True*
 
 Installation
 ------------
 
 .. highlight: bash
 
-With ggd insatlled and an activated ggd channel (see :ref:`using-ggd`), install with::
+With ggd installed and an activated ggd channel (see :ref:`using-ggd`), install with::
 
    ggd install -c ggd-genomics hg19-constrained-coding-regions-quinlan-lab-v1
 

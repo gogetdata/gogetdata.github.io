@@ -8,7 +8,7 @@ mm10-reference-ucsc-v1
 Reference genome for mouse from UCSC
 
 ================================== ====================================
-GGD Pacakge                        mm10-reference-ucsc-v1 
+GGD Package                        mm10-reference-ucsc-v1 
 Species                            Mus_musculus
 Genome Build                       mm10
 GGD Channel                        ggd-genomics
@@ -25,14 +25,16 @@ Package Dependencies:              samtools
 Recipe                             https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Mus_musculus/mm10/mm10-reference-ucsc-v1
 ================================== ====================================
 
-
+Install with ``--prefix``
+-------------------------
+**Prefix install enabled:** *False*. This package has not been set up to use the ``--prefix`` flag when running ggd install. Once installed, this package will work with other ggd tools that use ``--prefix`` flag.
 
 Installation
 ------------
 
 .. highlight: bash
 
-With ggd insatlled and an activated ggd channel (see :ref:`using-ggd`), install with::
+With ggd installed and an activated ggd channel (see :ref:`using-ggd`), install with::
 
    ggd install -c ggd-genomics mm10-reference-ucsc-v1
 

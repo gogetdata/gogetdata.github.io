@@ -8,7 +8,7 @@ grch37-scores-by-amino-acid-change-ggd-v1
 missense badnass, blosum, grantham scores foreach amino acid change
 
 ================================== ====================================
-GGD Pacakge                        grch37-scores-by-amino-acid-change-ggd-v1 
+GGD Package                        grch37-scores-by-amino-acid-change-ggd-v1 
 Species                            Homo_sapiens
 Genome Build                       GRCh37
 GGD Channel                        ggd-genomics
@@ -25,14 +25,16 @@ Package Dependencies:
 Recipe                             https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/GRCh37/grch37-scores-by-amino-acid-change-ggd-v1
 ================================== ====================================
 
-
+Install with ``--prefix``
+-------------------------
+**Prefix install enabled:** *True*
 
 Installation
 ------------
 
 .. highlight: bash
 
-With ggd insatlled and an activated ggd channel (see :ref:`using-ggd`), install with::
+With ggd installed and an activated ggd channel (see :ref:`using-ggd`), install with::
 
    ggd install -c ggd-genomics grch37-scores-by-amino-acid-change-ggd-v1
 
