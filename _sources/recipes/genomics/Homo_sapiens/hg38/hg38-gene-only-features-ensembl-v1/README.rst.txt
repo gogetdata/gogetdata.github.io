@@ -19,7 +19,7 @@ Data Version                       release-100_3-7-2020
 Genomic File Type                  gtf
 Data file coordinate basing        1-based-inclusive
 Package's Data Files               hg38-gene-only-features-ensembl-v1.gtf.gz, hg38-gene-only-features-ensembl-v1.gtf.gz.tbi
-Approximate Size of Each Data File hg38-gene-only-features-ensembl-v1.gtf.gz: **1.46M**, hg38-gene-only-features-ensembl-v1.gtf.gz.tbi: **192.91K**
+Approximate Size of Each Data File hg38-gene-only-features-ensembl-v1.gtf.gz: **1.46M**, hg38-gene-only-features-ensembl-v1.gtf.gz.tbi: **192.79K**
 Package Keywords                   Gene-Features, GTF, Ensembl-GTF, Ensembl-Gene-Set, Annotated-Transcripts, Gene-Only-Features
 Package Dependencies:              gsort, hg38-chrom-mapping-ensembl2ucsc-ncbi-v1, htslib, zlib
 Recipe                             https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/hg38/hg38-gene-only-features-ensembl-v1
