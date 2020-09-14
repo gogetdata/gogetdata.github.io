@@ -36,7 +36,7 @@ Installation
 
 With ggd installed and an activated ggd channel (see :ref:`using-ggd`), install with::
 
-   ggd install -c ggd-genomics hg38-liftover-chain-19-to-38-ucsc-v1
+   ggd install -c genomics hg38-liftover-chain-19-to-38-ucsc-v1
 
 .. |downloads| image:: https://anaconda.org/ggd-genomics/hg38-liftover-chain-19-to-38-ucsc-v1/badges/downloads.svg
                :target: https://anaconda.org/ggd-genomics/hg38-liftover-chain-19-to-38-ucsc-v1

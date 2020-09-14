@@ -36,7 +36,7 @@ Installation
 
 With ggd installed and an activated ggd channel (see :ref:`using-ggd`), install with::
 
-   ggd install -c ggd-genomics grch38-hg004-chr22-illumina-giab-v1
+   ggd install -c genomics grch38-hg004-chr22-illumina-giab-v1
 
 .. |downloads| image:: https://anaconda.org/ggd-genomics/grch38-hg004-chr22-illumina-giab-v1/badges/downloads.svg
                :target: https://anaconda.org/ggd-genomics/grch38-hg004-chr22-illumina-giab-v1

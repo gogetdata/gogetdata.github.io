@@ -36,7 +36,7 @@ Installation
 
 With ggd installed and an activated ggd channel (see :ref:`using-ggd`), install with::
 
-   ggd install -c ggd-genomics grch37-hg003-pb-chr22-giab-v1
+   ggd install -c genomics grch37-hg003-pb-chr22-giab-v1
 
 .. |downloads| image:: https://anaconda.org/ggd-genomics/grch37-hg003-pb-chr22-giab-v1/badges/downloads.svg
                :target: https://anaconda.org/ggd-genomics/grch37-hg003-pb-chr22-giab-v1
