@@ -40,3 +40,15 @@ With ggd installed and an activated ggd channel (see :ref:`using-ggd`), install 
 
 .. |downloads| image:: https://anaconda.org/ggd-genomics/grch37-cds-only-features-ensembl-v1/badges/downloads.svg
                :target: https://anaconda.org/ggd-genomics/grch37-cds-only-features-ensembl-v1
+
+Activating Environment Variables
+--------------------------------
+
+Run :code:`source activate base` after installing the data package to activate the environment variables 
+associated with this data package.
+
+.. note::
+    
+    You must be in the conda environment where the data package was installed in order to use the 
+    associated environment variables. Otherwise, use :code:`ggd get-files` to access this package's
+    data files.

@@ -187,6 +187,17 @@ following commands:</p>
 <p><code class="code docutils literal notranslate"><span class="pre">$</span> <span class="pre">ggd</span> <span class="pre">install</span> <span class="pre">hg19-pfam-domains-ucsc-v1</span></code></p>
 <p><code class="code docutils literal notranslate"><span class="pre">$</span> <span class="pre">ggd</span> <span class="pre">install</span> <span class="pre">hg19-cpg-islands-ucsc-v1</span></code></p>
 </div>
+<p>Each data package comes with a set of environment variables. To activate those environment variables run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">source</span> activate base
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In order to activate and use data package environment variables you must be in the conda environment where the
+data packages was installed. If you used the <code class="code docutils literal notranslate"><span class="pre">--prefix</span></code> argument during install or you are in an different
+conda environment than the one where the data package was installed you will not be able to use the data package’s
+environment variables. Instead, use <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">get-files</span></code></p>
+</div>
 </div>
 <div class="section" id="listing-installed-packages">
 <h2>4) Listing installed packages<a class="headerlink" href="#listing-installed-packages" title="Permalink to this headline">¶</a></h2>
