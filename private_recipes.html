@@ -1,0 +1,258 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Private Recipes &#8212; GGD  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="_static/font-awesome-4.7.0/css/font-awesome.min.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Available Data Packages" href="recipes.html" />
+    <link rel="prev" title="Contributing a ggd recipe" href="contribute-recipe.html" />
+    
+    <link href="https://fonts.googleapis.com/css?family=Lato|Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="_static/ms-icon-144x144.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="index.html">
+    <img class="logo" src="_static/logo/GoGetData_name_logo.png" alt="Logo"/>
+    
+  </a>
+</p>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quick-start.html">GGD Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using-ggd.html">Using GGD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GGD-CLI.html">GGD Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contribute.html">Contribute</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Private Recipes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#create-a-private-github-repository-to-store-private-data-recipes">1. Create a private github repository to store private data recipes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-a-ggd-recipe">2. Create a ggd recipe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#check-and-install-the-data-recipe">3. Check and install the data recipe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#add-the-data-recipe-to-github">4. Add the data recipe to github</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-access-installed-data-from-private-recipe">5. How to access installed data from private recipe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ggd-commands-the-won-t-work-with-private-recipes">6. GGD commands the won’t work with private recipes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#uninstalling-a-previously-installed-private-data-recipe">7. Uninstalling a previously installed private data recipe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#finally">Finally</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="recipes.html">Available Data Packages</a></li>
+</ul>
+
+<ul>
+  
+  <li class="toctree-l1"><a href="https://github.com/gogetdata/ggd-recipes">ggd-recipes @ Github</a></li>
+  
+  <li class="toctree-l1"><a href="https://github.com/gogetdata/ggd-cli">ggd-cli @ Github</a></li>
+  
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="private-recipes">
+<span id="id1"></span><h1>Private Recipes<a class="headerlink" href="#private-recipes" title="Permalink to this headline">¶</a></h1>
+<p>[<a class="reference internal" href="index.html#home-page"><span class="std std-ref">Click here to return to the home page</span></a>]</p>
+<p>Although GGD has been developed to provide reproducible data access and management for public scientific data,
+GGD can also be used to reproducibility curate and manage private data.</p>
+<p>For one reason or another, a researcher may wish to keep data private temporarily but still wish to use GGD to
+document data access, curation, and management. Below are suggested steps that can be followed in order to use
+GGD to manage private data on a local machine.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Private data management is not the primary use of GGD. GGD is used for public data access and use. It should be
+noted that private data recipes <strong>cannot</strong> be added to the ggd-recipes repository on github, they <strong>cannot</strong> be
+added to any ggd conda channel, and they <strong>cannot</strong> be added to ggd cloud caching services. All private data
+recipes will need to be stored and maintained by creator/user of those data recipes.</p>
+</div>
+<div class="section" id="create-a-private-github-repository-to-store-private-data-recipes">
+<h2>1. Create a private github repository to store private data recipes<a class="headerlink" href="#create-a-private-github-repository-to-store-private-data-recipes" title="Permalink to this headline">¶</a></h2>
+<p>We suggest that you create a private github repository to store your private data recipes. This allows for data recipe
+versioning and storage. As noted above, private data recipes <strong>cannot</strong> be stored on the ggd repositories.</p>
+<p>It is important that these recipes are somehow stored and maintained as they are the infrastructure and manual that ggd will
+use. They are key for the reproducibility and provenance aspects of data management.</p>
+</div>
+<div class="section" id="create-a-ggd-recipe">
+<h2>2. Create a ggd recipe<a class="headerlink" href="#create-a-ggd-recipe" title="Permalink to this headline">¶</a></h2>
+<p>Use <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">make-recipe</span></code> to create the private data recipe(s) from a bash script with the instruction on data access, curations,
+and processing.</p>
+<p>see <a class="reference internal" href="make-recipe.html#ggd-make-recipe"><span class="std std-ref">ggd make-recipe</span></a> for more information on how to create a data recipe</p>
+</div>
+<div class="section" id="check-and-install-the-data-recipe">
+<h2>3. Check and install the data recipe<a class="headerlink" href="#check-and-install-the-data-recipe" title="Permalink to this headline">¶</a></h2>
+<p>Because the private ggd data recipe will not be added to the ggd library, you <strong>won’t</strong> be able to use <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">install</span></code> to install the
+recipe. Instead you will use <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">check-recipe</span></code> command to install the recipe locally. In order to do this the <code class="code docutils literal notranslate"><span class="pre">-du</span></code> argument
+must be added to the <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">check-recipes</span></code> command.</p>
+<p>For example, if you have a private data recipe called <em>grch37-de-novo-callset-lark-v1</em> you would install it using the following command:</p>
+<p><code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">check-recipe</span> <span class="pre">grch37-de-novo-callset-lark-v1</span> <span class="pre">-du</span></code></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">check-recipe</span></code> command does not have a <code class="code docutils literal notranslate"><span class="pre">--prefix</span></code> argument. This means you have to be in the conda environment
+where you wish to install the data.</p>
+</div>
+<p>for more information on the <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">check-recipe</span></code> command see <a class="reference internal" href="check-recipe.html#ggd-check-recipe"><span class="std std-ref">ggd check-recipe</span></a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Installing private data recipes will take longer because the recipe goes through the normal check and validation step before it is
+installed. Additionally, there is now way to cache private data recipes, so the speedup seen from installing public data recipes is
+not available.</p>
+</div>
+</div>
+<div class="section" id="add-the-data-recipe-to-github">
+<h2>4. Add the data recipe to github<a class="headerlink" href="#add-the-data-recipe-to-github" title="Permalink to this headline">¶</a></h2>
+<p>Now that the data recipe has been created, it has been checked, and installed, you can add it to your private github repository.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We are suggesting adding the <em>data recipe</em> not the actual data to the private github repository</p>
+</div>
+</div>
+<div class="section" id="how-to-access-installed-data-from-private-recipe">
+<h2>5. How to access installed data from private recipe<a class="headerlink" href="#how-to-access-installed-data-from-private-recipe" title="Permalink to this headline">¶</a></h2>
+<p>Once a private data recipe has been installed on your system you can access and use it in a few different ways.</p>
+<ol class="upperalpha">
+<li><p>Using environment variables</p>
+<blockquote>
+<div><p>A private GGD recipe will come with environment variables as does a non-private ggd recipes. You must be in the same environment where the
+data recipe has been installed in order to use them. You must first run <code class="code docutils literal notranslate"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">base</span></code> before the environment variables are
+active.</p>
+</div></blockquote>
+</li>
+<li><p>Showing active environment variables</p>
+<blockquote>
+<div><p>Environment variables for private data recipes can be listed using <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">show-env</span></code></p>
+<p>For more information about the <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">show-env</span></code> command see: <a class="reference internal" href="show-env.html#ggd-show-env"><span class="std std-ref">ggd show-env</span></a></p>
+</div></blockquote>
+</li>
+<li><p>Listing installed private recipes</p>
+<blockquote>
+<div><p>A list of installed data recipes, including private recipes, can be seen using <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">list</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">list</span></code> has a <code class="code docutils literal notranslate"><span class="pre">--prefix</span></code> argument that is used to list installed data recipes in different
+conda environments. The <code class="code docutils literal notranslate"><span class="pre">--prefix</span></code> argument  <strong>can</strong> be used for private recipes. This means you can list
+private data recipes that are installed in a different conda environment then the currently active environment
+you are using.</p>
+</div>
+<p>For more information about the <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">list</span></code> command see: <a class="reference internal" href="list.html#ggd-list"><span class="std std-ref">ggd list</span></a></p>
+</div></blockquote>
+</li>
+<li><p>Getting data files for private recipes</p>
+<blockquote>
+<div><p>As with normal data recipes, you can use the <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">get-files</span></code> command to get data files created by private data recipes.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">get-files</span></code> has a <code class="code docutils literal notranslate"><span class="pre">--prefix</span></code> argument that is used to get installed data files from different conda environments.
+This <code class="code docutils literal notranslate"><span class="pre">--prefix</span></code> argument <strong>can</strong> be used for private recipes. This means you can get installed data files from private recipes
+that are in a different conda environment then the currently active one.</p>
+</div>
+<p>For more information about the <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">get-files</span></code> command see: <a class="reference internal" href="list-file.html#ggd-get-files"><span class="std std-ref">ggd get-files</span></a></p>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="ggd-commands-the-won-t-work-with-private-recipes">
+<h2>6. GGD commands the won’t work with private recipes<a class="headerlink" href="#ggd-commands-the-won-t-work-with-private-recipes" title="Permalink to this headline">¶</a></h2>
+<p>There are a few GGD commands that won’t work with private recipes. Those include:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">search</span></code></p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">predict-path</span></code></p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">uninstall</span></code></p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">pkg-info</span></code></p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="uninstalling-a-previously-installed-private-data-recipe">
+<h2>7. Uninstalling a previously installed private data recipe<a class="headerlink" href="#uninstalling-a-previously-installed-private-data-recipe" title="Permalink to this headline">¶</a></h2>
+<p>To uninstall a private data recipe you will run <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">check-recipes</span> <span class="pre">&lt;recipe</span> <span class="pre">name&gt;</span></code> where <em>&lt;recipe name&gt;</em> represents the path to and name of the
+data recipe.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="code docutils literal notranslate"><span class="pre">-du</span></code> argument is absent from the <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">check-recipe</span></code> command.</p>
+</div>
+</div>
+<div class="section" id="finally">
+<h2>Finally<a class="headerlink" href="#finally" title="Permalink to this headline">¶</a></h2>
+<p>GGD is a data management system built to mange and distribute publicly available scientific data. As this is the main purpose of GGD we encourage
+user to add ggd recipes to the public ggd repositories for the scientific community to use. GGD is built to help remove the inconsistencies with
+data processing and management that has plagued researchers for year. Therefore, GGD will continue to encourage public data access, management, and
+reproducibility. We understand that sometimes data cannot be shared publicly, but that the convenience and power of GGD can assist researchers and
+scientist during an analysis. The features on this page are here to assist if you want to use GGD but truly need to retain data privacy.
+However, GGD will continue to promote public data sharing whenever possible, and therefore, the GGD features will be maintained to support such
+goals.</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2016-2020, The GoGetData team.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.2.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/private_recipes.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
