@@ -6,19 +6,18 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ggd check-recipe &#8212; GGD  documentation</title>
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/style.css" />
     <link rel="stylesheet" type="text/css" href="_static/font-awesome-4.7.0/css/font-awesome.min.css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Contribute" href="contribute.html" />
-    <link rel="prev" title="ggd make-recipe" href="make-recipe.html" />
+    <link rel="next" title="GGD meta-recipes" href="meta-recipes.html" />
+    <link rel="prev" title="ggd make-meta-recipe" href="make-metarecipe.html" />
     
     <link href="https://fonts.googleapis.com/css?family=Lato|Raleway" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
@@ -68,9 +67,11 @@
 <li class="toctree-l2"><a class="reference internal" href="pkg-info.html">ggd pkg-info</a></li>
 <li class="toctree-l2"><a class="reference internal" href="show-env.html">ggd show-env</a></li>
 <li class="toctree-l2"><a class="reference internal" href="make-recipe.html">ggd make-recipe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="make-metarecipe.html">ggd make-meta-recipe</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">ggd check-recipe</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="meta-recipes.html">GGD meta-recipes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contribute.html">Contribute</a></li>
 <li class="toctree-l1"><a class="reference internal" href="private_recipes.html">Private Recipes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="recipes.html">Available Data Packages</a></li>
@@ -143,7 +144,13 @@ finished. To bypass this uninstall step (to keep the
 local package installed) set this flag “–
 dont_uninstall”</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">recipe_path</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--id</span></code>,
+<code class="docutils literal notranslate"><span class="pre">(meta-recipe</span> <span class="pre">ID)</span></code></p></td>
+<td><p>If checking a meta-recipe the associated meta-recipe id needs to be supplied.
+(Example: for a geo meta-recipe use something like –id GSE123) NOTE: GGD does
+not try to correct the ID. Please provide the correct case sensitive ID.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">recipe_path</span></code></p></td>
 <td><p><strong>Required</strong> Path to recipe directory (can also be path to the .bz2)</p></td>
 </tr>
 </tbody>
@@ -164,11 +171,25 @@ flag.</p></li>
 recipe. In order to test a portion of the recipe, the recipe will be packaged into a data package and will be installed.
 The default functionality for <cite>check-recipe</cite> is to uninstall that file once the tests have finished. If you would like
 to keep the local data package installed add <code class="code docutils literal notranslate"><span class="pre">-du</span></code> to your <cite>check-recipe</cite> command.</p></li>
+<li><dl class="simple">
+<dt><em>id:</em> The <code class="code docutils literal notranslate"><span class="pre">--id</span></code> parameter is used to designate the ID to use when checking a meta-recipe. This ID is required in order</dt><dd><p>to check the meta-recipe. The ID represents a unique identifier that the meta-recipe can used to download data from the
+database the meta-recipe is created for. The ID entered is based on an ID that can be used by the specific meta-recipe being
+checked. NOTE: GGD does not try to fix IDs. They must be entered correctly including being
+case sensitive with proper alphanumeric order.</p>
+</dd>
+</dl>
+</li>
 </ul>
 <p>The only required argument is the <code class="code docutils literal notranslate"><span class="pre">recipe_path</span></code> and refers to the directory you would like <code class="docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">check-recipe</span></code>
 to check. When using <a class="reference internal" href="make-recipe.html#ggd-make-recipe"><span class="std std-ref">ggd make-recipe</span></a> to create a ggd recipe, make-recipe will
 create a new directory with four new files. The recipe_path should be the path to the new directory created
 from using <cite>ggd make-recipe</cite>.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="code docutils literal notranslate"><span class="pre">--id</span></code> parameter is required if checking a meta-recipe</p>
+</div>
+</div></blockquote>
 <p>Running <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">check-recipe</span> <span class="pre">&lt;recipe-path&gt;</span></code> will build, install, and test and validate the recipe to ensure the recipe works correctly.</p>
 </div>
 </div>
@@ -232,8 +253,8 @@ from using <cite>ggd make-recipe</cite>.</p>
   Importing conda-verify failed.  Please be sure to test your packages.  conda install conda-verify to make this message go away.
   WARNING:conda_build.build:Importing conda-verify failed.  Please be sure to test your packages.  conda install conda-verify to make this message go away.
   WARNING conda_build.build:bundle_conda(1030): Importing conda-verify failed.  Please be sure to test your packages.  conda install conda-verify to make this message go away.
-  INFO:conda_build.variants:Adding in variants from /scratch/local/u1138933/tmpn3m0b150/info/recipe/conda_build_config.yaml
-  INFO conda_build.variants:_combine_spec_dictionaries(189): Adding in variants from /scratch/local/u1138933/tmpn3m0b150/info/recipe/conda_build_config.yaml
+  INFO:conda_build.variants:Adding in variants from /scratch/tmpn3m0b150/info/recipe/conda_build_config.yaml
+  INFO conda_build.variants:_combine_spec_dictionaries(189): Adding in variants from /scratch/local/tmpn3m0b150/info/recipe/conda_build_config.yaml
   Collecting package metadata (current_repodata.json): ...working... Unable to retrieve repodata (response: 404) for https://conda.anaconda.org/ggd-genomics/linux-64/current_repodata.json
 
   done
@@ -307,7 +328,7 @@ from using <cite>ggd make-recipe</cite>.</p>
 
   :ggd:uninstall: Removing hg19-phastcons-ucsc-v1 version 1 file(s) from ggd recipe storage
 
-  :ggd:uninstall: Deleteing 10 items of hg19-phastcons-ucsc-v1 version 1 from your conda root
+  :ggd:uninstall: Deleting 10 items of hg19-phastcons-ucsc-v1 version 1 from your conda root
 
   :ggd:env: Removing the ggd_hg19_phastcons_ucsc_v1_dir environment variable
 

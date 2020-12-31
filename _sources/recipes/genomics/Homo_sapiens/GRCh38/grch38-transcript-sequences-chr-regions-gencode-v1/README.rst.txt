@@ -36,7 +36,7 @@ Installation
 
 With ggd installed and an activated ggd channel (see :ref:`using-ggd`), install with::
 
-   ggd install -c genomics grch38-transcript-sequences-chr-regions-gencode-v1
+   ggd install -c genomics grch38-transcript-sequences-chr-regions-gencode-v1 
 
 .. |downloads| image:: https://anaconda.org/ggd-genomics/grch38-transcript-sequences-chr-regions-gencode-v1/badges/downloads.svg
                :target: https://anaconda.org/ggd-genomics/grch38-transcript-sequences-chr-regions-gencode-v1

@@ -6,19 +6,18 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contribute &#8212; GGD  documentation</title>
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/style.css" />
     <link rel="stylesheet" type="text/css" href="_static/font-awesome-4.7.0/css/font-awesome.min.css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Setting up with Github" href="github-setup.html" />
-    <link rel="prev" title="ggd check-recipe" href="check-recipe.html" />
+    <link rel="prev" title="GGD meta-recipes" href="meta-recipes.html" />
     
     <link href="https://fonts.googleapis.com/css?family=Lato|Raleway" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
@@ -59,9 +58,17 @@
 <li class="toctree-l1"><a class="reference internal" href="quick-start.html">GGD Quick Start</a></li>
 <li class="toctree-l1"><a class="reference internal" href="using-ggd.html">Using GGD</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GGD-CLI.html">GGD Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="meta-recipes.html">GGD meta-recipes</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Contribute</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="github-setup.html">Setting up with Github</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contribute-recipe.html">Contributing a ggd recipe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="making-meta-recipes.html">Creating a ggd meta-recipe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="making-meta-recipes.html#update-local-forked-repo">1. Update local forked repo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="making-meta-recipes.html#writing-the-curation-script-s">2. Writing the curation script(s)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="making-meta-recipes.html#creating-a-ggd-meta-recipe-using-the-ggd-cli">3. Creating a ggd meta-recipe using the ggd cli</a></li>
+<li class="toctree-l2"><a class="reference internal" href="making-meta-recipes.html#checking-testing-the-new-meta-recipe">4. Checking/Testing the new meta-recipe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="making-meta-recipes.html#submit-the-new-ggd-meta-recipe-to-the-original-ggd-recipes-repo">5. Submit the new ggd meta-recipe to the original ggd-recipes repo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="making-meta-recipes.html#example-of-the-gene-expression-omnibus-geo-main-bash-script-and-supporting-python-script">6. Example of the Gene Expression Omnibus (GEO) main bash script and supporting python script</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="private_recipes.html">Private Recipes</a></li>
@@ -119,14 +126,22 @@ recipe and add it to the ggd data repository.</p>
 </ul>
 </div></blockquote>
 </li>
-<li><p><a class="reference internal" href="contribute-recipe.html#contrib-recipe"><span class="std std-ref">Make a ggd recipe</span></a></p>
+</ol>
+<p>2a. <a class="reference internal" href="contribute-recipe.html#contrib-recipe"><span class="std std-ref">Make a ggd recipe</span></a></p>
 <blockquote>
 <div><ul class="simple">
 <li><p>The following steps will outline how to create a ggd data recipe, how to test it, and how to add it to the
 gogetdata/ggd-recipes repo.</p></li>
 </ul>
 </div></blockquote>
-</li>
+<p>2b. <a class="reference internal" href="making-meta-recipes.html#contribute-meta-recipe"><span class="std std-ref">Make a ggd meta-recipe</span></a></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The following steps will outline how to create a ggd data meta-recipe, how to test it, and how to add it
+to the gogetdata/ggd-recipe repo.</p></li>
+</ul>
+</div></blockquote>
+<ol class="arabic" start="3">
 <li><p>Continuous Integration testing with Circle CI</p>
 <blockquote>
 <div><ul class="simple">
@@ -149,6 +164,17 @@ with you on getting it to pass.</p></li>
 <li class="toctree-l2"><a class="reference internal" href="contribute-recipe.html#submit-the-new-ggd-recipe-to-the-original-ggd-recipes-repo">5. Submit the new ggd recipe to the original ggd-recipes repo</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="making-meta-recipes.html">Creating a ggd meta-recipe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="making-meta-recipes.html#update-local-forked-repo">1. Update local forked repo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="making-meta-recipes.html#writing-the-curation-script-s">2. Writing the curation script(s)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="making-meta-recipes.html#creating-the-main-bash-script">Creating the main bash script</a></li>
+<li class="toctree-l2"><a class="reference internal" href="making-meta-recipes.html#creating-the-supporting-script-s">Creating the supporting script(s)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="making-meta-recipes.html#creating-a-ggd-meta-recipe-using-the-ggd-cli">3. Creating a ggd meta-recipe using the ggd cli</a></li>
+<li class="toctree-l1"><a class="reference internal" href="making-meta-recipes.html#checking-testing-the-new-meta-recipe">4. Checking/Testing the new meta-recipe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="making-meta-recipes.html#submit-the-new-ggd-meta-recipe-to-the-original-ggd-recipes-repo">5. Submit the new ggd meta-recipe to the original ggd-recipes repo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="making-meta-recipes.html#example-of-the-gene-expression-omnibus-geo-main-bash-script-and-supporting-python-script">6. Example of the Gene Expression Omnibus (GEO) main bash script and supporting python script</a></li>
 </ul>
 </div>
 </div>

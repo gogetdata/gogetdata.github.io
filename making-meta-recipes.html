@@ -1,0 +1,993 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Creating a ggd meta-recipe &#8212; GGD  documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="_static/font-awesome-4.7.0/css/font-awesome.min.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Private Recipes" href="private_recipes.html" />
+    <link rel="prev" title="Contributing a ggd recipe" href="contribute-recipe.html" />
+    
+    <link href="https://fonts.googleapis.com/css?family=Lato|Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="_static/ms-icon-144x144.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="index.html">
+    <img class="logo" src="_static/logo/GoGetData_name_logo.png" alt="Logo"/>
+    
+  </a>
+</p>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quick-start.html">GGD Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using-ggd.html">Using GGD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GGD-CLI.html">GGD Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="meta-recipes.html">GGD meta-recipes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="contribute.html">Contribute</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="github-setup.html">Setting up with Github</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contribute-recipe.html">Contributing a ggd recipe</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Creating a ggd meta-recipe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#update-local-forked-repo">1. Update local forked repo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#writing-the-curation-script-s">2. Writing the curation script(s)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-a-ggd-meta-recipe-using-the-ggd-cli">3. Creating a ggd meta-recipe using the ggd cli</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#checking-testing-the-new-meta-recipe">4. Checking/Testing the new meta-recipe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#submit-the-new-ggd-meta-recipe-to-the-original-ggd-recipes-repo">5. Submit the new ggd meta-recipe to the original ggd-recipes repo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example-of-the-gene-expression-omnibus-geo-main-bash-script-and-supporting-python-script">6. Example of the Gene Expression Omnibus (GEO) main bash script and supporting python script</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="private_recipes.html">Private Recipes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recipes.html">Available Data Packages</a></li>
+</ul>
+
+<ul>
+  
+  <li class="toctree-l1"><a href="https://github.com/gogetdata/ggd-recipes">ggd-recipes @ Github</a></li>
+  
+  <li class="toctree-l1"><a href="https://github.com/gogetdata/ggd-cli">ggd-cli @ Github</a></li>
+  
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="creating-a-ggd-meta-recipe">
+<span id="contribute-meta-recipe"></span><h1>Creating a ggd meta-recipe<a class="headerlink" href="#creating-a-ggd-meta-recipe" title="Permalink to this headline">¶</a></h1>
+<p>This page is specific to creating a ggd <strong>meta-recipe</strong>. If you are looking to create a normal ggd recipe see <a class="reference internal" href="contribute-recipe.html#contrib-recipe"><span class="std std-ref">Creating a ggd recipe</span></a></p>
+<p>The following steps outline how to create, check, and add a ggd data meta-recipe.</p>
+</div>
+<div class="section" id="update-local-forked-repo">
+<h1>1. Update local forked repo<a class="headerlink" href="#update-local-forked-repo" title="Permalink to this headline">¶</a></h1>
+<p>You will need to update the forked ggd-recipes repo on your local machine before
+you add a recipe to it.</p>
+<ul class="simple">
+<li><p>Navigate to the forked ggd-recipes repo on your local machine</p></li>
+<li><p>Once in the directory run the following commands</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git checkout master
+$ git pull upstream master
+$ git push origin master
+</pre></div>
+</div>
+</div>
+<div class="section" id="writing-the-curation-script-s">
+<h1>2. Writing the curation script(s)<a class="headerlink" href="#writing-the-curation-script-s" title="Permalink to this headline">¶</a></h1>
+<p>A meta-recipe script should be quite a bit more detailed then a general ggd recipe script.</p>
+<p>Additionally, it is common to consider using multiple scripts for a meta-recipe, where you have a single main bash script which is used
+to control the process of all other scripts.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Whether using a single or multiple scripts, the main script must be a bash script</p>
+</div>
+<p>Things to consider when building a meta-recipe (This list is by far NOT a comprehensive list of things to think about while creating a meta-recipe):</p>
+<ul class="simple">
+<li><p>What types of identifiers do I need in order to download the data from the database of choice?</p></li>
+<li><p>Are there different types of identifiers? If so, how do I handle them?</p></li>
+<li><p>Does the database have and FTP site, a SQL database, etc? (How and where am I going to get the data from?)</p></li>
+<li><p>Is there a way to check if the ID and/or the data exists in the database?</p></li>
+<li><p>How do I handle a bad ID or the absence of data?</p></li>
+<li><p>Is there some hash value, like an md5sum hash value, I can use to validate that the contents of the data downloaded is correct and there wasn’t an error during downloading?</p></li>
+<li><p>What data should be downloaded, and where is it coming from?</p></li>
+<li><p>Is there additional processing that needs to happen once the data is downloaded?</p></li>
+<li><p>With an ID, and potentially the downloaded data, what information can I get and used to update the ID specific recipe metadata?</p></li>
+<li><p>How am I going to handle errors?</p></li>
+<li><p>etc.</p></li>
+</ul>
+<div class="section" id="creating-the-main-bash-script">
+<h2>Creating the main bash script<a class="headerlink" href="#creating-the-main-bash-script" title="Permalink to this headline">¶</a></h2>
+<p>This script should handle the ID. Data download, curation, etc. can be handled by this script or can be passed to a different supporting script.</p>
+<p>GGD provides 4 environment variables to use during meta-recipe installation in order to help the process. They are:</p>
+<blockquote>
+<div><table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>GGD_METARECIPE_ID</strong></p></td>
+<td><p>This is the ID provided during installation (Example: GSE123 for the GEO meta-recipe)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>SCRIPTS_PATH</strong></p></td>
+<td><p>The directory path to where the additional scripts are stored. (This path is required in order to run any supporting scripts)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>GGD_METARECIPE_ENV_VAR_FILE</strong></p></td>
+<td><p>This is the file path to store the ID specific updates to the meta-recipe. (More on this later)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>GGD_METARECIPE_FINAL_COMMANDS_FILE</strong></p></td>
+<td><p>This is the file path to a bash script which is used to store the final/actual commands used to install the ID specific data. (More on this later)</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>In addition to providing these four environment variables these variables are passed into the main bash script as the first four parameters as follows:
+(Strict Order)</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">id</span><span class="o">=</span><span class="nv">$1</span>            <span class="c1"># 1st argument is GGD_METARECIPE_ID</span>
+
+<span class="nv">script_path</span><span class="o">=</span><span class="nv">$2</span>   <span class="c1"># 2nd argument is SCRIPTS_PATH</span>
+
+<span class="nv">env_var_file</span><span class="o">=</span><span class="nv">$3</span>  <span class="c1"># 3rd argument is GGD_METARECIPE_ENV_VAR_FILE</span>
+
+<span class="nv">commands_file</span><span class="o">=</span><span class="nv">$4</span> <span class="c1"># 4rth argument is GGD_METARECIPE_FINAL_COMMANDS_FILE</span>
+</pre></div>
+</div>
+<p>The <strong>GGD_METARECIPE_ID</strong> will match exactly what was entered in the install command. GGD will not change case or order.</p>
+<ol class="upperalpha">
+<li><p>ID (GGD_METARECIPE_ID):</p>
+<blockquote>
+<div><p>The ID should be used to identify and download the data that is associated with that ID. If the ID doesn’t exists or there is no data for that ID then the
+bash script should print a warning/error message and exit.</p>
+</div></blockquote>
+</li>
+<li><p>Script Path (SCRIPTS_PATH):</p>
+<blockquote>
+<div><p>In order to use a supporting script, the script path must be used. For example, if you have a supporting script named “get_id_metadata.py” which you run from within the main
+bash script you would do:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">script_path</span><span class="o">=</span><span class="nv">$2</span>   <span class="c1"># 2nd argument is SCRIPTS_PATH</span>
+
+python <span class="nv">$script_path</span>/get_id_metadata.py &lt;other required arguments&gt;
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python <span class="nv">$SCRIPTS_PATH</span>/get_id_metadata.py &lt;other required arguments&gt;
+</pre></div>
+</div>
+<p>where &lt;other required arguments&gt; are the arguments needed for the “get_id_metadata.py” script.</p>
+</div></blockquote>
+</li>
+<li><p>Updating ID specific metadata (GGD_METARECIPE_ENV_VAR_FILE, GGD_METARECIPE_FINAL_COMMANDS_FILE):</p>
+<blockquote>
+<div><p>One of the main advantages of meta-recipes is the ability to update a recipes metadata based on information about the specific ID supplied. That is,
+based on the ID what information is there that should be added to the metadata.</p>
+<p>Although it is not required to updated the metadata, it is highly recommended that you do. Otherwise, the metadata will consist of the general information
+of the meta-recipe without any ID specific info.</p>
+<p>GGD provides two environment variables to use for this purpose.</p>
+<p><strong>GGD_METARECIPE_FINAL_COMMANDS_FILE</strong>: This represents a bash file that should store the commands used for installing and processing the data files specific to the ID.</p>
+<p>The main meta-recipe script will being doing a lot of work. This file should capture the essential pieces for determining where and how the data was installed and processed.
+Other information should be kept out.</p>
+<p>This file acts as a place holder for what will be updated in the ID specific meta-recipe metadata. That is, after the meta-recipe is installed and the metadata has been
+updated, a user will be able to access these commands through the <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">pkg-info</span></code> command. This helps to support reproducibility and transparency.</p>
+<p>Again, although it is not required it is highly recommended that this step is taken.</p>
+<p><strong>GGD_METARECIPE_ENV_VAR_FILE</strong>: This file represents different “environment variables” that can be set in order to update the metadata of an ID specific meta-recipe.
+This file is a <code class="docutils literal notranslate"><span class="pre">.json</span></code> file. This means that the meta-recipe needs to save the contents of the file as a .json file, otherwise GGD will not be able to use the
+updated environment variables. The json file should act as a dictionary/map with environment variable to change as keys and the content changes as values.</p>
+<p>The available keys are:</p>
+<blockquote>
+<div><table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 75%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>GGD_METARECIPE_SUMMARY</strong></p></td>
+<td><p>(string) A summary of the installed data</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>GGD_METARECIPE_SPECIES</strong></p></td>
+<td><p>(string) The species of the installed data</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>GGD_METARECIPE_GENOME_BUILD</strong></p></td>
+<td><p>(string) The genome build of the installed data</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>GGD_METARECIPE_VERSION</strong></p></td>
+<td><p>(string) The version of the data installed</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>GGD_METARECIPE_KEYWORDS</strong></p></td>
+<td><p>(list)   A list of key words to add to the metadata</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>GGD_METARECIPE_DATA_PROVIDER</strong></p></td>
+<td><p>(string) The data provider of the recipe. (Should already exists. Should not be used)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>GGD_METARECIPE_FILE_TYPE</strong></p></td>
+<td><p>(list)   A list of file types for the files installed by the package</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>GGD_METARECIPE_GENOMIC_COORDINATE_BASE</strong></p></td>
+<td><p>(string) A string that represented the coordinate base of the installed files</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Not all keys are required to be set. It is recommended that the <strong>GGD_METARECIPE_SUMMARY</strong> be updated, the <strong>GGD_METARECIPE_SPECIES</strong> and <strong>GGD_METARECIPE_GENOME_BUILD</strong> be
+updated if data is available to update them, the <strong>GGD_METARECIPE_VERSION</strong> be updated, and the <strong>GGD_METARECIPE_KEYWORDS</strong> be updated.</p>
+<p>The remaining keys/environment variable names can be used if data is available to update them.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The data provider can be updated, but it is recommended that the data provider is not updated. If the data provider needs to be updated
+we suggest that a different recipe be created for that data provider specifically.</p>
+</div>
+<p>After an ID specific meta-recipe is installed, GGD will check to see if any of the two files exists. If they do, GGD will update the metadata of the ID specific
+meta-recipe. These updates are available via the <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">pkg-info</span></code> command.</p>
+<p>Please try to update the metadata whenever possible.</p>
+<p>The meta-recipe main bash script should also clean up any extra files or other processes that were needed during the installation process.</p>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="creating-the-supporting-script-s">
+<h2>Creating the supporting script(s)<a class="headerlink" href="#creating-the-supporting-script-s" title="Permalink to this headline">¶</a></h2>
+<p>Supporting scripts are not needed if everything can be done easily in the main bash script without them. However, supporting scripts can be helpful
+in defining the updated metadata for the ID specific recipe installed, or for other tasks that aren’t done easily in bash.</p>
+<p>Supporting scripts need to be accessible through the main bash script, and any arguments needed for the supporting scripts needs to be accessible and/or generated
+within the main bash script.</p>
+<p>There is not requirement for language of supporting scripts. However, if a supporting script is written in another language other then bash, the language needs to be added
+to the dependencies list when making a ggd meta-recipe to ensure that the language is available when installing the meta-recipe</p>
+<p>It is recommended that the json file used for updating the metadata be created from a supporting script because creating json files from a bash script is not
+as straight forward as it is in some other languages. For example, if you are using a python script to create the json file, a simple example would be:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="n">json_outfile</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="c1">## This file path should be the GGD_METARECIPE_ENV_VAR_FILE passed in from the main bash script</span>
+
+<span class="c1">## Create dictionary</span>
+<span class="n">metadata_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+<span class="c1">## Add updated info to the  dictionary</span>
+<span class="n">metadata_dict</span><span class="p">[</span><span class="s2">&quot;GGD_METARECIPE_SUMMARY&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">updated</span> <span class="n">summary</span><span class="o">&gt;</span>
+
+<span class="o">.</span>
+<span class="o">.</span>
+<span class="o">.</span>
+
+<span class="c1">#save data as json file to the GGD_METARECIPE_ENV_VAR_FILE location</span>
+<span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">metadata_dict</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="n">json_outfile</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The json file needs to be formatted as a dictionary: {“GGD_METARECIPE_SUMMARY”: “An Updated Summary”, “GGD_METARECIPE_SPECIES”: “ID specific species”, …}</p>
+</div>
+<p>Supporting scripts can be as simple or complicated as needs be. We recommend you stay on the side of simple as much as possible as to help provide transparency with
+what is going on.</p>
+<p><strong>An example of the GEO meta-recipe scripts are provided below at number 6</strong></p>
+</div>
+</div>
+<div class="section" id="creating-a-ggd-meta-recipe-using-the-ggd-cli">
+<h1>3. Creating a ggd meta-recipe using the ggd cli<a class="headerlink" href="#creating-a-ggd-meta-recipe-using-the-ggd-cli" title="Permalink to this headline">¶</a></h1>
+<p>The ggd command line interface (cli) contains tools to create and test a data meta-recipe.</p>
+<p>If it has not been installed, install the ggd cli following the steps outlined in <a class="reference internal" href="using-ggd.html#using-ggd"><span class="std std-ref">Using GGD</span></a>.</p>
+<p>With the ggd cli installed you can now transform your meta-recipe script(s) created in the previous step into a ggd meta-recipe.</p>
+<p>To do this you will use the <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">make-meta-recipe</span></code> command. See the <a class="reference internal" href="make-metarecipe.html#ggd-make-meta-recipe"><span class="std std-ref">make-meta-recipe</span></a> docs page for more information on the command .</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="code docutils literal notranslate"><span class="pre">make-meta-recipe</span></code> command is different then the <code class="code docutils literal notranslate"><span class="pre">make-recipe</span></code> command. The first creates a meta-recipe
+while the second creates a normal ggd recipe.</p>
+</div>
+<p>It is important that the summary of the meta-recipe provides enough information about what the meta-recipe is and what it does, as well as what it expects in terms of
+an ID, so that a user can simply identify which meta-recipe they would like to use and how to use it.</p>
+<p>None of the information added during the <code class="code docutils literal notranslate"><span class="pre">make-meta-recipe</span></code> stage should include ID specific information other then the summary stating how to use IDs.</p>
+<p>A meta-recipe requires the following fields to be field out:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>species:         <strong>“meta-recipe”</strong></p></li>
+<li><p>genome build:    <strong>“meta-recipe”</strong></p></li>
+<li><p>data version:    <strong>“meta-recipe”</strong> (Not required, but suggested so that the version can be updated based on the installation of a specific ID recipe)</p></li>
+<li><p>data provider:   The data provider where the meta-recipe will pull data from</p></li>
+<li><p>summary:         A detailed summary of the meta-recipe</p></li>
+<li><p>author:          Who created the meta-recipe</p></li>
+<li><p>package version: The version of the meta-recipe/package (Usually “1” for the first version of a meta-recipe)</p></li>
+<li><p>keywords:        Keywords that will help to distinguish the meta-recipe</p></li>
+<li><p>coordinate base: <strong>“NA”</strong> unless otherwise known. (Can be updated by the meta-recipe during an ID specific recipe installation)</p></li>
+<li><p>name:            A defining name to use for the meta-recipe</p></li>
+<li><p>script:          The main bash script for the meta-recipe</p></li>
+<li><p>extra scripts:   A space separated list of all extra/supporting scripts that are used by the meta-recipe</p></li>
+<li><p>dependency:      Any software or ggd data dependencies required by the main or supporting scripts of the meta-recipe</p></li>
+</ul>
+</div></blockquote>
+<p>Example of making a meta-recipe:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd make-meta-recipe <span class="se">\</span>
+      --authors mjc <span class="se">\</span>
+      --package-version <span class="m">1</span> <span class="se">\</span>
+      --data-provider GEO <span class="se">\</span>
+      --data-version <span class="s2">&quot;meta-recipe&quot;</span> <span class="se">\</span>
+      --species <span class="s2">&quot;meta-recipe&quot;</span> <span class="se">\</span>
+      --genome-build <span class="s2">&quot;meta-recipe&quot;</span> <span class="se">\</span>
+      --cb <span class="s2">&quot;NA&quot;</span> <span class="se">\</span>
+      --summary <span class="s2">&quot;A meta-recipe for the Gene Expression Omnibus (GEO) database from NCBI. ... &quot;</span> <span class="se">\</span>
+      --extra-scripts parse_geo_header.py <span class="se">\</span>
+      -k Gene-Expression-Omnibus <span class="se">\</span>
+      -k GEO <span class="se">\</span>
+      -k GEO-Accession-ID <span class="se">\</span>
+      -k GEO-meta-recipe <span class="se">\</span>
+      --name geo-accession <span class="se">\</span>
+      geo_meta_recipe_script.sh
+</pre></div>
+</div>
+<p>This will create a new ggd meta-recipe named <strong>meta-recipe-geo-accession-geo-v1</strong></p>
+<p><em>meta-recipe-geo-accession-geo-v1</em> is a directory with the following files in it:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>checksums_file.txt</p></li>
+<li><p>meta.yaml</p></li>
+<li><p>metarecipe.sh</p></li>
+<li><p>parse_geo_header.py</p></li>
+<li><p>post-link.sh</p></li>
+<li><p>recipe.sh</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="checking-testing-the-new-meta-recipe">
+<h1>4. Checking/Testing the new meta-recipe<a class="headerlink" href="#checking-testing-the-new-meta-recipe" title="Permalink to this headline">¶</a></h1>
+<p>The new meta-recipe needs to be tested. GGD provides an easy to use tool to do this. The tool will check if the meta-recipe can be built into a data-package,
+if it can be installed, along with other aspects of the recipe that are pertinent for successful data meta-recipes.</p>
+<p>This tool is <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">check-recipe</span></code>. <code class="code docutils literal notranslate"><span class="pre">check-recipe</span></code> is used to test both a normal ggd data recipe along with a ggd data meta-recipe. One major difference
+from the user side is that for a meta-recipe the <code class="code docutils literal notranslate"><span class="pre">--id</span></code> parameter is required while it is ignored during a normal recipe check.</p>
+<p>This means that ggd will not only check that a meta-recipe works properly on its own, but also that it fulfills its requirements of installing ID specific data.</p>
+<p>Using the meta-recipe created in the previous step, you would run the following command in order to test the new meta-recipe:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ggd check-recipe meta-recipe-geo-accession-geo-v1 --id GSE123
+</pre></div>
+</div>
+<p>The ID can be any one of the IDs that can be used with the meta-recipe, <code class="code docutils literal notranslate"><span class="pre">check-recipe</span></code> just requires that a proper ID be used for testing.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="code docutils literal notranslate"><span class="pre">check-recipe</span></code> will fail for a meta-recipe if no <code class="code docutils literal notranslate"><span class="pre">--id</span></code> is provided.</p>
+<p>Additionally, the meta-recipe should be able to handle the occurrence of a bad ID.</p>
+</div>
+<p>If <code class="code docutils literal notranslate"><span class="pre">check-recipe</span></code> fails there will be information on why it failed. Fix the problems and continue to test the meta-recipe until it passes.</p>
+<p>Once the meta-recipe has passed the tests it can be added to GGD.</p>
+</div>
+<div class="section" id="submit-the-new-ggd-meta-recipe-to-the-original-ggd-recipes-repo">
+<h1>5. Submit the new ggd meta-recipe to the original ggd-recipes repo<a class="headerlink" href="#submit-the-new-ggd-meta-recipe-to-the-original-ggd-recipes-repo" title="Permalink to this headline">¶</a></h1>
+<p>Once the new ggd meta-recipe you created passes the previous step you are ready to add it to the original ggd-recipes repo.</p>
+<p>To do this you will need to create a <strong>pull request</strong>.</p>
+<p>From your local machine, add the new data meta-recipe you created to the forked ggd-recipes repo. You will add it
+to the <code class="docutils literal notranslate"><span class="pre">recipes/</span></code> directory. If you do not put it in the right directory it will be rejected.
+The recipes file convention is as follows:</p>
+<blockquote>
+<div><ul>
+<li><p>All recipes are stored within the <strong>ggd-recipes/recipes</strong> directory</p></li>
+<li><p>The recipes directory has the following format:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/&lt;</span><span class="n">path</span> <span class="n">to</span> <span class="n">forked</span> <span class="n">ggd</span><span class="o">-</span><span class="n">recipes</span> <span class="n">repo</span><span class="o">&gt;/</span><span class="n">recipes</span><span class="o">/&lt;</span><span class="n">ggd</span> <span class="n">channel</span><span class="o">&gt;/&lt;</span><span class="n">species</span><span class="o">&gt;/&lt;</span><span class="n">genome</span><span class="o">-</span><span class="n">build</span><span class="o">&gt;/</span>
+</pre></div>
+</div>
+<ul>
+<li><p><code class="code docutils literal notranslate"><span class="pre">&lt;path</span> <span class="pre">to</span> <span class="pre">forked</span> <span class="pre">ggd-recipes</span> <span class="pre">repo&gt;</span></code> is the path to the forked ggd-recipes repo on your local machine.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">recipes</span></code> is the <strong>recipes</strong> directory.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">&lt;ggd</span> <span class="pre">channel&gt;</span></code> is the ggd channel that recipe should go in. This depends on the type of data you are adding.</p>
+<p>for a meta-recipe you should add it to:</p>
+<p>/&lt;path to forked ggd-recipes repo&gt;/recipes/&lt;ggd channel&gt;/<strong>meta-recipe</strong>/<strong>meta-recipe</strong>/</p>
+</li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+<p>For the meta-recipe-geo-accession-geo-v1 meta-recipe created above you would use the following commands:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ mv meta-recipe-geo-accession-geo-v1 /&lt;forked ggd-recipes&gt;/recipes/genomics/meta-recipe/meta-recipe/
+</pre></div>
+</div>
+<p>Once the meta-recipe is there you will need to add it to your forked ggd-recipe repo.
+Navigate to the forked ggd-recipe directory and use the following commands:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Add the met-recipe to the git repo:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git add /recipes/genomics/meta-recipe/meta-recipe/meta-recipe-geo-accession-geo-v1/
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Commit the addition to the repo (The vim text editor will open up. Add a comment about the new meta-recipe and save it):</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git commit
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Push the commit to your fork repo on github (You will be asked to fill out your github credentials):</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git push origin
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Go to the ggd-recipes github page for your username (<a class="reference external" href="https://github.com">https://github.com</a>/&lt;USERNAME&gt;/ggd-recipes/).</p></li>
+<li><p>Under the green “Clone or download” button click on <strong>Pull request</strong>.</p></li>
+<li><p>Where it says <strong>base fork:</strong> make sure it is on <strong>gogetdata/ggd-recipes</strong>. And where it says <strong>base:</strong> make sure it
+is on <strong>master</strong>.</p></li>
+<li><p>Click the green <strong>Create pull request</strong> button.</p></li>
+<li><p>Add some comments and complete the pull request.</p></li>
+</ul>
+</div></blockquote>
+<p>You have now created a pull request with your new data meta-recipe. The meta-recipe will go through a continuous integration
+step where the recipe will be tested.</p>
+<p>If it passes, the recipe will be added to the gogetdata/ggd-recipes repo and anyone using the ggd tool will be
+able to access it.</p>
+<p>If it does not pass, you will be informed by the ggd team, and they will work with you on getting it working.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Because of the ID required by meta-recipes, there are additional steps that need to be taken during the continuous integration process.
+In the pull request comments make sure to indicate the test ID you would like used during the testing phase.
+The GGD team will work with you during this process to make sure that the process is done correctly.</p>
+</div>
+</div>
+<div class="section" id="example-of-the-gene-expression-omnibus-geo-main-bash-script-and-supporting-python-script">
+<h1>6. Example of the Gene Expression Omnibus (GEO) main bash script and supporting python script<a class="headerlink" href="#example-of-the-gene-expression-omnibus-geo-main-bash-script-and-supporting-python-script" title="Permalink to this headline">¶</a></h1>
+<p>Below is an example of a the main bash script and a supporting python script used to create a meta-recipe for the GEO database. This stands as one example
+of how to create a meta-recipe, but does not indicate how every meta-recipe should be created. As with all ggd recipes, the recipe scripts should be created
+in order to correctly install and process the data the recipe is created for.</p>
+<ol class="upperalpha">
+<li><p>Main bash:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">## GEO accession number</span>
+<span class="nv">geo_acc_id</span><span class="o">=</span><span class="nv">$1</span>
+
+<span class="c1">## Script Location: The file path the script</span>
+<span class="nv">script_path</span><span class="o">=</span><span class="nv">$2</span>
+
+<span class="c1">## Json File name</span>
+<span class="nv">json_outfile</span><span class="o">=</span><span class="nv">$3</span>
+
+<span class="c1">## file path for the subsetted commands used to download the data</span>
+<span class="nv">commands_outfile</span><span class="o">=</span><span class="nv">$4</span>
+
+<span class="c1">## Force Upper Case</span>
+<span class="c1">#geo_acc_id=$(echo ${geo_acc_id^^}) Requires bash &gt;= 4.2 (macOSX bash version == &lt; 4)</span>
+<span class="nv">geo_acc_id</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span><span class="nb">echo</span> <span class="nv">$geo_acc_id</span> <span class="p">|</span> tr <span class="s1">&#39;[:lower:]&#39;</span> <span class="s1">&#39;[:upper:]&#39;</span><span class="k">)</span><span class="s2">&quot;</span>
+
+<span class="nb">echo</span> -e <span class="s2">&quot;\n    Checking GEO for </span><span class="nv">$geo_acc_id</span><span class="s2">&quot;</span>
+<span class="nb">echo</span> -e <span class="s2">&quot;  ================================\n&quot;</span>
+
+<span class="c1">## Get the GEO number excluding the prefix</span>
+<span class="nv">geo_digit</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">geo_acc_id</span><span class="p">//[^[:</span><span class="nv">digit</span><span class="p">:]]/</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="c1">## Get GEO URL stub based on the number of digits</span>
+<span class="k">if</span> <span class="o">[[</span> <span class="s2">&quot;</span><span class="si">${#</span><span class="nv">geo_digit</span><span class="si">}</span><span class="s2">&quot;</span> -ge <span class="m">3</span> <span class="o">]]</span>
+<span class="k">then</span>
+    <span class="nv">stub</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$geo_acc_id</span><span class="s2">&quot;</span> <span class="p">|</span> sed <span class="s1">&#39;s/...$/nnn/&#39;</span><span class="k">)</span>
+
+<span class="k">elif</span> <span class="o">[[</span> <span class="s2">&quot;</span><span class="si">${#</span><span class="nv">geo_digit</span><span class="si">}</span><span class="s2">&quot;</span> -eq <span class="m">2</span> <span class="o">]]</span>
+<span class="k">then</span>
+    <span class="nv">stub</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$geo_acc_id</span><span class="s2">&quot;</span> <span class="p">|</span> sed <span class="s1">&#39;s/..$/nnn/&#39;</span><span class="k">)</span>
+
+<span class="k">elif</span> <span class="o">[[</span> <span class="s2">&quot;</span><span class="si">${#</span><span class="nv">geo_digit</span><span class="si">}</span><span class="s2">&quot;</span> -eq <span class="m">1</span> <span class="o">]]</span>
+<span class="k">then</span>
+    <span class="nv">stub</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$geo_acc_id</span><span class="s2">&quot;</span> <span class="p">|</span> sed <span class="s1">&#39;s/.$/nnn/&#39;</span><span class="k">)</span>
+
+<span class="k">fi</span>
+
+<span class="c1">## URL vars</span>
+<span class="nv">prefix</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
+<span class="nv">soft_url</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
+<span class="nv">matrix_url</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
+<span class="nv">annot_url</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
+<span class="nv">gsm_url</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
+<span class="nv">sup_url</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
+
+<span class="c1">## Check accession number prefix</span>
+<span class="k">if</span> <span class="o">[[</span> <span class="nv">$geo_acc_id</span> <span class="o">==</span> <span class="s2">&quot;GDS&quot;</span>* <span class="o">]]</span>
+<span class="k">then</span>
+
+    <span class="c1">## Set PREFIX</span>
+    <span class="nv">prefix</span><span class="o">=</span><span class="s2">&quot;GDS&quot;</span>
+
+    <span class="c1">## Get the soft file from the dataset</span>
+    <span class="nv">soft_url</span><span class="o">=</span><span class="s2">&quot;https://ftp.ncbi.nlm.nih.gov/geo/datasets/</span><span class="nv">$stub</span><span class="s2">/</span><span class="nv">$geo_acc_id</span><span class="s2">/soft/</span><span class="nv">$geo_acc_id</span><span class="s2">.soft.gz&quot;</span>
+
+    <span class="c1">## Supplemental URL</span>
+    <span class="nv">sup_url</span><span class="o">=</span><span class="s2">&quot;https://ftp.ncbi.nlm.nih.gov/geo/datasets/</span><span class="nv">$stub</span><span class="s2">/</span><span class="nv">$geo_acc_id</span><span class="s2">/suppl/&quot;</span>
+
+
+<span class="k">elif</span> <span class="o">[[</span> <span class="nv">$geo_acc_id</span> <span class="o">==</span> <span class="s2">&quot;GSE&quot;</span>* <span class="o">]]</span>
+<span class="k">then</span>
+
+    <span class="c1">## Set PREFIX</span>
+    <span class="nv">prefix</span><span class="o">=</span><span class="s2">&quot;GSE&quot;</span>
+
+    <span class="c1">## Get the soft file for the series</span>
+    <span class="nv">soft_url</span><span class="o">=</span><span class="s2">&quot;https://ftp.ncbi.nlm.nih.gov/geo/series/</span><span class="nv">$stub</span><span class="s2">/</span><span class="nv">$geo_acc_id</span><span class="s2">/soft/</span><span class="nv">$geo_acc_id</span><span class="s2">&quot;&quot;_family.soft.gz&quot;</span>
+    <span class="c1">## Get the matrix file for the series</span>
+    <span class="nv">matrix_url</span><span class="o">=</span><span class="s2">&quot;https://ftp.ncbi.nlm.nih.gov/geo/series/</span><span class="nv">$stub</span><span class="s2">/</span><span class="nv">$geo_acc_id</span><span class="s2">/matrix/</span><span class="nv">$geo_acc_id</span><span class="s2">&quot;&quot;_series_matrix.txt.gz&quot;</span>
+
+    <span class="c1">## Supplemental URL</span>
+    <span class="nv">sup_url</span><span class="o">=</span><span class="s2">&quot;https://ftp.ncbi.nlm.nih.gov/geo/series/</span><span class="nv">$stub</span><span class="s2">/</span><span class="nv">$geo_acc_id</span><span class="s2">/suppl/&quot;</span>
+
+<span class="k">elif</span> <span class="o">[[</span> <span class="nv">$geo_acc_id</span> <span class="o">==</span> <span class="s2">&quot;GPL&quot;</span>* <span class="o">]]</span>
+<span class="k">then</span>
+
+    <span class="c1">## Set PREFIX</span>
+    <span class="nv">prefix</span><span class="o">=</span><span class="s2">&quot;GPL&quot;</span>
+
+    <span class="c1">## Get the soft file for the platform</span>
+    <span class="nv">soft_url</span><span class="o">=</span><span class="s2">&quot;https://ftp.ncbi.nlm.nih.gov/geo/platforms/</span><span class="nv">$stub</span><span class="s2">/</span><span class="nv">$geo_acc_id</span><span class="s2">/soft/</span><span class="nv">$geo_acc_id</span><span class="s2">&quot;&quot;_family.soft.gz&quot;</span>
+    <span class="c1">## Get the annot file for the platform</span>
+    <span class="nv">annot_url</span><span class="o">=</span><span class="s2">&quot;https://ftp.ncbi.nlm.nih.gov/geo/platforms/</span><span class="nv">$stub</span><span class="s2">/</span><span class="nv">$geo_acc_id</span><span class="s2">/annot/</span><span class="nv">$geo_acc_id</span><span class="s2">.annot.gz&quot;</span>
+    <span class="c1">## Supplemental URL</span>
+    <span class="nv">sup_url</span><span class="o">=</span><span class="s2">&quot;https://ftp.ncbi.nlm.nih.gov/geo/platforms/</span><span class="nv">$stub</span><span class="s2">/</span><span class="nv">$geo_acc_id</span><span class="s2">/suppl/&quot;</span>
+
+<span class="k">elif</span> <span class="o">[[</span> <span class="nv">$geo_acc_id</span> <span class="o">==</span> <span class="s2">&quot;GSM&quot;</span>* <span class="o">]]</span>
+<span class="k">then</span>
+
+    <span class="c1">## Set PREFIX</span>
+    <span class="nv">prefix</span><span class="o">=</span><span class="s2">&quot;GSM&quot;</span>
+
+    <span class="c1">## Get the Table file from the CGI GEO Query site</span>
+    <span class="nv">gsm_url</span><span class="o">=</span><span class="s2">&quot;https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?targ=self&amp;acc=</span><span class="nv">$geo_acc_id</span><span class="s2">&amp;form=text&amp;view=full&quot;</span>
+    <span class="c1">## Supplemental URL</span>
+    <span class="nv">sup_url</span><span class="o">=</span><span class="s2">&quot;https://ftp.ncbi.nlm.nih.gov/geo/samples/</span><span class="nv">$stub</span><span class="s2">/</span><span class="nv">$geo_acc_id</span><span class="s2">/suppl/&quot;</span>
+
+<span class="k">else</span> <span class="c1">## Bad accession prefix</span>
+    <span class="nb">echo</span> -e <span class="s2">&quot;\n!!ERROR!! GEO does not recognized the supplied accession id: &#39;</span><span class="nv">$geo_acc_id</span><span class="s2">&#39;.&quot;</span> <span class="m">1</span>&gt;<span class="p">&amp;</span><span class="m">2</span>
+    <span class="nb">echo</span> -e <span class="s2">&quot;  Acceptable accession prefix include: \n\t- GDSxxx  \n\t- GPLxxx  \n\t- GSMxxx \n\t- GSExxx\n&quot;</span> <span class="m">1</span>&gt;<span class="p">&amp;</span><span class="m">2</span>
+    <span class="nb">exit</span> <span class="m">1</span>
+
+<span class="k">fi</span>
+
+
+<span class="c1">## Check if accession id exists</span>
+<span class="nv">message</span><span class="o">=</span><span class="k">$(</span>xmllint --xpath <span class="s2">&quot;string(//WarningList)&quot;</span> &lt;<span class="o">(</span>curl <span class="s2">&quot;https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=gds&amp;term=</span><span class="nv">$geo_acc_id</span><span class="s2">&quot;</span> --silent<span class="k">)</span><span class="o">)</span>
+
+<span class="k">if</span> <span class="o">[[</span> <span class="nv">$message</span> <span class="o">==</span> *<span class="s2">&quot;No items found&quot;</span>* <span class="o">]]</span>
+<span class="k">then</span>
+    <span class="c1">## If accession ID not found</span>
+    <span class="nb">echo</span> -e <span class="s2">&quot;!!ERROR!! Accession ID </span><span class="nv">$geo_acc_id</span><span class="s2"> not found in GEO\n&quot;</span> <span class="m">1</span>&gt;<span class="p">&amp;</span><span class="m">2</span>
+    <span class="nb">exit</span> <span class="m">1</span>
+<span class="k">else</span>
+    <span class="nb">echo</span> -e <span class="s2">&quot;Found Accession ID in GEO: </span><span class="nv">$geo_acc_id</span><span class="s2">\n&quot;</span>
+<span class="k">fi</span>
+
+
+<span class="c1">## Get the Accession URL for the GEO Accession page</span>
+<span class="nv">geo_acc_url</span><span class="o">=</span><span class="s2">&quot;https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?targ=self&amp;acc=</span><span class="nv">$geo_acc_id</span><span class="s2">&quot;</span>
+
+<span class="nb">echo</span> -e <span class="s2">&quot;Main GEO page for </span><span class="nv">$geo_acc_id</span><span class="s2">: </span><span class="nv">$geo_acc_url</span><span class="s2">\n&quot;</span>
+
+<span class="nb">echo</span> -e <span class="s2">&quot;Checking </span><span class="nv">$geo_acc_id</span><span class="s2"> for available files&quot;</span>
+<span class="nb">echo</span> -e <span class="s2">&quot;-------------------------------------\n&quot;</span>
+
+<span class="nv">final_commands</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
+<span class="c1">## Check for SOFT URL</span>
+<span class="k">if</span> <span class="o">[[</span> ! -z <span class="nv">$soft_url</span> <span class="o">]]</span>
+<span class="k">then</span>
+    <span class="c1">## Check if soft url file exists</span>
+    <span class="k">if</span> curl --output /dev/null --silent --head --fail <span class="s2">&quot;</span><span class="nv">$soft_url</span><span class="s2">&quot;</span>
+    <span class="k">then</span>
+        <span class="nb">echo</span> -e <span class="s2">&quot;\tDownloading SOFT file: </span><span class="nv">$soft_url</span><span class="s2">\n&quot;</span>
+        <span class="c1">## Download file</span>
+        <span class="c1">## GEOxxx.soft.gz file</span>
+        <span class="c1">##     or</span>
+        <span class="c1">## GEOxxx_family.soft.gz file</span>
+        curl <span class="s2">&quot;</span><span class="nv">$soft_url</span><span class="s2">&quot;</span> -O -J --silent
+        <span class="nv">final_commands</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;</span><span class="nv">$final_commands</span><span class="s2"></span>
+<span class="s2">curl \&quot;</span><span class="nv">$soft_url</span><span class="s2">\&quot; -O -J --silent</span>
+<span class="s2">&quot;&quot;&quot;</span>
+    <span class="k">fi</span>
+<span class="k">fi</span>
+
+<span class="c1">## Check for MATRIX URL</span>
+<span class="k">if</span> <span class="o">[[</span> ! -z <span class="nv">$matrix_url</span> <span class="o">]]</span>
+<span class="k">then</span>
+    <span class="c1">## Check if matrix url file exists</span>
+    <span class="k">if</span> curl --output /dev/null --silent --head --fail <span class="s2">&quot;</span><span class="nv">$matrix_url</span><span class="s2">&quot;</span>
+    <span class="k">then</span>
+        <span class="nb">echo</span> -e <span class="s2">&quot;\tDownloading MATRIX file: </span><span class="nv">$matrix_url</span><span class="s2">\n&quot;</span>
+        <span class="c1">## Download file</span>
+        <span class="c1">## GEOxxx_series_matrix.txt.gz file</span>
+        curl <span class="s2">&quot;</span><span class="nv">$matrix_url</span><span class="s2">&quot;</span> -O -J --silent
+        <span class="nv">final_commands</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;</span><span class="nv">$final_commands</span><span class="s2"></span>
+<span class="s2">curl \&quot;</span><span class="nv">$matrix_url</span><span class="s2">\&quot; -O -J --silent</span>
+<span class="s2">&quot;&quot;&quot;</span>
+    <span class="k">fi</span>
+<span class="k">fi</span>
+
+<span class="c1">## Check for ANNOT URL</span>
+<span class="k">if</span> <span class="o">[[</span> ! -z <span class="nv">$annot_url</span> <span class="o">]]</span>
+<span class="k">then</span>
+    <span class="c1">## Check if annot url file exists</span>
+    <span class="k">if</span> curl --output /dev/null --silent --head --fail <span class="s2">&quot;</span><span class="nv">$annot_url</span><span class="s2">&quot;</span>
+    <span class="k">then</span>
+        <span class="nb">echo</span> -e <span class="s2">&quot;\tDownloading ANNOT file: </span><span class="nv">$annot_url</span><span class="s2">\n&quot;</span>
+        <span class="c1">## Download file</span>
+        <span class="c1">## GEOxxx.annot.gz file</span>
+        curl <span class="s2">&quot;</span><span class="nv">$annot_url</span><span class="s2">&quot;</span> -O -J --silent
+        <span class="nv">final_commands</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;</span><span class="nv">$final_commands</span><span class="s2"></span>
+<span class="s2">curl \&quot;</span><span class="nv">$annot_url</span><span class="s2">\&quot; -O -J --silent</span>
+<span class="s2">&quot;&quot;&quot;</span>
+    <span class="k">fi</span>
+<span class="k">fi</span>
+
+<span class="c1">## Check for GSM URL</span>
+<span class="k">if</span> <span class="o">[[</span> ! -z <span class="nv">$gsm_url</span> <span class="o">]]</span>
+<span class="k">then</span>
+    <span class="c1">## Check if gsm url file exists</span>
+    <span class="k">if</span> curl --output /dev/null --silent --head --fail <span class="s2">&quot;</span><span class="nv">$gsm_url</span><span class="s2">&quot;</span>
+    <span class="k">then</span>
+        <span class="nb">echo</span> -e <span class="s2">&quot;\tDownloading table: </span><span class="nv">$gsm_url</span><span class="s2">\n&quot;</span>
+        <span class="c1">## Download file</span>
+        <span class="c1">## GEOxxx.txt file</span>
+        curl <span class="s2">&quot;</span><span class="nv">$gsm_url</span><span class="s2">&quot;</span> -O -J --silent
+        <span class="nv">final_commands</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;</span><span class="nv">$final_commands</span><span class="s2"></span>
+<span class="s2">curl \&quot;</span><span class="nv">$gsm_url</span><span class="s2">\&quot; -O -J --silent</span>
+<span class="s2">&quot;&quot;&quot;</span>
+    <span class="k">fi</span>
+<span class="k">fi</span>
+
+
+<span class="c1">## Check for Supplemental URL</span>
+<span class="k">if</span> <span class="o">[[</span> ! -z <span class="nv">$sup_url</span> <span class="o">]]</span>
+<span class="k">then</span>
+    <span class="c1">## Check if sup url exists</span>
+    <span class="k">if</span> curl --output /dev/null --silent --head --fail <span class="s2">&quot;</span><span class="nv">$sup_url</span><span class="s2">&quot;</span>
+    <span class="k">then</span>
+        <span class="c1">## Iterate over all GEO Accession ID specific files in sup url</span>
+        <span class="k">for</span> file in <span class="k">$(</span>curl <span class="s2">&quot;</span><span class="nv">$sup_url</span><span class="s2">&quot;</span> --silent <span class="p">|</span> grep -oE  <span class="s2">&quot;&lt;a href=&quot;</span>.+?<span class="s2">&quot;&gt;.+?&lt;\/a&gt;&quot;</span> <span class="p">|</span> cut -f <span class="m">2</span> -d <span class="s1">&#39;&quot;&#39;</span> <span class="p">|</span> grep  <span class="s2">&quot;^</span><span class="nv">$geo_acc_id</span><span class="s2">&quot;</span><span class="k">)</span>
+        <span class="k">do</span>
+            <span class="c1">## Build sup file url</span>
+            <span class="nv">sup_file_url</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$sup_url$file</span><span class="s2">&quot;</span>
+
+            <span class="c1">## Check if it exists</span>
+            <span class="k">if</span> curl --output /dev/null --silent --head --fail <span class="s2">&quot;</span><span class="nv">$sup_file_url</span><span class="s2">&quot;</span>
+            <span class="k">then</span>
+                <span class="c1">## Download file</span>
+                <span class="c1">## GEOxxx sup file</span>
+                <span class="nb">echo</span> -e <span class="s2">&quot;\tDownloading Sup. File: </span><span class="nv">$sup_file_url</span><span class="s2">\n&quot;</span>
+                curl <span class="s2">&quot;</span><span class="nv">$sup_file_url</span><span class="s2">&quot;</span> -O -J --silent
+                <span class="nv">final_commands</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;</span><span class="nv">$final_commands</span><span class="s2"></span>
+<span class="s2">curl \&quot;</span><span class="nv">$sup_file_url</span><span class="s2">\&quot; -O -J --silent</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+                <span class="c1">## Check for tar file</span>
+                <span class="k">if</span> <span class="o">[[</span> <span class="s2">&quot;</span><span class="nv">$file</span><span class="s2">&quot;</span> <span class="o">==</span> *<span class="s2">&quot;.tar&quot;</span>* <span class="o">]]</span>
+                <span class="k">then</span>
+                    <span class="nb">echo</span> -e <span class="s2">&quot;\t\tExtracting TAR File </span><span class="nv">$file</span><span class="s2">&quot;</span>
+
+                    <span class="c1">## Extract TAR file</span>
+                    <span class="k">if</span> <span class="o">[[</span> <span class="s2">&quot;</span><span class="nv">$file</span><span class="s2">&quot;</span> <span class="o">==</span> *<span class="s2">&quot;.tar&quot;</span> <span class="o">]]</span>
+                    <span class="k">then</span>
+                        tar -xf <span class="nv">$file</span>
+                        <span class="nv">final_commands</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;</span><span class="nv">$final_commands</span><span class="s2"></span>
+<span class="s2">tar -xf </span><span class="nv">$file</span><span class="s2"></span>
+<span class="s2">&quot;&quot;&quot;</span>
+                    <span class="k">elif</span> <span class="o">[[</span> <span class="s2">&quot;</span><span class="nv">$file</span><span class="s2">&quot;</span> <span class="o">==</span> *<span class="s2">&quot;.tar.gz&quot;</span> <span class="o">]]</span>
+                    <span class="k">then</span>
+                        tar -xzf <span class="nv">$file</span>
+                        <span class="nv">final_commands</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;</span><span class="nv">$final_commands</span><span class="s2"></span>
+<span class="s2">tar -xzf </span><span class="nv">$file</span><span class="s2"></span>
+<span class="s2">&quot;&quot;&quot;</span>
+                    <span class="k">elif</span> <span class="o">[[</span> <span class="s2">&quot;</span><span class="nv">$file</span><span class="s2">&quot;</span> <span class="o">==</span> *<span class="s2">&quot;.tar.bz2&quot;</span> <span class="o">]]</span>
+                    <span class="k">then</span>
+                        tar -xjf <span class="nv">$file</span>
+                        <span class="nv">final_commands</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;</span><span class="nv">$final_commands</span><span class="s2"></span>
+<span class="s2">tar -xjf </span><span class="nv">$file</span><span class="s2"></span>
+<span class="s2">&quot;&quot;&quot;</span>
+                    <span class="k">else</span>
+                        <span class="nb">echo</span> -e <span class="s2">&quot;!!ERROR!! Unable to extract tar file&quot;</span> <span class="m">1</span>&gt;<span class="p">&amp;</span><span class="m">2</span>
+                        <span class="nb">exit</span> <span class="m">1</span>
+                    <span class="k">fi</span>
+
+                    <span class="c1">## remove the tar file</span>
+                    rm <span class="nv">$file</span>
+                <span class="k">fi</span>
+            <span class="k">fi</span>
+        <span class="k">done</span>
+    <span class="k">fi</span>
+<span class="k">fi</span>
+
+
+<span class="c1">## Commands used to download the data files</span>
+<span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$final_commands</span><span class="s2">&quot;</span> &gt; <span class="nv">$commands_outfile</span>
+
+<span class="c1">## Get the main file to parse the header from</span>
+<span class="c1">### For GDS, GPL, and GSE the .soft file should be used</span>
+<span class="c1">### For GSM, the .txt file should be used</span>
+<span class="nv">main_file</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
+<span class="nv">submain_file</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
+<span class="k">for</span> file in <span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>/*
+<span class="k">do</span>
+    <span class="k">if</span> <span class="o">[[</span> <span class="nv">$prefix</span> <span class="o">==</span> <span class="s2">&quot;GSM&quot;</span> <span class="o">]]</span>
+    <span class="k">then</span>
+
+        <span class="k">if</span> <span class="o">[[</span> <span class="s2">&quot;</span><span class="nv">$file</span><span class="s2">&quot;</span> <span class="o">==</span> *<span class="s2">&quot;.txt&quot;</span> <span class="o">]]</span>
+        <span class="k">then</span>
+            <span class="nv">main_file</span><span class="o">=</span><span class="nv">$file</span>
+        <span class="k">fi</span>
+
+    <span class="k">else</span>
+        <span class="k">if</span> <span class="o">[[</span> <span class="s2">&quot;</span><span class="nv">$file</span><span class="s2">&quot;</span> <span class="o">==</span> *<span class="s2">&quot;.soft&quot;</span>* <span class="o">]]</span>
+        <span class="k">then</span>
+            <span class="nv">main_file</span><span class="o">=</span><span class="nv">$file</span>
+        <span class="k">elif</span> <span class="o">[[</span> <span class="s2">&quot;</span><span class="nv">$file</span><span class="s2">&quot;</span> <span class="o">==</span> *<span class="s2">&quot;matrix&quot;</span>* <span class="o">]]</span>
+        <span class="k">then</span>
+            <span class="nv">submain_file</span><span class="o">=</span><span class="nv">$file</span>
+        <span class="k">fi</span>
+    <span class="k">fi</span>
+<span class="k">done</span>
+
+<span class="c1">## If GSE and soft file does not exists, use the matrix file</span>
+<span class="k">if</span> <span class="o">[[</span> <span class="nv">$main_file</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span> <span class="o">]]</span>
+<span class="k">then</span>
+    <span class="nv">main_file</span><span class="o">=</span><span class="nv">$submain_file</span>
+<span class="k">fi</span>
+
+<span class="c1">## Update ID Specific meta-recipe</span>
+python <span class="nv">$script_path</span>/parse_geo_header.py --geo-acc <span class="nv">$geo_acc_id</span> --geo-file <span class="nv">$main_file</span>  --geo-url <span class="nv">$geo_acc_url</span> --geo-prefix <span class="nv">$prefix</span> --geo-files-dir <span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span> --json-out <span class="nv">$json_outfile</span>
+
+<span class="nb">echo</span> -e <span class="s2">&quot;DONE\n&quot;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Supporting python script named “parse_geo_header.py”</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+
+<span class="kn">import</span> <span class="nn">argparse</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">import</span> <span class="nn">gzip</span>
+<span class="kn">import</span> <span class="nn">io</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+
+
+<span class="c1"># ---------------------------------------------------------------------------------------------------------------------------------</span>
+<span class="c1">## Argument Parser</span>
+<span class="c1"># ---------------------------------------------------------------------------------------------------------------------------------</span>
+<span class="k">def</span> <span class="nf">arguments</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Argument method  &quot;&quot;&quot;</span>
+
+    <span class="n">p</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Parse GEO file header and update recipe meta-data&quot;</span>
+    <span class="p">)</span>
+
+    <span class="n">req</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">add_argument_group</span><span class="p">(</span><span class="s2">&quot;Required Arguments&quot;</span><span class="p">)</span>
+
+    <span class="n">req</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s2">&quot;--geo-acc&quot;</span><span class="p">,</span>
+        <span class="n">metavar</span><span class="o">=</span><span class="s2">&quot;GEO Accession ID&quot;</span><span class="p">,</span>
+        <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;The GEO accession ID&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">req</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s2">&quot;--geo-file&quot;</span><span class="p">,</span> <span class="n">metavar</span><span class="o">=</span><span class="s2">&quot;GEO file&quot;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;The GEO file to parse&quot;</span>
+    <span class="p">)</span>
+
+    <span class="n">req</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s2">&quot;--geo-url&quot;</span><span class="p">,</span>
+        <span class="n">metavar</span><span class="o">=</span><span class="s2">&quot;GEO Accession URL&quot;</span><span class="p">,</span>
+        <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;The GEO Accession ID specific home page URL&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">req</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s2">&quot;--geo-prefix&quot;</span><span class="p">,</span>
+        <span class="n">metavar</span><span class="o">=</span><span class="s2">&quot;GEO Accession prefix&quot;</span><span class="p">,</span>
+        <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">choices</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;GDS&quot;</span><span class="p">,</span> <span class="s2">&quot;GPL&quot;</span><span class="p">,</span> <span class="s2">&quot;GSM&quot;</span><span class="p">,</span> <span class="s2">&quot;GSE&quot;</span><span class="p">],</span>
+        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;The GEO Accession id Prefix. (GDS, GPL, GSM, GSE)&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">req</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s2">&quot;--geo-files-dir&quot;</span><span class="p">,</span>
+        <span class="n">metavar</span><span class="o">=</span><span class="s2">&quot;GEO downloaded files&quot;</span><span class="p">,</span>
+        <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;The directory path to where the files were downloaded&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">req</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s2">&quot;--json-out&quot;</span><span class="p">,</span>
+        <span class="n">metavar</span><span class="o">=</span><span class="s2">&quot;JSON out file&quot;</span><span class="p">,</span>
+        <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;The name of the json output file to create that will contain the ggd meta-recipe environment variables&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">p</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+
+
+<span class="c1"># ---------------------------------------------------------------------------------------------------------------------------------</span>
+<span class="c1">## Main</span>
+<span class="c1"># ---------------------------------------------------------------------------------------------------------------------------------</span>
+
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+
+    <span class="n">args</span> <span class="o">=</span> <span class="n">arguments</span><span class="p">()</span>
+
+    <span class="c1">## Open GEO File</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">fh</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">gzip</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">geo_file</span><span class="p">,</span> <span class="s2">&quot;rt&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">geo_file</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.gz&quot;</span><span class="p">)</span>
+            <span class="k">else</span> <span class="n">io</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">geo_file</span><span class="p">,</span> <span class="s2">&quot;rt&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+        <span class="p">)</span>
+    <span class="k">except</span> <span class="ne">IOError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">!!ERROR!! Unable to read the GEO File: &#39;</span><span class="si">{}</span><span class="s2">&#39;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">geo_file</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Parsing GEO header for file: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">geo_file</span><span class="p">))</span>
+
+    <span class="n">metadata_dict</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">fh</span><span class="p">):</span>
+
+        <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="p">:</span>
+            <span class="k">continue</span>
+
+        <span class="c1">## Check if line is a header</span>
+        <span class="k">if</span> <span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;!&quot;</span><span class="p">:</span>
+
+            <span class="n">line_list</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">line_list</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">metadata_dict</span><span class="p">[</span><span class="n">line_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                    <span class="n">line_list</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+                <span class="p">)</span>
+
+    <span class="n">fh</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+    <span class="n">geo_key</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s2">&quot;dataset&quot;</span>
+        <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">geo_prefix</span> <span class="o">==</span> <span class="s2">&quot;GDS&quot;</span>
+        <span class="k">else</span> <span class="s2">&quot;Platform&quot;</span>
+        <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">geo_prefix</span> <span class="o">==</span> <span class="s2">&quot;GPL&quot;</span>
+        <span class="k">else</span> <span class="s2">&quot;Sample&quot;</span>
+        <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">geo_prefix</span> <span class="o">==</span> <span class="s2">&quot;GSM&quot;</span>
+        <span class="k">else</span> <span class="s2">&quot;Series&quot;</span>
+        <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">geo_prefix</span> <span class="o">==</span> <span class="s2">&quot;GSE&quot;</span>
+        <span class="k">else</span> <span class="kc">None</span>
+    <span class="p">)</span>
+
+    <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">metadata_dict</span><span class="p">[</span><span class="s2">&quot;!</span><span class="si">{}</span><span class="s2">_title&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">geo_key</span><span class="p">)])</span>
+
+    <span class="n">summary</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">metadata_dict</span><span class="p">[</span><span class="s2">&quot;!</span><span class="si">{}</span><span class="s2">_summary&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">geo_key</span><span class="p">)])</span>
+
+    <span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">metadata_dict</span><span class="p">[</span><span class="s2">&quot;!</span><span class="si">{}</span><span class="s2">_description&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">geo_key</span><span class="p">)])</span>
+
+    <span class="n">etype</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">metadata_dict</span><span class="p">[</span><span class="s2">&quot;!</span><span class="si">{}</span><span class="s2">_type&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">geo_key</span><span class="p">)])</span>
+
+    <span class="n">status</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">metadata_dict</span><span class="p">[</span><span class="s2">&quot;!</span><span class="si">{}</span><span class="s2">_status&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">geo_key</span><span class="p">)])</span>
+
+    <span class="n">submission_date</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">metadata_dict</span><span class="p">[</span><span class="s2">&quot;!</span><span class="si">{}</span><span class="s2">_submission_date&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">geo_key</span><span class="p">)])</span>
+
+    <span class="n">last_update_date</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">metadata_dict</span><span class="p">[</span><span class="s2">&quot;!</span><span class="si">{}</span><span class="s2">_last_update_date&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">geo_key</span><span class="p">)])</span>
+
+    <span class="n">organism</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span>
+        <span class="p">[</span><span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">y</span><span class="p">)))</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">metadata_dict</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="s2">&quot;organism&quot;</span> <span class="ow">in</span> <span class="n">x</span><span class="p">]</span>
+    <span class="p">)</span>
+
+    <span class="n">pubmed_id</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span>
+        <span class="p">[</span><span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">y</span><span class="p">)))</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">metadata_dict</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="s2">&quot;pubmed_id&quot;</span> <span class="ow">in</span> <span class="n">x</span><span class="p">]</span>
+    <span class="p">)</span>
+
+    <span class="n">link</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">metadata_dict</span><span class="p">[</span><span class="s2">&quot;!</span><span class="si">{}</span><span class="s2">_web_link&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">geo_key</span><span class="p">)])</span>
+
+    <span class="c1">## Set summary environment variable</span>
+    <span class="n">env_vars</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+
+    <span class="c1">## UPDATE META RECIPE SUMMARY</span>
+    <span class="n">new_summary</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s2">&quot;GEO Accession ID: </span><span class="si">{}</span><span class="s2">. Title: </span><span class="si">{}</span><span class="s2">. GEO Accession site url: </span><span class="si">{}</span><span class="s2"> (See the url for additional information about </span><span class="si">{}</span><span class="s2">). &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">args</span><span class="o">.</span><span class="n">geo_acc</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">geo_url</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">geo_acc</span>
+        <span class="p">)</span>
+        <span class="o">+</span> <span class="s2">&quot;Summary: &quot;</span>
+        <span class="o">+</span> <span class="n">summary</span>
+        <span class="o">+</span> <span class="n">description</span>
+    <span class="p">)</span>
+    <span class="k">if</span> <span class="n">etype</span><span class="p">:</span>
+        <span class="n">new_summary</span> <span class="o">+=</span> <span class="s2">&quot; Type: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">etype</span><span class="p">)</span>
+
+    <span class="n">env_vars</span><span class="p">[</span><span class="s2">&quot;GGD_METARECIPE_SUMMARY&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_summary</span>
+
+    <span class="c1">## Update META RECIPE VERSION</span>
+    <span class="n">date_string</span> <span class="o">=</span> <span class="s2">&quot;Submission date: </span><span class="si">{}</span><span class="s2">. Status: </span><span class="si">{}</span><span class="s2">. Last Update Date: </span><span class="si">{}</span><span class="s2">. Download Date: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+        <span class="n">submission_date</span><span class="p">,</span>
+        <span class="n">status</span><span class="p">,</span>
+        <span class="n">last_update_date</span><span class="p">,</span>
+        <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%m-</span><span class="si">%d</span><span class="s2">-%Y&quot;</span><span class="p">),</span>
+    <span class="p">)</span>
+    <span class="n">env_vars</span><span class="p">[</span><span class="s2">&quot;GGD_METARECIPE_VERSION&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">date_string</span>
+
+    <span class="c1">## Update META RECIPE Keywords</span>
+    <span class="n">keywords</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">args</span><span class="o">.</span><span class="n">geo_acc</span><span class="p">,</span>
+        <span class="n">args</span><span class="o">.</span><span class="n">geo_url</span><span class="p">,</span>
+        <span class="n">etype</span><span class="p">,</span>
+        <span class="s2">&quot;PubMed id: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">pubmed_id</span><span class="p">))))</span> <span class="k">if</span> <span class="n">pubmed_id</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;WEB LINK: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">link</span><span class="p">)</span> <span class="k">if</span> <span class="n">link</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+    <span class="n">env_vars</span><span class="p">[</span><span class="s2">&quot;GGD_METARECIPE_KEYWORDS&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">keywords</span><span class="p">)</span>
+
+    <span class="c1">## Update META RECIPE SPECIES</span>
+    <span class="n">env_vars</span><span class="p">[</span><span class="s2">&quot;GGD_METARECIPE_SPECIES&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">organism</span><span class="p">)))</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Creating environment variable json file: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">json_out</span><span class="p">))</span>
+    <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">env_vars</span><span class="p">),</span> <span class="nb">open</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">json_out</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">))</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">main</span><span class="p">()</span> <span class="ow">or</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2016-2020, The GoGetData team.
+      
+      |
+      <a href="_sources/making-meta-recipes.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

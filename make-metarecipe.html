@@ -1,0 +1,321 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ggd make-meta-recipe &#8212; GGD  documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="_static/font-awesome-4.7.0/css/font-awesome.min.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="ggd check-recipe" href="check-recipe.html" />
+    <link rel="prev" title="ggd make-recipe" href="make-recipe.html" />
+    
+    <link href="https://fonts.googleapis.com/css?family=Lato|Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="_static/ms-icon-144x144.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="index.html">
+    <img class="logo" src="_static/logo/GoGetData_name_logo.png" alt="Logo"/>
+    
+  </a>
+</p>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quick-start.html">GGD Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using-ggd.html">Using GGD</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="GGD-CLI.html">GGD Commands</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ggd-search.html">ggd search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html">ggd install</a></li>
+<li class="toctree-l2"><a class="reference internal" href="predict-path.html">ggd predict-path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="uninstall.html">ggd uninstall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="list.html">ggd list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="list-file.html">ggd get-files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pkg-info.html">ggd pkg-info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="show-env.html">ggd show-env</a></li>
+<li class="toctree-l2"><a class="reference internal" href="make-recipe.html">ggd make-recipe</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ggd make-meta-recipe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="check-recipe.html">ggd check-recipe</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="meta-recipes.html">GGD meta-recipes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contribute.html">Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="private_recipes.html">Private Recipes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recipes.html">Available Data Packages</a></li>
+</ul>
+
+<ul>
+  
+  <li class="toctree-l1"><a href="https://github.com/gogetdata/ggd-recipes">ggd-recipes @ Github</a></li>
+  
+  <li class="toctree-l1"><a href="https://github.com/gogetdata/ggd-cli">ggd-cli @ Github</a></li>
+  
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="ggd-make-meta-recipe">
+<span id="id1"></span><h1>ggd make-meta-recipe<a class="headerlink" href="#ggd-make-meta-recipe" title="Permalink to this headline">¶</a></h1>
+<p>[<a class="reference internal" href="index.html#home-page"><span class="std std-ref">Click here to return to the home page</span></a>]</p>
+<p>For general information on meta-recipes see <a class="reference internal" href="meta-recipes.html#meta-recipes"><span class="std std-ref">Meta-Recipes</span></a></p>
+<p>ggd make-meta-recipe is used to create a ggd data meta-recipe from a single or group of script which contains the information on
+extracting and processing the data.</p>
+<p>This provides a simple resource to create a recipe where the users need only create the scripts and
+ggd will generate the remainder of the pieces required for a ggd data meta-recipe.</p>
+<p>This process is very similar to creating a ggd recipe, however, it does require a bit more work. Please see the
+docs on  <a class="reference internal" href="contribute.html#make-data-packages"><span class="std std-ref">contributing</span></a> recipes to ggd for more information on creating a ggd meta-recipe.</p>
+<p>The first step in this process is to create a bash script, and subsequent support scripts if needed, with instructions
+on downloading and processing the data, then using <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">make-meta-recipe</span></code> to create a ggd data meta-recipe</p>
+<div class="section" id="using-ggd-make-meta-recipe">
+<h2>Using ggd make-meta-recipe<a class="headerlink" href="#using-ggd-make-meta-recipe" title="Permalink to this headline">¶</a></h2>
+<p>Creating a ggd meta-recipe is easy using the <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">make-meta-recipe</span></code> tool.
+Running <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">make-meta-recipe</span> <span class="pre">-h</span></code> will give you the following help message:</p>
+<p>make-recipe arguments:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 38%" />
+<col style="width: 63%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>ggd make-recipe</p></th>
+<th class="head"><p>Make a ggd data meta-recipe</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">-h</span></code>, <code class="docutils literal notranslate"><span class="pre">--help</span></code></p></td>
+<td><p>show this help message and exit</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-c</span></code>, <code class="docutils literal notranslate"><span class="pre">--channel</span></code></p></td>
+<td><p>(Optional) The ggd channel to use. (Default = genomics)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">-d</span></code>, <code class="docutils literal notranslate"><span class="pre">--dependency</span></code></p></td>
+<td><p>any software dependencies (in bioconda, conda-forge) or
+data-dependency (in ggd). May be used as many times as needed.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-p</span></code>, <code class="docutils literal notranslate"><span class="pre">--platform</span></code></p></td>
+<td><p>(Optional) Whether to use noarch as the platform or the system
+platform. If set to ‘none’ the system platform will be
+used. (Default = noarch. Noarch means no architecture
+and is platform agnostic.)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">-s</span></code>, <code class="docutils literal notranslate"><span class="pre">--species</span></code></p></td>
+<td><p><strong>Required</strong> Species recipe is for. Use ‘meta-recipe` for a metarecipe
+file</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-g</span></code>, <code class="docutils literal notranslate"><span class="pre">--genome-build</span></code></p></td>
+<td><p><strong>Required</strong> Genome-build the recipe is for. Use ‘metarecipe’ for a
+metarecipe file</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--author</span></code></p></td>
+<td><p><strong>Required</strong> The author(s) of the data recipe being created, (This recipe)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-pv</span></code>, <code class="docutils literal notranslate"><span class="pre">--package-version</span></code></p></td>
+<td><p><strong>Required</strong> The version of the ggd package. (First time package = 1,
+updated package &gt; 1)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">-dv</span></code>, <code class="docutils literal notranslate"><span class="pre">--data-version</span></code></p></td>
+<td><p><strong>Required</strong> The version of the data (itself) being downloaded and
+processed (EX: dbsnp-127) If there is no data version
+apparent we recommend you use the date associated with
+the files or something else that can uniquely identify
+the ‘version’ of the data. Use ‘metarecipe’ for a metarecipe</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-dp</span></code>, <code class="docutils literal notranslate"><span class="pre">--data-provider</span></code></p></td>
+<td><p><strong>Required</strong> The data provider where the data was accessed.
+(Example: UCSC, Ensembl, gnomAD, etc.)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--summary</span></code></p></td>
+<td><p><strong>Required</strong> A detailed comment describing the recipe</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-k</span></code>, <code class="docutils literal notranslate"><span class="pre">--keyword</span></code></p></td>
+<td><p><strong>Required</strong> A keyword to associate with the recipe. May be
+specified more that once. Please add enough keywords
+to better describe and distinguish the recipe</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">-cb</span></code>, <code class="docutils literal notranslate"><span class="pre">--coordinate-base</span></code></p></td>
+<td><p><strong>Required</strong> The genomic coordinate basing for the file(s) in the
+recipe. That is, the coordinates exclusive start at genomic
+coordinate 0 or 1, and the end coordinate is either
+inclusive (everything up to and including the end
+coordinate) or exclusive (everything up to but not
+including the end coordinate) Files that do not have
+coordinate basing, like fasta files, specify NA for
+not applicable. Use ‘NA’ for a metarecipe</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><p><code class="docutils literal notranslate"><span class="pre">--extra-scripts</span></code></p></td>
+<td rowspan="2"><p>Any additional scripts used for the metarecipe that are not the main bash
+script</p></td>
+</tr>
+<tr class="row-even"></tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-n</span></code>, <code class="docutils literal notranslate"><span class="pre">--name</span></code></p></td>
+<td><p><strong>Required</strong> The sub-name of the recipe being created. (e.g. cpg-
+islands, pfam-domains, gaps, etc.) This will not be
+the final name of the recipe, but will specific to the data gathered
+and processed by the recipe</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">script</span></code></p></td>
+<td><p><strong>Required</strong> bash script that contains the commands to obtain and
+process the data</p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="additional-argument-explanation">
+<h3>Additional argument explanation:<a class="headerlink" href="#additional-argument-explanation" title="Permalink to this headline">¶</a></h3>
+<p>Required arguments:</p>
+<ul class="simple">
+<li><p><em>-s:</em> The <code class="code docutils literal notranslate"><span class="pre">-s</span></code> flag is used to declare the species of the data recipe. Use “meta-recipe” for a meta-recipe.</p></li>
+<li><p><em>-g:</em> The <code class="code docutils literal notranslate"><span class="pre">-g</span></code> flag is used to declare the genome-build of the data recipe. Use “meta-recipe” for a meta-recipe.</p></li>
+<li><p><em>–authors:</em> The <code class="code docutils literal notranslate"><span class="pre">--authors</span></code> flag is used to declare the authors of the ggd data recipe.</p></li>
+<li><p><em>-pv:</em> The <code class="code docutils literal notranslate"><span class="pre">-pv</span></code> flag is used to declare the version of the ggd recipe being created. (1 for first time recipe, and 2+ for updated recipes)</p></li>
+<li><p><em>-dv:</em> The <code class="code docutils literal notranslate"><span class="pre">-dv</span></code> flag is used to declare the version of the data being downloaded and processed. If a version is not
+available for the specific data, use something that can identify the data uniquely such as when the date the data. Use “meta-recipe” for a meta-recipe.
+was created.</p></li>
+<li><p><em>-dp:</em> The <code class="code docutils literal notranslate"><span class="pre">-dp</span></code> flag is used to designate where the original data is coming from. Please make sure to indicate the data provider correctly to
+both give credit to the data create/provider as well as to help uniquely identify the data origin.</p></li>
+<li><p><em>–summary:</em> The <code class="code docutils literal notranslate"><span class="pre">--summary</span></code> flag is used to provide a summary/description of the meta-recipe. Provide enough information to explain what the data is and
+where it is coming from. Provide information on what ID is required in order to install the data. Add any information that will help explain the meta-recipe.</p></li>
+<li><p><em>-k:</em> The <code class="code docutils literal notranslate"><span class="pre">-k</span></code> flag is used to declare keywords associated with the data and meta-recipe. If there are multiple keywords, the <cite>-k</cite> flag
+should be used for each keywords. (Example: -k ref -k GEO)</p></li>
+<li><p><em>-cb:</em> The <code class="code docutils literal notranslate"><span class="pre">-cb</span></code> flag designates the coordinate base of the data files created from this recipe. Please follow general genomic file
+coordinate standards based on the file format you are creating. Please indicate the coordinate basing of the file created here using this
+flag. For meta-recipes it is common to use “NA”.</p></li>
+<li><p><em>-n:</em> <code class="code docutils literal notranslate"><span class="pre">-n</span></code> represents the sub-name of the meta-recipe. Sub-name refers to a portion of the name that will help to uniquely identify the
+recipe from all other recipes based on the data the recipe creates. The full name will include the genome build the data provider and the
+ggd recipe version. <strong>DO NOT</strong> include the genome build, data provider, or ggd recipe version here. Those will be designated with other flags.
+The name should be specific to the data being processed or curated by the recipe. (Please provide an identifiable name. Example: cpg-islands)</p></li>
+<li><p><em>script:</em> <code class="code docutils literal notranslate"><span class="pre">script</span></code> represents the main bash script containing the information on data extraction and processing.</p></li>
+</ul>
+<p>Optional arguments:</p>
+<ul class="simple">
+<li><p><em>extra-scripts:</em> The <code class="code docutils literal notranslate"><span class="pre">extra-scripts</span></code> parameter is used to add any additional scripts used for the meta-recipe that are not the main bash script.
+If the main bash script, for example, uses a python script to set ID specific meta-recipe environment variables, then that python script should be added
+here. To add mutliple, seperate each script by a space aftter the <code class="code docutils literal notranslate"><span class="pre">--extra-scripts</span></code> parameter. (Example <code class="code docutils literal notranslate"><span class="pre">--extra-scripts</span> <span class="pre">script1.sh</span> <span class="pre">script2.py</span> <span class="pre">script3.prl</span></code>)</p></li>
+<li><p><em>-c:</em> The <code class="code docutils literal notranslate"><span class="pre">-c</span></code> flag is used to declare which ggd channel to use. (genomics is the default)</p></li>
+<li><p><em>-d:</em> The <code class="code docutils literal notranslate"><span class="pre">-d</span></code> flag is used to declare software dependencies in conda, bioconda, and conda-forge, and data-dependencies in
+ggd for creating the package. If there are no dependencies this flag is not needed.</p></li>
+<li><p><em>-p:</em> The <code class="code docutils literal notranslate"><span class="pre">-p</span></code> flag is used to set the noarch platform or not. By default “noarch” is set, which means the package will be
+built and installed with no architecture designation. This means it should be able to build on linux and macOS. If this is not
+true you will need to set <code class="code docutils literal notranslate"><span class="pre">-p</span></code> to “none”. The system you are using, linux or macOS will take then take the place of noarch.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>meta-recipes allow for information to be updated as an ID specific meta-recipe is installed. That is, for example, the summary, data version,
+key words, etc. can be updated while installing the ID specific recipe where the updated information reflects the information for the ID specific
+data. For more information see the contribute tab.</p>
+</div>
+</div>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="a-simple-example-of-creating-a-ggd-recipe">
+<h3>1. A simple example of creating a ggd recipe<a class="headerlink" href="#a-simple-example-of-creating-a-ggd-recipe" title="Permalink to this headline">¶</a></h3>
+<p>ggd make-recipe</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd make-meta-recipe <span class="se">\</span>
+      --authors mjc <span class="se">\</span>
+      --package-version <span class="m">1</span> <span class="se">\</span>
+      --data-provider GEO <span class="se">\</span>
+      --data-version <span class="s2">&quot;meta-recipe&quot;</span> <span class="se">\</span>
+      --species <span class="s2">&quot;meta-recipe&quot;</span> <span class="se">\</span>
+      --genome-build <span class="s2">&quot;meta-recipe&quot;</span> <span class="se">\</span>
+      --cb <span class="s2">&quot;NA&quot;</span> <span class="se">\</span>
+      --summary <span class="s2">&quot;A meta-recipe for the Gene Expression Omnibus (GEO) database from NCBI. This meta-recipe contains the instructions for accessing GEO data using GEO Accession IDs. GEO Datasets (GDS), GEO Platforms (GPL), GEO Series (GSE), and GEO Samples (GSM) are all accessible through this meta-recipe. Files downloaded for each type are: (GDS) SOFT files. (GPL) SOFT files and ANNOT files if they exist. (GSE) SOFT file and MATRIX files if they exist. (GSM) The main table file as a .txt file. Additionally, for all 4 types, all supplemental files are downloaded if they exist. Once installed, GEO ID specific recipes will contain ID specific info, such as a summary of the data and a url to the GEO Accession ID specific page. This info can be accessed using &#39;ggd pkg-info&#39;. To install simply add the &#39;--id&#39; flag with the desired GEO Accession ID when running &#39;ggd install&#39;. Additional info about GEO can be found at http://www.ncbi.nlm.nih.gov/geo&quot;</span> <span class="se">\</span>
+      --extra-scripts parse_geo_header.py <span class="se">\</span>
+      -k Gene-Expression-Omnibus <span class="se">\</span>
+      -k GEO <span class="se">\</span>
+      -k GEO-Accession-ID <span class="se">\</span>
+      -k GEO-meta-recipe <span class="se">\</span>
+      --name geo-accession <span class="se">\</span>
+      geo_meta_recipe_script.sh
+
+  :ggd:make-recipe: checking meta-recipe
+
+  :ggd:make-recipe: Wrote output to meta-recipe-geo-accession-geo-v1/
+
+  :ggd:make-recipe: To <span class="nb">test</span> that the recipe is working, and before pushing the new recipe to gogetdata/ggd-recipes, please run:
+
+      $ ggd check-recipe meta-recipe-geo-accession-geo-v1/ --id
+</pre></div>
+</div>
+<p>This code will create a new ggd recipe:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Directory Name: <strong>meta-recipe-geo-accession-geo-v</strong></p></li>
+<li><p>Files: <strong>meta.yaml</strong>, <strong>post-link.sh</strong>, <strong>recipe.sh</strong>, <strong>metarecipe.sh</strong>, and <strong>checksums_file.txt</strong></p></li>
+</ul>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The directory name <strong>meta-recipe-geo-accession-geo-v1/</strong> is the ggd meta-recipe</p>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2016-2020, The GoGetData team.
+      
+      |
+      <a href="_sources/make-metarecipe.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

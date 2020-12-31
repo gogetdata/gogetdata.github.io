@@ -19,7 +19,7 @@ Data Version                       release-34_03-24-2020
 Genomic File Type                  gtf
 Data file coordinate basing        1-based-inclusive
 Package's Data Files               hg38-canonical-transcript-features-gencode-v1.gtf.gz, hg38-canonical-transcript-features-gencode-v1.gtf.gz.tbi
-Approximate Size of Each Data File hg38-canonical-transcript-features-gencode-v1.gtf.gz: **12.30M**, hg38-canonical-transcript-features-gencode-v1.gtf.gz.tbi: **288.24K**
+Approximate Size of Each Data File hg38-canonical-transcript-features-gencode-v1.gtf.gz: **12.18M**, hg38-canonical-transcript-features-gencode-v1.gtf.gz.tbi: **281.30K**
 Package Keywords                   Canonical, Canonical-Transcripts, Canonical-Isoforms, Gene-Features, GTF, Gene-Features, Gene-Annotations, GTF, GENOCDOE-GTF, GENCODE-Gene-Sets, Annotated-Transcripts
 Package Dependencies:              gsort, hg38-chrom-mapping-ensembl2ucsc-ncbi-v1, htslib, zlib
 Recipe                             https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/hg38/hg38-canonical-transcript-features-gencode-v1
@@ -36,7 +36,7 @@ Installation
 
 With ggd installed and an activated ggd channel (see :ref:`using-ggd`), install with::
 
-   ggd install -c genomics hg38-canonical-transcript-features-gencode-v1
+   ggd install -c genomics hg38-canonical-transcript-features-gencode-v1 
 
 .. |downloads| image:: https://anaconda.org/ggd-genomics/hg38-canonical-transcript-features-gencode-v1/badges/downloads.svg
                :target: https://anaconda.org/ggd-genomics/hg38-canonical-transcript-features-gencode-v1

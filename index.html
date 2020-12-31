@@ -6,15 +6,14 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ggd consists of: &#8212; GGD  documentation</title>
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/style.css" />
     <link rel="stylesheet" type="text/css" href="_static/font-awesome-4.7.0/css/font-awesome.min.css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="GGD Quick Start" href="quick-start.html" />
@@ -58,6 +57,7 @@
 <li class="toctree-l1"><a class="reference internal" href="quick-start.html">GGD Quick Start</a></li>
 <li class="toctree-l1"><a class="reference internal" href="using-ggd.html">Using GGD</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GGD-CLI.html">GGD Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="meta-recipes.html">GGD meta-recipes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contribute.html">Contribute</a></li>
 <li class="toctree-l1"><a class="reference internal" href="private_recipes.html">Private Recipes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="recipes.html">Available Data Packages</a></li>
@@ -176,6 +176,13 @@ maintenance provides a stable and structured way to ensure metadata is maintaine
 for ggd. Simply, ggd CLI provides tools for installing data packages on your local system, but more importantly, tools for access and use on your system. For
 more information about the CLI tools see <a class="reference internal" href="GGD-CLI.html#ggd-cli-page"><span class="std std-ref">GGD CLI</span></a>.</p>
 <img alt="_images/Data_managment.png" src="_images/Data_managment.png" />
+</div>
+<div class="section" id="ggd-meta-recipes">
+<h2>GGD meta-recipes<a class="headerlink" href="#ggd-meta-recipes" title="Permalink to this headline">¶</a></h2>
+<p>meta-recipes are recipes that provide access to a database of data using an identifier specific to that database. This is different then a normal ggd recipe,
+which consists of a set of instructions for a specific data file(s) to be installed and processed. Meta-recipes are powerful tools to provide access to database
+with large amounts of data which would be unreasonable to create a specific ggd recipe for individual data types/identifiers.</p>
+<p>For more information about meta-recipes see: <a class="reference internal" href="meta-recipes.html#meta-recipes"><span class="std std-ref">Meta-Recipes</span></a></p>
 </div>
 </div>
 <hr class="docutils" />
@@ -507,12 +514,30 @@ ggd documentation</p>
 <li class="toctree-l2"><a class="reference internal" href="pkg-info.html">ggd pkg-info</a></li>
 <li class="toctree-l2"><a class="reference internal" href="show-env.html">ggd show-env</a></li>
 <li class="toctree-l2"><a class="reference internal" href="make-recipe.html">ggd make-recipe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="make-metarecipe.html">ggd make-meta-recipe</a></li>
 <li class="toctree-l2"><a class="reference internal" href="check-recipe.html">ggd check-recipe</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="meta-recipes.html">GGD meta-recipes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="meta-recipes.html#ggd-commands-with-meta-recipes">GGD commands with meta-recipes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meta-recipes.html#conda-environments-and-prefix">Conda Environments and Prefix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meta-recipes.html#installation-time">Installation Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meta-recipes.html#installing-a-meta-recipe">Installing a meta-recipe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meta-recipes.html#accessing-installed-id-specific-meta-recipe">Accessing installed ID specific meta-recipe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meta-recipes.html#creating-and-testing-meta-recipes">Creating and Testing meta-recipes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meta-recipes.html#meta-recipe-caveats">Meta-Recipe Caveats</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="contribute.html">Contribute</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="github-setup.html">Setting up with Github</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contribute-recipe.html">Contributing a ggd recipe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="making-meta-recipes.html">Creating a ggd meta-recipe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="making-meta-recipes.html#update-local-forked-repo">1. Update local forked repo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="making-meta-recipes.html#writing-the-curation-script-s">2. Writing the curation script(s)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="making-meta-recipes.html#creating-a-ggd-meta-recipe-using-the-ggd-cli">3. Creating a ggd meta-recipe using the ggd cli</a></li>
+<li class="toctree-l2"><a class="reference internal" href="making-meta-recipes.html#checking-testing-the-new-meta-recipe">4. Checking/Testing the new meta-recipe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="making-meta-recipes.html#submit-the-new-ggd-meta-recipe-to-the-original-ggd-recipes-repo">5. Submit the new ggd meta-recipe to the original ggd-recipes repo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="making-meta-recipes.html#example-of-the-gene-expression-omnibus-geo-main-bash-script-and-supporting-python-script">6. Example of the Gene Expression Omnibus (GEO) main bash script and supporting python script</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="private_recipes.html">Private Recipes</a><ul>

@@ -36,7 +36,7 @@ Installation
 
 With ggd installed and an activated ggd channel (see :ref:`using-ggd`), install with::
 
-   ggd install -c genomics hg19-scores-by-amino-acid-change-ggd-v1
+   ggd install -c genomics hg19-scores-by-amino-acid-change-ggd-v1 
 
 .. |downloads| image:: https://anaconda.org/ggd-genomics/hg19-scores-by-amino-acid-change-ggd-v1/badges/downloads.svg
                :target: https://anaconda.org/ggd-genomics/hg19-scores-by-amino-acid-change-ggd-v1
