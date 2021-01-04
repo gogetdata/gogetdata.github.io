@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Using GGD in Workflows &#8212; GGD  documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="_static/font-awesome-4.7.0/css/font-awesome.min.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Snakemake Workflow with GGD" href="snakemake_workflow.html" />
+    <link rel="prev" title="Private Recipes" href="private_recipes.html" />
+    
+    <link href="https://fonts.googleapis.com/css?family=Lato|Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="_static/ms-icon-144x144.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="index.html">
+    <img class="logo" src="_static/logo/GoGetData_name_logo.png" alt="Logo"/>
+    
+  </a>
+</p>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quick-start.html">GGD Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using-ggd.html">Using GGD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GGD-CLI.html">GGD Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="meta-recipes.html">GGD meta-recipes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contribute.html">Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="private_recipes.html">Private Recipes</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Using GGD in Workflows</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#ggd-and-workflows">GGD and Workflows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#snakemake-workflow-example"><span class="xref std std-ref">Snakemake Workflow Example</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#nextflow-workflow-example"><span class="xref std std-ref">Nextflow Workflow Example</span></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="recipes.html">Available Data Packages</a></li>
+</ul>
+
+<ul>
+  
+  <li class="toctree-l1"><a href="https://github.com/gogetdata/ggd-recipes">ggd-recipes @ Github</a></li>
+  
+  <li class="toctree-l1"><a href="https://github.com/gogetdata/ggd-cli">ggd-cli @ Github</a></li>
+  
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="using-ggd-in-workflows">
+<span id="workflows"></span><h1>Using GGD in Workflows<a class="headerlink" href="#using-ggd-in-workflows" title="Permalink to this headline">¶</a></h1>
+<p>[<a class="reference internal" href="index.html#home-page"><span class="std std-ref">Click here to return to the home page</span></a>]</p>
+<div class="section" id="ggd-and-workflows">
+<h2>GGD and Workflows<a class="headerlink" href="#ggd-and-workflows" title="Permalink to this headline">¶</a></h2>
+<p>Another advantage of GGD is its ability to be used in different workflows. These workflows can range from simple to complex, as well as from a bash
+script style workflow to more advance worflow managers like Snakemake and Nextflow.</p>
+<p>It is customary that data is required and used during a workflow. Rather then having to store and transmit that data along with a workflow, one
+could create the workflow with GGD data packages as dependencies and allow GGD to dynamically provide the data to the workflow.</p>
+<p>GGD can be used before running a workflow or during the workflow process. Additionaly, data recipes can be installed into a Docker or Singularity
+container, where a workflow like Netxflow uses the conda software packages and the GGD data packages in the container during the workflow process.
+GGD can be used during the workflow to install the required package into a specific environment if those packages are not yet installed. This allows
+versitlity in the use of GGD for many types of workflows.</p>
+<p>Provided below are two examples of using GGD in a workflow. These are two simple exmaples and don’t fully show the extent of what can be done with GGD
+wihtin a workflow, but rather stand as starting examples of what can be done.</p>
+</div>
+<div class="section" id="snakemake-workflow-example">
+<h2><a class="reference internal" href="snakemake_workflow.html#snakemake-workflow"><span class="std std-ref">Snakemake Workflow Example</span></a><a class="headerlink" href="#snakemake-workflow-example" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="nextflow-workflow-example">
+<h2><a class="reference internal" href="nextflow_workflow.html#nextflow-workflow"><span class="std std-ref">Nextflow Workflow Example</span></a><a class="headerlink" href="#nextflow-workflow-example" title="Permalink to this headline">¶</a></h2>
+<p>Contents:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="snakemake_workflow.html">Snakemake Workflow with GGD</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="snakemake_workflow.html#workflow-files">Workflow Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="snakemake_workflow.html#alternative-approaches">Alternative Approaches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="snakemake_workflow.html#workflow-output-examples">Workflow Output Examples:</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="nextflow_workflow.html">Nextflow Workflow with GGD</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="nextflow_workflow.html#nextflow-workflow-files">Nextflow Workflow Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nextflow_workflow.html#steps-to-run-the-workflow">Steps to run the workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nextflow_workflow.html#results">Results:</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2016-2021, The GoGetData team.
+      
+      |
+      <a href="_sources/workflows.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

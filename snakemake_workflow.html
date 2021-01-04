@@ -1,0 +1,378 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Snakemake Workflow with GGD &#8212; GGD  documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="_static/font-awesome-4.7.0/css/font-awesome.min.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Nextflow Workflow with GGD" href="nextflow_workflow.html" />
+    <link rel="prev" title="Using GGD in Workflows" href="workflows.html" />
+    
+    <link href="https://fonts.googleapis.com/css?family=Lato|Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="_static/ms-icon-144x144.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="index.html">
+    <img class="logo" src="_static/logo/GoGetData_name_logo.png" alt="Logo"/>
+    
+  </a>
+</p>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quick-start.html">GGD Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using-ggd.html">Using GGD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GGD-CLI.html">GGD Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="meta-recipes.html">GGD meta-recipes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contribute.html">Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="private_recipes.html">Private Recipes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="workflows.html">Using GGD in Workflows</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="workflows.html#ggd-and-workflows">GGD and Workflows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workflows.html#snakemake-workflow-example"><span class="xref std std-ref">Snakemake Workflow Example</span></a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="workflows.html#nextflow-workflow-example"><span class="xref std std-ref">Nextflow Workflow Example</span></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="recipes.html">Available Data Packages</a></li>
+</ul>
+
+<ul>
+  
+  <li class="toctree-l1"><a href="https://github.com/gogetdata/ggd-recipes">ggd-recipes @ Github</a></li>
+  
+  <li class="toctree-l1"><a href="https://github.com/gogetdata/ggd-cli">ggd-cli @ Github</a></li>
+  
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="snakemake-workflow-with-ggd">
+<span id="snakemake-workflow"></span><h1>Snakemake Workflow with GGD<a class="headerlink" href="#snakemake-workflow-with-ggd" title="Permalink to this headline">¶</a></h1>
+<p>[<a class="reference internal" href="index.html#home-page"><span class="std std-ref">Click here to return to the home page</span></a>]</p>
+<p>This simple example shows how to use GGD within the workflow process to dynamically maintain and use GGD data packages
+during the run-time of a Snakemake workflow. Additionally, it highlights the use of meta-recipes in a workflow, but
+it should be noted that this type of process also works with normal GGD data packages.</p>
+<p>This process will use a simple <code class="code docutils literal notranslate"><span class="pre">config.yml</span></code> file, a <code class="code docutils literal notranslate"><span class="pre">Snakefile</span></code>, and an R script named <code class="code docutils literal notranslate"><span class="pre">expression_analysis.R</span></code>.</p>
+<p>For information on Snakemake workflows see the <a class="reference external" href="https://snakemake.readthedocs.io/en/stable/">Snakemake docs</a>.</p>
+<p><strong>Description:</strong>
+This workflow takes a group of related samples as a <strong>Series</strong> record (GSE) from the Gene Expression Omnibus (GEO) database and uses
+the matrix file of samples to plot a few simple expression stats. It uses an R script, available below, to extract information from the
+matrix file and run the analyses. The GSE matrix file is obtained using the ggd meta-recipe <code class="code docutils literal notranslate"><span class="pre">meta-recipe-geo-accession-geo-v1</span></code>.</p>
+<p>This simple workflow can be run with any GSE GEO accession ID.</p>
+<div class="section" id="workflow-files">
+<h2>Workflow Files<a class="headerlink" href="#workflow-files" title="Permalink to this headline">¶</a></h2>
+<p><strong>config.yml</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Here, we set the <em>conda_prefix</em> variable to be the prefix where we want the data files to be installed. We call this
+prefix <code class="code docutils literal notranslate"><span class="pre">ggd_data</span></code>. (This prefix should be the name of the conda environment where you want to store GGD data)</p></li>
+<li><p>We also designate the ggd_recipes we want to use. Specifically, we want to use the GEO meta-recipe named
+<code class="code docutils literal notranslate"><span class="pre">meta-recipe-geo-accession-geo-v1</span></code> with the meta-recipe ID <code class="code docutils literal notranslate"><span class="pre">GSE1234</span></code>. The power of this approach is that
+multiple recipe or meta-recipes can be used during the process. For example, the <em>id</em> key below could be set to a list
+of GEO GSE IDs and used to install and use each ID in the workflow process.</p></li>
+<li><p>A simple change of this ID would allow this Snakemake workflow to work with any GEO GSE ID.</p></li>
+</ul>
+</div></blockquote>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda_prefix: <span class="s2">&quot;ggd_data&quot;</span>
+
+ggd_recipes:
+  name: <span class="s2">&quot;meta-recipe-geo-accession-geo-v1&quot;</span>
+  id: <span class="s2">&quot;GSE1234&quot;</span>
+</pre></div>
+</div>
+<p><strong>Snakefile</strong></p>
+<blockquote>
+<div><ul>
+<li><p>Here we load the config file and grab the config information from the config.yml file</p></li>
+<li><p>We use <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">predict-path</span></code> to predict the <strong>directory path</strong> where we would expect the data for the ID specific
+meta-recipe to be installed.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="code docutils literal notranslate"><span class="pre">predict-path</span></code> command can predict the extract file path of the intended file if installing a normal ggd
+data package, however, only the directory path is able to be predicted for meta-recipes. However, for this workflow
+we know that general pattern of the intended data file, so we can use that pattern along with the ID to get the
+specific path we expect.</p>
+</div>
+</li>
+<li><p>We get the expected file path of the <em>matrix</em> file using the predicted directory path and the ID specific matrix file pattern.</p></li>
+<li><p>We set up the rules of the Snakemake workflow, which include:</p>
+<ul class="simple">
+<li><p>Using GGD to install the ID specific meta-recipe</p></li>
+<li><p>Using the provided R script to calculate and plot statistics for that ID specific meta-recipe.</p></li>
+</ul>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This example could be expanded to many ID specific meta-recipes, where the workflow would check and install each meta-recipe
+and create the output for that meta-recipe.</p>
+</div>
+</div></blockquote>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">subprocess</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">configfile</span><span class="p">:</span> <span class="s2">&quot;config.yml&quot;</span>
+
+<span class="n">CONDA_PREFIX</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s2">&quot;conda_prefix&quot;</span><span class="p">]</span>
+<span class="n">ggd_recipe</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s2">&quot;ggd_recipes&quot;</span><span class="p">][</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
+<span class="n">recipe_id</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s2">&quot;ggd_recipes&quot;</span><span class="p">][</span><span class="s2">&quot;id&quot;</span><span class="p">]</span>
+
+<span class="c1">## Get the directory path for the expected file</span>
+<span class="n">dir_path</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">check_output</span><span class="p">([</span><span class="s2">&quot;ggd&quot;</span><span class="p">,</span>
+                         <span class="s2">&quot;predict-path&quot;</span><span class="p">,</span>
+                         <span class="s2">&quot;--prefix&quot;</span><span class="p">,</span>
+                         <span class="n">CONDA_PREFIX</span><span class="p">,</span>
+                         <span class="s2">&quot;-pn&quot;</span><span class="p">,</span>
+                         <span class="n">ggd_recipe</span><span class="p">,</span>
+                         <span class="s2">&quot;--id&quot;</span><span class="p">,</span>
+                         <span class="n">recipe_id</span><span class="p">,</span>
+                         <span class="s2">&quot;--dir-path&quot;</span>
+                         <span class="p">]</span>
+                        <span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+
+<span class="c1">## File path of the matrix file</span>
+<span class="n">matrix_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dir_path</span><span class="p">,</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">_series_matrix.txt.gz&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">recipe_id</span><span class="p">))</span>
+
+<span class="c1">## Rules</span>
+<span class="n">rule</span> <span class="nb">all</span><span class="p">:</span>
+  <span class="nb">input</span><span class="p">:</span>
+    <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">_stats.pdf&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">recipe_id</span><span class="p">)</span>
+
+
+<span class="c1">## Get a few stats from the GSE matrix</span>
+<span class="n">rule</span> <span class="n">get_stats</span><span class="p">:</span>
+  <span class="nb">input</span><span class="p">:</span>
+    <span class="n">matrix_file</span>
+  <span class="n">output</span><span class="p">:</span>
+    <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">_stats.pdf&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">recipe_id</span><span class="p">)</span>
+  <span class="n">shell</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Rscript expression_analysis.R {recipe_id} {matrix_file}</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<span class="c1">## Get the GEO GSE matrix file using the GGD GEO meta-recipe</span>
+<span class="n">rule</span> <span class="n">get_matrix_file</span><span class="p">:</span>
+  <span class="nb">input</span><span class="p">:</span>
+  <span class="n">output</span><span class="p">:</span>
+    <span class="n">matrix_file</span>
+  <span class="n">shell</span><span class="p">:</span>
+    <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    ## If the path dir path exists but not the file, remove the dir</span>
+<span class="s2">    if [ -d </span><span class="si">{dir_path}</span><span class="s2"> ] &amp;&amp; [ ! -d </span><span class="si">{matrix_file}</span><span class="s2"> ]</span>
+<span class="s2">    then</span>
+<span class="s2">        rm -r </span><span class="si">{dir_path}</span><span class="s2"></span>
+<span class="s2">    fi</span>
+
+<span class="s2">    ## Install ggd data package</span>
+<span class="s2">    ggd install  --prefix </span><span class="si">{CONDA_PREFIX}</span><span class="s2"> </span><span class="si">{ggd_recipe}</span><span class="s2"> --id </span><span class="si">{recipe_id}</span><span class="s2"></span>
+</pre></div>
+</div>
+<p><strong>expression_analysis.R</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>This R script is a simple R script that will take an GSE GEO ID along with the  associated  matrix file path and use the data within that matrix to
+calculate and plot simple expression statistics.</p></li>
+<li><p>The plots from this script are output as: &lt;ID&gt;_stats.pdf</p></li>
+<li><p>Examples of the output from this R script, and the workflow, are available below.</p></li>
+</ul>
+</div></blockquote>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="c1">## Default repo</span>
+<span class="nf">local</span><span class="p">({</span><span class="n">r</span> <span class="o">&lt;-</span> <span class="nf">getOption</span><span class="p">(</span><span class="s">&quot;repos&quot;</span><span class="p">)</span>
+    <span class="n">r</span><span class="p">[</span><span class="s">&quot;CRAN&quot;</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&quot;http://cran.us.r-project.org&quot;</span>
+    <span class="nf">options</span><span class="p">(</span><span class="n">repos</span><span class="o">=</span><span class="n">r</span><span class="p">)</span>
+<span class="p">})</span>
+
+<span class="nf">if </span><span class="p">(</span><span class="o">!</span><span class="nf">requireNamespace</span><span class="p">(</span><span class="s">&quot;BiocManager&quot;</span><span class="p">,</span> <span class="n">quietly</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">))</span>
+    <span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;BiocManager&quot;</span><span class="p">)</span>
+
+<span class="n">BiocManager</span><span class="o">::</span><span class="nf">install</span><span class="p">(</span><span class="s">&quot;GEOquery&quot;</span><span class="p">,</span> <span class="n">quietly</span> <span class="o">=</span> <span class="kc">TRUE</span> <span class="p">)</span>
+
+<span class="nf">install.packages</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;maptools&quot;</span><span class="p">,</span><span class="s">&quot;umap&quot;</span><span class="p">))</span>
+
+<span class="nf">library</span><span class="p">(</span><span class="n">GEOquery</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">limma</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">umap</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">maptools</span><span class="p">)</span>
+
+<span class="n">args</span> <span class="o">=</span> <span class="nf">commandArgs</span><span class="p">(</span><span class="n">trailingOnly</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+
+<span class="n">id</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="m">1</span><span class="p">]</span>
+<span class="n">matrix_file</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="m">2</span><span class="p">]</span>
+
+<span class="c1">## Load local isntalled matrix</span>
+<span class="n">gset</span> <span class="o">=</span> <span class="nf">getGEO</span><span class="p">(</span><span class="n">filename</span> <span class="o">=</span> <span class="n">matrix_file</span><span class="p">,</span> <span class="n">GSEMatrix</span> <span class="o">=</span><span class="kc">TRUE</span><span class="p">,</span> <span class="n">getGPL</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
+
+<span class="c1">## Number of samples:</span>
+<span class="n">nsamples</span> <span class="o">=</span> <span class="nf">length</span><span class="p">(</span><span class="n">gset</span><span class="o">$</span><span class="n">channel_count</span><span class="p">)</span>
+
+<span class="n">ex</span> <span class="o">=</span> <span class="nf">exprs</span><span class="p">(</span><span class="n">gset</span><span class="p">)</span>
+
+<span class="c1"># log2 transform</span>
+<span class="n">qx</span> <span class="o">=</span> <span class="nf">as.numeric</span><span class="p">(</span><span class="nf">quantile</span><span class="p">(</span><span class="n">ex</span><span class="p">,</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="n">.</span><span class="p">,</span> <span class="m">0.25</span><span class="p">,</span> <span class="m">0.5</span><span class="p">,</span> <span class="m">0.75</span><span class="p">,</span> <span class="m">0.99</span><span class="p">,</span> <span class="m">1.0</span><span class="p">),</span> <span class="n">na.rm</span><span class="o">=</span><span class="bp">T</span><span class="p">))</span>
+<span class="n">LogC</span> <span class="o">=</span> <span class="p">(</span><span class="n">qx</span><span class="p">[</span><span class="m">5</span><span class="p">]</span> <span class="o">&gt;</span> <span class="m">100</span><span class="p">)</span> <span class="o">||</span>
+          <span class="p">(</span><span class="n">qx</span><span class="p">[</span><span class="m">6</span><span class="p">]</span><span class="o">-</span><span class="n">qx</span><span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="m">50</span> <span class="o">&amp;&amp;</span> <span class="n">qx</span><span class="p">[</span><span class="m">2</span><span class="p">]</span> <span class="o">&gt;</span> <span class="m">0</span><span class="p">)</span>
+<span class="nf">if </span><span class="p">(</span><span class="n">LogC</span><span class="p">)</span> <span class="p">{</span> <span class="n">ex</span><span class="p">[</span><span class="nf">which</span><span class="p">(</span><span class="n">ex</span> <span class="o">&lt;=</span> <span class="m">0</span><span class="p">)]</span> <span class="o">=</span> <span class="kc">NaN</span>
+  <span class="n">ex</span> <span class="o">=</span> <span class="nf">log2</span><span class="p">(</span><span class="n">ex</span><span class="p">)</span> <span class="p">}</span>
+
+<span class="c1"># box-and-whisker plot</span>
+<span class="nf">pdf</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="s">&quot;_stats&quot;</span><span class="p">,</span><span class="s">&quot;.pdf&quot;</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">))</span>
+<span class="nf">par</span><span class="p">(</span><span class="n">mar</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">7</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">1</span><span class="p">))</span>
+<span class="n">title</span> <span class="o">=</span> <span class="nf">paste </span><span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="s">&quot;/&quot;</span><span class="p">,</span> <span class="nf">annotation</span><span class="p">(</span><span class="n">gset</span><span class="p">),</span> <span class="n">sep</span> <span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">)</span>
+<span class="nf">boxplot</span><span class="p">(</span><span class="n">ex</span><span class="p">,</span> <span class="n">boxwex</span><span class="o">=</span><span class="m">0.7</span><span class="p">,</span> <span class="n">notch</span><span class="o">=</span><span class="bp">T</span><span class="p">,</span> <span class="n">main</span><span class="o">=</span><span class="n">title</span><span class="p">,</span> <span class="n">outline</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span> <span class="n">las</span><span class="o">=</span><span class="m">2</span><span class="p">)</span>
+
+<span class="c1"># expression value distribution plot</span>
+<span class="nf">par</span><span class="p">(</span><span class="n">mar</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">4</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">1</span><span class="p">))</span>
+<span class="n">title</span> <span class="o">=</span> <span class="nf">paste </span><span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="s">&quot;/&quot;</span><span class="p">,</span> <span class="nf">annotation</span><span class="p">(</span><span class="n">gset</span><span class="p">),</span> <span class="s">&quot; value distribution&quot;</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">)</span>
+<span class="nf">plotDensities</span><span class="p">(</span><span class="n">ex</span><span class="p">,</span> <span class="n">main</span><span class="o">=</span><span class="n">title</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="bp">F</span><span class="p">)</span>
+
+<span class="c1"># mean-variance trend</span>
+<span class="n">ex</span> <span class="o">=</span> <span class="nf">na.omit</span><span class="p">(</span><span class="n">ex</span><span class="p">)</span> <span class="c1"># eliminate rows with NAs</span>
+<span class="nf">plotSA</span><span class="p">(</span><span class="nf">lmFit</span><span class="p">(</span><span class="n">ex</span><span class="p">),</span> <span class="n">main</span><span class="o">=</span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;Mean variance trend,&quot;</span><span class="p">,</span><span class="n">id</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s">&quot; &quot;</span><span class="p">))</span>
+
+<span class="c1"># UMAP plot (multi-dimensional scaling)</span>
+<span class="n">ex</span> <span class="o">=</span> <span class="n">ex</span><span class="p">[</span><span class="o">!</span><span class="nf">duplicated</span><span class="p">(</span><span class="n">ex</span><span class="p">),</span> <span class="p">]</span>  <span class="c1"># remove duplicates</span>
+<span class="n">ump</span> <span class="o">=</span> <span class="nf">umap</span><span class="p">(</span><span class="nf">t</span><span class="p">(</span><span class="n">ex</span><span class="p">),</span> <span class="n">n_neighbors</span> <span class="o">=</span> <span class="n">nsamples</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="m">123</span><span class="p">)</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">ump</span><span class="o">$</span><span class="n">layout</span><span class="p">,</span> <span class="n">main</span><span class="o">=</span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;UMAP plot, nbrs=&quot;</span><span class="p">,</span><span class="n">nsamples</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span> <span class="s">&quot; &quot;</span><span class="p">),</span> <span class="n">xlab</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="n">ylab</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="n">pch</span><span class="o">=</span><span class="m">20</span><span class="p">,</span> <span class="n">cex</span><span class="o">=</span><span class="m">1.5</span><span class="p">)</span>
+
+<span class="c1"># point labels without overlaps</span>
+<span class="nf">pointLabel</span><span class="p">(</span><span class="n">ump</span><span class="o">$</span><span class="n">layout</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="nf">rownames</span><span class="p">(</span><span class="n">ump</span><span class="o">$</span><span class="n">layout</span><span class="p">),</span> <span class="n">method</span><span class="o">=</span><span class="s">&quot;SANN&quot;</span><span class="p">,</span> <span class="n">cex</span><span class="o">=</span><span class="m">0.6</span><span class="p">)</span>
+<span class="nf">dev.off</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>software requirements</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>below is a list of the software requirements needed in order to run the above Snakemake workflow. (These are requirements that can and should
+be installed using conda)</p></li>
+</ul>
+</div></blockquote>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ggd
+<span class="nv">python</span><span class="o">=</span><span class="m">3</span>
+r-essentials
+snakemake
+</pre></div>
+</div>
+</div>
+<div class="section" id="alternative-approaches">
+<h2>Alternative Approaches<a class="headerlink" href="#alternative-approaches" title="Permalink to this headline">¶</a></h2>
+<p>As stated previously, this is a simple workflow to show how one could use GGD within a workflow.</p>
+<p>To modify this workflow for a normal ggd recipe, not a meta-recipe, one would use <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">predict</span> <span class="pre">path</span></code> with the <code class="code docutils literal notranslate"><span class="pre">--file-name</span></code> parameter
+added. This will give the file path rather then the directory path, which will reduce any additional steps.</p>
+<p>Other options for using GGD could be to have the data previously installed and provided either the GGD generated environment variables for the files
+or the file paths before running the workflow. One could also use <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">get-files</span></code> command during the workflow processes to get any installed ggd
+data file without having to know before hand where the file is installed.</p>
+<p>Containers such as Docker containers or Singularity containers are also options that can be used that are not covered here.</p>
+<p>GGD can be used in many different ways, and we encourage anyone that wants to use GGD for a workflow to experiment with the different options and find the
+solution that works best for your workflow needs.</p>
+</div>
+<div class="section" id="workflow-output-examples">
+<h2>Workflow Output Examples:<a class="headerlink" href="#workflow-output-examples" title="Permalink to this headline">¶</a></h2>
+<p>Here are two examples of running the above workflow with two randomly picked GEO GSE IDs:</p>
+<ol class="arabic">
+<li><p><strong>GSE1234_stats.pdf</strong></p>
+<blockquote>
+<div><p>
+                        <iframe
+                                id="ID"
+                                style="border:1px solid #666CCC"
+                                title="PDF"
+                                src="_static/GSE1234_stats.pdf"
+                                frameborder="1"
+                                scrolling="auto"
+                                height="800"
+                                width="800"
+                                align="middle">
+                        </iframe>
+                     </p>
+</div></blockquote>
+</li>
+<li><p><strong>GSE57214_stats.pdf</strong></p>
+<blockquote>
+<div><p>
+                        <iframe
+                                id="ID"
+                                style="border:1px solid #666CCC"
+                                title="PDF"
+                                src="_static/GSE57214_stats.pdf"
+                                frameborder="1"
+                                scrolling="auto"
+                                height="800"
+                                width="800"
+                                align="middle">
+                        </iframe>
+                     </p>
+</div></blockquote>
+</li>
+</ol>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2016-2021, The GoGetData team.
+      
+      |
+      <a href="_sources/snakemake_workflow.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

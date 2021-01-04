@@ -74,6 +74,7 @@
 <li class="toctree-l1"><a class="reference internal" href="meta-recipes.html">GGD meta-recipes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contribute.html">Contribute</a></li>
 <li class="toctree-l1"><a class="reference internal" href="private_recipes.html">Private Recipes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflows.html">Using GGD in Workflows</a></li>
 <li class="toctree-l1"><a class="reference internal" href="recipes.html">Available Data Packages</a></li>
 </ul>
 
@@ -116,8 +117,8 @@ Running <code class="code docutils literal notranslate"><span class="pre">ggd</s
 <p>predict-path arguments:</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 25%" />
-<col style="width: 75%" />
+<col style="width: 26%" />
+<col style="width: 74%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>ggd predict-path</p></th>
@@ -140,16 +141,25 @@ package should also be installed in this environment.
 (Only needed if not predicting for a path in the
 current conda environment)</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-pn</span></code>, <code class="docutils literal notranslate"><span class="pre">--package-name</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--id</span></code>, <code class="docutils literal notranslate"><span class="pre">meta-recipe</span> <span class="pre">ID</span></code></p></td>
+<td><p>(Optional) The ID to predict the path for if the package is a meta-recipe. If it is
+not a meta-recipe it will be ignored</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">-pn</span></code>, <code class="docutils literal notranslate"><span class="pre">--package-name</span></code></p></td>
 <td><p><strong>Required</strong> The name of the data package to predict a
 file path for</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">-fn</span></code>, <code class="docutils literal notranslate"><span class="pre">--file-name</span></code></p></td>
-<td><p><strong>Required</strong> The name of the file to predict that path
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-fn</span></code>, <code class="docutils literal notranslate"><span class="pre">--file-name</span></code></p></td>
+<td><p><strong>Required if –dir-path not used</strong> The name of the file to predict that path
 for. It is best if you give the full and correct name
 of the file to predict the path for. If not, ggd will
 try to identify the right file, but won’t guarantee
 that it is the right file</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">-dir-path</span></code></p></td>
+<td><p><strong>Required if –file-name not used</strong> Whether or not to get the predicted directory
+path rather then the predicted file path. If both –file-name and –dir-path are
+provided the –file-name will be used and –dir-path will be ignored</p></td>
 </tr>
 </tbody>
 </table>
@@ -159,15 +169,32 @@ that it is the right file</p></td>
 <ul class="simple">
 <li><p><em>-pn:</em> The <code class="code docutils literal notranslate"><span class="pre">-pn</span></code> flag represents the data package name for which to predict a file path for. (NOTE: the file
 path is for a data file from this data package and not the data package itself)</p></li>
+</ul>
+<p>One Argument Required:</p>
+<ul class="simple">
 <li><p><em>-fn:</em> The <code class="code docutils literal notranslate"><span class="pre">-fn</span></code> flag represents the name of the data file for which to predict the file path for. (NOTE: this is
 the actual file from the data package to predict the path for) You can use <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">search</span></code> or check the
 <a class="reference internal" href="recipes.html#recipes"><span class="std std-ref">Available packages</span></a> page to get the name of the files provided by the package</p></li>
+<li><p><em>–dir-path</em> The <code class="code docutils literal notranslate"><span class="pre">--dir-path</span></code> flag is used to the the predicted directory path of the installed files rather then the
+exact file path. This is specifically useful for meta-recipes, where the file-path cannot be predicted because of the
+dynamic nature of meta-recipes.</p></li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Either the <code class="code docutils literal notranslate"><span class="pre">--file-name</span></code> or the <code class="code docutils literal notranslate"><span class="pre">--dir-path</span></code> parameter is required. If both are provided then the <code class="code docutils literal notranslate"><span class="pre">--file-path</span></code>
+will be used and the <code class="code docutils literal notranslate"><span class="pre">--dir-path</span></code> ignored. If neither one is given then the <code class="code docutils literal notranslate"><span class="pre">predict-path</span></code> command will exit and
+prompt for one.</p>
+</div>
 <p>Optional arguments:</p>
 <ul class="simple">
 <li><p><em>-c:</em> The <code class="code docutils literal notranslate"><span class="pre">-c</span></code> flag represents the ggd channel. The default channel is <em>genomics</em>.</p></li>
 <li><p><em>–prefix:</em> The <code class="code docutils literal notranslate"><span class="pre">--prefix</span></code> flag is used to get to the install path for a data file in a specific conda  environment/prefix
 that is different then the current environment.</p></li>
+<li><p><em>–id</em> The <code class="code docutils literal notranslate"><span class="pre">--id</span></code> flag is used to for predicting the directory path of an ID specifc meta-recipe. It is not possible to predict
+the file path of a meta-recipe due to the dynamic nature of the recipe iteself, however, it is possible to predict the directory path.
+An ID is required when install a meta-recipe, and this ID represents the ID that would be used when install a desired meta-recipe.
+This ID will be ignored if the path being predicted is NOT for a meta-recipe. Additionaly, if this parameter is not used then the
+directory path to the non ID specifc meta-recipe will be provided, which is of no use.</p></li>
 </ul>
 </div>
 </div>
@@ -182,11 +209,24 @@ that is different then the current environment.</p></li>
 </div>
 </div>
 <div class="section" id="predict-the-path-of-the-chromsize-file-in-the-data-environment">
-<h3>1. Predict the path of the chromsize file in the “data” environment:<a class="headerlink" href="#predict-the-path-of-the-chromsize-file-in-the-data-environment" title="Permalink to this headline">¶</a></h3>
+<h3>2. Predict the path of the chromsize file in the “data” environment:<a class="headerlink" href="#predict-the-path-of-the-chromsize-file-in-the-data-environment" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd predict-path -pn hg19-chromsizes-ggd-v1 -fn hg19-chromsizes-ggd-v1.txt --prefix data
 
   &lt;data environment&gt;/share/ggd/Homo_sapiens/hg19/hg19-chromsizes-ggd-v1/1/hg19-chromsizes-ggd-v1.txt
 </pre></div>
+</div>
+</div>
+<div class="section" id="predict-the-directory-path-of-a-geo-meta-recipe">
+<h3>3. Predict the directory path of a GEO meta-recipe:<a class="headerlink" href="#predict-the-directory-path-of-a-geo-meta-recipe" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ggd predict-path --package-name meta-recipe-geo-accession-geo-v1 --dir-path --id GSE123
+
+ &lt;conda root&gt;/share/ggd/meta-recipe/meta-recipe/gse123-geo-v1/1/
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are getting the predicted path for a meta-recipe you need to add the <code class="code docutils literal notranslate"><span class="pre">--id</span></code> parameter, otherwise, you will get
+the directory path to a main meta-recipe, which should never contain any data files. (The wrong path)</p>
 </div>
 </div>
 </div>
@@ -200,7 +240,7 @@ that is different then the current environment.</p></li>
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2016-2020, The GoGetData team.
+      &copy;2016-2021, The GoGetData team.
       
       |
       <a href="_sources/predict-path.rst.txt"

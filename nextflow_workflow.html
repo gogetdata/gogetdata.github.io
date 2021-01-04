@@ -1,0 +1,423 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nextflow Workflow with GGD &#8212; GGD  documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="_static/font-awesome-4.7.0/css/font-awesome.min.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Available Data Packages" href="recipes.html" />
+    <link rel="prev" title="Snakemake Workflow with GGD" href="snakemake_workflow.html" />
+    
+    <link href="https://fonts.googleapis.com/css?family=Lato|Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="_static/ms-icon-144x144.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="index.html">
+    <img class="logo" src="_static/logo/GoGetData_name_logo.png" alt="Logo"/>
+    
+  </a>
+</p>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quick-start.html">GGD Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using-ggd.html">Using GGD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GGD-CLI.html">GGD Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="meta-recipes.html">GGD meta-recipes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contribute.html">Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="private_recipes.html">Private Recipes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="workflows.html">Using GGD in Workflows</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="workflows.html#ggd-and-workflows">GGD and Workflows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workflows.html#snakemake-workflow-example"><span class="xref std std-ref">Snakemake Workflow Example</span></a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="workflows.html#nextflow-workflow-example"><span class="xref std std-ref">Nextflow Workflow Example</span></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="recipes.html">Available Data Packages</a></li>
+</ul>
+
+<ul>
+  
+  <li class="toctree-l1"><a href="https://github.com/gogetdata/ggd-recipes">ggd-recipes @ Github</a></li>
+  
+  <li class="toctree-l1"><a href="https://github.com/gogetdata/ggd-cli">ggd-cli @ Github</a></li>
+  
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="nextflow-workflow-with-ggd">
+<span id="nextflow-workflow"></span><h1>Nextflow Workflow with GGD<a class="headerlink" href="#nextflow-workflow-with-ggd" title="Permalink to this headline">¶</a></h1>
+<p>[<a class="reference internal" href="index.html#home-page"><span class="std std-ref">Click here to return to the home page</span></a>]</p>
+<p>This simple example shows one approach of using GGD for a Nextflow workflow.</p>
+<p>In this example, we will use GGD to install a data package prior to running the nextflow workflow and using the data files
+during the nextflow workflow process. This is one of many approaches that can be taken to us GGD in a Nextflow workflow</p>
+<p>For information on Nextflow workflows see <a class="reference external" href="https://www.nextflow.io/docs/latest/index.html">Nextflow Workflow docs</a>.</p>
+<p><strong>Description:</strong>
+In this example we are going to be using the <a class="reference external" href="https://github.com/brentp/seqcover">SeqCover</a> tool to interactively
+evaluate and QC the coverage of a few genes in a few 1000G samples. To do this, we are going to be using the
+nextflow workflow <a class="reference external" href="https://github.com/brwnj/seqcover-nf">seqcover-nf</a> created by Joe Brown.</p>
+<div class="section" id="nextflow-workflow-files">
+<h2>Nextflow Workflow Files<a class="headerlink" href="#nextflow-workflow-files" title="Permalink to this headline">¶</a></h2>
+<p>The files for this Nextflow workflow are provided below for convenience. However, the workflow is available <a class="reference external" href="https://github.com/brwnj/seqcover-nf">here</a>.</p>
+<p><strong>nextflow.config</strong></p>
+<ul class="simple">
+<li><p>This is the nextflow config file used to set the different configs for running the workflow.</p></li>
+</ul>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">// Configurable variables</span>
+<span class="l l-Scalar l-Scalar-Plain">params {</span>
+    <span class="l l-Scalar l-Scalar-Plain">outdir = &#39;./results&#39;</span>
+    <span class="l l-Scalar l-Scalar-Plain">cpus = 4</span>
+    <span class="l l-Scalar l-Scalar-Plain">percentile = 5</span>
+<span class="l l-Scalar l-Scalar-Plain">}</span>
+
+<span class="l l-Scalar l-Scalar-Plain">process {</span>
+    <span class="l l-Scalar l-Scalar-Plain">time = 12.h</span>
+    <span class="l l-Scalar l-Scalar-Plain">memory = 8.GB</span>
+    <span class="l l-Scalar l-Scalar-Plain">cpus = 1</span>
+    <span class="l l-Scalar l-Scalar-Plain">cache = &#39;lenient&#39;</span>
+<span class="l l-Scalar l-Scalar-Plain">}</span>
+
+<span class="l l-Scalar l-Scalar-Plain">profiles {</span>
+    <span class="l l-Scalar l-Scalar-Plain">docker {</span>
+        <span class="l l-Scalar l-Scalar-Plain">docker.enabled = true</span>
+    <span class="l l-Scalar l-Scalar-Plain">}</span>
+    <span class="l l-Scalar l-Scalar-Plain">singularity {</span>
+        <span class="l l-Scalar l-Scalar-Plain">singularity.runOptions = &#39;--bind /scratch&#39;</span>
+        <span class="l l-Scalar l-Scalar-Plain">singularity.enabled = true</span>
+    <span class="l l-Scalar l-Scalar-Plain">}</span>
+    <span class="l l-Scalar l-Scalar-Plain">none {}</span>
+<span class="l l-Scalar l-Scalar-Plain">}</span>
+
+<span class="l l-Scalar l-Scalar-Plain">process.shell = [&#39;/bin/bash&#39;, &#39;-euo&#39;, &#39;pipefail&#39;]</span>
+
+<span class="l l-Scalar l-Scalar-Plain">timeline {</span>
+    <span class="l l-Scalar l-Scalar-Plain">enabled = true</span>
+    <span class="l l-Scalar l-Scalar-Plain">file = &quot;${params.outdir}/logs/timeline.html&quot;</span>
+<span class="l l-Scalar l-Scalar-Plain">}</span>
+<span class="l l-Scalar l-Scalar-Plain">report {</span>
+    <span class="l l-Scalar l-Scalar-Plain">enabled = true</span>
+    <span class="l l-Scalar l-Scalar-Plain">file = &quot;${params.outdir}/logs/report.html&quot;</span>
+<span class="l l-Scalar l-Scalar-Plain">}</span>
+<span class="l l-Scalar l-Scalar-Plain">trace {</span>
+    <span class="l l-Scalar l-Scalar-Plain">enabled = true</span>
+    <span class="l l-Scalar l-Scalar-Plain">file = &quot;${params.outdir}/logs/trace.txt&quot;</span>
+<span class="l l-Scalar l-Scalar-Plain">}</span>
+
+<span class="l l-Scalar l-Scalar-Plain">manifest {</span>
+    <span class="l l-Scalar l-Scalar-Plain">name = &#39;brwnj/seqcover-nf&#39;</span>
+    <span class="l l-Scalar l-Scalar-Plain">author = &#39;Joe Brown&#39;</span>
+    <span class="l l-Scalar l-Scalar-Plain">description = &#39;generate depth report per sample per gene&#39;</span>
+    <span class="l l-Scalar l-Scalar-Plain">version = &#39;0.1.0&#39;</span>
+    <span class="l l-Scalar l-Scalar-Plain">nextflowVersion = &#39;&gt;=20.10.0&#39;</span>
+    <span class="l l-Scalar l-Scalar-Plain">homePage = &#39;https://github.com/brwnj/seqcover-nf&#39;</span>
+    <span class="l l-Scalar l-Scalar-Plain">mainScript = &#39;main.nf&#39;</span>
+<span class="l l-Scalar l-Scalar-Plain">}</span>
+</pre></div>
+</div>
+<p><strong>main.nf</strong></p>
+<ul class="simple">
+<li><p>This file is the main nextflow workflow file</p></li>
+<li><p>The workflow is as follows:</p>
+<ul>
+<li><p>Run mosdepth to get per base coverage for each sample</p></li>
+<li><p>Create a coverage background for the cohort using seqcover</p></li>
+<li><p>Generate the seqcover report of the combined samples</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>nextflow.enable.dsl=2
+
+params.help = false
+if (params.help) {
+    log.info &quot;&quot;&quot;
+    -----------------------------------------------------------------------
+    seqcover-nf
+    ===========
+    Documentation and issues can be found at:
+    https://github.com/brwnj/seqcover-nf
+    seqcover is available at:
+    https://github.com/brentp/seqcover
+    Required arguments:
+    -------------------
+    --crams               Aligned sequences in .bam and/or .cram format.
+                          Indexes (.bai/.crai) must be present.
+    --reference           Reference FASTA. Index (.fai) must exist in same
+                          directory.
+    --genes               Comma separated list of genes across which to
+                          show coverage, e.g. &quot;PIGA,KCNQ2,ARX,DNM1,SLC25A22,CDKL5&quot;.
+    Options:
+    --------
+    --outdir              Base results directory for output.
+                          Default: &#39;/.results&#39;
+    --cpus                Number of cpus dedicated to `mosdepth` calls.
+                          Default: 4
+    --percentile          Background percentile used in seqcover report.
+                          More info is available at:
+                          https://github.com/brentp/seqcover#outlier
+                          Default: 5
+    -----------------------------------------------------------------------
+    &quot;&quot;&quot;.stripIndent()
+    exit 0
+}
+
+params.crams = false
+params.reference = false
+params.outdir = &#39;./results&#39;
+params.cpus = 4
+params.percentile = 5
+params.genes = false
+params.hg19 = false
+
+if(!params.crams) {
+    exit 1, &quot;--crams argument like &#39;/path/to/*.cram&#39; is required&quot;
+}
+if(!params.reference) {
+    exit 1, &quot;--reference argument is required&quot;
+}
+if(!params.genes) {
+    exit 1, &quot;--genes argument, e.g. &#39;PIGA,KCNQ2,ARX,DNM1&#39;, is required&quot;
+}
+
+crams = channel.fromPath(params.crams)
+crais = crams.map { it -&gt; it + (&quot;${it}&quot;.endsWith(&#39;.cram&#39;) ? &#39;.crai&#39; : &#39;.bai&#39;) }
+
+
+process mosdepth {
+    container &quot;brwnj/seqcover-nf:v0.1.0&quot;
+    publishDir &quot;${params.outdir}/mosdepth&quot;
+    cpus params.cpus
+
+    input:
+    path(cram)
+    path(crai)
+    path(reference)
+
+    output:
+    path(&quot;*.d4&quot;), emit: d4
+
+    script:
+    &quot;&quot;&quot;
+    mosdepth -f $reference -x -t ${task.cpus} --d4 ${cram.getSimpleName()} $cram
+    &quot;&quot;&quot;
+}
+
+process seqcover_background {
+    container &quot;brwnj/seqcover-nf:v0.1.0&quot;
+    publishDir params.outdir
+
+    input:
+    path(d4)
+    path(reference)
+    val(percentile)
+
+    output:
+    path(&quot;seqcover/*.d4&quot;), emit: d4
+
+    script:
+    &quot;&quot;&quot;
+    seqcover generate-background -p 5 -f $reference -o seqcover/ $d4
+    &quot;&quot;&quot;
+}
+
+process seqcover_report {
+    container &quot;brwnj/seqcover-nf:v0.1.0&quot;
+    publishDir params.outdir
+
+    input:
+    path(d4)
+    path(background)
+    path(reference)
+    val(genes)
+    val(hg19)
+
+    output:
+    path(&quot;*.html&quot;), emit: html
+
+    script:
+    genome_flag = hg19 ? &quot;--hg19&quot; : &quot;&quot;
+    &quot;&quot;&quot;
+    seqcover report --fasta $reference --background $background --genes $genes $genome_flag $d4
+    &quot;&quot;&quot;
+}
+
+workflow {
+    mosdepth(crams, crais, params.reference)
+    seqcover_background(mosdepth.output.d4.collect(), params.reference, params.percentile)
+    seqcover_report(mosdepth.output.d4.collect(), seqcover_background.output.d4, params.reference, params.genes, params.hg19)
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="steps-to-run-the-workflow">
+<h2>Steps to run the workflow<a class="headerlink" href="#steps-to-run-the-workflow" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p>Grab 1000G bam files.</p>
+<blockquote>
+<div><p>5 bams and their indexes from 1000G to represent our alignments</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir data <span class="o">&amp;&amp;</span> <span class="nb">cd</span> data
+wget ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/phase1/data/HG00096/alignment/HG00096.chrom20.ILLUMINA.bwa.GBR.low_coverage.20101123.bam
+wget ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/phase1/data/HG00096/alignment/HG00096.chrom20.ILLUMINA.bwa.GBR.low_coverage.20101123.bam.bai
+wget ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/phase1/data/HG00097/alignment/HG00097.chrom20.SOLID.bfast.GBR.low_coverage.20101123.bam
+wget ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/phase1/data/HG00097/alignment/HG00097.chrom20.SOLID.bfast.GBR.low_coverage.20101123.bam.bai
+wget ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/phase1/data/HG00182/alignment/HG00182.chrom20.ILLUMINA.bwa.FIN.low_coverage.20101123.bam
+wget ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/phase1/data/HG00182/alignment/HG00182.chrom20.ILLUMINA.bwa.FIN.low_coverage.20101123.bam.bai
+wget ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/phase1/data/HG00100/alignment/HG00100.chrom20.ILLUMINA.bwa.GBR.low_coverage.20101123.bam
+wget ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/phase1/data/HG00100/alignment/HG00100.chrom20.ILLUMINA.bwa.GBR.low_coverage.20101123.bam.bai
+wget ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/phase1/data/HG00183/alignment/HG00183.chrom20.ILLUMINA.bwa.FIN.low_coverage.20101123.bam
+wget ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/phase1/data/HG00183/alignment/HG00183.chrom20.ILLUMINA.bwa.FIN.low_coverage.20101123.bam.bai
+<span class="nb">echo</span> <span class="k">done</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Use GGD to install a reference genome</p>
+<blockquote>
+<div><p>We see from the header that 1000G uses GRCh37. Using ggd search we can find our reference:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ggd search -g GRCh37 reference genome
+</pre></div>
+</div>
+<p>Among the listings, we see the reference we need with install instructions:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>----------------------------------------------------------------------------------------------------
+
+    grch37-reference-genome-1000g-v1
+    <span class="o">================================</span>
+
+    Summary: GRCh37 reference genome from <span class="m">1000</span> genomes
+
+    Species: Homo_sapiens
+
+    Genome Build: GRCh37
+
+    Keywords: ref, reference, fasta-file
+
+    Data Version: phase2_reference
+
+        .
+        .
+        .
+
+    To install run:
+        ggd install grch37-reference-genome-1000g-v1
+
+  ----------------------------------------------------------------------------------------------------
+</pre></div>
+</div>
+<p>We install our reference:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ggd install grch37-reference-genome-1000g-v1
+
+<span class="c1"># activate environmental variables</span>
+<span class="nb">source</span> activate base
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Run the Nextflow workflow</p>
+<blockquote>
+<div><p>Now we have everything to QC our reads using a Nextflow workflow for seqcover.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We are using the <code class="code docutils literal notranslate"><span class="pre">$ggd_grch37_reference_genome_1000g_v1_file</span></code> environment variable created by GGD when the
+data package was installed.</p>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">GENES</span><span class="o">=</span><span class="s2">&quot;MYL9,TLDC2,NNAT,ADIG,FAM83D,PTPRT,SGK2,HNF4A&quot;</span>
+
+nextflow run brwnj/seqcover-nf -revision main -profile docker <span class="se">\</span>
+    --reference <span class="nv">$ggd_grch37_reference_genome_1000g_v1_file</span> <span class="se">\</span>
+    --crams <span class="s1">&#39;data/*.bam&#39;</span> <span class="se">\</span>
+    --genes <span class="nv">$GENES</span> --hg19
+</pre></div>
+</div>
+<p>The Nextflow output gives:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>N E X T F L O W  ~  version <span class="m">20</span>.10.0
+Launching <span class="sb">`</span>brwnj/seqcover-nf<span class="sb">`</span> <span class="o">[</span>pedantic_jennings<span class="o">]</span> - revision: 8bba84f42f <span class="o">[</span>main<span class="o">]</span>
+executor &gt;  <span class="nb">local</span> <span class="o">(</span><span class="m">7</span><span class="o">)</span>
+<span class="o">[</span>bb/2fddf4<span class="o">]</span> process &gt; mosdepth <span class="o">(</span><span class="m">3</span><span class="o">)</span>        <span class="o">[</span><span class="m">100</span>%<span class="o">]</span> <span class="m">5</span> of <span class="m">5</span> ✔
+<span class="o">[</span><span class="m">72</span>/2ea7b3<span class="o">]</span> process &gt; seqcover_background <span class="o">[</span><span class="m">100</span>%<span class="o">]</span> <span class="m">1</span> of <span class="m">1</span> ✔
+<span class="o">[</span>e5/8d2432<span class="o">]</span> process &gt; seqcover_report     <span class="o">[</span><span class="m">100</span>%<span class="o">]</span> <span class="m">1</span> of <span class="m">1</span> ✔
+Completed at: <span class="m">25</span>-Nov-2020 <span class="m">16</span>:30:28
+Duration    : 12m 50s
+CPU hours   : <span class="m">0</span>.6
+Succeeded   : <span class="m">7</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+<p>And we have our results in ./results/seqcover_report.html.</p>
+</div>
+<div class="section" id="results">
+<h2>Results:<a class="headerlink" href="#results" title="Permalink to this headline">¶</a></h2>
+<p>Here is the <strong>seqcover_report.html</strong> output from the above workflow</p>
+<iframe src="_static/seqcover_report.html" height="1100px" width="100%"></iframe></div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2016-2021, The GoGetData team.
+      
+      |
+      <a href="_sources/nextflow_workflow.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

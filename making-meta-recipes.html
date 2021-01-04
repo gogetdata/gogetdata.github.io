@@ -63,15 +63,10 @@
 <li class="toctree-l2"><a class="reference internal" href="github-setup.html">Setting up with Github</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contribute-recipe.html">Contributing a ggd recipe</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Creating a ggd meta-recipe</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#update-local-forked-repo">1. Update local forked repo</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#writing-the-curation-script-s">2. Writing the curation script(s)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#creating-a-ggd-meta-recipe-using-the-ggd-cli">3. Creating a ggd meta-recipe using the ggd cli</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#checking-testing-the-new-meta-recipe">4. Checking/Testing the new meta-recipe</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#submit-the-new-ggd-meta-recipe-to-the-original-ggd-recipes-repo">5. Submit the new ggd meta-recipe to the original ggd-recipes repo</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#example-of-the-gene-expression-omnibus-geo-main-bash-script-and-supporting-python-script">6. Example of the Gene Expression Omnibus (GEO) main bash script and supporting python script</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="private_recipes.html">Private Recipes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflows.html">Using GGD in Workflows</a></li>
 <li class="toctree-l1"><a class="reference internal" href="recipes.html">Available Data Packages</a></li>
 </ul>
 
@@ -102,11 +97,11 @@
             
   <div class="section" id="creating-a-ggd-meta-recipe">
 <span id="contribute-meta-recipe"></span><h1>Creating a ggd meta-recipe<a class="headerlink" href="#creating-a-ggd-meta-recipe" title="Permalink to this headline">¶</a></h1>
+<p>[<a class="reference internal" href="index.html#home-page"><span class="std std-ref">Click here to return to the home page</span></a>]</p>
 <p>This page is specific to creating a ggd <strong>meta-recipe</strong>. If you are looking to create a normal ggd recipe see <a class="reference internal" href="contribute-recipe.html#contrib-recipe"><span class="std std-ref">Creating a ggd recipe</span></a></p>
 <p>The following steps outline how to create, check, and add a ggd data meta-recipe.</p>
-</div>
 <div class="section" id="update-local-forked-repo">
-<h1>1. Update local forked repo<a class="headerlink" href="#update-local-forked-repo" title="Permalink to this headline">¶</a></h1>
+<h2>1. Update local forked repo<a class="headerlink" href="#update-local-forked-repo" title="Permalink to this headline">¶</a></h2>
 <p>You will need to update the forked ggd-recipes repo on your local machine before
 you add a recipe to it.</p>
 <ul class="simple">
@@ -120,7 +115,7 @@ $ git push origin master
 </div>
 </div>
 <div class="section" id="writing-the-curation-script-s">
-<h1>2. Writing the curation script(s)<a class="headerlink" href="#writing-the-curation-script-s" title="Permalink to this headline">¶</a></h1>
+<h2>2. Writing the curation script(s)<a class="headerlink" href="#writing-the-curation-script-s" title="Permalink to this headline">¶</a></h2>
 <p>A meta-recipe script should be quite a bit more detailed then a general ggd recipe script.</p>
 <p>Additionally, it is common to consider using multiple scripts for a meta-recipe, where you have a single main bash script which is used
 to control the process of all other scripts.</p>
@@ -143,7 +138,7 @@ to control the process of all other scripts.</p>
 <li><p>etc.</p></li>
 </ul>
 <div class="section" id="creating-the-main-bash-script">
-<h2>Creating the main bash script<a class="headerlink" href="#creating-the-main-bash-script" title="Permalink to this headline">¶</a></h2>
+<h3>Creating the main bash script<a class="headerlink" href="#creating-the-main-bash-script" title="Permalink to this headline">¶</a></h3>
 <p>This script should handle the ID. Data download, curation, etc. can be handled by this script or can be passed to a different supporting script.</p>
 <p>GGD provides 4 environment variables to use during meta-recipe installation in order to help the process. They are:</p>
 <blockquote>
@@ -271,7 +266,7 @@ meta-recipe. These updates are available via the <code class="code docutils lite
 </ol>
 </div>
 <div class="section" id="creating-the-supporting-script-s">
-<h2>Creating the supporting script(s)<a class="headerlink" href="#creating-the-supporting-script-s" title="Permalink to this headline">¶</a></h2>
+<h3>Creating the supporting script(s)<a class="headerlink" href="#creating-the-supporting-script-s" title="Permalink to this headline">¶</a></h3>
 <p>Supporting scripts are not needed if everything can be done easily in the main bash script without them. However, supporting scripts can be helpful
 in defining the updated metadata for the ID specific recipe installed, or for other tasks that aren’t done easily in bash.</p>
 <p>Supporting scripts need to be accessible through the main bash script, and any arguments needed for the supporting scripts needs to be accessible and/or generated
@@ -310,7 +305,7 @@ what is going on.</p>
 </div>
 </div>
 <div class="section" id="creating-a-ggd-meta-recipe-using-the-ggd-cli">
-<h1>3. Creating a ggd meta-recipe using the ggd cli<a class="headerlink" href="#creating-a-ggd-meta-recipe-using-the-ggd-cli" title="Permalink to this headline">¶</a></h1>
+<h2>3. Creating a ggd meta-recipe using the ggd cli<a class="headerlink" href="#creating-a-ggd-meta-recipe-using-the-ggd-cli" title="Permalink to this headline">¶</a></h2>
 <p>The ggd command line interface (cli) contains tools to create and test a data meta-recipe.</p>
 <p>If it has not been installed, install the ggd cli following the steps outlined in <a class="reference internal" href="using-ggd.html#using-ggd"><span class="std std-ref">Using GGD</span></a>.</p>
 <p>With the ggd cli installed you can now transform your meta-recipe script(s) created in the previous step into a ggd meta-recipe.</p>
@@ -374,7 +369,7 @@ an ID, so that a user can simply identify which meta-recipe they would like to u
 </div></blockquote>
 </div>
 <div class="section" id="checking-testing-the-new-meta-recipe">
-<h1>4. Checking/Testing the new meta-recipe<a class="headerlink" href="#checking-testing-the-new-meta-recipe" title="Permalink to this headline">¶</a></h1>
+<h2>4. Checking/Testing the new meta-recipe<a class="headerlink" href="#checking-testing-the-new-meta-recipe" title="Permalink to this headline">¶</a></h2>
 <p>The new meta-recipe needs to be tested. GGD provides an easy to use tool to do this. The tool will check if the meta-recipe can be built into a data-package,
 if it can be installed, along with other aspects of the recipe that are pertinent for successful data meta-recipes.</p>
 <p>This tool is <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">check-recipe</span></code>. <code class="code docutils literal notranslate"><span class="pre">check-recipe</span></code> is used to test both a normal ggd data recipe along with a ggd data meta-recipe. One major difference
@@ -394,7 +389,7 @@ from the user side is that for a meta-recipe the <code class="code docutils lite
 <p>Once the meta-recipe has passed the tests it can be added to GGD.</p>
 </div>
 <div class="section" id="submit-the-new-ggd-meta-recipe-to-the-original-ggd-recipes-repo">
-<h1>5. Submit the new ggd meta-recipe to the original ggd-recipes repo<a class="headerlink" href="#submit-the-new-ggd-meta-recipe-to-the-original-ggd-recipes-repo" title="Permalink to this headline">¶</a></h1>
+<h2>5. Submit the new ggd meta-recipe to the original ggd-recipes repo<a class="headerlink" href="#submit-the-new-ggd-meta-recipe-to-the-original-ggd-recipes-repo" title="Permalink to this headline">¶</a></h2>
 <p>Once the new ggd meta-recipe you created passes the previous step you are ready to add it to the original ggd-recipes repo.</p>
 <p>To do this you will need to create a <strong>pull request</strong>.</p>
 <p>From your local machine, add the new data meta-recipe you created to the forked ggd-recipes repo. You will add it
@@ -465,7 +460,7 @@ The GGD team will work with you during this process to make sure that the proces
 </div>
 </div>
 <div class="section" id="example-of-the-gene-expression-omnibus-geo-main-bash-script-and-supporting-python-script">
-<h1>6. Example of the Gene Expression Omnibus (GEO) main bash script and supporting python script<a class="headerlink" href="#example-of-the-gene-expression-omnibus-geo-main-bash-script-and-supporting-python-script" title="Permalink to this headline">¶</a></h1>
+<h2>6. Example of the Gene Expression Omnibus (GEO) main bash script and supporting python script<a class="headerlink" href="#example-of-the-gene-expression-omnibus-geo-main-bash-script-and-supporting-python-script" title="Permalink to this headline">¶</a></h2>
 <p>Below is an example of a the main bash script and a supporting python script used to create a meta-recipe for the GEO database. This stands as one example
 of how to create a meta-recipe, but does not indicate how every meta-recipe should be created. As with all ggd recipes, the recipe scripts should be created
 in order to correctly install and process the data the recipe is created for.</p>
@@ -970,6 +965,7 @@ python <span class="nv">$script_path</span>/parse_geo_header.py --geo-acc <span 
 </li>
 </ol>
 </div>
+</div>
 
 
           </div>
@@ -979,7 +975,7 @@ python <span class="nv">$script_path</span>/parse_geo_header.py --geo-acc <span 
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2016-2020, The GoGetData team.
+      &copy;2016-2021, The GoGetData team.
       
       |
       <a href="_sources/making-meta-recipes.rst.txt"

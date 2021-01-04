@@ -70,6 +70,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="contribute.html">Contribute</a></li>
 <li class="toctree-l1"><a class="reference internal" href="private_recipes.html">Private Recipes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflows.html">Using GGD in Workflows</a></li>
 <li class="toctree-l1"><a class="reference internal" href="recipes.html">Available Data Packages</a></li>
 </ul>
 
@@ -123,6 +124,7 @@ a single GGD meta-recipe, each ID specific meta-recipe installed will have updat
 <li><p><code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">show-env</span></code> to show the environment variables for ID specific meta-recipe(s)</p></li>
 <li><p><code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">pkg-info</span></code> to get the metadata/information of a ID specific meta-recipe</p></li>
 <li><p><code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">get-files</span></code> to get the installed data files for an ID specific meta-recipe</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">predict-path</span></code> to predict the directory path of an ID specific meta-recipe</p></li>
 <li><p><code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">uninstall</span></code> to uninstall an ID specific meta-recipe(s)</p></li>
 <li><p><code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">make-meta-recipe</span></code> to make a meta-recipe from a single or group of scripts</p></li>
 <li><p><code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">check-recipe</span></code> to test and check a new meta-recipe</p></li>
@@ -133,7 +135,6 @@ a single GGD meta-recipe, each ID specific meta-recipe installed will have updat
 <blockquote>
 <div><ul class="simple">
 <li><p><code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">make-recipe</span></code>: This command will only created a GGD recipe not a GGD meta-recipe.</p></li>
-<li><p><code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">predict-path</span></code>: Currently, the <cite>predict-path</cite> command does not work with meta-recipes.</p></li>
 </ul>
 </div></blockquote>
 </div>
@@ -400,7 +401,7 @@ gse123-geo-v1 recipe file:
 <ol class="arabic simple" start="5">
 <li><p>PREFIX</p></li>
 </ol>
-<p>As mentioned above, any GGD command that can use the <code class="code docutils literal notranslate"><span class="pre">--prefix</span></code> parameter can be used with meta-recipes. (Excluding the <code class="code docutils literal notranslate"><span class="pre">predict-path</span></code> command)</p>
+<p>As mentioned above, any GGD command that can use the <code class="code docutils literal notranslate"><span class="pre">--prefix</span></code> parameter can be used with meta-recipes.</p>
 <p>Therefore, one can install and access the data files of a ID specific meta-recipe in an environment that is different then the active one. Additionally,
 a meta-recipes metadata can be accessed in a different environment using <code class="code docutils literal notranslate"><span class="pre">ggd</span> <span class="pre">pkg-info</span></code> with the <code class="code docutils literal notranslate"><span class="pre">--prefix</span></code> parameter.</p>
 </div>
@@ -433,7 +434,7 @@ GGD does not plan to implement md5sum checking of data files for ID specific met
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2016-2020, The GoGetData team.
+      &copy;2016-2021, The GoGetData team.
       
       |
       <a href="_sources/meta-recipes.rst.txt"
