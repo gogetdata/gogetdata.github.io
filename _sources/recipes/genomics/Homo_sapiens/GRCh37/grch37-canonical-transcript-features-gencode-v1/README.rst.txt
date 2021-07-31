@@ -19,7 +19,7 @@ Data Version                       release-34_03-24-2020
 Genomic File Type                  gtf
 Data file coordinate basing        1-based-inclusive
 Package's Data Files               grch37-canonical-transcript-features-gencode-v1.gtf.gz, grch37-canonical-transcript-features-gencode-v1.gtf.gz.tbi
-Approximate Size of Each Data File grch37-canonical-transcript-features-gencode-v1.gtf.gz: **15.42M**, grch37-canonical-transcript-features-gencode-v1.gtf.gz.tbi: **260.39K**
+Approximate Size of Each Data File grch37-canonical-transcript-features-gencode-v1.gtf.gz: **14.99M**, grch37-canonical-transcript-features-gencode-v1.gtf.gz.tbi: **257.76K**
 Package Keywords                   Canonical, Canonical-Transcripts, Canonical-Isoforms, Gene-Features, GTF, Gene-Features, Gene-Annotations, GTF, GENOCDOE-GTF, GENCODE-Gene-Sets, Annotated-Transcripts
 Package Dependencies:              grch37-chrom-mapping-ucsc2ensembl-ncbi-v1, gsort, htslib, zlib
 Recipe                             https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/GRCh37/grch37-canonical-transcript-features-gencode-v1

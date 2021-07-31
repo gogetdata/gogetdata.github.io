@@ -19,7 +19,7 @@ Data Version                       release-34_03-24-2020
 Genomic File Type                  gtf
 Data file coordinate basing        1-based-inclusive
 Package's Data Files               hg38-canonical-transcript-features-gencode-v1.gtf.gz, hg38-canonical-transcript-features-gencode-v1.gtf.gz.tbi
-Approximate Size of Each Data File hg38-canonical-transcript-features-gencode-v1.gtf.gz: **12.18M**, hg38-canonical-transcript-features-gencode-v1.gtf.gz.tbi: **281.30K**
+Approximate Size of Each Data File hg38-canonical-transcript-features-gencode-v1.gtf.gz: **10.75M**, hg38-canonical-transcript-features-gencode-v1.gtf.gz.tbi: **262.08K**
 Package Keywords                   Canonical, Canonical-Transcripts, Canonical-Isoforms, Gene-Features, GTF, Gene-Features, Gene-Annotations, GTF, GENOCDOE-GTF, GENCODE-Gene-Sets, Annotated-Transcripts
 Package Dependencies:              gsort, hg38-chrom-mapping-ensembl2ucsc-ncbi-v1, htslib, zlib
 Recipe                             https://github.com/gogetdata/ggd-recipes/tree/master/recipes/genomics/Homo_sapiens/hg38/hg38-canonical-transcript-features-gencode-v1
